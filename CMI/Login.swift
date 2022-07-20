@@ -18,8 +18,8 @@ struct Login: View {
                TextField("Usuario o email", text: $username)
                     .font(.subheadline)
                     .padding()
-                    .background(.white)
-                    .border(Color("gris"))
+                    .background(Color("colorDarkAparence"))
+                    .border(Color("gris_2.1"))
                     
                 Text("Contraseña")
                     .font(.headline)
@@ -28,8 +28,8 @@ struct Login: View {
                 SecureField("Contraseña", text: $password)
                      .font(.subheadline)
                      .padding()
-                     .background(.white)
-                     .border(Color("gris"))
+                     .background(Color("colorDarkAparence"))
+                     .border(Color("gris_2.1"))
                 Button(action: {
                     
                     print("Usuario: \(username)\nContraseña: \(password)")
@@ -41,7 +41,7 @@ struct Login: View {
                             .foregroundColor(username == "" || password == "" ? Color("rosita") : Color.white )
                             .padding()
                             .frame(width: 400, height: 60)
-                            .background(username == "" || password == "" ?   Color.white : Color("rosita"))
+                            .background(username == "" || password == "" ?   Color("colorDarkAparence") : Color("rosita"))
                             .border(Color("rosita"))
                     
                 }).disabled(username == "" || password == "")

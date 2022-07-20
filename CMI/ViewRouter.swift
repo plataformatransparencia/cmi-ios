@@ -1,7 +1,7 @@
 import SwiftUI
 
 class ViewRouter: ObservableObject {
-    @Published var currentPage: Page = .login
+    @Published var currentPage: Page = .inicio
 }
 
 enum Page{
