@@ -12,6 +12,9 @@
 		78002B68286E764400B3B8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B67286E764400B3B8B4 /* Assets.xcassets */; };
 		78002B6B286E764400B3B8B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */; };
 		7819C1062887242100E7BE73 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819C1052887242100E7BE73 /* Login.swift */; };
+		784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA5FF28919F7500DF30BE /* DetalleModulo.swift */; };
+		784FA6042891BBE900DF30BE /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6032891BBE900DF30BE /* Filtro.swift */; };
+		784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */; };
 		78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D13CE2287F3B4D0038EE47 /* Utils.swift */; };
 		78D9F881288A0CC70087A35A /* ModuloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D9F880288A0CC70087A35A /* ModuloView.swift */; };
 		78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF28FC2885D62500106EF7 /* SlideMenu.swift */; };
@@ -31,6 +34,9 @@
 		78002B67286E764400B3B8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7819C1052887242100E7BE73 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		784FA5FF28919F7500DF30BE /* DetalleModulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleModulo.swift; sourceTree = "<group>"; };
+		784FA6032891BBE900DF30BE /* Filtro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtro.swift; sourceTree = "<group>"; };
+		784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownPeriodos.swift; sourceTree = "<group>"; };
 		78D13CE2287F3B4D0038EE47 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		78D9F880288A0CC70087A35A /* ModuloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloView.swift; sourceTree = "<group>"; };
 		78DF28FC2885D62500106EF7 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
@@ -89,6 +95,25 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		784FA5FE28919F1300DF30BE /* Módulos */ = {
+			isa = PBXGroup;
+			children = (
+				784FA6022891BBDC00DF30BE /* Filtro */,
+				78D9F880288A0CC70087A35A /* ModuloView.swift */,
+				784FA5FF28919F7500DF30BE /* DetalleModulo.swift */,
+			);
+			name = "Módulos";
+			sourceTree = "<group>";
+		};
+		784FA6022891BBDC00DF30BE /* Filtro */ = {
+			isa = PBXGroup;
+			children = (
+				784FA6032891BBE900DF30BE /* Filtro.swift */,
+				784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */,
+			);
+			path = Filtro;
+			sourceTree = "<group>";
+		};
 		78D13CE0287F385B0038EE47 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,15 +125,15 @@
 		78D13CE4287F676D0038EE47 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78DF28FB2885D39D00106EF7 /* Menu */,
+				784FA5FE28919F1300DF30BE /* Módulos */,
 				78DF29002886064700106EF7 /* Inicio.swift */,
 				78002B65286E764300B3B8B4 /* ContentView.swift */,
 				78002B63286E764300B3B8B4 /* CMIApp.swift */,
 				78DF290728861F9500106EF7 /* ViewRouter.swift */,
 				78DF2909288622E400106EF7 /* AcercaDe.swift */,
 				78DF290B288622F800106EF7 /* LogOut.swift */,
-				78DF28FB2885D39D00106EF7 /* Menu */,
 				7819C1052887242100E7BE73 /* Login.swift */,
-				78D9F880288A0CC70087A35A /* ModuloView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -197,15 +222,18 @@
 				78DF290828861F9500106EF7 /* ViewRouter.swift in Sources */,
 				78DF290A288622E400106EF7 /* AcercaDe.swift in Sources */,
 				78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */,
+				784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */,
 				7819C1062887242100E7BE73 /* Login.swift in Sources */,
 				78D9F881288A0CC70087A35A /* ModuloView.swift in Sources */,
 				78DF290C288622F800106EF7 /* LogOut.swift in Sources */,
 				78002B66286E764300B3B8B4 /* ContentView.swift in Sources */,
 				78DF29012886064700106EF7 /* Inicio.swift in Sources */,
 				78DF28FF2885D91B00106EF7 /* Home.swift in Sources */,
+				784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */,
 				78DF290628861E7B00106EF7 /* MenuButton.swift in Sources */,
 				78002B64286E764300B3B8B4 /* CMIApp.swift in Sources */,
 				78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */,
+				784FA6042891BBE900DF30BE /* Filtro.swift in Sources */,
 				78DF290428861E2500106EF7 /* TopBand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
