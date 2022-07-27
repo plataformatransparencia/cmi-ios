@@ -29,7 +29,7 @@ struct DetalleModulo: View {
                                 .padding([.horizontal, .top])
                             
                             if modulo == "Módulo I" {
-                               Filtro()
+                                Filtro(mod: modulo)
                             }
                             
                             ForEach(listaIndicadores, id:\.self){value in

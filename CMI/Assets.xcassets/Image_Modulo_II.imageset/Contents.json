@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "Módulo_II.png",
+      "filename" : "Módulo_II-3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Módulo_II-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Módulo_II-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

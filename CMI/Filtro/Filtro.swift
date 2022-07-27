@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct Filtro: View {
+    @State var mod : String
     @State var isPresented = false
     var body: some View {
         VStack{
@@ -41,7 +42,14 @@ struct Filtro: View {
                     ScrollView(showsIndicators: true){
                         VStack{
                             VStack(alignment: .leading){
-                                DropDownPeriodos()
+                                if mod == "Módulo I" {
+                                    DropDownPeriodos()
+                                }else{
+                                    DropDownEjercicioFiscal()
+                                    DropDownEntidadFederativa()
+                                    DropDownSubsistema()
+                                    DropDownInstitucion()
+                                }
                             }.padding(.top, 30)
                         }.padding(.bottom, (UIApplication
                             .shared

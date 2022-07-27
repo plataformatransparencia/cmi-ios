@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct DropDownPeriodos: View {
-    @State var periodos = [String:String]()
+struct DropDownEjercicioFiscal: View {
+    @State var ejerciciosFiscales = [String:String]()
     @State var expand = false
     @State var selected: String = "Selecciona"
     var body: some View {
         VStack{
             HStack{
-                Text("Periodo")
+                Text("Ejercicio Fiscal")
                     .font(.body)
                 Spacer()
                 HStack{
@@ -25,7 +25,7 @@ struct DropDownPeriodos: View {
             ScrollView(showsIndicators: false){
                 VStack(alignment: .center, spacing: 18, content: {
                     if expand {
-                        ForEach(periodos.sorted(by: {$0.0 > $1.0}), id: \.key){ key, value in
+                        ForEach(ejerciciosFiscales.sorted(by: {$0.0 > $1.0}), id: \.key){ key, value in
                             Button(action: {
                                 self.expand.toggle()
                                 self.selected = key
@@ -49,5 +49,11 @@ struct DropDownPeriodos: View {
                     withAnimation(.default){}
                 }
         }
+    }
+}
+
+struct DropDownEjercicioFiscal_Previews: PreviewProvider {
+    static var previews: some View {
+        DropDownEjercicioFiscal()
     }
 }

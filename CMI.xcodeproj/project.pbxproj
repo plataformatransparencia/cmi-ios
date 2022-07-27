@@ -15,6 +15,10 @@
 		784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA5FF28919F7500DF30BE /* DetalleModulo.swift */; };
 		784FA6042891BBE900DF30BE /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6032891BBE900DF30BE /* Filtro.swift */; };
 		784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */; };
+		784FA6082891C6F500DF30BE /* DropDownEjercicioFiscal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6072891C6F500DF30BE /* DropDownEjercicioFiscal.swift */; };
+		784FA60A2891C7A700DF30BE /* DropDownEntidadFederativa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6092891C7A700DF30BE /* DropDownEntidadFederativa.swift */; };
+		784FA60C2891C7DB00DF30BE /* DropDownSubsistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA60B2891C7DB00DF30BE /* DropDownSubsistema.swift */; };
+		784FA60E2891C7EA00DF30BE /* DropDownInstitucion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA60D2891C7EA00DF30BE /* DropDownInstitucion.swift */; };
 		78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D13CE2287F3B4D0038EE47 /* Utils.swift */; };
 		78D9F881288A0CC70087A35A /* ModuloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D9F880288A0CC70087A35A /* ModuloView.swift */; };
 		78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF28FC2885D62500106EF7 /* SlideMenu.swift */; };
@@ -37,6 +41,10 @@
 		784FA5FF28919F7500DF30BE /* DetalleModulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleModulo.swift; sourceTree = "<group>"; };
 		784FA6032891BBE900DF30BE /* Filtro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtro.swift; sourceTree = "<group>"; };
 		784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownPeriodos.swift; sourceTree = "<group>"; };
+		784FA6072891C6F500DF30BE /* DropDownEjercicioFiscal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownEjercicioFiscal.swift; sourceTree = "<group>"; };
+		784FA6092891C7A700DF30BE /* DropDownEntidadFederativa.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownEntidadFederativa.swift; sourceTree = "<group>"; };
+		784FA60B2891C7DB00DF30BE /* DropDownSubsistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownSubsistema.swift; sourceTree = "<group>"; };
+		784FA60D2891C7EA00DF30BE /* DropDownInstitucion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownInstitucion.swift; sourceTree = "<group>"; };
 		78D13CE2287F3B4D0038EE47 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		78D9F880288A0CC70087A35A /* ModuloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloView.swift; sourceTree = "<group>"; };
 		78DF28FC2885D62500106EF7 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
@@ -110,6 +118,10 @@
 			children = (
 				784FA6032891BBE900DF30BE /* Filtro.swift */,
 				784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */,
+				784FA6072891C6F500DF30BE /* DropDownEjercicioFiscal.swift */,
+				784FA6092891C7A700DF30BE /* DropDownEntidadFederativa.swift */,
+				784FA60B2891C7DB00DF30BE /* DropDownSubsistema.swift */,
+				784FA60D2891C7EA00DF30BE /* DropDownInstitucion.swift */,
 			);
 			path = Filtro;
 			sourceTree = "<group>";
@@ -222,6 +234,8 @@
 				78DF290828861F9500106EF7 /* ViewRouter.swift in Sources */,
 				78DF290A288622E400106EF7 /* AcercaDe.swift in Sources */,
 				78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */,
+				784FA6082891C6F500DF30BE /* DropDownEjercicioFiscal.swift in Sources */,
+				784FA60C2891C7DB00DF30BE /* DropDownSubsistema.swift in Sources */,
 				784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */,
 				7819C1062887242100E7BE73 /* Login.swift in Sources */,
 				78D9F881288A0CC70087A35A /* ModuloView.swift in Sources */,
@@ -231,10 +245,12 @@
 				78DF28FF2885D91B00106EF7 /* Home.swift in Sources */,
 				784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */,
 				78DF290628861E7B00106EF7 /* MenuButton.swift in Sources */,
+				784FA60E2891C7EA00DF30BE /* DropDownInstitucion.swift in Sources */,
 				78002B64286E764300B3B8B4 /* CMIApp.swift in Sources */,
 				78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */,
 				784FA6042891BBE900DF30BE /* Filtro.swift in Sources */,
 				78DF290428861E2500106EF7 /* TopBand.swift in Sources */,
+				784FA60A2891C7A700DF30BE /* DropDownEntidadFederativa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
