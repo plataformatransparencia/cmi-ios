@@ -11,7 +11,7 @@ struct DetalleModulo: View {
             NavigationView{
                 ZStack{
                     ScrollView(showsIndicators: true){
-                        VStack(alignment: .leading){
+                        VStack{
                             HStack{
                                 Button(action: {
                                     self.presentationMode.wrappedValue.dismiss()

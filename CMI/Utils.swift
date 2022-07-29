@@ -138,6 +138,19 @@ let listaModulo_III = [
 ]
 
 
+let listaItemsFichas = [
+    ElementosFichas(titulo: "Nombre del Indicador", texto: "")
+]
+
+
+
+struct ElementosFichas: Identifiable {
+    let id = UUID()
+    var titulo : String
+    var texto : String
+}
+
+
 
 struct Indicadores : Identifiable {
     let id = UUID()
@@ -148,6 +161,30 @@ struct Indicadores : Identifiable {
 }
 
 
+
+struct GroupItem: View {
+    @State var titulo : String
+    @State var texto : String
+    var body: some View{
+        VStack{
+            HStack{
+                Text("\(titulo)")
+                    .font(.body.bold())
+                Spacer()
+            }
+            HStack{
+                Text("\(texto)")
+                    .font(.body)
+                    .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
+                    .multilineTextAlignment(.leading)
+                Spacer()
+            }
+            
+            
+            
+        }
+    }
+}
 
 
 

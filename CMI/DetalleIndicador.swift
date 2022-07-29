@@ -7,11 +7,12 @@ struct DetalleIndicador: View {
     @State var items : [String]
     @State var codigoFicha: String
     @State var nombreFicha: String
+    
     var body: some View {
         VStack{
             ZStack{
                 ScrollView(showsIndicators: true){
-                    VStack(alignment: .leading){
+                    VStack{
                         HStack{
                             Button(action: {
                                 self.presentationMode.wrappedValue.dismiss()
@@ -27,28 +28,55 @@ struct DetalleIndicador: View {
                             
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
-                                
+                        
                         if modulo == "Módulo II" || modulo == "Módulo III"{
                             Filtro(mod: modulo)
                         }
-                        NavigationLink(destination: Text("Detalle de la ficha con el codigo \(codigoFicha)")){
+                        
+                        
+                        switch modulo{
+                        case "Módulo I":
+                            NavigationLink(destination: FichaModulo_I(titulo: nombreFicha)){
                                 Text("\(nombreFicha)")
-                                .font(.body)
-                                .underline()
-                                .multilineTextAlignment(.center)
-                                .padding()
+                                    .font(.body)
+                                    .underline()
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                                
+                            }
+                            
+                        case "Módulo II":
+                            NavigationLink(destination: FichaModulo_II(titulo: nombreFicha)){
+                                Text("\(nombreFicha)")
+                                    .font(.body)
+                                    .underline()
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                            }
+                            
+                        case "Módulo III":
+                            NavigationLink(destination: FichaModulo_III(titulo: nombreFicha)){
+                                Text("\(nombreFicha)")
+                                    .font(.body)
+                                    .underline()
+                                    .multilineTextAlignment(.center)
+                                    .padding()
+                            }
+                        default:
+                            EmptyView()
                         }
+                        
                         
                         ForEach(items, id:\.self){i in
                             NavigationLink(destination: Text("Vista del tab \(i)")){
                                 ItemView(indicador: i)
                             }
                         }
-                }
-            }.edgesIgnoringSafeArea(.all)
-            .navigationBarHidden(true)
-        }
+                    }
+                }.edgesIgnoringSafeArea(.all)
+                    .navigationBarHidden(true)
+            }
             
-    }.navigationBarHidden(true)
-}
+        }.navigationBarHidden(true)
+    }
 }
