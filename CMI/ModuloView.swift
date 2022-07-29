@@ -19,7 +19,7 @@ struct Modulo: View {
     var imagen: String
     var titulo: String
     var texto: String
-    var listaIndicadores: [String]
+    var listaIndicadores: [Indicadores]
     var body: some View{
         VStack(spacing: 15){
             Image(imagen)

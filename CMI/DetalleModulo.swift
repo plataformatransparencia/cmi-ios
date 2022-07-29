@@ -4,7 +4,7 @@ struct DetalleModulo: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var modulo: String
     @State var titulo: String
-    @State var listaIndicadores : [String]
+    @State var listaIndicadores : [Indicadores]
     @State var isPresented = false
     var body: some View {
         VStack{
@@ -32,9 +32,9 @@ struct DetalleModulo: View {
                                 Filtro(mod: modulo)
                             }
                             
-                            ForEach(listaIndicadores, id:\.self){value in
-                                NavigationLink(destination: Text("Vista de indicador \(value)")){
-                                    ItemView(indicador: value)
+                            ForEach(listaIndicadores){v in
+                                NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, codigoFicha: v.codigo, nombreFicha: v.ficha)){
+                                    ItemView(indicador: v.indicador)
                                 }
                             }
                         }
