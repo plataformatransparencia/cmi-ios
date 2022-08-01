@@ -29,11 +29,6 @@ struct DetalleIndicador: View {
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
                         
-                        if modulo == "Módulo II" || modulo == "Módulo III"{
-                            Filtro(mod: modulo)
-                        }
-                        
-                        
                         switch modulo{
                         case "Módulo I":
                             NavigationLink(destination: FichaModulo_I(titulo: nombreFicha)){
@@ -42,35 +37,52 @@ struct DetalleIndicador: View {
                                     .underline()
                                     .multilineTextAlignment(.center)
                                     .padding()
-                                
+                            }
+                            ForEach(items, id:\.self){i in
+                                NavigationLink(destination: Text("Vista del tab \(i)")){
+                                    ItemView(indicador: i)
+                                }
                             }
                             
                         case "Módulo II":
-                            NavigationLink(destination: FichaModulo_II(titulo: nombreFicha)){
-                                Text("\(nombreFicha)")
-                                    .font(.body)
-                                    .underline()
-                                    .multilineTextAlignment(.center)
-                                    .padding()
+                            Filtro(mod: modulo)
+                            HStack(alignment: .center){
+                                NavigationLink(destination: FichaModulo_II(titulo: nombreFicha)){
+                                    Text("\(nombreFicha)")
+                                        .font(.body)
+                                        .underline()
+                                        .multilineTextAlignment(.leading)
+                                }.padding(.horizontal)
+                                Spacer()
+                                Button(action: {
+                                    print("descarga de excel")
+                                }){
+                                    Image("Image_Excel")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }.padding(.horizontal)
                             }
                             
                         case "Módulo III":
-                            NavigationLink(destination: FichaModulo_III(titulo: nombreFicha)){
-                                Text("\(nombreFicha)")
-                                    .font(.body)
-                                    .underline()
-                                    .multilineTextAlignment(.center)
-                                    .padding()
+                            Filtro(mod: modulo)
+                            HStack(alignment: .center){
+                                NavigationLink(destination: FichaModulo_III(titulo: nombreFicha)){
+                                    Text("\(nombreFicha)")
+                                        .font(.body)
+                                        .underline()
+                                        .multilineTextAlignment(.leading)
+                                }.padding(.horizontal)
+                                Spacer()
+                                Button(action: {
+                                    print("descarga de excel")
+                                }){
+                                    Image("Image_Excel")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }.padding(.horizontal)
                             }
                         default:
                             EmptyView()
-                        }
-                        
-                        
-                        ForEach(items, id:\.self){i in
-                            NavigationLink(destination: Text("Vista del tab \(i)")){
-                                ItemView(indicador: i)
-                            }
                         }
                     }
                 }.edgesIgnoringSafeArea(.all)

@@ -24,6 +24,13 @@ struct FichaModulo_III: View {
                             
                         }.padding([.horizontal, .top])
                         
+                        Button(action: {
+                            print("descarga de PDF")
+                        }){
+                            Image("Image_PDF")
+                                .resizable()
+                                .frame(width: 50, height: 50)
+                        }.padding(.horizontal)
                         
                         Text("Elementos del indicador o parámetro")
                             .font(.title3.bold())
