@@ -35,10 +35,11 @@ struct DetalleModulo: View {
                             ForEach(listaIndicadores){v in
                                 NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, codigoFicha: v.codigo, nombreFicha: v.ficha)){
                                     ItemView(indicador: v.indicador)
-                                }
+                                }.padding(.bottom)
                             }
                         }
-                    }.edgesIgnoringSafeArea(.all)
+                    }.padding(.bottom)
+                    .edgesIgnoringSafeArea(.all)
                     .navigationBarHidden(true)
                 }
                 
@@ -67,7 +68,7 @@ struct ItemView: View {
             }
             .foregroundColor(Color("gris_2"))
             .edgesIgnoringSafeArea(.all)
-        }.padding()
+        }.padding([.horizontal, .top])
         
     }
 }
