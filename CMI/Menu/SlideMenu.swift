@@ -4,7 +4,7 @@ struct SlideMenu: View {
     let menuButtons = [
         IconAndTitle(icon: "homekit", title: "Inicio", pagina: .inicio),
         IconAndTitle(icon: "info.circle", title: "Acerca de CMI", pagina: .acercaDe),
-        IconAndTitle(icon: "rectangle.portrait.and.arrow.right", title: "Cerrar Sesión", pagina: .logout)
+        IconAndTitle(icon: "rectangle.portrait.and.arrow.right", title: "Cerrar Sesión", pagina: .login)
     ]
     
     @StateObject var viewRouter: ViewRouter
