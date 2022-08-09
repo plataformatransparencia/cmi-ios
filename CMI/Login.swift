@@ -1,16 +1,33 @@
 import SwiftUI
 
 struct Login: View {
+    
+    @EnvironmentObject var userAuth: AuthUser
     @State var username: String = ""
     @State var password: String = ""
-    @StateObject var viewRouter: ViewRouter
-    @State var isLoginError : Bool = false
     @State var loginError = "Usuario o contraseña incorrectos."
     var disableForm: Bool {!isValidEmail(username) || !isPasswordValid(password)}
     
-    
     var body: some View {
         VStack(alignment: .center, spacing: 15){
+            VStack{
+                HStack{
+                    Spacer(minLength: 0)
+                    Text("Cuadro de Mando Integral")
+                        .font(.title2)
+                        .multilineTextAlignment(.center)
+                    Spacer(minLength: 0)
+                }
+                .foregroundColor(.white)
+                .padding()
+                .background(Color("verdeHeader"))
+                
+                
+            }
+            .contentShape(Rectangle())
+            .background(Color("colorDarkAparence"))
+            Spacer(minLength: 0)
+            
             HStack{
                 Text("Inicia Sesión")
                     .font(.title2.bold())
@@ -24,15 +41,18 @@ struct Login: View {
                 TextField("Usuario o email", text: $username)
                     .font(.subheadline)
                     .padding()
+                    .autocapitalization(.none)
                     .background(Color("colorDarkAparence"))
                     .border(Color("gris_2.1"))
                     .frame(width: UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? 500 : 370, height: UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? 80 : 50, alignment: .center)
                 
-                if self.isLoginError == true {
+                if self.userAuth.isLoginError {
                     Text("\(self.loginError)")
                         .font(.headline)
                         .foregroundColor(.red)
                 }
+                
+               
                 
                 Text("Contraseña")
                     .font(.headline)
@@ -41,26 +61,16 @@ struct Login: View {
                 SecureField("Contraseña", text: $password)
                     .font(.subheadline)
                     .padding()
+                    .autocapitalization(.none)
                     .background(Color("colorDarkAparence"))
                     .border(Color("gris_2.1"))
                     .frame(width: UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? 500 : 370, height: UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.pad ? 80 : 50, alignment: .center)
             }
             
             Button(action: {
-                print("Usuario: \(self.username)\nContraseña: \(self.password)")
-                if username == "Jose.esquivel" && password == "Password1."{
-                    withAnimation{
-                        viewRouter.currentPage = .inicio
-                    }
-                    self.username = ""
-                    self.password = ""
-                }else{
-                    isLoginError = true
-                    self.username = self.username
-                    self.password = ""
-                }
-                
-                
+                self.userAuth.login(username: username, password: password)
+                self.username = self.username
+                self.password = ""
             }, label: {
                 
                 Text("Iniciar Sesión")
@@ -73,13 +83,14 @@ struct Login: View {
                 
             })
             .disabled(disableForm)
+            Spacer()
             
         }
         
     }
     
     private func isValidEmail(_ email: String) -> Bool {
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", "^(?=[a-zA-Z0-9._]{8,}$)(?!.*[_.]{2})[^_.].*[^_.]$")
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", "^(?=[a-zA-Z0-9._]{2,}$)(?!.*[_.]{2})[^_.].*[^_.]$")
         return emailPred.evaluate(with: email)
     }
     

@@ -7,7 +7,7 @@ struct TopBand: View {
         VStack{
             HStack{
                 
-                if !(viewRouter.currentPage == .login || viewRouter.currentPage == .logout) {
+                if viewRouter.currentPage == .inicio || viewRouter.currentPage == .acercaDe {
                     Button(action: {
                         withAnimation{
                             x = 0

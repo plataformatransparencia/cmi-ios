@@ -10,13 +10,11 @@ struct Home: View {
                 TopBand(x: $x, viewRouter: viewRouter)
                 switch viewRouter.currentPage{
                 case .login:
-                    Login(viewRouter: viewRouter)
+                    Login()
                 case .inicio:
                     Inicio().position(x: geometry.size.width/2.0, y: geometry.size.height * 0.57)
                 case .acercaDe:
                     AcercaDe().position(x: geometry.size.width/2.0, y: geometry.size.height * 0.57)
-                case .logout:
-                    LogOut()
                 }
                 
                 SlideMenu(viewRouter: viewRouter,x: $x)
