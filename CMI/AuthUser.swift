@@ -1,6 +1,5 @@
 import Foundation
 import Combine
-import SwiftUI
 
 class AuthUser: ObservableObject {
     
@@ -24,7 +23,6 @@ class AuthUser: ObservableObject {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        //fse#n8GiAARU@*ubUokb
         request.httpBody = "username=\(username)&password=\(password)&client_id=app_cmi&client_secret=Password.1&grant_type=password".data(using: .utf8, allowLossyConversion: false)!
         
         URLSession.shared.dataTask(with: request){(data, response, error) in
@@ -43,16 +41,15 @@ class AuthUser: ObservableObject {
                 case 401:
                     self.isLoginError = true
                 default:
-                    print("BAD REQUEST \(String(describing: responseHTTP?.debugDescription))")
+                    fatalError("BAD REQUEST \(String(describing: responseHTTP?.debugDescription))")
                 }
             }
-            
         }.resume()
     }
     
     
     func logout(token:String, refresToken: String) {
-        guard let url = URL(string: "http://143.244.183.102:8180/desarrollocmi/auth/realms/CMI/protocol/openid-connect/logout") else {
+        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/auth/realms/CMI/protocol/openid-connect/logout") else {
             return
         }
         
@@ -61,11 +58,9 @@ class AuthUser: ObservableObject {
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         request.httpBody = "refresh_token=\(refresToken)&client_id=app_cmi".data(using: .utf8, allowLossyConversion: false)!
         
-        
         URLSession.shared.dataTask(with: request){(data, response, error) in
             guard error == nil else {
-                print("Error: error calling POST",error!)
-                return
+                fatalError("Error: error calling POST \(error!)")
             }
             
             if let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode{
@@ -75,8 +70,7 @@ class AuthUser: ObservableObject {
             }
             
             guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
-                print("Error: HTTP request failed",response.debugDescription)
-                return
+                fatalError("Error: HTTP request failed \(response.debugDescription)")
             }
             
         }.resume()

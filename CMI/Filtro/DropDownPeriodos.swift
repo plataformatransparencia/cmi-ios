@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct DropDownPeriodos: View {
-    @State var periodos = [String:String]()
+    @State var periodos : [String:String] = ["2019 - 2020":"2019 - 2020", "2020 - 2021":"2020 - 2021", "2021 - 2022":"2021 - 2022", "2022 - 2023":"2022 - 2023"]
     @State var expand = false
     @State var selected: String = "Selecciona"
     var body: some View {
@@ -36,7 +36,7 @@ struct DropDownPeriodos: View {
                                         .padding(.top, -13)
                                     Divider()
                                 }
-                            }.foregroundColor(.black)
+                            }.foregroundColor(Color("gris_2"))
                         }
                     }
                 }).padding(.top, 11)

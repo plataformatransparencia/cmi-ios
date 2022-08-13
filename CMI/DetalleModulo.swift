@@ -6,6 +6,7 @@ struct DetalleModulo: View {
     @State var titulo: String
     @State var listaIndicadores : [Indicadores]
     @State var isPresented = false
+    @StateObject var moduloViewModel = ModuloViewModel()
     var body: some View {
         VStack{
             NavigationView{
@@ -33,7 +34,7 @@ struct DetalleModulo: View {
                             }
                             
                             ForEach(listaIndicadores){v in
-                                NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, codigoFicha: v.codigo, nombreFicha: v.ficha)){
+                                NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha).environmentObject(moduloViewModel)){
                                     ItemView(indicador: v.indicador)
                                 }.padding(.bottom)
                             }

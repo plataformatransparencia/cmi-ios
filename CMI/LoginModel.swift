@@ -28,10 +28,3 @@ struct LoginModel: Codable {
 }
 
 
-struct bodyModel : Decodable{
-    var username: String
-    var password: String
-    var client_id: String
-    var grant_type:String
-}
-
