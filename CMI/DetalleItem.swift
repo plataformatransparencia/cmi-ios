@@ -48,7 +48,7 @@ struct DetalleItem: View {
                         }
                         HStack{
                             ScrollView(.horizontal, showsIndicators: true){
-                                Image(uiImage: UIImage(data: Data(base64Encoded: ImagenGrafica)!)!)
+                                !(ImagenGrafica.isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: ImagenGrafica)!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                             }
                         }
                         

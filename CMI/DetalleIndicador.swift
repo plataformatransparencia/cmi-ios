@@ -48,15 +48,15 @@ struct DetalleIndicador: View {
                                     case "tasa-bruta-escolarizacion-cobertura":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalTBEC)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaTotalGlobalTBEC)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.censoTotalGlobalTBEC)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaEscolarizacionGlobalTBEC)), ImagenGrafica: self.mouloViewModel.imagenTotalTBEC)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Mujeres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenMujeresTBEC)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaMujGlobalTBEC)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.censoMujGlobalTBEC)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaMujeresGlobalTBEC)), ImagenGrafica: self.mouloViewModel.imagenMujeresTBEC)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hombres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHombresTBEC)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaHomGlobalTBEC)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.censoHomGlobalTBEC)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaHombresGlobalTBEC)), ImagenGrafica: self.mouloViewModel.imagenHombresTBEC)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -66,15 +66,15 @@ struct DetalleIndicador: View {
                                     case "tasa-bruta-escolarizacion-cobertura-entidad-federativa":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalTBECEF)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: calcularPorcentaje(monto: self.mouloViewModel.contribucionTBECEF)), ImagenGrafica: self.mouloViewModel.imagenTotalTBECEF)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Mujeres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenMujeresTBECEF)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: calcularPorcentaje(monto: self.mouloViewModel.contribucionMujeresTBECEF)), ImagenGrafica: self.mouloViewModel.imagenMujeresTBECEF)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hombres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHombresTBECEF)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: calcularPorcentaje(monto: self.mouloViewModel.contribucionHombresTBECEF)), ImagenGrafica: self.mouloViewModel.imagenHombresTBECEF)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -84,35 +84,35 @@ struct DetalleIndicador: View {
                                     case "tasa-bruta-escolarizacion-cobertura-institucion":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalTSUPATBECI)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.totalLicenciaturaTBECI)")).replacingOccurrences(of: "{2}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaTotalTBECI)")).replacingOccurrences(of: "{3}", with: calcularPorcentaje(monto: self.mouloViewModel.contrubucionDGESUITBECI)), ImagenGrafica: self.mouloViewModel.imagenTotalTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Mujeres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenMujeresTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalMujeresTBECI)")).replacingOccurrences(of: "{1}", with: calcularPorcentaje(monto: self.mouloViewModel.contribucionDGESUIMujeresTBECI)), ImagenGrafica: self.mouloViewModel.imagenMujeresTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hombres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHombresTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalHombresTBECI)")).replacingOccurrences(of: "{1}", with: calcularPorcentaje(monto: self.mouloViewModel.contribucionDGESUIHombresTBECI)), ImagenGrafica: self.mouloViewModel.imagenHombresTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Con discapacidad":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalDiscapacitadosTBECI)")).replacingOccurrences(of: "{1}", with: calcularPorcentaje(monto: self.mouloViewModel.porcentajeConDiscapacidadTBECI)), ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hablantes de lengua Indígena":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHablantesLenguaIndigenaTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalHablanteLenguaIndigenaTBECI)")).replacingOccurrences(of: "{1}", with: calcularPorcentaje(monto: self.mouloViewModel.porcentajeHablanteLenguaIndigenaTBECI)), ImagenGrafica: self.mouloViewModel.imagenHablantesLenguaIndigenaTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Escolarizado":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenEscolarizadoTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalEscolarizadoTBECI)")).replacingOccurrences(of: "{1}", with: calcularPorcentaje(monto: self.mouloViewModel.porcentajeEscolarizadoTBECI)), ImagenGrafica: self.mouloViewModel.imagenEscolarizadoTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         case "No escolarizado":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenNoEscolarizadoTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalNoEscolarizadoTBECI)")).replacingOccurrences(of: "{1}", with: calcularPorcentaje(monto: self.mouloViewModel.porcentajeNoEscolarizadoTBECI)), ImagenGrafica: self.mouloViewModel.imagenNoEscolarizadoTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Mixto":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenMixtoTBECI)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalMixtoTBECI)")).replacingOccurrences(of: "{1}", with: calcularPorcentaje(monto: self.mouloViewModel.porcentajeMixtoTBECI)), ImagenGrafica: self.mouloViewModel.imagenMixtoTBECI)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -122,23 +122,23 @@ struct DetalleIndicador: View {
                                     case "tasa-bruta-escolarizacion-poblacion-primeros-cuatro-deciles":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalTBEPPD)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.totalTBEPPD)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.totalEnRangoDeEdadTBEPPD)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaGeneralTBEPPD)), ImagenGrafica: self.mouloViewModel.imagenTotalTBEPPD)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Mujeres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenMujeresTBEPPD)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.mujeresTBEPPD)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.mujeresEnRangoDeEdadTBEPPD)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaEscolarizacionMujeresTBEPPD)), ImagenGrafica: self.mouloViewModel.imagenMujeresTBEPPD)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hombres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHombresTBEPPD)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.hombresTBEPPD)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.hombresEnRangoDeEdadTBEPPD)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaEscolarizacionHombresTBEPPD)), ImagenGrafica: self.mouloViewModel.imagenHombresTBEPPD)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Con discapacidad":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosTBEPPD)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.discapacitadosTBEPPD)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.discapacitadosEnRangoDeEdadTBEPPD)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaDiscapacitadosTBEPPD)), ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosTBEPPD)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hablantes de lengua Indígena":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHablantesLenguaIndigenaTBEPPD)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.hablantesLenguaIndigenaTBEPPD)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.hablantesLenguaIndigenaEnRangoDeEdadTBEPPD)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaHablantesLenguaIndigenaTBEPPD)), ImagenGrafica: self.mouloViewModel.imagenHablantesLenguaIndigenaTBEPPD)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -148,19 +148,19 @@ struct DetalleIndicador: View {
                                     case "porcentaje-eficiencia-terminal-sistema-educativo-nacional":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalPETSEN)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosCicloAnteriorGeneralPETSEN)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoSeisCiclosAtrasGeneralPETSEN)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.eficienciaTerminalGeneralPETSEN)), ImagenGrafica: self.mouloViewModel.imagenTotalPETSEN)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Mujeres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenMujeresPETSEN)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosCicloAnteriorMujeresPETSEN)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoSeisCiclosAtrasMujeresPETSEN)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.eficienciaTerminalMujeresPETSEN)), ImagenGrafica: self.mouloViewModel.imagenMujeresPETSEN)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hombres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHombresPETSEN)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosCicloAnteriorHombresPETSEN)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoSeisCiclosAtrasHombresPETSEN)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.eficienciaTerminalHombresPETSEN)), ImagenGrafica: self.mouloViewModel.imagenHombresPETSEN)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Con discapacidad":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosPETSEN)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosCicloAnteriorDiscapacitadosPETSEN)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoSeisCiclosAtrasDiscapacitadosPETSEN)")).replacingOccurrences(of: "{2}", with: calcularPorcentaje(monto: self.mouloViewModel.eficienciaTerminalDiscapacitadosPETSEN)), ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosPETSEN)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -170,23 +170,23 @@ struct DetalleIndicador: View {
                                     case "porcentaje-abandono-escolar":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalPAE)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaPeriodoAnteriorGeneralPAE)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosPeriodoAnteriorGeneralPAE)")).replacingOccurrences(of: "{2}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaGeneralPAE)")).replacingOccurrences(of: "{3}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoGeneralPAE)")).replacingOccurrences(of: "{4}", with: formatResult(basedOn: "\(self.mouloViewModel.abandonoGeneralPAE)")).replacingOccurrences(of: "{5}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaAbandonoGeneralPAE)).replacingOccurrences(of: "{6}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaRetencionGeneralPAE)), ImagenGrafica: self.mouloViewModel.imagenTotalPAE)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Mujeres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenMujeresPAE)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaPeriodoAnteriorMujeresPAE)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosPeriodoAnteriorMujeresPAE)")).replacingOccurrences(of: "{2}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaMujeresPAE)")).replacingOccurrences(of: "{3}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoMujeresPAE)")).replacingOccurrences(of: "{4}", with: formatResult(basedOn: "\(self.mouloViewModel.abandonoMujeresPAE)")).replacingOccurrences(of: "{5}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaAbandonoMujeresPAE)).replacingOccurrences(of: "{6}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaRetencionMujeresPAE)), ImagenGrafica: self.mouloViewModel.imagenMujeresPAE)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hombres":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHombresPAE)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaPeriodoAnteriorHombresPAE)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosPeriodoAnteriorHombresPAE)")).replacingOccurrences(of: "{2}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaHombresPAE)")).replacingOccurrences(of: "{3}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoHombresPAE)")).replacingOccurrences(of: "{4}", with: formatResult(basedOn: "\(self.mouloViewModel.abandonoHombresPAE)")).replacingOccurrences(of: "{5}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaAbandonoHombresPAE)).replacingOccurrences(of: "{6}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaRetencionHombresPAE)), ImagenGrafica: self.mouloViewModel.imagenHombresPAE)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Con discapacidad":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosPAE)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaPeriodoAnteriorDiscapacitadosPAE)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosPeriodoAnteriorDiscapacitadosPAE)")).replacingOccurrences(of: "{2}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaDiscapacitadosPAE)")).replacingOccurrences(of: "{3}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoDiscapacitadosPAE)")).replacingOccurrences(of: "{4}", with: formatResult(basedOn: "\(self.mouloViewModel.abandonoDiscapacitadosPAE)")).replacingOccurrences(of: "{5}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaAbandonoDiscapacitadosPAE)).replacingOccurrences(of: "{6}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaRetencionDiscapacitadosPAE)), ImagenGrafica: self.mouloViewModel.imagenDiscapacitadosPAE)){
                                                 ItemView(indicador: key)
                                             }
                                         case "Hablantes de lengua Indígena":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenHablantesLenguaIndigenaPAE)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaPeriodoAnteriorHablantesLenguaIndigenaPAE)")).replacingOccurrences(of: "{1}", with: formatResult(basedOn: "\(self.mouloViewModel.egresadosPeriodoAnteriorHablantesLenguaIndigenaPAE)")).replacingOccurrences(of: "{2}", with: formatResult(basedOn: "\(self.mouloViewModel.matriculaHablantesLenguaIndigenaPAE)")).replacingOccurrences(of: "{3}", with: formatResult(basedOn: "\(self.mouloViewModel.nuevoIngresoHablantesLenguaIndigenaPAE)")).replacingOccurrences(of: "{4}", with: formatResult(basedOn: "\(self.mouloViewModel.abandonoHablantesLenguaIndigenaPAE)")).replacingOccurrences(of: "{5}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaAbandonoHablantesLenguaIndigenaPAE)).replacingOccurrences(of: "{6}", with: calcularPorcentaje(monto: self.mouloViewModel.tasaRetencionHablantesLenguaIndigenaPAE)), ImagenGrafica: self.mouloViewModel.imagenHablantesLenguaIndigenaPAE)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -196,7 +196,7 @@ struct DetalleIndicador: View {
                                     case "gasto-federal-educacion-porcentaje-pib-ies":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibIes)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResultPIB(basedOn: "\(self.mouloViewModel.aportacionGFEPPibIes)")).replacingOccurrences(of: "{1}", with: calcularPorcentajePIB(monto: self.mouloViewModel.subsidioGFEPPibIes)), ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibIes)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -206,7 +206,7 @@ struct DetalleIndicador: View {
                                     case "gasto-federal-educacion-porcentaje-pib-entidad":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value, ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibEEntidad)){
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: calcularPorcentajePIB(monto: self.mouloViewModel.subsidioGFEPPibEEntidad)), ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibEEntidad)){
                                                 ItemView(indicador: key)
                                             }
                                         default:
