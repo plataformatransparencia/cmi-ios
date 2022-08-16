@@ -8,6 +8,7 @@ struct DetalleIndicador: View {
     @State var path: String
     @State var codigoFicha: String
     @State var nombreFicha: String
+    @StateObject var fichaViewModel = FichaViewModel()
     @EnvironmentObject var mouloViewModel : ModuloViewModel
     @EnvironmentObject var auth : AuthUser
     
@@ -34,7 +35,7 @@ struct DetalleIndicador: View {
                         
                         switch modulo{
                         case "Módulo I":
-                            NavigationLink(destination: FichaModulo_I(titulo: nombreFicha)){
+                            NavigationLink(destination: FichaModulo_I(titulo: nombreFicha, path: path, token: auth.token).environmentObject(fichaViewModel)){
                                 Text("\(nombreFicha)")
                                     .font(.body)
                                     .underline()
