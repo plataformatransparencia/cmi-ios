@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 
 class FichaViewModel : ObservableObject {
@@ -69,6 +70,30 @@ class FichaViewModel : ObservableObject {
                          
                         
                     }
+                case 401:
+                    fatalError("No autorizado \(responseHTTP.debugDescription)")
+                default:
+                    fatalError("BAD REQUEST \(error.debugDescription)")
+                }
+            }
+        }.resume()
+
+    }
+    
+    func loadInfoFichaPDF(token: String, path: String) {
+        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/\(path)/ficha.pdf") else{
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.downloadTask(with: request) {(tempLocalUrl, response, error) in
+            let responseHTTP = response as? HTTPURLResponse
+            DispatchQueue.main.async {
+                switch responseHTTP?.statusCode {
+                case 200:
+                    print("La peticion es 200 ok")
                 case 401:
                     fatalError("No autorizado \(responseHTTP.debugDescription)")
                 default:

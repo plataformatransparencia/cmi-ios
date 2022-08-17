@@ -38,6 +38,7 @@
 		7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262E28A4421F00048F74 /* ModuloViewModel.swift */; };
 		788FD89F28A57C7D002C97F3 /* DetalleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FD89E28A57C7D002C97F3 /* DetalleItem.swift */; };
 		789107212891CE0F00CCB68C /* DetalleIndicador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789107202891CE0F00CCB68C /* DetalleIndicador.swift */; };
+		78C249C528AD5B120084B799 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C249C428AD5B120084B799 /* WebView.swift */; };
 		78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D13CE2287F3B4D0038EE47 /* Utils.swift */; };
 		78D9F881288A0CC70087A35A /* Modulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D9F880288A0CC70087A35A /* Modulo.swift */; };
 		78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF28FC2885D62500106EF7 /* SlideMenu.swift */; };
@@ -84,6 +85,7 @@
 		7886262E28A4421F00048F74 /* ModuloViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloViewModel.swift; sourceTree = "<group>"; };
 		788FD89E28A57C7D002C97F3 /* DetalleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItem.swift; sourceTree = "<group>"; };
 		789107202891CE0F00CCB68C /* DetalleIndicador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleIndicador.swift; sourceTree = "<group>"; };
+		78C249C428AD5B120084B799 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		78D13CE2287F3B4D0038EE47 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		78D9F880288A0CC70087A35A /* Modulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modulo.swift; sourceTree = "<group>"; };
 		78DF28FC2885D62500106EF7 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 			path = "Módulo_I";
 			sourceTree = "<group>";
 		};
+		78C249C328AD5B000084B799 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				78C249C428AD5B120084B799 /* WebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		78D13CE0287F385B0038EE47 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +237,7 @@
 		78D13CE4287F676D0038EE47 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78C249C328AD5B000084B799 /* WebView */,
 				787272852899C08E0018DAB5 /* Model */,
 				78DF28FB2885D39D00106EF7 /* Menu */,
 				784FA5FE28919F1300DF30BE /* Módulos */,
@@ -324,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7872727D289444C70018DAB5 /* FichaModulo_II.swift in Sources */,
+				78C249C528AD5B120084B799 /* WebView.swift in Sources */,
 				789107212891CE0F00CCB68C /* DetalleIndicador.swift in Sources */,
 				7857F16028A719F700D75FC3 /* PorcentajeAbanonoEscolarModel.swift in Sources */,
 				7857F16228A725D400D75FC3 /* GastoFederalEducacionPorcentajePibIesModel.swift in Sources */,

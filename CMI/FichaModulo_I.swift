@@ -7,6 +7,7 @@ struct FichaModulo_I: View {
     var lista = [ElementosFichas]()
     var path : String
     var token : String
+    @State var isPresented = false
     var body: some View {
         
         VStack{
@@ -29,7 +30,7 @@ struct FichaModulo_I: View {
                         }.padding([.horizontal, .top])
                         
                         Button(action: {
-                            print("descarga de PDF")
+                            self.isPresented.toggle()
                         }){
                             Image("Image_PDF")
                                 .resizable()
@@ -366,6 +367,11 @@ struct FichaModulo_I: View {
             }
             
         }.navigationBarHidden(true)
+        .sheet(isPresented: $isPresented, content: {
+            VStack{
+                WebView(token: self.token, path: self.path)
+            }
+        })
         
         
         
