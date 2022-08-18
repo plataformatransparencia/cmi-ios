@@ -9,8 +9,10 @@ struct DetalleIndicador: View {
     @State var codigoFicha: String
     @State var nombreFicha: String
     @StateObject var fichaViewModel = FichaViewModel()
+    @StateObject var filtroViewModel = FiltroViewModel()
     @EnvironmentObject var mouloViewModel : ModuloViewModel
     @EnvironmentObject var auth : AuthUser
+    
     
     var body: some View {
         VStack{
@@ -220,7 +222,7 @@ struct DetalleIndicador: View {
                             }
                             
                         case "Módulo II":
-                            Filtro(mod: modulo)
+                            Filtro(mod: modulo,token: auth.token).environmentObject(filtroViewModel)
                             HStack(alignment: .center){
                                 NavigationLink(destination: FichaModulo_II(titulo: nombreFicha)){
                                     Text("\(nombreFicha)")
@@ -239,7 +241,7 @@ struct DetalleIndicador: View {
                             }
                             
                         case "Módulo III":
-                            Filtro(mod: modulo)
+                            Filtro(mod: modulo, token: auth.token).environmentObject(filtroViewModel)
                             HStack(alignment: .center){
                                 NavigationLink(destination: FichaModulo_III(titulo: nombreFicha)){
                                     Text("\(nombreFicha)")

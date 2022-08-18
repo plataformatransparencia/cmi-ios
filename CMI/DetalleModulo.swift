@@ -7,6 +7,8 @@ struct DetalleModulo: View {
     @State var listaIndicadores : [Indicadores]
     @State var isPresented = false
     @StateObject var moduloViewModel = ModuloViewModel()
+    @StateObject var filtroViewModel = FiltroViewModel()
+    @StateObject var auth = AuthUser()
     var body: some View {
         VStack{
             NavigationView{
@@ -30,7 +32,7 @@ struct DetalleModulo: View {
                                 .padding([.horizontal, .top])
                             
                             if modulo == "Módulo I" {
-                                Filtro(mod: modulo)
+                                Filtro(mod: modulo, token: auth.token).environmentObject(filtroViewModel)
                             }
                             
                             ForEach(listaIndicadores){v in

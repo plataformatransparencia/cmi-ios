@@ -1,8 +1,10 @@
 import SwiftUI
 
 struct Filtro: View {
+    @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var mod : String
     @State var isPresented = false
+    @State var token : String
     var body: some View {
         VStack{
             HStack{
@@ -12,6 +14,7 @@ struct Filtro: View {
                 Spacer()
                 Button(action: {
                     self.isPresented.toggle()
+                    self.filtroViewModel.loadFiltro(token: self.token)
                 }, label: {
                     Image(systemName: "slider.horizontal.3")
                         .font(.title3.bold())
@@ -36,8 +39,8 @@ struct Filtro: View {
                             .font(.title3.bold())
                         Spacer()
                     }.foregroundColor(Color("gris_2"))
-                    .padding(.horizontal)
-                    .padding(.top, 15)
+                        .padding(.horizontal)
+                        .padding(.top, 15)
                     Divider().background(Color("gris_2"))
                     ScrollView(showsIndicators: true){
                         VStack{
@@ -56,10 +59,10 @@ struct Filtro: View {
                             .connectedScenes
                             .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
                             .first { $0.isKeyWindow }?.safeAreaInsets.bottom)! + 5)
-                            .padding(.horizontal)
-                            .background(Color.white)
-                            .cornerRadius(25)
-                            .edgesIgnoringSafeArea(.bottom)
+                        .padding(.horizontal)
+                        .background(Color.white)
+                        .cornerRadius(25)
+                        .edgesIgnoringSafeArea(.bottom)
                     }.foregroundColor(Color("gris_2"))
                     
                     Button(action: {
