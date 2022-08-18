@@ -50,7 +50,6 @@
 		78DF290628861E7B00106EF7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF290528861E7B00106EF7 /* MenuButton.swift */; };
 		78DF290828861F9500106EF7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF290728861F9500106EF7 /* ViewRouter.swift */; };
 		78DF290A288622E400106EF7 /* AcercaDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF2909288622E400106EF7 /* AcercaDe.swift */; };
-		78DF290C288622F800106EF7 /* LogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF290B288622F800106EF7 /* LogOut.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,7 +98,6 @@
 		78DF290528861E7B00106EF7 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		78DF290728861F9500106EF7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		78DF2909288622E400106EF7 /* AcercaDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcercaDe.swift; sourceTree = "<group>"; };
-		78DF290B288622F800106EF7 /* LogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOut.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +258,6 @@
 				78002B63286E764300B3B8B4 /* CMIApp.swift */,
 				78DF290728861F9500106EF7 /* ViewRouter.swift */,
 				78DF2909288622E400106EF7 /* AcercaDe.swift */,
-				78DF290B288622F800106EF7 /* LogOut.swift */,
 				7819C1052887242100E7BE73 /* Login.swift */,
 				787272862899C0AA0018DAB5 /* AuthUser.swift */,
 			);
@@ -368,7 +365,6 @@
 				78D9F881288A0CC70087A35A /* Modulo.swift in Sources */,
 				7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */,
 				7857F15C28A7051700D75FC3 /* TasaBrutaEscolarizacionPoblacionPrimerosCuatroDecilesIngresoModel.swift in Sources */,
-				78DF290C288622F800106EF7 /* LogOut.swift in Sources */,
 				7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */,
 				7857F16428A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift in Sources */,
 				78002B66286E764300B3B8B4 /* ContentView.swift in Sources */,

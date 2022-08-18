@@ -1,6 +1,11 @@
 import SwiftUI
 
 struct Inicio: View {
+    var paragraphStyle: NSParagraphStyle {
+      let style = NSMutableParagraphStyle()
+      style.alignment = .right
+      return style
+    }
     var body: some View {
         NavigationView{
             ScrollView(.vertical, showsIndicators: true){
@@ -9,9 +14,7 @@ struct Inicio: View {
                     .font(.title3.bold())
                     .padding([.top,.bottom])
                 VStack(alignment: .center){
-                    Text(.init(text_info_inicio))
-                        .font(.body)
-                        .multilineTextAlignment(.leading)
+                    LabelAlignment(text: text_info_inicio, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                 }.padding([.horizontal,.vertical])
                 ScrollView(.horizontal, showsIndicators: true){
                     HStack(alignment: .center, spacing: 10){
@@ -27,6 +30,37 @@ struct Inicio: View {
     }
 }
 
+
+struct LabelAlignment: UIViewRepresentable {
+   var text: String
+   var textAlignmentStyle : TextAlignmentStyle
+   var width: CGFloat
+
+   func makeUIView(context: Context) -> UILabel {
+       let label = UILabel()
+       label.textAlignment = NSTextAlignment(rawValue: textAlignmentStyle.rawValue)!
+       label.adjustsFontSizeToFitWidth = false
+       label.numberOfLines = 0
+       label.lineBreakStrategy = .pushOut
+       label.preferredMaxLayoutWidth = width
+       label.setContentHuggingPriority(.required, for: .horizontal)
+       label.setContentHuggingPriority(.required, for: .vertical)
+       label.font = UIFont.systemFont(ofSize: 18)
+
+       label.textColor = UIColor(Color("gris_2"))
+    
+
+       return label
+   }
+
+   func updateUIView(_ uiView: UILabel, context: Context) {
+       uiView.text = text
+   }
+}
+
+enum TextAlignmentStyle : Int{
+    case left = 0 ,center = 1 , right = 2 ,justified = 3 ,natural = 4
+}
 
 struct Inicio_Previews: PreviewProvider {
     static var previews: some View {

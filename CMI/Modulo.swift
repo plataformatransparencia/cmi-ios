@@ -11,20 +11,16 @@ struct Modulo: View {
                 .resizable()
                 .frame(width: 100, height: 100)
                 .foregroundColor(Color("dorado"))
-                .padding()
-            
+                .padding(.top)
             
             Text(.init(titulo))
                 .font(.title3.bold())
                 .foregroundColor(Color("gris_2"))
+                .padding(.bottom)
                     
-            Spacer()
-            Text(.init(texto))
-                .multilineTextAlignment(.center)
-                .font(.body)
-                .foregroundColor(Color("gris_2"))
-                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-            Spacer()
+            LabelAlignment(text: texto, textAlignmentStyle: .center, width: 240)
+                .padding(.bottom)
+            
             NavigationLink(destination: DetalleModulo(modulo: titulo, titulo: texto, listaIndicadores: listaIndicadores)) {
                 Text("Ver")
                     .font(.headline)
@@ -34,9 +30,9 @@ struct Modulo: View {
                         RoundedRectangle(cornerRadius: 3)
                             .stroke(Color("rosita"), lineWidth: 2)
                     )
-            }.padding()
+            }.padding(.bottom)
         }.padding(.horizontal)
-            .frame(width: 250, height: 450)
+            .frame(width: 260, height: 400)
             .overlay(
                 RoundedRectangle(cornerRadius: 20)
                     .stroke(Color("dorado"), lineWidth: 5)
@@ -46,6 +42,6 @@ struct Modulo: View {
 
 struct ModuloView_Previews: PreviewProvider {
     static var previews: some View {
-        Modulo(imagen: "Image_Modulo_II", titulo: "Modulo II", texto: "Indicadores de las Matrices de Indicadores para Resultados (MIR) de los programas presupuestales que opera la DGESUI", listaIndicadores: listaModulo_II)
+        Modulo(imagen: "Image_Modulo_II", titulo: "Modulo II", texto: "Indicadores de la contribución de las Instituciones de los subsistemas de la DGESUI al Programa Sectorial de Educación 2020-2024", listaIndicadores: listaModulo_II)
     }
 }
