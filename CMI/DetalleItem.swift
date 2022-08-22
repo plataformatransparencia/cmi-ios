@@ -6,6 +6,9 @@ struct DetalleItem: View {
     var texto : String
     var ImagenGrafica : String
     var referencias : [Referencias]
+    @EnvironmentObject var excelViewModel : ExcelViewModel
+    var token: String
+    var path : String
     var body: some View {
         VStack(){
             ZStack{
@@ -33,7 +36,7 @@ struct DetalleItem: View {
                                 .font(.headline.bold())
                             Spacer()
                             Button(action: {
-                                print("descarga de excel")
+                                self.excelViewModel.downloadExcel(token: self.token, path: self.path, periodo: "2019%20-%202020")
                             }){
                                 Image("Image_Excel")
                                     .resizable()
