@@ -51,11 +51,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.nombreIndicador)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.nombreIndicador, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             VStack{
@@ -65,10 +61,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.codigoIndicador)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
+                                    LabelAlignment(text: fichaViewModel.codigoIndicador, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                     Spacer()
                                 }
                             }
@@ -79,11 +72,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.objetivoPrioritario)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.objetivoPrioritario, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             VStack{
@@ -93,11 +82,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.definicionDescripcion)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.definicionDescripcion, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             VStack{
@@ -107,11 +92,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.fuente)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             VStack{
@@ -121,11 +102,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.nivelesDesagregacion)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.nivelesDesagregacion, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             VStack{
@@ -135,10 +112,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.contribucionInstitucionesDGESUI)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
+                                    LabelAlignment(text: fichaViewModel.contribucionInstitucionesDGESUI, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                     Spacer()
                                 }
                             }
@@ -149,10 +123,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.unidadMedida)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
+                                    LabelAlignment(text: fichaViewModel.unidadMedida, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                     Spacer()
                                 }
                             }
@@ -163,10 +134,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.tendenciaEsperada)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
+                                    LabelAlignment(text: fichaViewModel.tendenciaEsperada, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                     Spacer()
                                 }
                             }
@@ -193,11 +161,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.metodoCalculo)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.metodoCalculo, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             VStack{
@@ -207,11 +171,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.observaciones)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.observaciones, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             VStack{
@@ -235,11 +195,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text(fichaViewModel.dimensionCalidadEducativa)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.dimensionCalidadEducativa, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                         }.padding()
@@ -259,10 +215,7 @@ struct FichaModulo_I: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("\(i.nombre)")
-                                            .font(.body)
-                                            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                            .multilineTextAlignment(.leading)
+                                        LabelAlignment(text: i.nombre, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                         Spacer()
                                     }
                                 }
@@ -273,10 +226,7 @@ struct FichaModulo_I: View {
                                         Spacer()
                                     }
                                     HStack{
-                                        Text("\(i.fuente.valor)")
-                                            .font(.body)
-                                            .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                            .multilineTextAlignment(.leading)
+                                        LabelAlignment(text: i.fuente.valor, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                         Spacer()
                                     }
                                 }
@@ -318,10 +268,7 @@ struct FichaModulo_I: View {
                                     Text("Nota sobre línea base")
                                 }.font(.body.bold())
                                 HStack{
-                                    Text(fichaViewModel.notasLB)
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
+                                    LabelAlignment(text: fichaViewModel.notasLB, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             
@@ -332,10 +279,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text("\(fichaViewModel.valorMetas)")
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
+                                    LabelAlignment(text: fichaViewModel.valorMetas, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                     Spacer()
                                 }
                             }
@@ -347,11 +291,7 @@ struct FichaModulo_I: View {
                                     Spacer()
                                 }
                                 HStack{
-                                    Text("\(fichaViewModel.notasMetas)")
-                                        .font(.body)
-                                        .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
-                                        .multilineTextAlignment(.leading)
-                                    Spacer()
+                                    LabelAlignment(text: fichaViewModel.notasMetas, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                                 }
                             }
                             

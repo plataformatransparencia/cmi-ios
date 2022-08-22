@@ -51,5 +51,5 @@ struct ValorEntidades: Codable {
 struct Referencias: Codable {
     var id: String
     var texto: String
-    var url : String?
+    var url : String
 }

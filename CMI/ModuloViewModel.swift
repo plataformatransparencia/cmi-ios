@@ -7,6 +7,7 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenTotalTBEC = ""
     @Published var imagenMujeresTBEC = ""
     @Published var imagenHombresTBEC = ""
+    @Published var refereenciasTBEC = [Referencias]()
     
     //Totales tasa-bruta-escolarizacion-cobertura
     @Published var censoMujGlobalTBEC = 0
@@ -23,6 +24,7 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenTotalTBECEF = ""
     @Published var imagenMujeresTBECEF = ""
     @Published var imagenHombresTBECEF = ""
+    @Published var refereenciasTBECEF = [Referencias]()
     
     // Totales tasa-bruta-escolarizacion-cobertura-entidad-federativa
     @Published var matriculaHombresTBECEF = 0
@@ -44,6 +46,7 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenEscolarizadoTBECI = ""
     @Published var imagenNoEscolarizadoTBECI = ""
     @Published var imagenMixtoTBECI = ""
+    @Published var refereenciasTBECI = [Referencias]()
     
     //Totales tasa-bruta-escolarizacion-cobertura-institucion
     @Published var censoNacionalHombresTBECI = 0
@@ -74,6 +77,7 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenHombresTBEPPD = ""
     @Published var imagenDiscapacitadosTBEPPD = ""
     @Published var imagenHablantesLenguaIndigenaTBEPPD = ""
+    @Published var refereenciasTBEPPD = [Referencias]()
     
     
     //Totales tasa-bruta-escolarizacion-poblacion-primeros-cuatro-deciles
@@ -98,6 +102,8 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenMujeresPETSEN = ""
     @Published var imagenHombresPETSEN = ""
     @Published var imagenDiscapacitadosPETSEN = ""
+    @Published var refereenciasPETSEN = [Referencias]()
+
     
     //Totales porcentaje-eficiencia-terminal-sistema-educativo-nacional
     @Published var egresadosCicloAnteriorHombresPETSEN = 0
@@ -119,6 +125,8 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenHombresPAE = ""
     @Published var imagenDiscapacitadosPAE = ""
     @Published var imagenHablantesLenguaIndigenaPAE = ""
+    @Published var refereenciasPAE = [Referencias]()
+
     
     //Totales porcentaje-abandono-escolar
     @Published var matriculaPeriodoAnteriorHombresPAE = 0
@@ -159,6 +167,8 @@ class ModuloViewModel : ObservableObject {
     
     //gasto-federal-educacion-porcentaje-pib-ies
     @Published var imagenTotalGFEPPibIes = ""
+    @Published var refereenciasGFEPPibIes  = [Referencias]()
+
     
     // Totales gasto-federal-educacion-porcentaje-pib-ies
     @Published var aportacionGFEPPibIes = 0.0
@@ -166,6 +176,8 @@ class ModuloViewModel : ObservableObject {
     
     //gasto-federal-educacion-porcentaje-pib-entidad
     @Published var imagenTotalGFEPPibEEntidad = ""
+    @Published var refereenciasGFEPPibEEntidad  = [Referencias]()
+
     
     // Totales gasto-federal-educacion-porcentaje-pib-entidad
     @Published var aportacionEstatalTotalGFEPPibEEntidad = 0.0
@@ -202,6 +214,7 @@ class ModuloViewModel : ObservableObject {
                             self.tasaMujeresGlobalTBEC = result.tabla.tasaMujeresGlobal
                             self.tasaHombresGlobalTBEC = result.tabla.tasaHombresGlobal
                             self.tasaEscolarizacionGlobalTBEC = result.tabla.tasaEscolarizacionGlobal
+                            self.refereenciasTBEC  = result.referencias
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -223,6 +236,8 @@ class ModuloViewModel : ObservableObject {
                             self.contribucionTBECEF = result.tabla.contribucion
                             self.contribucionHombresTBECEF = result.tabla.contribucionHombres
                             self.contribucionMujeresTBECEF = result.tabla.contribucionMujeres
+                            self.refereenciasTBECEF  = result.referencias
+
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -271,6 +286,8 @@ class ModuloViewModel : ObservableObject {
                             //Mixto
                             self.totalMixtoTBECI = result.tabla.totalMixto
                             self.porcentajeMixtoTBECI = result.tabla.porcentajeMixto
+                            self.refereenciasTBECI  = result.referencias
+
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -310,6 +327,8 @@ class ModuloViewModel : ObservableObject {
                             self.hablantesLenguaIndigenaTBEPPD = result.tabla.hablantesLenguaIndigena
                             self.hablantesLenguaIndigenaEnRangoDeEdadTBEPPD = result.tabla.hablantesLenguaIndigenaEnRangoDeEdad
                             self.tasaHablantesLenguaIndigenaTBEPPD = result.tabla.tasaHablantesLenguaIndigena
+                            self.refereenciasTBEPPD  = result.referencias
+
                             
                         }
                     case 401:
@@ -345,6 +364,8 @@ class ModuloViewModel : ObservableObject {
                             self.egresadosCicloAnteriorDiscapacitadosPETSEN = result.tabla.egresadosCicloAnteriorDiscapacitados
                             self.nuevoIngresoSeisCiclosAtrasDiscapacitadosPETSEN = result.tabla.nuevoIngresoSeisCiclosAtrasDiscapacitados
                             self.eficienciaTerminalDiscapacitadosPETSEN = result.tabla.eficienciaTerminalDiscapacitados
+                            self.refereenciasPETSEN = result.referencias
+
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -404,6 +425,8 @@ class ModuloViewModel : ObservableObject {
                             self.abandonoHablantesLenguaIndigenaPAE = result.tabla.abandonoHablantesLenguaIndigena
                             self.tasaAbandonoHablantesLenguaIndigenaPAE = result.tabla.tasaAbandonoHablantesLenguaIndigena
                             self.tasaRetencionHablantesLenguaIndigenaPAE =  result.tabla.tasaRetencionHablantesLenguaIndigena
+                            self.refereenciasPAE = result.referencias
+
                             
                         }
                     case 401:
@@ -423,6 +446,8 @@ class ModuloViewModel : ObservableObject {
                             // Total
                             self.aportacionGFEPPibIes = result.tabla.aportacion
                             self.subsidioGFEPPibIes = result.tabla.subsidio
+                            self.refereenciasGFEPPibIes = result.referencias
+
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -441,6 +466,8 @@ class ModuloViewModel : ObservableObject {
                             // Total
                             self.aportacionEstatalTotalGFEPPibEEntidad = result.tabla.aportacionEstatalTotal
                             self.subsidioGFEPPibEEntidad = result.tabla.subsidio
+                            self.refereenciasGFEPPibEEntidad  = result.referencias
+
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")

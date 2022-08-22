@@ -5,6 +5,7 @@ struct DetalleItem: View {
     var titulo: String
     var texto : String
     var ImagenGrafica : String
+    var referencias : [Referencias]
     var body: some View {
         VStack(){
             ZStack{
@@ -41,14 +42,32 @@ struct DetalleItem: View {
                         }
                         
                         HStack{
-                            Text(texto)
-                                .font(.body.bold())
-                                .multilineTextAlignment(.leading)
-                            
+                            LabelAlignment(text: texto, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
                         }
                         HStack{
                             ScrollView(.horizontal, showsIndicators: true){
                                 !(ImagenGrafica.isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: ImagenGrafica)!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
+                            }
+                        }
+                        
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            ForEach(referencias, id: \.id){ i in
+                                if i.url != ""{
+                                    Button(action: {
+                                        UIApplication.shared.open(URL(string: i.url)!)
+                                    }){
+                                        LabelAlignmentLink(text: i.texto, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                    }
+                                }else{
+                                    LabelAlignment(text: i.texto, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                        .padding(.bottom)
+                                }
                             }
                         }
                         
