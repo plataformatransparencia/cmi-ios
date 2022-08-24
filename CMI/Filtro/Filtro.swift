@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct Filtro: View {
-    @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var mod : String
     @State var isPresented = false
     @State var token : String
@@ -14,7 +13,7 @@ struct Filtro: View {
                 Spacer()
                 Button(action: {
                     self.isPresented.toggle()
-                    self.filtroViewModel.loadFiltro(token: self.token)
+                    
                 }, label: {
                     Image(systemName: "slider.horizontal.3")
                         .font(.title3.bold())

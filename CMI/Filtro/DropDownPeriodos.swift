@@ -1,9 +1,8 @@
 import SwiftUI
 
 struct DropDownPeriodos: View {
-    @State var periodos : [String:String] = ["2019 - 2020":"2019 - 2020", "2020 - 2021":"2020 - 2021", "2021 - 2022":"2021 - 2022", "2022 - 2023":"2022 - 2023"]
+    @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var expand = false
-    @State var selected: String = "Selecciona"
     var body: some View {
         VStack{
             HStack{
@@ -13,8 +12,9 @@ struct DropDownPeriodos: View {
                 HStack{
                     Button(action: {
                         self.expand.toggle()
+                        
                     }, label: {
-                        Text("\(self.selected)")
+                        Text("\(self.filtroViewModel.seleccionado)")
                             .font(.body)
                         Image(systemName: expand ? "chevron.up" :  "chevron.down")
                             .resizable()
@@ -25,13 +25,13 @@ struct DropDownPeriodos: View {
             ScrollView(showsIndicators: false){
                 VStack(alignment: .center, spacing: 18, content: {
                     if expand {
-                        ForEach(periodos.sorted(by: {$0.0 > $1.0}), id: \.key){ key, value in
+                        ForEach(self.filtroViewModel.filtros, id: \.self){ value in
                             Button(action: {
                                 self.expand.toggle()
-                                self.selected = key
+                                self.filtroViewModel.seleccionado = value
                             }){
                                 VStack{
-                                    Text(key)
+                                    Text(value)
                                         .font(.titulo())
                                         .padding(.top, -13)
                                     Divider()

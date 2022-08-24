@@ -1,11 +1,8 @@
 import SwiftUI
 
 struct Inicio: View {
-    var paragraphStyle: NSParagraphStyle {
-      let style = NSMutableParagraphStyle()
-      style.alignment = .right
-      return style
-    }
+    @EnvironmentObject var auth : AuthUser
+    var token : String
     var body: some View {
         NavigationView{
             ScrollView(.vertical, showsIndicators: true){
@@ -18,9 +15,9 @@ struct Inicio: View {
                 }.padding([.horizontal,.vertical])
                 ScrollView(.horizontal, showsIndicators: true){
                     HStack(alignment: .center, spacing: 10){
-                        Modulo(imagen: "Image_Modulo_I", titulo: "Módulo I", texto: "Indicadores de la contribución de las Instituciones de los subsistemas de la DGESUI al Programa Sectorial de Educación 2020-2024", listaIndicadores: listaModulo_I)
-                        Modulo(imagen: "Image_Modulo_II", titulo: "Módulo II", texto: "Indicadores de las Matrices de Indicadores para Resultados (MIR) de los programas presupuestales que opera la DGESUI", listaIndicadores: listaModulo_II)
-                        Modulo(imagen: "Image_Modulo_III", titulo: "Módulo III", texto: "Repositorio de Datos Estadísticos (RDE) de la DGESUI", listaIndicadores: listaModulo_III)
+                        Modulo(imagen: "Image_Modulo_I", titulo: "Módulo I", texto: "Indicadores de la contribución de las Instituciones de los subsistemas de la DGESUI al Programa Sectorial de Educación 2020-2024", listaIndicadores: listaModulo_I, token: self.auth.token)
+                        Modulo(imagen: "Image_Modulo_II", titulo: "Módulo II", texto: "Indicadores de las Matrices de Indicadores para Resultados (MIR) de los programas presupuestales que opera la DGESUI", listaIndicadores: listaModulo_II, token: self.auth.token)
+                        Modulo(imagen: "Image_Modulo_III", titulo: "Módulo III", texto: "Repositorio de Datos Estadísticos (RDE) de la DGESUI", listaIndicadores: listaModulo_III, token: self.auth.token)
                     }.padding()
                 }
                 
@@ -35,7 +32,7 @@ struct Inicio: View {
 
 struct Inicio_Previews: PreviewProvider {
     static var previews: some View {
-        Inicio()
+        Inicio(token: "")
     }
 }
 

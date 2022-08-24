@@ -7,7 +7,7 @@ struct ContentView: View {
         if !userAuth.isLoggedin {
             return AnyView(Login())
         }else{
-            return AnyView(Home(viewRouter: viewRouter))
+            return AnyView(Home(viewRouter: viewRouter, auth: userAuth))
         }
     }
 }

@@ -4,6 +4,7 @@ struct Home: View {
     @State var width = UIScreen.main.bounds.width - 90
     @State var x = -UIScreen.main.bounds.width + 90
     @StateObject var viewRouter: ViewRouter
+    @StateObject var auth: AuthUser
     var body: some View {
         GeometryReader { geometry in
             ZStack{
@@ -12,7 +13,7 @@ struct Home: View {
                 case .login:
                     Login()
                 case .inicio:
-                    Inicio().position(x: geometry.size.width/2.0, y: geometry.size.height * 0.57)
+                    Inicio(token: self.auth.token).position(x: geometry.size.width/2.0, y: geometry.size.height * 0.57)
                 case .acercaDe:
                     AcercaDe().position(x: geometry.size.width/2.0, y: geometry.size.height * 0.57)
                 }

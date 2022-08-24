@@ -190,7 +190,6 @@ class ModuloViewModel : ObservableObject {
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
-        
         URLSession.shared.dataTask(with: request) {(data, response, error) in
             guard let data = data, error == nil else {return}
             switch path{
