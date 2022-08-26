@@ -6,7 +6,7 @@ struct Login: View {
     @State var username: String = ""
     @State var password: String = ""
     @State var loginError = "Usuario o contraseña incorrectos."
-    var disableForm: Bool {!isValidEmail(username) || !isPasswordValid(password)}
+    var disableForm: Bool {(!isValidEmail(username) || !isValidUser(username)) && !isPasswordValid(password)}
     
     var body: some View {
         VStack(alignment: .center, spacing: 15){
@@ -89,8 +89,13 @@ struct Login: View {
         
     }
     
+    private func isValidUser(_ email: String) -> Bool {
+        let usernamePred = NSPredicate(format:"SELF MATCHES %@", "^(?=[a-zA-Z0-9._]{2,}$)(?!.*[_.]{2})[^_.].*[^_.]$")
+        return usernamePred.evaluate(with: email)
+    }
+    
     private func isValidEmail(_ email: String) -> Bool {
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", "^(?=[a-zA-Z0-9._]{2,}$)(?!.*[_.]{2})[^_.].*[^_.]$")
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", "^[a-zA-Z0-9_.]+@([a-zA-Z0-9_-]+.)+[a-zA-Z0-9_-]{2,4}$")
         return emailPred.evaluate(with: email)
     }
     
