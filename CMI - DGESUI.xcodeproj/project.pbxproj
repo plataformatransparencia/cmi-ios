@@ -11,7 +11,6 @@
 		78002B66286E764300B3B8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78002B65286E764300B3B8B4 /* ContentView.swift */; };
 		78002B68286E764400B3B8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B67286E764400B3B8B4 /* Assets.xcassets */; };
 		78002B6B286E764400B3B8B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */; };
-		7802268E28B444C2009D2AD8 /* ExcelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7802268D28B444C2009D2AD8 /* ExcelViewModel.swift */; };
 		7819C1062887242100E7BE73 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819C1052887242100E7BE73 /* Login.swift */; };
 		784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA5FF28919F7500DF30BE /* DetalleModulo.swift */; };
 		784FA6042891BBE900DF30BE /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6032891BBE900DF30BE /* Filtro.swift */; };
@@ -39,6 +38,7 @@
 		7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262E28A4421F00048F74 /* ModuloViewModel.swift */; };
 		788FD89F28A57C7D002C97F3 /* DetalleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FD89E28A57C7D002C97F3 /* DetalleItem.swift */; };
 		789107212891CE0F00CCB68C /* DetalleIndicador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789107202891CE0F00CCB68C /* DetalleIndicador.swift */; };
+		78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B84E0B28BD4FFD0059D6B7 /* WebViewExcel.swift */; };
 		78C249C528AD5B120084B799 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C249C428AD5B120084B799 /* WebView.swift */; };
 		78C249C828AD850B0084B799 /* FiltroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C249C728AD850B0084B799 /* FiltroModel.swift */; };
 		78C249CA28AD85A80084B799 /* FiltroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C249C928AD85A80084B799 /* FiltroViewModel.swift */; };
@@ -59,7 +59,6 @@
 		78002B65286E764300B3B8B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78002B67286E764400B3B8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7802268D28B444C2009D2AD8 /* ExcelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcelViewModel.swift; sourceTree = "<group>"; };
 		7819C1052887242100E7BE73 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		784FA5FF28919F7500DF30BE /* DetalleModulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleModulo.swift; sourceTree = "<group>"; };
 		784FA6032891BBE900DF30BE /* Filtro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtro.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		7886262E28A4421F00048F74 /* ModuloViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloViewModel.swift; sourceTree = "<group>"; };
 		788FD89E28A57C7D002C97F3 /* DetalleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItem.swift; sourceTree = "<group>"; };
 		789107202891CE0F00CCB68C /* DetalleIndicador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleIndicador.swift; sourceTree = "<group>"; };
+		78B84E0B28BD4FFD0059D6B7 /* WebViewExcel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExcel.swift; sourceTree = "<group>"; };
 		78C249C428AD5B120084B799 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		78C249C728AD850B0084B799 /* FiltroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroModel.swift; sourceTree = "<group>"; };
 		78C249C928AD85A80084B799 /* FiltroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroViewModel.swift; sourceTree = "<group>"; };
@@ -160,7 +160,6 @@
 				789107202891CE0F00CCB68C /* DetalleIndicador.swift */,
 				7886262E28A4421F00048F74 /* ModuloViewModel.swift */,
 				788FD89E28A57C7D002C97F3 /* DetalleItem.swift */,
-				7802268D28B444C2009D2AD8 /* ExcelViewModel.swift */,
 			);
 			name = "Módulos";
 			sourceTree = "<group>";
@@ -229,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				78C249C428AD5B120084B799 /* WebView.swift */,
+				78B84E0B28BD4FFD0059D6B7 /* WebViewExcel.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -374,7 +374,6 @@
 				78DF29012886064700106EF7 /* Inicio.swift in Sources */,
 				78DF28FF2885D91B00106EF7 /* Home.swift in Sources */,
 				7866D88228AC19A900B71244 /* FichaModuloIModel.swift in Sources */,
-				7802268E28B444C2009D2AD8 /* ExcelViewModel.swift in Sources */,
 				7866D87F28AC189800B71244 /* FichaViewModel.swift in Sources */,
 				784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */,
 				78DF290628861E7B00106EF7 /* MenuButton.swift in Sources */,
@@ -387,6 +386,7 @@
 				787272892899C5BD0018DAB5 /* LoginModel.swift in Sources */,
 				7857F15828A6A99E00D75FC3 /* TasaBrutaEscolarizacionCoberturaEntidadFederativaModel.swift in Sources */,
 				784FA6042891BBE900DF30BE /* Filtro.swift in Sources */,
+				78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */,
 				7872727F289444D70018DAB5 /* FichaModulo_III.swift in Sources */,
 				78DF290428861E2500106EF7 /* TopBand.swift in Sources */,
 				784FA60A2891C7A700DF30BE /* DropDownEntidadFederativa.swift in Sources */,
@@ -521,7 +521,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Direccion General de Educacion Superior Universitaria e Intercultural (DGESUI) (MYY8YFL9J8)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"CMI/Preview Content\"";
 				DEVELOPMENT_TEAM = MYY8YFL9J8;
 				ENABLE_PREVIEWS = YES;
@@ -557,7 +557,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Direccion General de Educacion Superior Universitaria e Intercultural (DGESUI) (MYY8YFL9J8)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"CMI/Preview Content\"";
 				DEVELOPMENT_TEAM = MYY8YFL9J8;
 				ENABLE_PREVIEWS = YES;

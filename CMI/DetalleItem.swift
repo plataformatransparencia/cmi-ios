@@ -6,11 +6,12 @@ struct DetalleItem: View {
     var texto : String
     var ImagenGrafica : String
     var referencias : [Referencias]
-    @EnvironmentObject var excelViewModel : ExcelViewModel
     var token: String
     var path : String
+    var periodo : String
+    @State var isPresented = false
     var body: some View {
-        VStack(){
+        VStack{
             ZStack{
                 ScrollView(showsIndicators: true){
                     VStack{
@@ -36,7 +37,7 @@ struct DetalleItem: View {
                                 .font(.headline.bold())
                             Spacer()
                             Button(action: {
-                                self.excelViewModel.downloadExcel(token: self.token, path: self.path, periodo: "2019%20-%202020")
+                                self.isPresented.toggle()
                             }){
                                 Image("Image_Excel")
                                     .resizable()
@@ -82,6 +83,22 @@ struct DetalleItem: View {
             }
             
         }.navigationBarHidden(true)
+            .sheet(isPresented: $isPresented, content: {
+                VStack {
+                    WebViewExcel(token: self.token, path: self.path, periodo: self.periodo.replacingOccurrences(of: " ", with: "%20"))
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            self.isPresented.toggle()
+                        }, label: {
+                            Text("Listo")
+                                .font(.headline.bold())
+                                .padding([.trailing])
+                        })
+                    }.foregroundColor(.blue)
+                    
+                }
+            })
     }
 }
 

@@ -1,14 +1,18 @@
 import Foundation
 import SwiftUI
+import WebKit
 
-
-class ExcelViewModel : ObservableObject {
+struct WebViewExcel: UIViewRepresentable {
+    let webView = WKWebView()
+    let token : String
+    let path : String
+    let periodo: String
     
-    func downloadExcel(token: String, path: String, periodo: String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/\(path)/\(periodo).csv?enc=iso-8859-1") else{
-            return
-        }
-        var request = URLRequest(url: url)
+    func makeUIView(context: Context) -> some UIView {
+        let url =   "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/\(path)/\(periodo).csv?enc=iso-8859-1"
+        print(url)
+        let downloadUrl = URL(string: url)!
+        var request = URLRequest(url: downloadUrl)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
         let resourceDocPath = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last! as URL
@@ -23,6 +27,7 @@ class ExcelViewModel : ObservableObject {
                 case 200:
                     do {
                         try tempLocalUrl.write(to: resourceDocPath.appendingPathComponent("\(path).csv"), options: .atomic)
+                        webView.load(request)
                     } catch {
                         fatalError("NO SE PUDO GUARDAR EL PDF")
                     }
@@ -34,6 +39,10 @@ class ExcelViewModel : ObservableObject {
             }
         }.resume()
         
+        return webView
     }
     
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        
+    }
 }

@@ -307,16 +307,22 @@ struct FichaModulo_I: View {
             }
             
         }.navigationBarHidden(true)
-        .sheet(isPresented: $isPresented, content: {
-            VStack{
-                WebView(token: self.token, path: self.path)
-            }
-        })
-        
-        
-        
-        
-        
+            .sheet(isPresented: $isPresented, content: {
+                VStack {
+                    WebView(token: self.token, path: self.path)
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            self.isPresented.toggle()
+                        }, label: {
+                            Text("Listo")
+                                .font(.headline.bold())
+                                .padding([.trailing])
+                        })
+                    }.foregroundColor(.blue)
+                        
+                }
+            })
     }
 }
 
