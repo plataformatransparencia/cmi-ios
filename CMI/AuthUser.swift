@@ -8,6 +8,7 @@ class AuthUser: ObservableObject {
     var didChange = PassthroughSubject<AuthUser, Never>()
     var timer : Timer?
     var counter = 0
+    @Published var username : String = ""
     @Published var token : String = ""
     @Published var refreshToken : String = ""
     @Published var isLoginError : Bool = false
@@ -39,6 +40,7 @@ class AuthUser: ObservableObject {
                         self.token = result.accessToken
                         self.refreshToken = result.refreshToken
                         self.isLoginError = false
+                        self.username = username
                         Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ timer in
                             if !self.isLoggedin{
                                 self.counter = 0

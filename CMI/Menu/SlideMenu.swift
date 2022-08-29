@@ -17,10 +17,10 @@ struct SlideMenu: View {
                 HStack(alignment: .center, spacing: 12){
                     Image(systemName: "person.circle.fill")
                         .resizable()
-                        .frame(width: 60, height: 60)
+                        .frame(width: 50, height: 50)
                     
-                    Text("José Ángel Esquivel Islas")
-                        .font(.headline)
+                    Text("\(self.userAuth.username)")
+                        .font(.body)
                         .multilineTextAlignment(.center)
                     Spacer(minLength: 0)
                 }
