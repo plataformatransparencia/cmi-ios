@@ -1,11 +1,13 @@
 import Foundation
 import Combine
+import SwiftUI
 
 class AuthUser: ObservableObject {
     
     
     var didChange = PassthroughSubject<AuthUser, Never>()
-    
+    var timer : Timer?
+    var counter = 0
     @Published var token : String = ""
     @Published var refreshToken : String = ""
     @Published var isLoginError : Bool = false
@@ -37,6 +39,65 @@ class AuthUser: ObservableObject {
                         self.token = result.accessToken
                         self.refreshToken = result.refreshToken
                         self.isLoginError = false
+                        Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ timer in
+                            if !self.isLoggedin{
+                                self.counter = 0
+                                timer.invalidate()
+                            }else{
+                                self.timerAction()
+                                if self.counter == 300 {
+                                    self.counter = 0
+                                    self.refresh(refresh_token: result.refreshToken)
+                                    timer.invalidate()
+                                }
+                            }
+                        }
+                    }
+                case 401:
+                    self.isLoginError = true
+                default:
+                    fatalError("BAD REQUEST \(String(describing: responseHTTP?.debugDescription))")
+                }
+            }
+        }.resume()
+    }
+    
+    @objc func timerAction() {
+        counter += 1
+    }
+    
+    func refresh(refresh_token: String) {
+        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/auth/realms/CMI/protocol/openid-connect/token") else {
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpBody = "client_id=app_cmi&grant_type=refresh_token&refresh_token=\(refresh_token)".data(using: .utf8, allowLossyConversion: false)!
+        
+        URLSession.shared.dataTask(with: request){(data, response, error) in
+            guard let data = data, error == nil else {return}
+            let result = try? JSONDecoder().decode(LoginModel.self, from: data)
+            let responseHTTP = response as? HTTPURLResponse
+            DispatchQueue.main.async {
+                switch responseHTTP?.statusCode{
+                case 200:
+                    if let result = result {
+                        self.token = result.accessToken
+                        self.refreshToken = result.refreshToken
+                        Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ timer in
+                            if !self.isLoggedin{
+                                self.counter = 0
+                                timer.invalidate()
+                            }else{
+                                self.timerAction()
+                                if self.counter == 300  {
+                                    self.counter = 0
+                                    self.refresh(refresh_token: result.refreshToken)
+                                    timer.invalidate()
+                                }
+                            }
+                        }
                     }
                 case 401:
                     self.isLoginError = true
