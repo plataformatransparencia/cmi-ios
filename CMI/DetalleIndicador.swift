@@ -278,7 +278,6 @@ struct DetalleIndicador: View {
         case "Módulo III":
             VStack{
                 ZStack{
-                    //ScrollView(showsIndicators: true){
                         VStack{
                             HStack{
                                 Button(action: {
@@ -331,18 +330,50 @@ struct DetalleIndicador: View {
                                 }.disabled(showGraph)
                             }.padding(.horizontal)
                          
-                            if showGraph {
-                                Grafica(graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006)
+                            VStack{
+                                switch path{
+                                case "ordinario-u006":
+                                    if showGraph {
+                                        GraficaOrdU006(graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006)
+                                    }
+                                    if showList {
+                                        ListadoOrdU006(items: self.items, ordinarioU006: self.mouloViewModel.ordinarioU006, graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006 )
+                                    }
+                                case "federal-u006":
+                                    EmptyView()
+                                case "estatal-u006":
+                                    EmptyView()
+                                case "universidades-en-crisis":
+                                    if showGraph {
+                                        GraficaUniversidadesCrisis(graficaUniversidadesCrisis: self.mouloViewModel.graficaUniversidadesCrisis)
+                                    }
+                                    if showList {
+                                        ListadoUniversidadesCrisis(items: self.items, universidadesCrisis: self.mouloViewModel.universidadesCrisis, graficaUniversidadesCrisis: self.mouloViewModel.graficaUniversidadesCrisis)
+                                    }
+                                case "extraordinario-s247":
+                                    EmptyView()
+                                case "extraordinario-u006":
+                                    EmptyView()
+                                case "uo80":
+                                    EmptyView()
+                                case "indicadores-entidad":
+                                    EmptyView()
+                                case "indicadores-subsistema":
+                                    EmptyView()
+                                case "indicadores-ies":
+                                    EmptyView()
+                                    
+                                default:
+                                    EmptyView()
+                                    
+                                }
                             }
-                            if showList {
-                                Listado(items: self.items, ordinarioU006: self.mouloViewModel.ordinarioU006, graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006 )
-                            }
+                            Spacer()
                             
                         }
-                    //}
                 }.onAppear{
-                    self.mouloViewModel.loadInfoModIII(token: self.token, path: self.path, anio: "2022")
-                    self.mouloViewModel.loadGraficasModIII(token: self.token, path: self.path, anio: "2022")
+                    self.mouloViewModel.loadInfoModIII(token: self.token, path: self.path, anio: "2021")
+                    self.mouloViewModel.loadGraficasModIII(token: self.token, path: self.path, anio: "2021")
                 }
                 .edgesIgnoringSafeArea(.all)
                     .navigationBarHidden(true)

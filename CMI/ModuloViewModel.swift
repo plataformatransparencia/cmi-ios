@@ -172,6 +172,9 @@ class ModuloViewModel : ObservableObject {
     @Published var ordinarioU006 = [OrdinarioU006]()
     @Published var graficasOrdinarioU006 = [String]()
     
+    @Published var universidadesCrisis = [UniversidadesCrisis]()
+    @Published var graficaUniversidadesCrisis = ""
+    
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
             return
@@ -501,8 +504,21 @@ class ModuloViewModel : ObservableObject {
                 
                 //case "estatal-u006":
                 
-                //case "universidades-en-crisis":
-                
+                case "universidades-en-crisis":
+                let result = try? JSONDecoder().decode([UniversidadesCrisis].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.universidadesCrisis = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 //case "extraordinario-s247":
                 
                 //case "extraordinario-u006":
@@ -550,7 +566,22 @@ class ModuloViewModel : ObservableObject {
                 
                 //case "estatal-u006":
                 
-                //case "universidades-en-crisis":
+                case "universidades-en-crisis":
+                let result = try? JSONDecoder().decode(String.self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            print(result)
+                            self.graficaUniversidadesCrisis = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 
                 //case "extraordinario-s247":
                 

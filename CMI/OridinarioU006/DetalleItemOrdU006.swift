@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DetalleItem_modIII: View {
+struct DetalleItemOrdU006: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var titulo: String
     @State var instrumento: String

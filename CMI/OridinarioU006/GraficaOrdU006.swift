@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct Grafica: View {
+struct GraficaOrdU006: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var graficasOrdinarioU006 : [String]
     var body: some View {

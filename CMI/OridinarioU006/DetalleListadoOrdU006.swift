@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct DetalleListado: View {
+struct DetalleListadoOrdU006: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var titulo: String
     @State var items : [String:String]
@@ -41,7 +41,7 @@ struct DetalleListado: View {
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
                         ForEach(items.sorted(by: >), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItem_modIII(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, matriculaSuperior: matriculaSuperior, matriculaMediaSuperior: matriculaMediaSuperior, porcentajeFederal: porcentajeFederal, porcentajeEstatal: porcentajeEstatal, matriculaTotal: matriculaTotal, matriculaTotalPonderada: matriculaTotalPonderada, subsidioEstatalPorAlumno: subsidioEstatalPorAlumno, subsidioFederalPorAlumno: subsidioFederalPorAlumno, subsidioPublicoPorAlumno: subsidioPublicoPorAlumno, graficasOrdinarioU006: graficasOrdinarioU006)){
+                            NavigationLink(destination: DetalleItemOrdU006(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, matriculaSuperior: matriculaSuperior, matriculaMediaSuperior: matriculaMediaSuperior, porcentajeFederal: porcentajeFederal, porcentajeEstatal: porcentajeEstatal, matriculaTotal: matriculaTotal, matriculaTotalPonderada: matriculaTotalPonderada, subsidioEstatalPorAlumno: subsidioEstatalPorAlumno, subsidioFederalPorAlumno: subsidioFederalPorAlumno, subsidioPublicoPorAlumno: subsidioPublicoPorAlumno, graficasOrdinarioU006: graficasOrdinarioU006)){
                                 ItemView(indicador: key)
                             }
                         }
