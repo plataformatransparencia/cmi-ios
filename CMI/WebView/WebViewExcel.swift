@@ -9,7 +9,7 @@ struct WebViewExcel: UIViewRepresentable {
     let periodo: String
     
     func makeUIView(context: Context) -> some UIView {
-        let url =   "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/\(path)/\(periodo).csv?enc=iso-8859-1"
+        let url = "\(base_url_qa)/webservice/\(path)/\(periodo).csv?enc=iso-8859-1"
         print(url)
         let downloadUrl = URL(string: url)!
         var request = URLRequest(url: downloadUrl)

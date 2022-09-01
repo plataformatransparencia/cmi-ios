@@ -19,7 +19,7 @@ class AuthUser: ObservableObject {
     }
     
     func login(username: String, password:String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/auth/realms/CMI/protocol/openid-connect/token") else {
+        guard let url = URL(string: "\(base_url_qa)/auth/realms/CMI/protocol/openid-connect/token") else {
             return
         }
         
@@ -69,7 +69,7 @@ class AuthUser: ObservableObject {
     }
     
     func refresh(refresh_token: String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/auth/realms/CMI/protocol/openid-connect/token") else {
+        guard let url = URL(string: "\(base_url_qa)/auth/realms/CMI/protocol/openid-connect/token") else {
             return
         }
         var request = URLRequest(url: url)
@@ -112,7 +112,7 @@ class AuthUser: ObservableObject {
     
     
     func logout(token:String, refresToken: String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/auth/realms/CMI/protocol/openid-connect/logout") else {
+        guard let url = URL(string: "\(base_url_qa)/auth/realms/CMI/protocol/openid-connect/logout") else {
             return
         }
         

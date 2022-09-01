@@ -13,30 +13,33 @@ struct DetalleIndicador: View {
     @EnvironmentObject var mouloViewModel : ModuloViewModel
     @State var token: String
     @State var periodo: String
+    @State private var selection: Int = 1
+    @State var showGraph : Bool = true
+    @State var showList : Bool = false
     
     var body: some View {
-        VStack{
-            ZStack{
-                ScrollView(showsIndicators: true){
-                    VStack{
-                        HStack{
-                            Button(action: {
-                                self.presentationMode.wrappedValue.dismiss()
-                            }, label: {
-                                Image(systemName: "chevron.left")
+        switch modulo{
+        case "Módulo I":
+            VStack{
+                ZStack{
+                    ScrollView(showsIndicators: true){
+                        VStack{
+                            HStack{
+                                Button(action: {
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }, label: {
+                                    Image(systemName: "chevron.left")
+                                        .font(.title3.bold())
+                                })
+                                Spacer()
+                                Text("\(titulo)")
                                     .font(.title3.bold())
-                            })
-                            Spacer()
-                            Text("\(titulo)")
-                                .font(.title3.bold())
-                                .multilineTextAlignment(.center)
-                            Spacer()
+                                    .multilineTextAlignment(.center)
+                                Spacer()
+                                
+                            }.foregroundColor(Color("gris_2"))
+                                .padding([.horizontal, .top])
                             
-                        }.foregroundColor(Color("gris_2"))
-                            .padding([.horizontal, .top])
-                        
-                        switch modulo{
-                        case "Módulo I":
                             NavigationLink(destination: FichaModulo_I(titulo: nombreFicha, path: path, token: self.token).environmentObject(fichaViewModel)){
                                 Text("\(nombreFicha)")
                                     .font(.body)
@@ -220,8 +223,34 @@ struct DetalleIndicador: View {
                                     }
                                 }
                             }
+                        }
+                    }.edgesIgnoringSafeArea(.all)
+                        .navigationBarHidden(true)
+                }.onAppear{
+                    self.mouloViewModel.loadInfoModI(token: self.token, path: self.path, periodo: periodo.replacingOccurrences(of: " ", with: "%20"))
+                }
+            }.navigationBarHidden(true)
+        case "Módulo II":
+            VStack{
+                ZStack{
+                    ScrollView(showsIndicators: true){
+                        VStack{
+                            HStack{
+                                Button(action: {
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }, label: {
+                                    Image(systemName: "chevron.left")
+                                        .font(.title3.bold())
+                                })
+                                Spacer()
+                                Text("\(titulo)")
+                                    .font(.title3.bold())
+                                    .multilineTextAlignment(.center)
+                                Spacer()
+                                
+                            }.foregroundColor(Color("gris_2"))
+                                .padding([.horizontal, .top])
                             
-                        case "Módulo II":
                             Filtro(mod: modulo,token: self.token).environmentObject(filtroViewModel)
                             HStack(alignment: .center){
                                 NavigationLink(destination: FichaModulo_II(titulo: nombreFicha)){
@@ -239,8 +268,34 @@ struct DetalleIndicador: View {
                                         .frame(width: 50, height: 50)
                                 }.padding(.horizontal)
                             }
+                        }
+                        
+                    }.edgesIgnoringSafeArea(.all)
+                        .navigationBarHidden(true)
+                }
+            }.navigationBarHidden(true)
+            
+        case "Módulo III":
+            VStack{
+                ZStack{
+                    //ScrollView(showsIndicators: true){
+                        VStack{
+                            HStack{
+                                Button(action: {
+                                    self.presentationMode.wrappedValue.dismiss()
+                                }, label: {
+                                    Image(systemName: "chevron.left")
+                                        .font(.title3.bold())
+                                })
+                                Spacer()
+                                Text("\(titulo)")
+                                    .font(.title3.bold())
+                                    .multilineTextAlignment(.center)
+                                Spacer()
+                                
+                            }.foregroundColor(Color("gris_2"))
+                                .padding([.horizontal, .top])
                             
-                        case "Módulo III":
                             Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
                             HStack(alignment: .center){
                                 NavigationLink(destination: FichaModulo_III(titulo: nombreFicha)){
@@ -248,7 +303,7 @@ struct DetalleIndicador: View {
                                         .font(.body)
                                         .underline()
                                         .multilineTextAlignment(.leading)
-                                }.padding(.horizontal)
+                                }
                                 Spacer()
                                 Button(action: {
                                     print("descarga de excel")
@@ -256,20 +311,46 @@ struct DetalleIndicador: View {
                                     Image("Image_Excel")
                                         .resizable()
                                         .frame(width: 50, height: 50)
-                                }.padding(.horizontal)
+                                }
+                                
+                                Button(action: {
+                                    self.showList.toggle()
+                                    self.showGraph = false
+                                }){
+                                    Image("lista_icon")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }.disabled(showList)
+                                Button(action: {
+                                   self.showGraph.toggle()
+                                    self.showList = false
+                                }){
+                                    Image("grafica_icon")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }.disabled(showGraph)
+                            }.padding(.horizontal)
+                         
+                            if showGraph {
+                                Grafica(graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006)
                             }
-                        default:
-                            EmptyView()
+                            if showList {
+                                Listado(items: self.items, ordinarioU006: self.mouloViewModel.ordinarioU006, graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006 )
+                            }
+                            
                         }
-                    }
-                }.edgesIgnoringSafeArea(.all)
-                    .navigationBarHidden(true)
-            }.onAppear{
-                if modulo == "Módulo I" {
-                    self.mouloViewModel.loadInfo(token: self.token, path: self.path, periodo: periodo.replacingOccurrences(of: " ", with: "%20"))
+                    //}
+                }.onAppear{
+                    self.mouloViewModel.loadInfoModIII(token: self.token, path: self.path, anio: "2022")
+                    self.mouloViewModel.loadGraficasModIII(token: self.token, path: self.path, anio: "2022")
                 }
-            }
+                .edgesIgnoringSafeArea(.all)
+                    .navigationBarHidden(true)
+            }.navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+        default:
+            EmptyView()
             
-        }.navigationBarHidden(true)
+        }
     }
 }

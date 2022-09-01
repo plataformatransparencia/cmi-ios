@@ -6,7 +6,7 @@ class FiltroViewModel : ObservableObject {
     @Published var seleccionado = ""
     
     func loadFiltro(token: String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/filtro/periodos") else{
+        guard let url = URL(string: "\(base_url_qa)/webservice/filtro/periodos") else{
             return
         }
         

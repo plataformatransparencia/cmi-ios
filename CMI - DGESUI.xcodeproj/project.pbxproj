@@ -26,6 +26,8 @@
 		7857F16028A719F700D75FC3 /* PorcentajeAbanonoEscolarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857F15F28A719F700D75FC3 /* PorcentajeAbanonoEscolarModel.swift */; };
 		7857F16228A725D400D75FC3 /* GastoFederalEducacionPorcentajePibIesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857F16128A725D400D75FC3 /* GastoFederalEducacionPorcentajePibIesModel.swift */; };
 		7857F16428A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857F16328A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift */; };
+		7860F2BB28BFF4B9003A17E6 /* DetalleListado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F2BA28BFF4B9003A17E6 /* DetalleListado.swift */; };
+		7860F2BE28BFFB93003A17E6 /* OrdinarioU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F2BD28BFFB93003A17E6 /* OrdinarioU006.swift */; };
 		7866D87F28AC189800B71244 /* FichaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866D87E28AC189800B71244 /* FichaViewModel.swift */; };
 		7866D88228AC19A900B71244 /* FichaModuloIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866D88128AC19A900B71244 /* FichaModuloIModel.swift */; };
 		7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872727A289444B80018DAB5 /* FichaModulo_I.swift */; };
@@ -36,6 +38,9 @@
 		7872728D2899D1B00018DAB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872728C2899D1B00018DAB5 /* AppDelegate.swift */; };
 		7886262D28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262C28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift */; };
 		7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262E28A4421F00048F74 /* ModuloViewModel.swift */; };
+		788F066A28BE6A5F00A61A5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F066928BE6A5F00A61A5B /* NetworkManager.swift */; };
+		788F067028BE858000A61A5B /* Listado.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F066F28BE858000A61A5B /* Listado.swift */; };
+		788F067228BE858E00A61A5B /* Grafica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F067128BE858E00A61A5B /* Grafica.swift */; };
 		788FD89F28A57C7D002C97F3 /* DetalleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FD89E28A57C7D002C97F3 /* DetalleItem.swift */; };
 		789107212891CE0F00CCB68C /* DetalleIndicador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789107202891CE0F00CCB68C /* DetalleIndicador.swift */; };
 		78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B84E0B28BD4FFD0059D6B7 /* WebViewExcel.swift */; };
@@ -51,6 +56,7 @@
 		78DF290628861E7B00106EF7 /* MenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF290528861E7B00106EF7 /* MenuButton.swift */; };
 		78DF290828861F9500106EF7 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF290728861F9500106EF7 /* ViewRouter.swift */; };
 		78DF290A288622E400106EF7 /* AcercaDe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF2909288622E400106EF7 /* AcercaDe.swift */; };
+		78F3178028C11CFD00389DBF /* DetalleItem_modIII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3177F28C11CFD00389DBF /* DetalleItem_modIII.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +80,8 @@
 		7857F15F28A719F700D75FC3 /* PorcentajeAbanonoEscolarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentajeAbanonoEscolarModel.swift; sourceTree = "<group>"; };
 		7857F16128A725D400D75FC3 /* GastoFederalEducacionPorcentajePibIesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoFederalEducacionPorcentajePibIesModel.swift; sourceTree = "<group>"; };
 		7857F16328A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GastoFederalEducacionPorcentajePibEntidadModel.swift; sourceTree = "<group>"; };
+		7860F2BA28BFF4B9003A17E6 /* DetalleListado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListado.swift; sourceTree = "<group>"; };
+		7860F2BD28BFFB93003A17E6 /* OrdinarioU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdinarioU006.swift; sourceTree = "<group>"; };
 		7866D87E28AC189800B71244 /* FichaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaViewModel.swift; sourceTree = "<group>"; };
 		7866D88128AC19A900B71244 /* FichaModuloIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModuloIModel.swift; sourceTree = "<group>"; };
 		7872727A289444B80018DAB5 /* FichaModulo_I.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModulo_I.swift; sourceTree = "<group>"; };
@@ -85,6 +93,9 @@
 		7872728C2899D1B00018DAB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7886262C28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasaBrutaEscolarizacionCoberturaModel.swift; sourceTree = "<group>"; };
 		7886262E28A4421F00048F74 /* ModuloViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloViewModel.swift; sourceTree = "<group>"; };
+		788F066928BE6A5F00A61A5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		788F066F28BE858000A61A5B /* Listado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listado.swift; sourceTree = "<group>"; };
+		788F067128BE858E00A61A5B /* Grafica.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grafica.swift; sourceTree = "<group>"; };
 		788FD89E28A57C7D002C97F3 /* DetalleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItem.swift; sourceTree = "<group>"; };
 		789107202891CE0F00CCB68C /* DetalleIndicador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleIndicador.swift; sourceTree = "<group>"; };
 		78B84E0B28BD4FFD0059D6B7 /* WebViewExcel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExcel.swift; sourceTree = "<group>"; };
@@ -100,6 +111,7 @@
 		78DF290528861E7B00106EF7 /* MenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButton.swift; sourceTree = "<group>"; };
 		78DF290728861F9500106EF7 /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		78DF2909288622E400106EF7 /* AcercaDe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcercaDe.swift; sourceTree = "<group>"; };
+		78F3177F28C11CFD00389DBF /* DetalleItem_modIII.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItem_modIII.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +165,7 @@
 		784FA5FE28919F1300DF30BE /* Módulos */ = {
 			isa = PBXGroup;
 			children = (
+				788F066E28BE856400A61A5B /* tabs_Indicador */,
 				787272792894428B0018DAB5 /* Fichas */,
 				784FA6022891BBDC00DF30BE /* Filtro */,
 				78D9F880288A0CC70087A35A /* Modulo.swift */,
@@ -178,6 +191,14 @@
 			path = Filtro;
 			sourceTree = "<group>";
 		};
+		7860F2BC28BFFB12003A17E6 /* Módulo_III */ = {
+			isa = PBXGroup;
+			children = (
+				7860F2BD28BFFB93003A17E6 /* OrdinarioU006.swift */,
+			);
+			name = "Módulo_III";
+			sourceTree = "<group>";
+		};
 		7866D88028AC199700B71244 /* Ficha */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,8 +221,10 @@
 		787272852899C08E0018DAB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7860F2BC28BFFB12003A17E6 /* Módulo_III */,
 				7886262B28A4396100048F74 /* Módulo_I */,
 				787272882899C5BD0018DAB5 /* LoginModel.swift */,
+				788F066928BE6A5F00A61A5B /* NetworkManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +245,17 @@
 			);
 			name = "Módulo_I";
 			path = "Módulo_I";
+			sourceTree = "<group>";
+		};
+		788F066E28BE856400A61A5B /* tabs_Indicador */ = {
+			isa = PBXGroup;
+			children = (
+				788F066F28BE858000A61A5B /* Listado.swift */,
+				788F067128BE858E00A61A5B /* Grafica.swift */,
+				7860F2BA28BFF4B9003A17E6 /* DetalleListado.swift */,
+				78F3177F28C11CFD00389DBF /* DetalleItem_modIII.swift */,
+			);
+			name = tabs_Indicador;
 			sourceTree = "<group>";
 		};
 		78C249C328AD5B000084B799 /* WebView */ = {
@@ -365,14 +399,18 @@
 				7857F15A28A6B35800D75FC3 /* TasaBrutaEscolarizacionCoberturaInstitucionModel.swift in Sources */,
 				784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */,
 				7819C1062887242100E7BE73 /* Login.swift in Sources */,
+				788F067028BE858000A61A5B /* Listado.swift in Sources */,
 				78D9F881288A0CC70087A35A /* Modulo.swift in Sources */,
+				7860F2BE28BFFB93003A17E6 /* OrdinarioU006.swift in Sources */,
 				7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */,
 				7857F15C28A7051700D75FC3 /* TasaBrutaEscolarizacionPoblacionPrimerosCuatroDecilesIngresoModel.swift in Sources */,
 				7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */,
+				78F3178028C11CFD00389DBF /* DetalleItem_modIII.swift in Sources */,
 				7857F16428A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift in Sources */,
 				78002B66286E764300B3B8B4 /* ContentView.swift in Sources */,
 				78DF29012886064700106EF7 /* Inicio.swift in Sources */,
 				78DF28FF2885D91B00106EF7 /* Home.swift in Sources */,
+				788F067228BE858E00A61A5B /* Grafica.swift in Sources */,
 				7866D88228AC19A900B71244 /* FichaModuloIModel.swift in Sources */,
 				7866D87F28AC189800B71244 /* FichaViewModel.swift in Sources */,
 				784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */,
@@ -384,11 +422,13 @@
 				78C249C828AD850B0084B799 /* FiltroModel.swift in Sources */,
 				788FD89F28A57C7D002C97F3 /* DetalleItem.swift in Sources */,
 				787272892899C5BD0018DAB5 /* LoginModel.swift in Sources */,
+				7860F2BB28BFF4B9003A17E6 /* DetalleListado.swift in Sources */,
 				7857F15828A6A99E00D75FC3 /* TasaBrutaEscolarizacionCoberturaEntidadFederativaModel.swift in Sources */,
 				784FA6042891BBE900DF30BE /* Filtro.swift in Sources */,
 				78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */,
 				7872727F289444D70018DAB5 /* FichaModulo_III.swift in Sources */,
 				78DF290428861E2500106EF7 /* TopBand.swift in Sources */,
+				788F066A28BE6A5F00A61A5B /* NetworkManager.swift in Sources */,
 				784FA60A2891C7A700DF30BE /* DropDownEntidadFederativa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

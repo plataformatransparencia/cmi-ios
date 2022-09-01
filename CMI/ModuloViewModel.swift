@@ -3,12 +3,13 @@ import Foundation
 
 class ModuloViewModel : ObservableObject {
     
+    /** Módulo I*/
+    
     //tasa-bruta-escolarizacion-cobertura
     @Published var imagenTotalTBEC = ""
     @Published var imagenMujeresTBEC = ""
     @Published var imagenHombresTBEC = ""
     @Published var refereenciasTBEC = [Referencias]()
-    
     //Totales tasa-bruta-escolarizacion-cobertura
     @Published var censoMujGlobalTBEC = 0
     @Published var censoHomGlobalTBEC = 0
@@ -19,13 +20,11 @@ class ModuloViewModel : ObservableObject {
     @Published var tasaMujeresGlobalTBEC = 0.0
     @Published var tasaHombresGlobalTBEC = 0.0
     @Published var tasaEscolarizacionGlobalTBEC = 0.0
-    
     //tasa-bruta-escolarizacion-cobertura-entidad-federativa
     @Published var imagenTotalTBECEF = ""
     @Published var imagenMujeresTBECEF = ""
     @Published var imagenHombresTBECEF = ""
     @Published var refereenciasTBECEF = [Referencias]()
-    
     // Totales tasa-bruta-escolarizacion-cobertura-entidad-federativa
     @Published var matriculaHombresTBECEF = 0
     @Published var matriculaMujeresTBECEF = 0
@@ -36,7 +35,6 @@ class ModuloViewModel : ObservableObject {
     @Published var contribucionTBECEF = 0.0
     @Published var contribucionHombresTBECEF = 0.0
     @Published var contribucionMujeresTBECEF = 0.0
-    
     //tasa-bruta-escolarizacion-cobertura-institucion
     @Published var imagenTotalTBECI = ""
     @Published var imagenMujeresTBECI = ""
@@ -47,7 +45,6 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenNoEscolarizadoTBECI = ""
     @Published var imagenMixtoTBECI = ""
     @Published var refereenciasTBECI = [Referencias]()
-    
     //Totales tasa-bruta-escolarizacion-cobertura-institucion
     @Published var censoNacionalHombresTBECI = 0
     @Published var censoNacionalMujeresTBECI = 0
@@ -69,8 +66,6 @@ class ModuloViewModel : ObservableObject {
     @Published var porcentajeEscolarizadoTBECI = 0.0
     @Published var porcentajeNoEscolarizadoTBECI = 0.0
     @Published var porcentajeMixtoTBECI = 0.0
-    
-    
     //tasa-bruta-escolarizacion-poblacion-primeros-cuatro-deciles
     @Published var imagenTotalTBEPPD = ""
     @Published var imagenMujeresTBEPPD = ""
@@ -78,8 +73,6 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenDiscapacitadosTBEPPD = ""
     @Published var imagenHablantesLenguaIndigenaTBEPPD = ""
     @Published var refereenciasTBEPPD = [Referencias]()
-    
-    
     //Totales tasa-bruta-escolarizacion-poblacion-primeros-cuatro-deciles
     @Published var hombresTBEPPD = 0
     @Published var mujeresTBEPPD = 0
@@ -96,15 +89,12 @@ class ModuloViewModel : ObservableObject {
     @Published var tasaGeneralTBEPPD = 0.0
     @Published var tasaDiscapacitadosTBEPPD = 0.0
     @Published var tasaHablantesLenguaIndigenaTBEPPD = 0.0
-    
     //porcentaje-eficiencia-terminal-sistema-educativo-nacional
     @Published var imagenTotalPETSEN = ""
     @Published var imagenMujeresPETSEN = ""
     @Published var imagenHombresPETSEN = ""
     @Published var imagenDiscapacitadosPETSEN = ""
     @Published var refereenciasPETSEN = [Referencias]()
-
-    
     //Totales porcentaje-eficiencia-terminal-sistema-educativo-nacional
     @Published var egresadosCicloAnteriorHombresPETSEN = 0
     @Published var nuevoIngresoSeisCiclosAtrasHombresPETSEN = 0
@@ -118,7 +108,6 @@ class ModuloViewModel : ObservableObject {
     @Published var egresadosCicloAnteriorGeneralPETSEN = 0
     @Published var nuevoIngresoSeisCiclosAtrasGeneralPETSEN = 0
     @Published var eficienciaTerminalGeneralPETSEN = 0.0
-    
     //porcentaje-abandono-escolar
     @Published var imagenTotalPAE = ""
     @Published var imagenMujeresPAE = ""
@@ -126,8 +115,6 @@ class ModuloViewModel : ObservableObject {
     @Published var imagenDiscapacitadosPAE = ""
     @Published var imagenHablantesLenguaIndigenaPAE = ""
     @Published var refereenciasPAE = [Referencias]()
-
-    
     //Totales porcentaje-abandono-escolar
     @Published var matriculaPeriodoAnteriorHombresPAE = 0
     @Published var egresadosPeriodoAnteriorHombresPAE = 0
@@ -164,27 +151,29 @@ class ModuloViewModel : ObservableObject {
     @Published var abandonoGeneralPAE = 0
     @Published var tasaAbandonoGeneralPAE = 0.0
     @Published var tasaRetencionGeneralPAE = 0.0
-    
     //gasto-federal-educacion-porcentaje-pib-ies
     @Published var imagenTotalGFEPPibIes = ""
     @Published var refereenciasGFEPPibIes  = [Referencias]()
-
-    
     // Totales gasto-federal-educacion-porcentaje-pib-ies
     @Published var aportacionGFEPPibIes = 0.0
     @Published var subsidioGFEPPibIes = 0.0
-    
     //gasto-federal-educacion-porcentaje-pib-entidad
     @Published var imagenTotalGFEPPibEEntidad = ""
     @Published var refereenciasGFEPPibEEntidad  = [Referencias]()
-
-    
     // Totales gasto-federal-educacion-porcentaje-pib-entidad
     @Published var aportacionEstatalTotalGFEPPibEEntidad = 0.0
     @Published var subsidioGFEPPibEEntidad = 0.0
-        
-    func loadInfo(token: String, path: String ,periodo: String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/\(path)/\(periodo)") else{
+    
+    
+    
+    
+    /** Módulo III*/
+    
+    @Published var ordinarioU006 = [OrdinarioU006]()
+    @Published var graficasOrdinarioU006 = [String]()
+    
+    func loadInfoModI(token: String, path: String ,periodo: String) {
+        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
             return
         }
         var request = URLRequest(url: url)
@@ -236,7 +225,7 @@ class ModuloViewModel : ObservableObject {
                             self.contribucionHombresTBECEF = result.tabla.contribucionHombres
                             self.contribucionMujeresTBECEF = result.tabla.contribucionMujeres
                             self.refereenciasTBECEF  = result.referencias
-
+                            
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -286,7 +275,7 @@ class ModuloViewModel : ObservableObject {
                             self.totalMixtoTBECI = result.tabla.totalMixto
                             self.porcentajeMixtoTBECI = result.tabla.porcentajeMixto
                             self.refereenciasTBECI  = result.referencias
-
+                            
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -327,7 +316,7 @@ class ModuloViewModel : ObservableObject {
                             self.hablantesLenguaIndigenaEnRangoDeEdadTBEPPD = result.tabla.hablantesLenguaIndigenaEnRangoDeEdad
                             self.tasaHablantesLenguaIndigenaTBEPPD = result.tabla.tasaHablantesLenguaIndigena
                             self.refereenciasTBEPPD  = result.referencias
-
+                            
                             
                         }
                     case 401:
@@ -364,7 +353,7 @@ class ModuloViewModel : ObservableObject {
                             self.nuevoIngresoSeisCiclosAtrasDiscapacitadosPETSEN = result.tabla.nuevoIngresoSeisCiclosAtrasDiscapacitados
                             self.eficienciaTerminalDiscapacitadosPETSEN = result.tabla.eficienciaTerminalDiscapacitados
                             self.refereenciasPETSEN = result.referencias
-
+                            
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -425,7 +414,7 @@ class ModuloViewModel : ObservableObject {
                             self.tasaAbandonoHablantesLenguaIndigenaPAE = result.tabla.tasaAbandonoHablantesLenguaIndigena
                             self.tasaRetencionHablantesLenguaIndigenaPAE =  result.tabla.tasaRetencionHablantesLenguaIndigena
                             self.refereenciasPAE = result.referencias
-
+                            
                             
                         }
                     case 401:
@@ -446,7 +435,7 @@ class ModuloViewModel : ObservableObject {
                             self.aportacionGFEPPibIes = result.tabla.aportacion
                             self.subsidioGFEPPibIes = result.tabla.subsidio
                             self.refereenciasGFEPPibIes = result.referencias
-
+                            
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -466,7 +455,7 @@ class ModuloViewModel : ObservableObject {
                             self.aportacionEstatalTotalGFEPPibEEntidad = result.tabla.aportacionEstatalTotal
                             self.subsidioGFEPPibEEntidad = result.tabla.subsidio
                             self.refereenciasGFEPPibEEntidad  = result.referencias
-
+                            
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -480,4 +469,104 @@ class ModuloViewModel : ObservableObject {
         }.resume()
     }
     
+    
+    
+    
+    func loadInfoModIII(token: String, path: String ,anio: String) {
+        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(anio)") else{
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data, error == nil else {return}
+            switch path{
+            case "ordinario-u006":
+                let result = try? JSONDecoder().decode([OrdinarioU006].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.ordinarioU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                //case "federal-u006":
+                
+                //case "estatal-u006":
+                
+                //case "universidades-en-crisis":
+                
+                //case "extraordinario-s247":
+                
+                //case "extraordinario-u006":
+                
+                //case "uo80":
+                
+                //case "indicadores-entidad":
+                
+                //case "indicadores-subsistema":
+                
+                //case "indicadores-ies":
+                
+            default:
+                fatalError("No se selecciono algun indicador de la lista")
+            }
+        }.resume()
+    }
+    
+    func loadGraficasModIII(token: String, path: String ,anio: String) {
+        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(anio)/graficas") else{
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data, error == nil else {return}
+            switch path{
+            case "ordinario-u006":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasOrdinarioU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                //case "federal-u006":
+                
+                //case "estatal-u006":
+                
+                //case "universidades-en-crisis":
+                
+                //case "extraordinario-s247":
+                
+                //case "extraordinario-u006":
+                
+                //case "uo80":
+                
+                //case "indicadores-entidad":
+                
+                //case "indicadores-subsistema":
+                
+                //case "indicadores-ies":
+                
+            default:
+                fatalError("No se selecciono algun indicador de la lista")
+            }
+        }.resume()
+    }
 }

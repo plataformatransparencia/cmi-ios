@@ -27,7 +27,7 @@ class FichaViewModel : ObservableObject {
     
     
     func loadInfoFicha(token: String, path: String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/\(path)/ficha") else{
+        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/ficha") else{
             return
         }
         var request = URLRequest(url: url)
@@ -81,7 +81,7 @@ class FichaViewModel : ObservableObject {
     }
     
     func loadInfoFichaPDF(token: String, path: String) {
-        guard let url = URL(string: "https://dgesui.ses.sep.gob.mx/desarrollocmi/webservice/\(path)/ficha.pdf") else{
+        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/ficha.pdf") else{
             return
         }
         var request = URLRequest(url: url)
