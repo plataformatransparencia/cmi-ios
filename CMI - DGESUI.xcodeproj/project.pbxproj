@@ -62,6 +62,11 @@
 		78F3178B28C1457700389DBF /* GraficaUniversidadesCrisis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3178A28C1457700389DBF /* GraficaUniversidadesCrisis.swift */; };
 		78F3178D28C1458A00389DBF /* DetalleListadoUniversidadesCrisis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3178C28C1458A00389DBF /* DetalleListadoUniversidadesCrisis.swift */; };
 		78F3178F28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3178E28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift */; };
+		78F3179128C16AFB00389DBF /* ExtraordinarioS247.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3179028C16AFB00389DBF /* ExtraordinarioS247.swift */; };
+		78F3179428C16CD200389DBF /* ListadoExtraordinarioS247.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3179328C16CD200389DBF /* ListadoExtraordinarioS247.swift */; };
+		78F3179628C16CE000389DBF /* GraficaExtraordinarioS247.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3179528C16CE000389DBF /* GraficaExtraordinarioS247.swift */; };
+		78F3179828C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3179728C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift */; };
+		78F3179A28C16D0200389DBF /* DetalleItemExtraordinarioS247.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F3179928C16D0200389DBF /* DetalleItemExtraordinarioS247.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +127,11 @@
 		78F3178A28C1457700389DBF /* GraficaUniversidadesCrisis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaUniversidadesCrisis.swift; sourceTree = "<group>"; };
 		78F3178C28C1458A00389DBF /* DetalleListadoUniversidadesCrisis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoUniversidadesCrisis.swift; sourceTree = "<group>"; };
 		78F3178E28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemUniversidadesCrisis.swift; sourceTree = "<group>"; };
+		78F3179028C16AFB00389DBF /* ExtraordinarioS247.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtraordinarioS247.swift; sourceTree = "<group>"; };
+		78F3179328C16CD200389DBF /* ListadoExtraordinarioS247.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoExtraordinarioS247.swift; sourceTree = "<group>"; };
+		78F3179528C16CE000389DBF /* GraficaExtraordinarioS247.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaExtraordinarioS247.swift; sourceTree = "<group>"; };
+		78F3179728C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoExtraordinarioS247.swift; sourceTree = "<group>"; };
+		78F3179928C16D0200389DBF /* DetalleItemExtraordinarioS247.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemExtraordinarioS247.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +217,7 @@
 			children = (
 				7860F2BD28BFFB93003A17E6 /* OrdinarioU006.swift */,
 				78F3178128C1377A00389DBF /* UniversidadesCrisis.swift */,
+				78F3179028C16AFB00389DBF /* ExtraordinarioS247.swift */,
 			);
 			name = "Módulo_III";
 			sourceTree = "<group>";
@@ -324,6 +335,7 @@
 		78F3178528C1429300389DBF /* Módulo III */ = {
 			isa = PBXGroup;
 			children = (
+				78F3179228C16CBA00389DBF /* ExtraordinarioS247 */,
 				78F3178728C1454000389DBF /* UniversidadesEnCrisis */,
 				78F3178628C142A400389DBF /* OridinarioU006 */,
 			);
@@ -350,6 +362,17 @@
 				78F3178E28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift */,
 			);
 			name = UniversidadesEnCrisis;
+			sourceTree = "<group>";
+		};
+		78F3179228C16CBA00389DBF /* ExtraordinarioS247 */ = {
+			isa = PBXGroup;
+			children = (
+				78F3179328C16CD200389DBF /* ListadoExtraordinarioS247.swift */,
+				78F3179528C16CE000389DBF /* GraficaExtraordinarioS247.swift */,
+				78F3179728C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift */,
+				78F3179928C16D0200389DBF /* DetalleItemExtraordinarioS247.swift */,
+			);
+			name = ExtraordinarioS247;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,6 +451,7 @@
 				789107212891CE0F00CCB68C /* DetalleIndicador.swift in Sources */,
 				7857F16028A719F700D75FC3 /* PorcentajeAbanonoEscolarModel.swift in Sources */,
 				7857F16228A725D400D75FC3 /* GastoFederalEducacionPorcentajePibIesModel.swift in Sources */,
+				78F3179128C16AFB00389DBF /* ExtraordinarioS247.swift in Sources */,
 				78F3178928C1456600389DBF /* ListadoUniversidadesCrisis.swift in Sources */,
 				78DF290828861F9500106EF7 /* ViewRouter.swift in Sources */,
 				787272872899C0AA0018DAB5 /* AuthUser.swift in Sources */,
@@ -435,6 +459,7 @@
 				7886262D28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift in Sources */,
 				78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */,
 				784FA6082891C6F500DF30BE /* DropDownEjercicioFiscal.swift in Sources */,
+				78F3179428C16CD200389DBF /* ListadoExtraordinarioS247.swift in Sources */,
 				784FA60C2891C7DB00DF30BE /* DropDownSubsistema.swift in Sources */,
 				78F3178228C1377A00389DBF /* UniversidadesCrisis.swift in Sources */,
 				7857F15E28A712A600D75FC3 /* PorcentajeEficienciaTerminalSistemaEducativoNacionalModel.swift in Sources */,
@@ -444,6 +469,7 @@
 				7819C1062887242100E7BE73 /* Login.swift in Sources */,
 				788F067028BE858000A61A5B /* ListadoOrdU006.swift in Sources */,
 				78D9F881288A0CC70087A35A /* Modulo.swift in Sources */,
+				78F3179828C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift in Sources */,
 				7860F2BE28BFFB93003A17E6 /* OrdinarioU006.swift in Sources */,
 				7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */,
 				7857F15C28A7051700D75FC3 /* TasaBrutaEscolarizacionPoblacionPrimerosCuatroDecilesIngresoModel.swift in Sources */,
@@ -464,6 +490,7 @@
 				78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */,
 				7872728D2899D1B00018DAB5 /* AppDelegate.swift in Sources */,
 				78C249C828AD850B0084B799 /* FiltroModel.swift in Sources */,
+				78F3179A28C16D0200389DBF /* DetalleItemExtraordinarioS247.swift in Sources */,
 				788FD89F28A57C7D002C97F3 /* DetalleItem.swift in Sources */,
 				787272892899C5BD0018DAB5 /* LoginModel.swift in Sources */,
 				7860F2BB28BFF4B9003A17E6 /* DetalleListadoOrdU006.swift in Sources */,
@@ -475,6 +502,7 @@
 				78DF290428861E2500106EF7 /* TopBand.swift in Sources */,
 				788F066A28BE6A5F00A61A5B /* NetworkManager.swift in Sources */,
 				784FA60A2891C7A700DF30BE /* DropDownEntidadFederativa.swift in Sources */,
+				78F3179628C16CE000389DBF /* GraficaExtraordinarioS247.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

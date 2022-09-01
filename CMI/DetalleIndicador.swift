@@ -351,7 +351,12 @@ struct DetalleIndicador: View {
                                         ListadoUniversidadesCrisis(items: self.items, universidadesCrisis: self.mouloViewModel.universidadesCrisis, graficaUniversidadesCrisis: self.mouloViewModel.graficaUniversidadesCrisis)
                                     }
                                 case "extraordinario-s247":
-                                    EmptyView()
+                                    if showGraph {
+                                        GraficaExtraordinarioS247(graficaExtraordinarioS247: self.mouloViewModel.graficaExtraordinarioS247)
+                                    }
+                                    if showList {
+                                        ListadoExtraordinarioS247(items: self.items, extraordinarioS247: self.mouloViewModel.extraordinarioS247, graficaExtraordinarioS247: self.mouloViewModel.graficaExtraordinarioS247)
+                                    }
                                 case "extraordinario-u006":
                                     EmptyView()
                                 case "uo80":
