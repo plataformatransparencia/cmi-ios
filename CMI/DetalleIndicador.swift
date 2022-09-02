@@ -297,7 +297,7 @@ struct DetalleIndicador: View {
                             
                             Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
                             HStack(alignment: .center){
-                                NavigationLink(destination: FichaModulo_III(titulo: nombreFicha)){
+                                NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                     Text("\(nombreFicha)")
                                         .font(.body)
                                         .underline()
