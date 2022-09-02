@@ -178,6 +178,9 @@ class ModuloViewModel : ObservableObject {
     @Published var extraordinarioS247 = [ExtraordinarioS247]()
     @Published var graficaExtraordinarioS247 = ""
     
+    @Published var extraordinarioU006 = [ExtraordinarioU006]()
+    @Published var graficasExtraordinarioU006 = [String]()
+    
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
             return
@@ -538,7 +541,21 @@ class ModuloViewModel : ObservableObject {
                     }
                 }
                 
-                //case "extraordinario-u006":
+                case "extraordinario-u006":
+                let result = try? JSONDecoder().decode([ExtraordinarioU006].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.extraordinarioU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 
                 //case "uo80":
                 
@@ -616,7 +633,21 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                //case "extraordinario-u006":
+                case "extraordinario-u006":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasExtraordinarioU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 
                 //case "uo80":
                 
