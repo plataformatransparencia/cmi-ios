@@ -364,8 +364,13 @@ struct DetalleIndicador: View {
                                     if showList {
                                         ListadoExtraordinarioU006(items: self.items, extraordinarioU006: self.mouloViewModel.extraordinarioU006, graficasExtraordinarioU006: self.mouloViewModel.graficasExtraordinarioU006)
                                     }
-                                case "uo80":
-                                    EmptyView()
+                                case "u080":
+                                    if showGraph {
+                                        GraficaU080(graficasU080: self.mouloViewModel.graficasU080)
+                                    }
+                                    if showList {
+                                        ListadoU080(items: items, u080: self.mouloViewModel.u080, graficasU080: self.mouloViewModel.graficasU080)
+                                    }
                                 case "indicadores-entidad":
                                     EmptyView()
                                 case "indicadores-subsistema":

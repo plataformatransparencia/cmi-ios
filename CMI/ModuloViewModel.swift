@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 
 class ModuloViewModel : ObservableObject {
@@ -180,6 +181,9 @@ class ModuloViewModel : ObservableObject {
     
     @Published var extraordinarioU006 = [ExtraordinarioU006]()
     @Published var graficasExtraordinarioU006 = [String]()
+    
+    @Published var u080 = [U080]()
+    @Published var graficasU080 = [String]()
     
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
@@ -557,8 +561,21 @@ class ModuloViewModel : ObservableObject {
                     }
                 }
                 
-                //case "uo80":
-                
+                case "u080":
+                let result = try? JSONDecoder().decode([U080].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.u080 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 //case "indicadores-entidad":
                 
                 //case "indicadores-subsistema":
@@ -607,7 +624,6 @@ class ModuloViewModel : ObservableObject {
                     switch responseHTTP?.statusCode {
                     case 200:
                         if let result = result{
-                            print(result)
                             self.graficaUniversidadesCrisis = result
                         }
                     case 401:
@@ -624,7 +640,6 @@ class ModuloViewModel : ObservableObject {
                     switch responseHTTP?.statusCode {
                     case 200:
                         if let result = result{
-                            print(result)
                             self.graficaExtraordinarioS247 = result
                         }
                     case 401:
@@ -649,8 +664,21 @@ class ModuloViewModel : ObservableObject {
                     }
                 }
                 
-                //case "uo80":
-                
+                case "u080":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasU080 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 //case "indicadores-entidad":
                 
                 //case "indicadores-subsistema":
