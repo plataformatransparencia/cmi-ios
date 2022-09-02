@@ -372,7 +372,12 @@ struct DetalleIndicador: View {
                                         ListadoU080(items: items, u080: self.mouloViewModel.u080, graficasU080: self.mouloViewModel.graficasU080)
                                     }
                                 case "indicadores-entidad":
-                                    EmptyView()
+                                    if showGraph {
+                                        GraficaIndicadoresEntidad(graficasIndicadoresEntidad: self.mouloViewModel.graficasIndicadoresEntidad)
+                                    }
+                                    if showList {
+                                        ListadoIndicadoresEntidad(items: items, indicadoresEntidad: self.mouloViewModel.indicadoresEntidad, graficasIndicadoresEntidad: self.mouloViewModel.graficasIndicadoresEntidad)
+                                    }
                                 case "indicadores-subsistema":
                                     EmptyView()
                                 case "indicadores-ies":
