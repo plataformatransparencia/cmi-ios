@@ -188,6 +188,9 @@ class ModuloViewModel : ObservableObject {
     @Published var indicadoresEntidad = [IndicadoresEntidad]()
     @Published var graficasIndicadoresEntidad = [String]()
     
+    @Published var indicadoresSubsistema = [IndicadoresSubsistema]()
+    @Published var graficasIndicadoresSubsistema = [String]()
+    
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
             return
@@ -594,8 +597,21 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                //case "indicadores-subsistema":
-                
+                case "indicadores-subsistema":
+                let result = try? JSONDecoder().decode([IndicadoresSubsistema].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.indicadoresSubsistema = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 //case "indicadores-ies":
                 
             default:
@@ -710,8 +726,21 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                //case "indicadores-subsistema":
-                
+                case "indicadores-subsistema":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasIndicadoresSubsistema = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 //case "indicadores-ies":
                 
             default:

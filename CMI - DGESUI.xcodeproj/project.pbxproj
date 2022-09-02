@@ -46,6 +46,11 @@
 		7881D8EB28C26559006142C8 /* GraficaIndicadoresEntidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8EA28C26559006142C8 /* GraficaIndicadoresEntidad.swift */; };
 		7881D8ED28C26570006142C8 /* DetalleListadoIndicadoresEntidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8EC28C26570006142C8 /* DetalleListadoIndicadoresEntidad.swift */; };
 		7881D8EF28C2657E006142C8 /* DetalleItemIndicadoresEntidad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8EE28C2657E006142C8 /* DetalleItemIndicadoresEntidad.swift */; };
+		7881D8F228C280B5006142C8 /* ListadoIndicadoresSubsistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8F128C280B5006142C8 /* ListadoIndicadoresSubsistema.swift */; };
+		7881D8F428C280C0006142C8 /* GraficaIndicadoresSubsistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8F328C280C0006142C8 /* GraficaIndicadoresSubsistema.swift */; };
+		7881D8F628C280CC006142C8 /* DetalleListadoIndicadoresSubsistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8F528C280CC006142C8 /* DetalleListadoIndicadoresSubsistema.swift */; };
+		7881D8F828C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8F728C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift */; };
+		7881D8FA28C28161006142C8 /* IndicadoresSubsistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D8F928C28161006142C8 /* IndicadoresSubsistema.swift */; };
 		7886262D28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262C28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift */; };
 		7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262E28A4421F00048F74 /* ModuloViewModel.swift */; };
 		788F066A28BE6A5F00A61A5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F066928BE6A5F00A61A5B /* NetworkManager.swift */; };
@@ -126,6 +131,11 @@
 		7881D8EA28C26559006142C8 /* GraficaIndicadoresEntidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaIndicadoresEntidad.swift; sourceTree = "<group>"; };
 		7881D8EC28C26570006142C8 /* DetalleListadoIndicadoresEntidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoIndicadoresEntidad.swift; sourceTree = "<group>"; };
 		7881D8EE28C2657E006142C8 /* DetalleItemIndicadoresEntidad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemIndicadoresEntidad.swift; sourceTree = "<group>"; };
+		7881D8F128C280B5006142C8 /* ListadoIndicadoresSubsistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoIndicadoresSubsistema.swift; sourceTree = "<group>"; };
+		7881D8F328C280C0006142C8 /* GraficaIndicadoresSubsistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaIndicadoresSubsistema.swift; sourceTree = "<group>"; };
+		7881D8F528C280CC006142C8 /* DetalleListadoIndicadoresSubsistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoIndicadoresSubsistema.swift; sourceTree = "<group>"; };
+		7881D8F728C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemIndicadoresSubsistema.swift; sourceTree = "<group>"; };
+		7881D8F928C28161006142C8 /* IndicadoresSubsistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicadoresSubsistema.swift; sourceTree = "<group>"; };
 		7886262C28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasaBrutaEscolarizacionCoberturaModel.swift; sourceTree = "<group>"; };
 		7886262E28A4421F00048F74 /* ModuloViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloViewModel.swift; sourceTree = "<group>"; };
 		788F066928BE6A5F00A61A5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -251,6 +261,7 @@
 				78F3179C28C1740C00389DBF /* ExtraordinarioU006.swift */,
 				7881D8E328C25B83006142C8 /* U080.swift */,
 				7881D8E528C26391006142C8 /* IndicadoresEntidad.swift */,
+				7881D8F928C28161006142C8 /* IndicadoresSubsistema.swift */,
 			);
 			name = "Módulo_III";
 			sourceTree = "<group>";
@@ -305,6 +316,17 @@
 				7881D8EE28C2657E006142C8 /* DetalleItemIndicadoresEntidad.swift */,
 			);
 			path = IndicadoresEntidad;
+			sourceTree = "<group>";
+		};
+		7881D8F028C2809D006142C8 /* IndicadoresSubsistema */ = {
+			isa = PBXGroup;
+			children = (
+				7881D8F128C280B5006142C8 /* ListadoIndicadoresSubsistema.swift */,
+				7881D8F328C280C0006142C8 /* GraficaIndicadoresSubsistema.swift */,
+				7881D8F528C280CC006142C8 /* DetalleListadoIndicadoresSubsistema.swift */,
+				7881D8F728C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift */,
+			);
+			name = IndicadoresSubsistema;
 			sourceTree = "<group>";
 		};
 		7886262B28A4396100048F74 /* Módulo_I */ = {
@@ -390,6 +412,7 @@
 		78F3178528C1429300389DBF /* Módulo III */ = {
 			isa = PBXGroup;
 			children = (
+				7881D8F028C2809D006142C8 /* IndicadoresSubsistema */,
 				7881D8E728C26522006142C8 /* IndicadoresEntidad */,
 				7881D8DA28C25A40006142C8 /* U080 */,
 				78F3179B28C173E900389DBF /* ExtraordinarioU006 */,
@@ -534,9 +557,11 @@
 				78F3179F28C175ED00389DBF /* ListadoExtraordinarioU006.swift in Sources */,
 				78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */,
 				784FA6082891C6F500DF30BE /* DropDownEjercicioFiscal.swift in Sources */,
+				7881D8F228C280B5006142C8 /* ListadoIndicadoresSubsistema.swift in Sources */,
 				78F3179428C16CD200389DBF /* ListadoExtraordinarioS247.swift in Sources */,
 				784FA60C2891C7DB00DF30BE /* DropDownSubsistema.swift in Sources */,
 				78F3178228C1377A00389DBF /* UniversidadesCrisis.swift in Sources */,
+				7881D8F628C280CC006142C8 /* DetalleListadoIndicadoresSubsistema.swift in Sources */,
 				7857F15E28A712A600D75FC3 /* PorcentajeEficienciaTerminalSistemaEducativoNacionalModel.swift in Sources */,
 				7857F15A28A6B35800D75FC3 /* TasaBrutaEscolarizacionCoberturaInstitucionModel.swift in Sources */,
 				78F3178F28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift in Sources */,
@@ -547,6 +572,7 @@
 				78D9F881288A0CC70087A35A /* Modulo.swift in Sources */,
 				78F3179828C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift in Sources */,
 				7860F2BE28BFFB93003A17E6 /* OrdinarioU006.swift in Sources */,
+				7881D8FA28C28161006142C8 /* IndicadoresSubsistema.swift in Sources */,
 				7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */,
 				7857F15C28A7051700D75FC3 /* TasaBrutaEscolarizacionPoblacionPrimerosCuatroDecilesIngresoModel.swift in Sources */,
 				7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */,
@@ -568,6 +594,7 @@
 				7881D8ED28C26570006142C8 /* DetalleListadoIndicadoresEntidad.swift in Sources */,
 				7881D8E028C25A81006142C8 /* DetalleListadoU080.swift in Sources */,
 				78002B64286E764300B3B8B4 /* CMIApp.swift in Sources */,
+				7881D8F428C280C0006142C8 /* GraficaIndicadoresSubsistema.swift in Sources */,
 				78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */,
 				7872728D2899D1B00018DAB5 /* AppDelegate.swift in Sources */,
 				7881D8EB28C26559006142C8 /* GraficaIndicadoresEntidad.swift in Sources */,
@@ -581,6 +608,7 @@
 				784FA6042891BBE900DF30BE /* Filtro.swift in Sources */,
 				7881D8E928C26549006142C8 /* ListadoIndicadoresEntidad.swift in Sources */,
 				78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */,
+				7881D8F828C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift in Sources */,
 				7872727F289444D70018DAB5 /* FichaModulo_III.swift in Sources */,
 				78DF290428861E2500106EF7 /* TopBand.swift in Sources */,
 				78F317A528C1762100389DBF /* DetalleItemExtraordinarioU006.swift in Sources */,
