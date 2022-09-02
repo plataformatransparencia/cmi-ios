@@ -72,11 +72,11 @@ struct DetalleItemU080: View {
                                         .font(.body)
                                 }
                                 
-                                /**HStack{
+                                HStack{
                                     ScrollView(.horizontal, showsIndicators: true){
                                         !(graficasU080[0].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficasU080[0])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                                     }
-                                }.padding(.bottom)**/
+                                }.padding(.bottom)
                                 
                             default:
                                 EmptyView()
