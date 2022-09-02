@@ -7,7 +7,7 @@ struct DetalleItemExtraordinarioS247: View {
     @State var estatusConvenio : String
     @State var fechaProdep : String
     @State var montoFederalProdep : Double
-    @State var graficaExtraordinarioS247 : String
+    @State var graficaExtraordinarioS247 : [String]
     var body: some View {
         VStack{
             ZStack{
@@ -63,7 +63,7 @@ struct DetalleItemExtraordinarioS247: View {
                                 
                                 HStack{
                                     ScrollView(.horizontal, showsIndicators: true){
-                                        !(graficaExtraordinarioS247.isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficaExtraordinarioS247)!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
+                                        !(graficaExtraordinarioS247[0].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficaExtraordinarioS247[0])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                                     }
                                 }.padding(.bottom)
                             default:

@@ -173,10 +173,10 @@ class ModuloViewModel : ObservableObject {
     @Published var graficasOrdinarioU006 = [String]()
     
     @Published var universidadesCrisis = [UniversidadesCrisis]()
-    @Published var graficaUniversidadesCrisis = ""
+    @Published var graficaUniversidadesCrisis = [String]()
     
     @Published var extraordinarioS247 = [ExtraordinarioS247]()
-    @Published var graficaExtraordinarioS247 = ""
+    @Published var graficaExtraordinarioS247 = [String]()
     
     @Published var extraordinarioU006 = [ExtraordinarioU006]()
     @Published var graficasExtraordinarioU006 = [String]()
@@ -601,7 +601,7 @@ class ModuloViewModel : ObservableObject {
                 //case "estatal-u006":
                 
                 case "universidades-en-crisis":
-                let result = try? JSONDecoder().decode(String.self, from: data)
+                let result = try? JSONDecoder().decode([String].self, from: data)
                 let responseHTTP = response as? HTTPURLResponse
                 DispatchQueue.main.async {
                     switch responseHTTP?.statusCode {
@@ -618,7 +618,7 @@ class ModuloViewModel : ObservableObject {
                 }
                 
                 case "extraordinario-s247":
-                let result = try? JSONDecoder().decode(String.self, from: data)
+                let result = try? JSONDecoder().decode([String].self, from: data)
                 let responseHTTP = response as? HTTPURLResponse
                 DispatchQueue.main.async {
                     switch responseHTTP?.statusCode {

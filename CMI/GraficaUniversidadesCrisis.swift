@@ -1,12 +1,16 @@
 import SwiftUI
 
 struct GraficaUniversidadesCrisis: View {
-    @State var graficaUniversidadesCrisis : String
+    @State var graficaUniversidadesCrisis : [String]
     var body: some View {
-        HStack{
-            ScrollView(.horizontal, showsIndicators: true){
-                !(graficaUniversidadesCrisis.isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficaUniversidadesCrisis)!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
+        ScrollView(.vertical, showsIndicators: true){
+            ForEach(graficaUniversidadesCrisis, id:\.self) { grafica in
+                HStack{
+                    ScrollView(.horizontal, showsIndicators: true){
+                        !(grafica.isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: grafica)!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
+                    }
+                }.padding(.bottom)
             }
-        }.padding(.bottom)
+        }.navigationBarHidden(true)
     }
 }

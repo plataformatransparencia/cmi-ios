@@ -13,7 +13,7 @@ struct DetalleListadoUniversidadesCrisis: View {
     @State var montoConvenioEstado: Double
     @State var totalMinistradoEstado: Double
     @State var ministraciones : [Ministraciones]
-    @State var graficaUniversidadesCrisis : String
+    @State var graficaUniversidadesCrisis : [String]
     var body: some View {
         VStack{
             ZStack{

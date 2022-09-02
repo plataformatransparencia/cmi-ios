@@ -12,7 +12,7 @@ struct DetalleItemUniversidadesCrisis: View {
     @State var montoConvenioEstado: Double
     @State var totalMinistradoEstado: Double
     @State var ministraciones : [Ministraciones]
-    @State var graficaUniversidadesCrisis : String
+    @State var graficaUniversidadesCrisis : [String]
     var body: some View {
         VStack{
             ZStack{
@@ -62,7 +62,7 @@ struct DetalleItemUniversidadesCrisis: View {
                                 
                                 HStack{
                                     ScrollView(.horizontal, showsIndicators: true){
-                                        !(graficaUniversidadesCrisis.isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficaUniversidadesCrisis)!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
+                                        !(graficaUniversidadesCrisis[0].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficaUniversidadesCrisis[0])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                                     }
                                 }.padding(.bottom)
                                 

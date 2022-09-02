@@ -8,7 +8,7 @@ struct DetalleListadoExtraordinarioS247: View {
     @State var estatusConvenio : String
     @State var fechaProdep : String
     @State var montoFederalProdep : Double
-    @State var graficaExtraordinarioS247 : String
+    @State var graficaExtraordinarioS247 : [String]
     var body: some View {
         VStack{
             ZStack{

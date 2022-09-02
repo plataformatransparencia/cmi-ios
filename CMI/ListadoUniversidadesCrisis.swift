@@ -3,7 +3,7 @@ import SwiftUI
 struct ListadoUniversidadesCrisis: View {
     @State var items : [String:String]
     @State var universidadesCrisis : [UniversidadesCrisis]
-    @State var graficaUniversidadesCrisis : String
+    @State var graficaUniversidadesCrisis : [String]
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){

@@ -3,7 +3,7 @@ import SwiftUI
 struct ListadoExtraordinarioS247: View {
     @State var items : [String:String]
     @State var extraordinarioS247 : [ExtraordinarioS247]
-    @State var graficaExtraordinarioS247 : String
+    @State var graficaExtraordinarioS247 : [String]
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
             ForEach(extraordinarioS247, id:\.universidad.clave) { n in
