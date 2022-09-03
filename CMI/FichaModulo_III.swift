@@ -29,7 +29,7 @@ struct FichaModulo_III: View {
                         }.padding([.horizontal, .top])
                         
                         Button(action: {
-                            print("descarga de PDF")
+                            self.isPresented.toggle()
                         }){
                             Image("Image_PDF")
                                 .resizable()
@@ -181,5 +181,21 @@ struct FichaModulo_III: View {
             }
             
         }.navigationBarHidden(true)
+            .sheet(isPresented: $isPresented, content: {
+                VStack {
+                    WebView(token: self.token, path: self.path)
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            self.isPresented.toggle()
+                        }, label: {
+                            Text("Listo")
+                                .font(.headline.bold())
+                                .padding([.trailing])
+                        })
+                    }.foregroundColor(.blue)
+                        
+                }
+            })
     }
 }
