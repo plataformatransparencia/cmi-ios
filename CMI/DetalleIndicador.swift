@@ -16,7 +16,7 @@ struct DetalleIndicador: View {
     @State private var selection: Int = 1
     @State var showGraph : Bool = true
     @State var showList : Bool = false
-    
+    @State var isPresented = false
     var body: some View {
         switch modulo{
         case "Módulo I":
@@ -305,6 +305,7 @@ struct DetalleIndicador: View {
                                 }
                                 Spacer()
                                 Button(action: {
+                                    self.isPresented.toggle()
                                     print("descarga de excel")
                                 }){
                                     Image("Image_Excel")
@@ -404,6 +405,22 @@ struct DetalleIndicador: View {
                     .navigationBarHidden(true)
             }.navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
+                .sheet(isPresented: $isPresented, content: {
+                    VStack {
+                        WebViewExcel(token: self.token, path: self.path, periodo: "2021")
+                        HStack{
+                            Spacer()
+                            Button(action: {
+                                self.isPresented.toggle()
+                            }, label: {
+                                Text("Listo")
+                                    .font(.headline.bold())
+                                    .padding([.trailing])
+                            })
+                        }.foregroundColor(.blue)
+                        
+                    }
+                })
         default:
             EmptyView()
             
