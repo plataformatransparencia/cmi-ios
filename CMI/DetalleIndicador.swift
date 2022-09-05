@@ -387,7 +387,12 @@ struct DetalleIndicador: View {
                                         ListadoIndicadoresSubsistema(items: items, indicadoresSubsistema: self.mouloViewModel.indicadoresSubsistema, graficasIndicadoresSubsistema: self.mouloViewModel.graficasIndicadoresSubsistema)
                                     }
                                 case "indicadores-ies":
-                                    EmptyView()
+                                    if showGraph {
+                                        GraficaIndicadoresIES(graficasIndicadoresIES: self.mouloViewModel.graficasIndicadoresIES)
+                                    }
+                                    if showList {
+                                        ListadoIndicadoresIES(items: items, indicadoresIES: self.mouloViewModel.indicadoresIES, graficasIndicadoresIES: self.mouloViewModel.graficasIndicadoresIES)
+                                    }
                                     
                                 default:
                                     EmptyView()
