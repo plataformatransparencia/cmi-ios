@@ -59,6 +59,7 @@
 		7881D90928C3DE1F006142C8 /* IndicadoresIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7881D90828C3DE1F006142C8 /* IndicadoresIES.swift */; };
 		7886262D28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262C28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift */; };
 		7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7886262E28A4421F00048F74 /* ModuloViewModel.swift */; };
+		788B5C6E28C7EE5400021CC8 /* FiltroModelModIII.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788B5C6D28C7EE5400021CC8 /* FiltroModelModIII.swift */; };
 		788F066A28BE6A5F00A61A5B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F066928BE6A5F00A61A5B /* NetworkManager.swift */; };
 		788F067028BE858000A61A5B /* ListadoOrdU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F066F28BE858000A61A5B /* ListadoOrdU006.swift */; };
 		788F067228BE858E00A61A5B /* GraficaOrdU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788F067128BE858E00A61A5B /* GraficaOrdU006.swift */; };
@@ -162,6 +163,7 @@
 		7881D90828C3DE1F006142C8 /* IndicadoresIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicadoresIES.swift; sourceTree = "<group>"; };
 		7886262C28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasaBrutaEscolarizacionCoberturaModel.swift; sourceTree = "<group>"; };
 		7886262E28A4421F00048F74 /* ModuloViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuloViewModel.swift; sourceTree = "<group>"; };
+		788B5C6D28C7EE5400021CC8 /* FiltroModelModIII.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltroModelModIII.swift; sourceTree = "<group>"; };
 		788F066928BE6A5F00A61A5B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		788F066F28BE858000A61A5B /* ListadoOrdU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoOrdU006.swift; sourceTree = "<group>"; };
 		788F067128BE858E00A61A5B /* GraficaOrdU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaOrdU006.swift; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 			isa = PBXGroup;
 			children = (
 				78C249C728AD850B0084B799 /* FiltroModel.swift */,
+				788B5C6D28C7EE5400021CC8 /* FiltroModelModIII.swift */,
 			);
 			path = Filtro;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				7866D88228AC19A900B71244 /* FichaModuloIModel.swift in Sources */,
 				7866D87F28AC189800B71244 /* FichaViewModel.swift in Sources */,
 				7881D8DC28C25A62006142C8 /* ListadoU080.swift in Sources */,
+				788B5C6E28C7EE5400021CC8 /* FiltroModelModIII.swift in Sources */,
 				78DA650428C7A9C300576E37 /* GraficaFederalU006.swift in Sources */,
 				7881D90328C3DD84006142C8 /* GraficaIndicadoresIES.swift in Sources */,
 				784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */,

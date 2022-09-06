@@ -500,10 +500,11 @@ class ModuloViewModel : ObservableObject {
     
     
     
-    func loadInfoModIII(token: String, path: String ,anio: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(anio)") else{
+    func loadInfoModIII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, institucion: String) {
+        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(anio)?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&institucion=\(institucion)") else{
             return
         }
+        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")

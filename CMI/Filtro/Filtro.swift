@@ -4,6 +4,10 @@ struct Filtro: View {
     @State var mod : String
     @State var isPresented = false
     @State var token : String
+    @State var anios: [String]?
+    @State var subsistemas: [String]?
+    @State var entidadesFederativas: [String]?
+    @State var universidades: [String]?
     var body: some View {
         VStack{
             HStack{
@@ -46,12 +50,15 @@ struct Filtro: View {
                             VStack(alignment: .leading){
                                 if mod == "Módulo I" {
                                     DropDownPeriodos()
-                                }else{
-                                    DropDownEjercicioFiscal()
-                                    DropDownEntidadFederativa()
-                                    DropDownSubsistema()
-                                    DropDownInstitucion()
                                 }
+                                
+                                if mod == "Módulo III" {
+                                    DropDownEjercicioFiscal(anios: self.anios!)
+                                    DropDownEntidadFederativa(entidadesFederativas: self.entidadesFederativas!)
+                                    DropDownSubsistema(subsistemas: self.subsistemas!)
+                                    DropDownInstitucion(universidades: self.universidades!)
+                                }
+                                
                             }.padding(.top, 30)
                         }.padding(.bottom, (UIApplication
                             .shared

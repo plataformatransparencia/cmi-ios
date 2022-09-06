@@ -9,7 +9,7 @@ struct DetalleIndicador: View {
     @State var codigoFicha: String
     @State var nombreFicha: String
     @StateObject var fichaViewModel = FichaViewModel()
-    @StateObject var filtroViewModel = FiltroViewModel()
+    @EnvironmentObject var filtroViewModel : FiltroViewModel
     @EnvironmentObject var mouloViewModel : ModuloViewModel
     @State var token: String
     @State var periodo: String
@@ -295,7 +295,7 @@ struct DetalleIndicador: View {
                             }.foregroundColor(Color("gris_2"))
                                 .padding([.horizontal, .top])
                             
-                            Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
+                            Filtro(mod: modulo, token: self.token, anios: self.filtroViewModel.anios, subsistemas: self.filtroViewModel.subsistemas , entidadesFederativas: self.filtroViewModel.entidadesFederativas, universidades: self.filtroViewModel.universidades)
                             HStack(alignment: .center){
                                 NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                     Text("\(nombreFicha)")
@@ -413,16 +413,18 @@ struct DetalleIndicador: View {
                             
                         }
                 }.onAppear{
-                    self.mouloViewModel.loadInfoModIII(token: self.token, path: self.path, anio: "2021")
-                    self.mouloViewModel.loadGraficasModIII(token: self.token, path: self.path, anio: "2021")
+                    self.filtroViewModel.loadFiltroModIII(token: self.token, path: self.path)
+                    self.mouloViewModel.loadInfoModIII(token: self.token, path: self.path, anio: self.filtroViewModel.anioSeleccionado, entidadFederativa: self.filtroViewModel.entidadFederativaSeleccionado, subsistema: self.filtroViewModel.subsistemaSeleccionado, institucion: self.filtroViewModel.universidadSeleccionado)
+                    self.mouloViewModel.loadGraficasModIII(token: self.token, path: self.path, anio: self.filtroViewModel.anioSeleccionado)
                 }
                 .edgesIgnoringSafeArea(.all)
                     .navigationBarHidden(true)
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
                 .sheet(isPresented: $isPresented, content: {
                     VStack {
-                        WebViewExcel(token: self.token, path: self.path, periodo: "2021")
+                        WebViewExcel(token: self.token, path: self.path, periodo: self.filtroViewModel.anioSeleccionado)
                         HStack{
                             Spacer()
                             Button(action: {

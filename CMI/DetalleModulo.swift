@@ -48,8 +48,9 @@ struct DetalleModulo: View {
                                 }
                             case "Módulo III":
                                 ForEach(listaIndicadores){v in
-                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado).environmentObject(moduloViewModel)){
+                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado).environmentObject(moduloViewModel).environmentObject(filtroViewModel)){
                                         ItemView(indicador: v.indicador)
+                                       
                                     }.padding(.bottom)
                                 }
                             default:

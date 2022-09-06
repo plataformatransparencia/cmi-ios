@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct DropDownInstitucion: View {
-    @State var instituciones = [String:String]()
+    @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var expand = false
-    @State var selected: String = "Selecciona"
+    @State var universidades: [String]
     var body: some View {
         VStack{
             HStack{
@@ -14,7 +14,7 @@ struct DropDownInstitucion: View {
                     Button(action: {
                         self.expand.toggle()
                     }, label: {
-                        Text("\(self.selected)")
+                        Text("\(self.filtroViewModel.universidadSeleccionado)")
                             .font(.body)
                         Image(systemName: expand ? "chevron.up" :  "chevron.down")
                             .resizable()
@@ -25,18 +25,18 @@ struct DropDownInstitucion: View {
             ScrollView(showsIndicators: false){
                 VStack(alignment: .center, spacing: 18, content: {
                     if expand {
-                        ForEach(instituciones.sorted(by: {$0.0 > $1.0}), id: \.key){ key, value in
+                        ForEach(universidades, id: \.self){ value in
                             Button(action: {
                                 self.expand.toggle()
-                                self.selected = key
+                                self.filtroViewModel.universidadSeleccionado = value
                             }){
                                 VStack{
-                                    Text(key)
+                                    Text(value)
                                         .font(.titulo())
                                         .padding(.top, -13)
                                     Divider()
                                 }
-                            }.foregroundColor(.black)
+                            }.foregroundColor(Color("gris_2"))
                         }
                     }
                 }).padding(.top, 11)
@@ -49,11 +49,5 @@ struct DropDownInstitucion: View {
                     withAnimation(.default){}
                 }
         }
-    }
-}
-
-struct DropDownInstitucion_Previews: PreviewProvider {
-    static var previews: some View {
-        DropDownInstitucion()
     }
 }

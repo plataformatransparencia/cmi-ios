@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct DropDownEjercicioFiscal: View {
-    @State var ejerciciosFiscales = [String:String]()
+    @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var expand = false
-    @State var selected: String = "Selecciona"
+    @State var anios: [String]
     var body: some View {
         VStack{
             HStack{
@@ -14,7 +14,7 @@ struct DropDownEjercicioFiscal: View {
                     Button(action: {
                         self.expand.toggle()
                     }, label: {
-                        Text("\(self.selected)")
+                        Text("\(self.filtroViewModel.anioSeleccionado)")
                             .font(.body)
                         Image(systemName: expand ? "chevron.up" :  "chevron.down")
                             .resizable()
@@ -25,18 +25,18 @@ struct DropDownEjercicioFiscal: View {
             ScrollView(showsIndicators: false){
                 VStack(alignment: .center, spacing: 18, content: {
                     if expand {
-                        ForEach(ejerciciosFiscales.sorted(by: {$0.0 > $1.0}), id: \.key){ key, value in
+                        ForEach(anios, id: \.self){ value in
                             Button(action: {
                                 self.expand.toggle()
-                                self.selected = key
+                                self.filtroViewModel.anioSeleccionado = value
                             }){
                                 VStack{
-                                    Text(key)
+                                    Text(value)
                                         .font(.titulo())
                                         .padding(.top, -13)
                                     Divider()
                                 }
-                            }.foregroundColor(.black)
+                            }.foregroundColor(Color("gris_2"))
                         }
                     }
                 }).padding(.top, 11)
@@ -49,11 +49,5 @@ struct DropDownEjercicioFiscal: View {
                     withAnimation(.default){}
                 }
         }
-    }
-}
-
-struct DropDownEjercicioFiscal_Previews: PreviewProvider {
-    static var previews: some View {
-        DropDownEjercicioFiscal()
     }
 }
