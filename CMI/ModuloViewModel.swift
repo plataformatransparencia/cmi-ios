@@ -173,6 +173,9 @@ class ModuloViewModel : ObservableObject {
     @Published var ordinarioU006 = [OrdinarioU006]()
     @Published var graficasOrdinarioU006 = [String]()
     
+    @Published var federalU006 = [FederalU006]()
+    @Published var graficasFederalU006 = [String]()
+    
     @Published var universidadesCrisis = [UniversidadesCrisis]()
     @Published var graficaUniversidadesCrisis = [String]()
     
@@ -519,8 +522,21 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                //case "federal-u006":
-                
+                case "federal-u006":
+                let result = try? JSONDecoder().decode([FederalU006].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.federalU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 //case "estatal-u006":
                 
                 case "universidades-en-crisis":
@@ -661,8 +677,21 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                //case "federal-u006":
-                
+                case "federal-u006":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasFederalU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 //case "estatal-u006":
                 
                 case "universidades-en-crisis":

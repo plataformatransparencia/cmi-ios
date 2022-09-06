@@ -341,7 +341,12 @@ struct DetalleIndicador: View {
                                         ListadoOrdU006(items: self.items, ordinarioU006: self.mouloViewModel.ordinarioU006, graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006 )
                                     }
                                 case "federal-u006":
-                                    EmptyView()
+                                    if showGraph {
+                                        GraficaFederalU006(graficasFederalU006: self.mouloViewModel.graficasFederalU006)
+                                    }
+                                    if showList {
+                                        ListadoFederalU006(items: items, federalU006: self.mouloViewModel.federalU006, graficasFederalU006: self.mouloViewModel.graficasFederalU006)
+                                    }
                                 case "estatal-u006":
                                     EmptyView()
                                 case "universidades-en-crisis":
