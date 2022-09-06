@@ -1,16 +1,16 @@
 import SwiftUI
 
-struct DetalleListadoFederalU006: View {
+struct DetalleListadoEstatalU006: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var titulo: String
     @State var items : [String:String]
-    @State var listaCalendarizado : [ListaCalendarizado]
-    @State var listaReportado: [ListaReportado]
-    @State var listaPlataforma: [ListaPlataforma]
+    @State var aportaciones : [AportacionesEstatal]
+    @State var graficasEstatalU006 : [String]
+    
     @State var totalCalendarizado: Double
-    @State var totalComprobado: Double
     @State var totalReportado: Double
-    @State var graficasFederalU006 : [String]
+    @State var totalAdeudosMensuales: Double
+    
     var body: some View {
         VStack{
             ZStack{
@@ -32,7 +32,7 @@ struct DetalleListadoFederalU006: View {
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
                         ForEach(items.sorted(by: >), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItemFederalU006(titulo: key, listaCalendarizado: listaCalendarizado, listaReportado: listaReportado, listaPlataforma: listaPlataforma, totalCalendarizado:totalCalendarizado, totalComprobado: totalComprobado, totalReportado:totalReportado, graficasFederalU006: graficasFederalU006)){
+                            NavigationLink(destination: DetalleItemEstatalU006(titulo: key, aportaciones: aportaciones, graficasEstatalU006: graficasEstatalU006, totalCalendarizado: totalCalendarizado, totalReportado: totalReportado, totalAdeudosMensuales: totalAdeudosMensuales)){
                                 ItemView(indicador: key)
                             }
                             
@@ -48,3 +48,4 @@ struct DetalleListadoFederalU006: View {
         }.navigationBarHidden(true)
     }
 }
+

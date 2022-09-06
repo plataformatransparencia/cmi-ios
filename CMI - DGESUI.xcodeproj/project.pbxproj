@@ -76,6 +76,12 @@
 		78DA650628C7A9D500576E37 /* DetalleListadoFederalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA650528C7A9D500576E37 /* DetalleListadoFederalU006.swift */; };
 		78DA650828C7A9E600576E37 /* DetalleItemFederalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA650728C7A9E600576E37 /* DetalleItemFederalU006.swift */; };
 		78DA650A28C7BB1C00576E37 /* DetalleMesFederalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA650928C7BB1C00576E37 /* DetalleMesFederalU006.swift */; };
+		78DA650C28C7D34F00576E37 /* EstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA650B28C7D34F00576E37 /* EstatalU006.swift */; };
+		78DA651028C7D54000576E37 /* ListadoEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA650F28C7D54000576E37 /* ListadoEstatalU006.swift */; };
+		78DA651228C7D54B00576E37 /* GraficaEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA651128C7D54B00576E37 /* GraficaEstatalU006.swift */; };
+		78DA651428C7D55D00576E37 /* DetalleListadoEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA651328C7D55D00576E37 /* DetalleListadoEstatalU006.swift */; };
+		78DA651628C7D57000576E37 /* DetalleItemEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA651528C7D57000576E37 /* DetalleItemEstatalU006.swift */; };
+		78DA651828C7D57D00576E37 /* DetalleMesEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA651728C7D57D00576E37 /* DetalleMesEstatalU006.swift */; };
 		78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF28FC2885D62500106EF7 /* SlideMenu.swift */; };
 		78DF28FF2885D91B00106EF7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF28FE2885D91B00106EF7 /* Home.swift */; };
 		78DF29012886064700106EF7 /* Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF29002886064700106EF7 /* Inicio.swift */; };
@@ -173,6 +179,12 @@
 		78DA650528C7A9D500576E37 /* DetalleListadoFederalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoFederalU006.swift; sourceTree = "<group>"; };
 		78DA650728C7A9E600576E37 /* DetalleItemFederalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemFederalU006.swift; sourceTree = "<group>"; };
 		78DA650928C7BB1C00576E37 /* DetalleMesFederalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleMesFederalU006.swift; sourceTree = "<group>"; };
+		78DA650B28C7D34F00576E37 /* EstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstatalU006.swift; sourceTree = "<group>"; };
+		78DA650F28C7D54000576E37 /* ListadoEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoEstatalU006.swift; sourceTree = "<group>"; };
+		78DA651128C7D54B00576E37 /* GraficaEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaEstatalU006.swift; sourceTree = "<group>"; };
+		78DA651328C7D55D00576E37 /* DetalleListadoEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoEstatalU006.swift; sourceTree = "<group>"; };
+		78DA651528C7D57000576E37 /* DetalleItemEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemEstatalU006.swift; sourceTree = "<group>"; };
+		78DA651728C7D57D00576E37 /* DetalleMesEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleMesEstatalU006.swift; sourceTree = "<group>"; };
 		78DF28FC2885D62500106EF7 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
 		78DF28FE2885D91B00106EF7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		78DF29002886064700106EF7 /* Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inicio.swift; sourceTree = "<group>"; };
@@ -289,6 +301,7 @@
 				7881D8F928C28161006142C8 /* IndicadoresSubsistema.swift */,
 				7881D90828C3DE1F006142C8 /* IndicadoresIES.swift */,
 				78A9AFF028C69233002FB144 /* FederalU006.swift */,
+				78DA650B28C7D34F00576E37 /* EstatalU006.swift */,
 			);
 			name = "Módulo_III";
 			sourceTree = "<group>";
@@ -448,6 +461,18 @@
 			name = FederalU006;
 			sourceTree = "<group>";
 		};
+		78DA650E28C7D51E00576E37 /* EstatalU006 */ = {
+			isa = PBXGroup;
+			children = (
+				78DA650F28C7D54000576E37 /* ListadoEstatalU006.swift */,
+				78DA651128C7D54B00576E37 /* GraficaEstatalU006.swift */,
+				78DA651328C7D55D00576E37 /* DetalleListadoEstatalU006.swift */,
+				78DA651528C7D57000576E37 /* DetalleItemEstatalU006.swift */,
+				78DA651728C7D57D00576E37 /* DetalleMesEstatalU006.swift */,
+			);
+			path = EstatalU006;
+			sourceTree = "<group>";
+		};
 		78DF28FB2885D39D00106EF7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +495,7 @@
 		78F3178528C1429300389DBF /* Módulo III */ = {
 			isa = PBXGroup;
 			children = (
+				78DA650E28C7D51E00576E37 /* EstatalU006 */,
 				78DA650028C7A98600576E37 /* FederalU006 */,
 				7881D8FF28C3DD56006142C8 /* IndicadoresIES */,
 				7881D8F028C2809D006142C8 /* IndicadoresSubsistema */,
@@ -627,6 +653,7 @@
 				7857F15E28A712A600D75FC3 /* PorcentajeEficienciaTerminalSistemaEducativoNacionalModel.swift in Sources */,
 				7857F15A28A6B35800D75FC3 /* TasaBrutaEscolarizacionCoberturaInstitucionModel.swift in Sources */,
 				7881D90128C3DD77006142C8 /* ListadoIndicadoresIES.swift in Sources */,
+				78DA651228C7D54B00576E37 /* GraficaEstatalU006.swift in Sources */,
 				78F3178F28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift in Sources */,
 				784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */,
 				7819C1062887242100E7BE73 /* Login.swift in Sources */,
@@ -637,16 +664,19 @@
 				7860F2BE28BFFB93003A17E6 /* OrdinarioU006.swift in Sources */,
 				7881D8FA28C28161006142C8 /* IndicadoresSubsistema.swift in Sources */,
 				7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */,
+				78DA651028C7D54000576E37 /* ListadoEstatalU006.swift in Sources */,
 				7857F15C28A7051700D75FC3 /* TasaBrutaEscolarizacionPoblacionPrimerosCuatroDecilesIngresoModel.swift in Sources */,
 				7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */,
 				78F3178028C11CFD00389DBF /* DetalleItemOrdU006.swift in Sources */,
 				7857F16428A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift in Sources */,
 				78002B66286E764300B3B8B4 /* ContentView.swift in Sources */,
+				78DA651828C7D57D00576E37 /* DetalleMesEstatalU006.swift in Sources */,
 				78A9AFF128C69233002FB144 /* FederalU006.swift in Sources */,
 				78DA650228C7A9B300576E37 /* ListadoFederalU006.swift in Sources */,
 				78DF29012886064700106EF7 /* Inicio.swift in Sources */,
 				78DF28FF2885D91B00106EF7 /* Home.swift in Sources */,
 				7881D90728C3DDA5006142C8 /* DetalleItemIndicadoresIES.swift in Sources */,
+				78DA651428C7D55D00576E37 /* DetalleListadoEstatalU006.swift in Sources */,
 				7881D8EF28C2657E006142C8 /* DetalleItemIndicadoresEntidad.swift in Sources */,
 				788F067228BE858E00A61A5B /* GraficaOrdU006.swift in Sources */,
 				7866D88228AC19A900B71244 /* FichaModuloIModel.swift in Sources */,
@@ -678,8 +708,10 @@
 				78F3178B28C1457700389DBF /* GraficaUniversidadesCrisis.swift in Sources */,
 				784FA6042891BBE900DF30BE /* Filtro.swift in Sources */,
 				7881D8E928C26549006142C8 /* ListadoIndicadoresEntidad.swift in Sources */,
+				78DA650C28C7D34F00576E37 /* EstatalU006.swift in Sources */,
 				78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */,
 				7881D8F828C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift in Sources */,
+				78DA651628C7D57000576E37 /* DetalleItemEstatalU006.swift in Sources */,
 				7872727F289444D70018DAB5 /* FichaModulo_III.swift in Sources */,
 				78DF290428861E2500106EF7 /* TopBand.swift in Sources */,
 				78DA650628C7A9D500576E37 /* DetalleListadoFederalU006.swift in Sources */,

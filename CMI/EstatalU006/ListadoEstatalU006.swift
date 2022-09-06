@@ -1,13 +1,13 @@
 import SwiftUI
 
-struct ListadoFederalU006: View {
+struct ListadoEstatalU006: View {
     @State var items : [String:String]
-    @State var federalU006 : [FederalU006]
-    @State var graficasFederalU006 : [String]
+    @State var estatalU006 : [EstatalU006]
+    @State var graficasEstatalU006 : [String]
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
-            ForEach(federalU006, id:\.universidad.clave) { n in
-                NavigationLink(destination: DetalleListadoFederalU006(titulo: n.universidad.nombre, items: items,listaCalendarizado: n.listaCalendarizado, listaReportado: n.listaReportado, listaPlataforma: n.listaPlataforma, totalCalendarizado: n.totalCalendarizado, totalComprobado: n.totalComprobado, totalReportado: n.totalReportado ,graficasFederalU006: graficasFederalU006), label: {
+            ForEach(estatalU006, id:\.universidad.clave) { n in
+                NavigationLink(destination: DetalleListadoEstatalU006(titulo: n.universidad.nombre, items: items, aportaciones: n.aportaciones, graficasEstatalU006: graficasEstatalU006, totalCalendarizado: n.totalCalendarizado, totalReportado: n.totalReportado, totalAdeudosMensuales: n.totalAdeudosMensuales), label: {
                     VStack(alignment: .leading){
                         HStack{
                             Text("\(n.universidad.nombre)")
@@ -23,3 +23,4 @@ struct ListadoFederalU006: View {
         }.navigationBarHidden(true)
     }
 }
+

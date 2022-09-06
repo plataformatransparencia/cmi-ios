@@ -176,6 +176,9 @@ class ModuloViewModel : ObservableObject {
     @Published var federalU006 = [FederalU006]()
     @Published var graficasFederalU006 = [String]()
     
+    @Published var estatalU006 = [EstatalU006]()
+    @Published var graficasEstatalU006 = [String]()
+    
     @Published var universidadesCrisis = [UniversidadesCrisis]()
     @Published var graficaUniversidadesCrisis = [String]()
     
@@ -537,8 +540,21 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                //case "estatal-u006":
-                
+                case "estatal-u006":
+                let result = try? JSONDecoder().decode([EstatalU006].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.estatalU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 case "universidades-en-crisis":
                 let result = try? JSONDecoder().decode([UniversidadesCrisis].self, from: data)
                 let responseHTTP = response as? HTTPURLResponse
@@ -692,8 +708,21 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                //case "estatal-u006":
-                
+                case "estatal-u006":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasEstatalU006 = result
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
                 case "universidades-en-crisis":
                 let result = try? JSONDecoder().decode([String].self, from: data)
                 let responseHTTP = response as? HTTPURLResponse

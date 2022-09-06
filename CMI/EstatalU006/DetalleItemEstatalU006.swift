@@ -1,15 +1,15 @@
 import SwiftUI
 
-struct DetalleItemFederalU006: View {
+struct DetalleItemEstatalU006: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @State var titulo: String
-    @State var listaCalendarizado : [ListaCalendarizado]
-    @State var listaReportado: [ListaReportado]
-    @State var listaPlataforma: [ListaPlataforma]
+    @State var aportaciones : [AportacionesEstatal]
+    @State var graficasEstatalU006 : [String]
+    
     @State var totalCalendarizado: Double
-    @State var totalComprobado: Double
     @State var totalReportado: Double
-    @State var graficasFederalU006 : [String]
+    @State var totalAdeudosMensuales: Double
+    
     var body: some View {
         VStack{
             ZStack{
@@ -32,8 +32,8 @@ struct DetalleItemFederalU006: View {
                         VStack(alignment: .leading, spacing: 15){
                             switch titulo{
                             case "Calendarizado":
-                                ForEach(listaCalendarizado, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, aportacion: value.aportacion, comprobaciones: value.comprobaciones)){
+                                ForEach(aportaciones, id:\.mes){ value in
+                                    NavigationLink(destination: DetalleMesEstatalU006(titulo: value.mes, item: titulo, calendarizada: value.calendarizada, reportes: value.reportes)){
                                         ItemView(indicador: value.mes)
                                     }
                                 }
@@ -47,51 +47,47 @@ struct DetalleItemFederalU006: View {
                                             .font(.body)
                                     }
                                     VStack(alignment: .leading,spacing: 10){
-                                        Text("Aportación comprobada CLC")
-                                            .font(.headline.bold())
-                                        Text("$" + formatResultPIB(basedOn: String(self.totalComprobado)))
-                                            .font(.body)
-                                    }
-                                }.padding()
-                                
-                                HStack{
-                                    ScrollView(.horizontal, showsIndicators: true){
-                                        !(graficasFederalU006[0].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficasFederalU006[0])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
-                                    }
-                                }.padding(.bottom)
-                                
-                                
-                            case "Reportado por la universidad":
-                                ForEach(listaReportado, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, reportes: value.reportes)){
-                                        ItemView(indicador: value.mes)
-                                    }
-                                }
-                                VStack(alignment: .leading,spacing: 15){
-                                    Text("Subtotal")
-                                        .font(.headline.bold())
-                                    VStack(alignment: .leading,spacing: 10){
-                                        Text("Aportación reportada por la universidad")
+                                        Text("Aportación reportada en el sistema")
                                             .font(.headline.bold())
                                         Text("$" + formatResultPIB(basedOn: String(self.totalReportado)))
                                             .font(.body)
                                     }
                                 }.padding()
                                 
+                                HStack{
+                                    ScrollView(.horizontal, showsIndicators: true){
+                                        !(graficasEstatalU006[0].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficasEstatalU006[0])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
+                                    }
+                                }.padding(.bottom)
+                                
                             case "Según plataforma":
-                                ForEach(listaPlataforma, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, aportacionSP: value.aportacion ,observacionSP: value.observacion, adeudoMensualSP: value.adeudoMensual)){
+                                ForEach(aportaciones, id:\.mes){ value in
+                                    NavigationLink(destination: DetalleMesEstatalU006(titulo: value.mes, item: titulo, totalReportado: value.totalReportado, observacion: value.observacion, adeudoMensual: value.adeudoMensual)){
                                         ItemView(indicador: value.mes)
                                     }
                                 }
+                                
+                                VStack(alignment: .leading,spacing: 15){
+                                    Text("Subtotal")
+                                        .font(.headline.bold())
+                                    VStack(alignment: .leading,spacing: 10){
+                                        Text("Aportación según plataforma")
+                                            .font(.headline.bold())
+                                        Text("$" + formatResultPIB(basedOn: String(self.totalReportado)))
+                                            .font(.body)
+                                    }
+                                    VStack(alignment: .leading,spacing: 10){
+                                        Text("Adeudos mensuales")
+                                            .font(.headline.bold())
+                                        Text("$" + formatResultPIB(basedOn: String(self.totalAdeudosMensuales)))
+                                            .font(.body)
+                                    }
+                                }.padding()
+                                
                             default:
                                 EmptyView()
                             }
                         }.foregroundColor(Color("gris_2"))
-                        
-                        
-                        
-                        
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)
