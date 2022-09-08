@@ -71,6 +71,7 @@ struct Filtro: View {
                     
                     Button(action: {
                         self.isPresented.toggle()
+                        self.filtroViewModel.cambio.toggle()
                     }, label: {
                         Text("Aplicar")
                             .font(.title3)

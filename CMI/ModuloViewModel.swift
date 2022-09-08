@@ -512,8 +512,6 @@ class ModuloViewModel : ObservableObject {
         guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+")) else{
             return
         }
-        
-        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")

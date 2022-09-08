@@ -13,10 +13,10 @@ struct DetalleIndicador: View {
     @StateObject var mouloViewModel = ModuloViewModel()
     @State var token: String
     @State var periodo: String
-
-    @State var showGraph : Bool = true
-    @State var showList : Bool = false
     @State var isPresented = false
+    @State var graph : Bool = true
+    
+    
     var body: some View {
         switch modulo{
         case "Módulo I":
@@ -313,96 +313,173 @@ struct DetalleIndicador: View {
                             }
                             
                             Button(action: {
-                                self.showList.toggle()
-                                self.showGraph = false
+                                self.graph.toggle()
                             }){
                                 Image("lista_icon")
                                     .resizable()
                                     .frame(width: 50, height: 50)
-                            }.disabled(showList)
+                            }.disabled(!graph)
+                            
+                            
                             Button(action: {
-                                self.showGraph.toggle()
-                                self.showList = false
+                                self.graph.toggle()
                             }){
                                 Image("grafica_icon")
                                     .resizable()
                                     .frame(width: 50, height: 50)
-                            }.disabled(showGraph)
+                            }.disabled(graph)
                         }.padding(.horizontal)
                         
                         VStack{
                             switch path{
                             case "ordinario-u006":
-                                if showGraph {
-                                    GraficaOrdU006(token:token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoOrdU006(items: items,token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)    
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaOrdU006(token:token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoOrdU006(items: items,token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaOrdU006(token:token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoOrdU006(items: items,token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
                                 }
                             case "federal-u006":
-                                if showGraph {
-                                    GraficaFederalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoFederalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                case "estatal-u006":
-                                if showGraph {
-                                    GraficaEstatalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoEstatalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                case "universidades-en-crisis":
-                                if showGraph {
-                                    GraficaUniversidadesCrisis(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoUniversidadesCrisis(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                case "extraordinario-s247":
-                                if showGraph {
-                                    GraficaExtraordinarioS247(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoExtraordinarioS247(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                case "extraordinario-u006":
-                                if showGraph {
-                                    GraficaExtraordinarioU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoExtraordinarioU006(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                case "u080":
-                                if showGraph {
-                                    GraficaU080(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoU080(items: items,  token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                case "indicadores-entidad":
-                                if showGraph {
-                                    GraficaIndicadoresEntidad(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoIndicadoresEntidad(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                            case "indicadores-subsistema":
-                                if showGraph {
-                                    GraficaIndicadoresSubsistema(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoIndicadoresSubsistema(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                            case "indicadores-ies":
-                                if showGraph {
-                                    GraficaIndicadoresIES(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
-                                }
-                                if showList {
-                                    ListadoIndicadoresIES(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaFederalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoFederalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaFederalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoFederalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
                                 }
                                 
+                                case "estatal-u006":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaEstatalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoEstatalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaEstatalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoEstatalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                case "universidades-en-crisis":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaUniversidadesCrisis(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoUniversidadesCrisis(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaUniversidadesCrisis(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoUniversidadesCrisis(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                case "extraordinario-s247":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaExtraordinarioS247(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoExtraordinarioS247(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaExtraordinarioS247(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoExtraordinarioS247(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                case "extraordinario-u006":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaExtraordinarioU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoExtraordinarioU006(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaExtraordinarioU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoExtraordinarioU006(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                case "u080":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaU080(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoU080(items: items,  token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaU080(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoU080(items: items,  token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                case "indicadores-entidad":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaIndicadoresEntidad(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoIndicadoresEntidad(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaIndicadoresEntidad(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoIndicadoresEntidad(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                            case "indicadores-subsistema":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaIndicadoresSubsistema(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoIndicadoresSubsistema(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaIndicadoresSubsistema(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoIndicadoresSubsistema(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                            case "indicadores-ies":
+                                if filtroViewModel.cambio{
+                                    if graph {
+                                        GraficaIndicadoresIES(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoIndicadoresIES(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph {
+                                        GraficaIndicadoresIES(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else {
+                                        ListadoIndicadoresIES(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
                             default:
                                 EmptyView()
                                 
@@ -412,8 +489,9 @@ struct DetalleIndicador: View {
                         
                     }
                 }.onAppear{
-                    self.filtroViewModel.loadFiltroModIII(token: self.token, path: self.path)
-                    
+                    if self.filtroViewModel.anios.isEmpty && self.filtroViewModel.subsistemas.isEmpty && self.filtroViewModel.entidadesFederativas.isEmpty && self.filtroViewModel.universidades.isEmpty{
+                        self.filtroViewModel.loadFiltroModIII(token: self.token, path: self.path)
+                    }
                 }
                 .edgesIgnoringSafeArea(.all)
                 .navigationBarHidden(true)

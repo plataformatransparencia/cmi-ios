@@ -21,6 +21,7 @@ class FiltroViewModel : ObservableObject {
     @Published var showGraph : Bool = true
     @Published var showList : Bool = false
     
+    @Published var cambio : Bool = false
     func loadFiltro(token: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/filtro/periodos") else{
             return
