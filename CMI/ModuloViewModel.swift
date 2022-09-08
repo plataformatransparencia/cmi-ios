@@ -507,13 +507,12 @@ class ModuloViewModel : ObservableObject {
     }
     
     
-    
-    
     func loadInfoModIII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, universidad: String) {
         let preprareUrl = "\(base_url_qa)/webservice/\(path)/\(anio)?ejercicioFiscal=\(anio)&entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
-        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: " ", with: "+")) else{
+        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+")) else{
             return
         }
+        
         print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -691,7 +690,7 @@ class ModuloViewModel : ObservableObject {
     
     func loadGraficasModIII(token: String, path: String ,anio: String,entidadFederativa: String, subsistema: String, universidad: String) {
         let prepareURL = "\(base_url_qa)/webservice/\(path)/\(anio)/graficas?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
-        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: " ", with: "+")) else{
+        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+")) else{
             
             return
         }
