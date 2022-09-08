@@ -100,7 +100,7 @@ struct Login: View {
     }
     
     private func isPasswordValid(_ password : String) -> Bool{
-        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])(?=.*[$.@$#!%*?&-_])[A-Za-z0-9$.@$#!%*?&-_]{8,64}")
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", "^(?=.*[A-Z])(?=.*[a-z])(?=.*?[0-9])(?=.*[$.@$#!%*?&-])[A-Za-z0-9$.@$#!%*?&-]{8,}")
         return passwordTest.evaluate(with: password)
     }
     
