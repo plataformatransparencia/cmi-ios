@@ -85,7 +85,7 @@ struct DetalleItem: View {
         }.navigationBarHidden(true)
             .sheet(isPresented: $isPresented, content: {
                 VStack {
-                    WebViewExcel(token: self.token, path: self.path, periodo: self.periodo.replacingOccurrences(of: " ", with: "%20"))
+                    WebViewExcel(token: self.token, path: self.path, periodo: self.periodo.replacingOccurrences(of: " ", with: "%20"), modulo: "I", entidadFederativa: "", subsistema: "", universidad: "")
                     HStack{
                         Spacer()
                         Button(action: {

@@ -3,7 +3,6 @@ import SwiftUI
 struct DropDownSubsistema: View {
     @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var expand = false
-    @State var subsistemas: [String]
     
     var body: some View {
         VStack{
@@ -26,7 +25,7 @@ struct DropDownSubsistema: View {
             ScrollView(showsIndicators: false){
                 VStack(alignment: .center, spacing: 18, content: {
                     if expand {
-                        ForEach(subsistemas, id: \.self){ value in
+                        ForEach(filtroViewModel.subsistemas, id: \.self){ value in
                             Button(action: {
                                 self.expand.toggle()
                                 self.filtroViewModel.subsistemaSeleccionado = value

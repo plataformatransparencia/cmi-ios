@@ -9,11 +9,11 @@ struct DetalleIndicador: View {
     @State var codigoFicha: String
     @State var nombreFicha: String
     @StateObject var fichaViewModel = FichaViewModel()
-    @EnvironmentObject var filtroViewModel : FiltroViewModel
-    @EnvironmentObject var mouloViewModel : ModuloViewModel
+    @StateObject var filtroViewModel = FiltroViewModel()
+    @StateObject var mouloViewModel = ModuloViewModel()
     @State var token: String
     @State var periodo: String
-    @State private var selection: Int = 1
+
     @State var showGraph : Bool = true
     @State var showList : Bool = false
     @State var isPresented = false
@@ -278,166 +278,164 @@ struct DetalleIndicador: View {
         case "Módulo III":
             VStack{
                 ZStack{
-                        VStack{
-                            HStack{
-                                Button(action: {
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }, label: {
-                                    Image(systemName: "chevron.left")
-                                        .font(.title3.bold())
-                                })
-                                Spacer()
-                                Text("\(titulo)")
+                    VStack{
+                        HStack{
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }, label: {
+                                Image(systemName: "chevron.left")
                                     .font(.title3.bold())
-                                    .multilineTextAlignment(.center)
-                                Spacer()
-                                
-                            }.foregroundColor(Color("gris_2"))
-                                .padding([.horizontal, .top])
-                            
-                            Filtro(mod: modulo, token: self.token, anios: self.filtroViewModel.anios, subsistemas: self.filtroViewModel.subsistemas , entidadesFederativas: self.filtroViewModel.entidadesFederativas, universidades: self.filtroViewModel.universidades)
-                            HStack(alignment: .center){
-                                NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                    Text("\(nombreFicha)")
-                                        .font(.body)
-                                        .underline()
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                                Button(action: {
-                                    self.isPresented.toggle()
-                                    print("descarga de excel")
-                                }){
-                                    Image("Image_Excel")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }
-                                
-                                Button(action: {
-                                    self.showList.toggle()
-                                    self.showGraph = false
-                                }){
-                                    Image("lista_icon")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }.disabled(showList)
-                                Button(action: {
-                                   self.showGraph.toggle()
-                                    self.showList = false
-                                }){
-                                    Image("grafica_icon")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }.disabled(showGraph)
-                            }.padding(.horizontal)
-                         
-                            VStack{
-                                switch path{
-                                case "ordinario-u006":
-                                    if showGraph {
-                                        GraficaOrdU006(graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006)
-                                    }
-                                    if showList {
-                                        ListadoOrdU006(items: self.items, ordinarioU006: self.mouloViewModel.ordinarioU006, graficasOrdinarioU006: self.mouloViewModel.graficasOrdinarioU006 )
-                                    }
-                                case "federal-u006":
-                                    if showGraph {
-                                        GraficaFederalU006(graficasFederalU006: self.mouloViewModel.graficasFederalU006)
-                                    }
-                                    if showList {
-                                        ListadoFederalU006(items: items, federalU006: self.mouloViewModel.federalU006, graficasFederalU006: self.mouloViewModel.graficasFederalU006)
-                                    }
-                                case "estatal-u006":
-                                    if showGraph {
-                                        GraficaEstatalU006(graficasEstatalU006: self.mouloViewModel.graficasEstatalU006)
-                                    }
-                                    if showList {
-                                        ListadoEstatalU006(items: items, estatalU006: self.mouloViewModel.estatalU006, graficasEstatalU006: self.mouloViewModel.graficasEstatalU006)
-                                    }
-                                case "universidades-en-crisis":
-                                    if showGraph {
-                                        GraficaUniversidadesCrisis(graficaUniversidadesCrisis: self.mouloViewModel.graficaUniversidadesCrisis)
-                                    }
-                                    if showList {
-                                        ListadoUniversidadesCrisis(items: self.items, universidadesCrisis: self.mouloViewModel.universidadesCrisis, graficaUniversidadesCrisis: self.mouloViewModel.graficaUniversidadesCrisis)
-                                    }
-                                case "extraordinario-s247":
-                                    if showGraph {
-                                        GraficaExtraordinarioS247(graficaExtraordinarioS247: self.mouloViewModel.graficaExtraordinarioS247)
-                                    }
-                                    if showList {
-                                        ListadoExtraordinarioS247(items: self.items, extraordinarioS247: self.mouloViewModel.extraordinarioS247, graficaExtraordinarioS247: self.mouloViewModel.graficaExtraordinarioS247)
-                                    }
-                                case "extraordinario-u006":
-                                    if showGraph {
-                                        GraficaExtraordinarioU006(graficasExtraordinarioU006: self.mouloViewModel.graficasExtraordinarioU006)
-                                    }
-                                    if showList {
-                                        ListadoExtraordinarioU006(items: self.items, extraordinarioU006: self.mouloViewModel.extraordinarioU006, graficasExtraordinarioU006: self.mouloViewModel.graficasExtraordinarioU006)
-                                    }
-                                case "u080":
-                                    if showGraph {
-                                        GraficaU080(graficasU080: self.mouloViewModel.graficasU080)
-                                    }
-                                    if showList {
-                                        ListadoU080(items: items, u080: self.mouloViewModel.u080, graficasU080: self.mouloViewModel.graficasU080)
-                                    }
-                                case "indicadores-entidad":
-                                    if showGraph {
-                                        GraficaIndicadoresEntidad(graficasIndicadoresEntidad: self.mouloViewModel.graficasIndicadoresEntidad)
-                                    }
-                                    if showList {
-                                        ListadoIndicadoresEntidad(items: items, indicadoresEntidad: self.mouloViewModel.indicadoresEntidad, graficasIndicadoresEntidad: self.mouloViewModel.graficasIndicadoresEntidad)
-                                    }
-                                case "indicadores-subsistema":
-                                    if showGraph {
-                                        GraficaIndicadoresSubsistema(graficasIndicadoresSubsistema: self.mouloViewModel.graficasIndicadoresSubsistema)
-                                    }
-                                    if showList {
-                                        ListadoIndicadoresSubsistema(items: items, indicadoresSubsistema: self.mouloViewModel.indicadoresSubsistema, graficasIndicadoresSubsistema: self.mouloViewModel.graficasIndicadoresSubsistema)
-                                    }
-                                case "indicadores-ies":
-                                    if showGraph {
-                                        GraficaIndicadoresIES(graficasIndicadoresIES: self.mouloViewModel.graficasIndicadoresIES)
-                                    }
-                                    if showList {
-                                        ListadoIndicadoresIES(items: items, indicadoresIES: self.mouloViewModel.indicadoresIES, graficasIndicadoresIES: self.mouloViewModel.graficasIndicadoresIES)
-                                    }
-                                    
-                                default:
-                                    EmptyView()
-                                    
-                                }
-                            }
+                            })
+                            Spacer()
+                            Text("\(titulo)")
+                                .font(.title3.bold())
+                                .multilineTextAlignment(.center)
                             Spacer()
                             
-                        }
-                }.onAppear{
-                    self.filtroViewModel.loadFiltroModIII(token: self.token, path: self.path)
-                    self.mouloViewModel.loadInfoModIII(token: self.token, path: self.path, anio: self.filtroViewModel.anioSeleccionado, entidadFederativa: self.filtroViewModel.entidadFederativaSeleccionado, subsistema: self.filtroViewModel.subsistemaSeleccionado, institucion: self.filtroViewModel.universidadSeleccionado)
-                    self.mouloViewModel.loadGraficasModIII(token: self.token, path: self.path, anio: self.filtroViewModel.anioSeleccionado)
-                }
-                .edgesIgnoringSafeArea(.all)
-                    .navigationBarHidden(true)
-            }
-            .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
-                .sheet(isPresented: $isPresented, content: {
-                    VStack {
-                        WebViewExcel(token: self.token, path: self.path, periodo: self.filtroViewModel.anioSeleccionado)
-                        HStack{
+                        }.foregroundColor(Color("gris_2"))
+                            .padding([.horizontal, .top])
+                        
+                        Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
+                        HStack(alignment: .center){
+                            NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                Text("\(nombreFicha)")
+                                    .font(.body)
+                                    .underline()
+                                    .multilineTextAlignment(.leading)
+                            }
                             Spacer()
                             Button(action: {
                                 self.isPresented.toggle()
-                            }, label: {
-                                Text("Listo")
-                                    .font(.headline.bold())
-                                    .padding([.trailing])
-                            })
-                        }.foregroundColor(.blue)
+                            }){
+                                Image("Image_Excel")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }
+                            
+                            Button(action: {
+                                self.showList.toggle()
+                                self.showGraph = false
+                            }){
+                                Image("lista_icon")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }.disabled(showList)
+                            Button(action: {
+                                self.showGraph.toggle()
+                                self.showList = false
+                            }){
+                                Image("grafica_icon")
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                            }.disabled(showGraph)
+                        }.padding(.horizontal)
+                        
+                        VStack{
+                            switch path{
+                            case "ordinario-u006":
+                                if showGraph {
+                                    GraficaOrdU006(token:token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoOrdU006(items: items,token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)    
+                                }
+                            case "federal-u006":
+                                if showGraph {
+                                    GraficaFederalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoFederalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                case "estatal-u006":
+                                if showGraph {
+                                    GraficaEstatalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoEstatalU006(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                case "universidades-en-crisis":
+                                if showGraph {
+                                    GraficaUniversidadesCrisis(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoUniversidadesCrisis(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                case "extraordinario-s247":
+                                if showGraph {
+                                    GraficaExtraordinarioS247(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoExtraordinarioS247(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                case "extraordinario-u006":
+                                if showGraph {
+                                    GraficaExtraordinarioU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoExtraordinarioU006(items: self.items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                case "u080":
+                                if showGraph {
+                                    GraficaU080(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoU080(items: items,  token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                case "indicadores-entidad":
+                                if showGraph {
+                                    GraficaIndicadoresEntidad(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoIndicadoresEntidad(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                            case "indicadores-subsistema":
+                                if showGraph {
+                                    GraficaIndicadoresSubsistema(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoIndicadoresSubsistema(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                            case "indicadores-ies":
+                                if showGraph {
+                                    GraficaIndicadoresIES(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                if showList {
+                                    ListadoIndicadoresIES(items: items, token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                            default:
+                                EmptyView()
+                                
+                            }
+                        }
+                        Spacer()
                         
                     }
-                })
+                }.onAppear{
+                    self.filtroViewModel.loadFiltroModIII(token: self.token, path: self.path)
+                    
+                }
+                .edgesIgnoringSafeArea(.all)
+                .navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
+            .sheet(isPresented: $isPresented, content: {
+                VStack {
+                    WebViewExcel(token: self.token, path: self.path, periodo: filtroViewModel.anioSeleccionado, modulo: "III", entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            self.isPresented.toggle()
+                        }, label: {
+                            Text("Listo")
+                                .font(.headline.bold())
+                                .padding([.trailing])
+                        })
+                    }.foregroundColor(.blue)
+                    
+                }
+            })
         default:
             EmptyView()
             

@@ -34,7 +34,14 @@ struct DetalleListadoExtraordinarioU006: View {
     @State var fechaFirmaConvenioDeficitU006: String
     @State var montoEstatalDeficitU006: Double
     @State var montoPublicoDeficitU006: Double
-    @State var graficasExtraordinarioU006 : [String]
+    
+    @StateObject var mouloViewModel = ModuloViewModel()
+    @State var token: String
+    @State var path: String
+    @State var anio: String
+    @State var entidadFederativa: String
+    @State var subsistema: String
+    @State var universidad: String
     var body: some View {
         VStack{
             ZStack{
@@ -55,9 +62,14 @@ struct DetalleListadoExtraordinarioU006: View {
                             Spacer()
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
-                        ForEach(items.sorted(by: >), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItemExtraordinarioU006(titulo: key, items: items, montoFederalRecExt: montoFederalRecExt, instrumentoRecExt: instrumentoRecExt, fechaExt: fechaExt, estatusRecRxt: estatusRecRxt, montoRegresoClases: montoRegresoClases, instrumentoRegresoClases: instrumentoRegresoClases, estatusRegresoClases: estatusRegresoClases, fechaFirmaConvenioRegresoClases: fechaFirmaConvenioRegresoClases, montoInclusionEstancias: montoInclusionEstancias, instrumentoInclusionEstancias: instrumentoInclusionEstancias, estatusInclusionEstancias: estatusInclusionEstancias, fechaFirmaConvenioInclusionEstancias: fechaFirmaConvenioInclusionEstancias, instrumentoIncrementoSalarial: instrumentoIncrementoSalarial, estatusIncrementoSalarial: estatusIncrementoSalarial, informacionIncrementoSalarial: informacionIncrementoSalarial, montoFederalIncrementoSalarial: montoFederalIncrementoSalarial, clcIncrementoSalarial: clcIncrementoSalarial, montoEstatalIncSalU006: montoEstatalIncSalU006, montoPublicoIncSalU006: montoPublicoIncSalU006 ,deficit: deficit, instrumentoDeficit: instrumentoDeficit, estatusDeficit: estatusDeficit, fechaFirmaConvenioDeficitU006: fechaFirmaConvenioDeficitU006, montoEstatalDeficitU006: montoEstatalDeficitU006, montoPublicoDeficitU006: montoPublicoDeficitU006, graficasExtraordinarioU006: graficasExtraordinarioU006)){
-                                ItemView(indicador: key)
+                        
+                        if mouloViewModel.isTrue{
+                            ProgressView()
+                        }else{
+                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                                NavigationLink(destination: DetalleItemExtraordinarioU006(titulo: key, items: items, montoFederalRecExt: montoFederalRecExt, instrumentoRecExt: instrumentoRecExt, fechaExt: fechaExt, estatusRecRxt: estatusRecRxt, montoRegresoClases: montoRegresoClases, instrumentoRegresoClases: instrumentoRegresoClases, estatusRegresoClases: estatusRegresoClases, fechaFirmaConvenioRegresoClases: fechaFirmaConvenioRegresoClases, montoInclusionEstancias: montoInclusionEstancias, instrumentoInclusionEstancias: instrumentoInclusionEstancias, estatusInclusionEstancias: estatusInclusionEstancias, fechaFirmaConvenioInclusionEstancias: fechaFirmaConvenioInclusionEstancias, instrumentoIncrementoSalarial: instrumentoIncrementoSalarial, estatusIncrementoSalarial: estatusIncrementoSalarial, informacionIncrementoSalarial: informacionIncrementoSalarial, montoFederalIncrementoSalarial: montoFederalIncrementoSalarial, clcIncrementoSalarial: clcIncrementoSalarial, montoEstatalIncSalU006: montoEstatalIncSalU006, montoPublicoIncSalU006: montoPublicoIncSalU006 ,deficit: deficit, instrumentoDeficit: instrumentoDeficit, estatusDeficit: estatusDeficit, fechaFirmaConvenioDeficitU006: fechaFirmaConvenioDeficitU006, montoEstatalDeficitU006: montoEstatalDeficitU006, montoPublicoDeficitU006: montoPublicoDeficitU006, graficasExtraordinarioU006: mouloViewModel.graficasExtraordinarioU006)){
+                                    ItemView(indicador: key)
+                                }
                             }
                         }
                     }.padding(.bottom)
@@ -68,6 +80,9 @@ struct DetalleListadoExtraordinarioU006: View {
             }.edgesIgnoringSafeArea(.all)
                 .navigationViewStyle(StackNavigationViewStyle())
             
-        }.navigationBarHidden(true)
+        }.onAppear{
+            self.mouloViewModel.loadGraficasModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+        }
+        .navigationBarHidden(true)
     }
 }

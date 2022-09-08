@@ -1,9 +1,17 @@
 import Foundation
+import Combine
 import SwiftUI
 
 
 class ModuloViewModel : ObservableObject {
     
+    
+    var didChange = PassthroughSubject<ModuloViewModel, Never>()
+    @Published var isTrue : Bool = true {
+        didSet{
+            didChange.send(self)
+        }
+    }
     /** Módulo I*/
     
     //tasa-bruta-escolarizacion-cobertura
@@ -175,6 +183,7 @@ class ModuloViewModel : ObservableObject {
     
     @Published var federalU006 = [FederalU006]()
     @Published var graficasFederalU006 = [String]()
+    
     
     @Published var estatalU006 = [EstatalU006]()
     @Published var graficasEstatalU006 = [String]()
@@ -500,8 +509,9 @@ class ModuloViewModel : ObservableObject {
     
     
     
-    func loadInfoModIII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, institucion: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(anio)?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&institucion=\(institucion)") else{
+    func loadInfoModIII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, universidad: String) {
+        let preprareUrl = "\(base_url_qa)/webservice/\(path)/\(anio)?ejercicioFiscal=\(anio)&entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
+        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: " ", with: "+")) else{
             return
         }
         print(url)
@@ -519,6 +529,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.ordinarioU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -534,6 +545,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.federalU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -549,6 +561,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.estatalU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -564,6 +577,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.universidadesCrisis = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -579,6 +593,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.extraordinarioS247 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -595,6 +610,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.extraordinarioU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -611,6 +627,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.u080 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -626,6 +643,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.indicadoresEntidad = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -641,6 +659,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.indicadoresSubsistema = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -656,6 +675,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.indicadoresIES = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -669,8 +689,10 @@ class ModuloViewModel : ObservableObject {
         }.resume()
     }
     
-    func loadGraficasModIII(token: String, path: String ,anio: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(anio)/graficas") else{
+    func loadGraficasModIII(token: String, path: String ,anio: String,entidadFederativa: String, subsistema: String, universidad: String) {
+        let prepareURL = "\(base_url_qa)/webservice/\(path)/\(anio)/graficas?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
+        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: " ", with: "+")) else{
+            
             return
         }
         var request = URLRequest(url: url)
@@ -687,6 +709,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasOrdinarioU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -702,6 +725,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasFederalU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -717,6 +741,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasEstatalU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -732,6 +757,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficaUniversidadesCrisis = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -748,6 +774,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficaExtraordinarioS247 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -763,6 +790,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasExtraordinarioU006 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -779,6 +807,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasU080 = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -794,6 +823,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasIndicadoresEntidad = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -809,6 +839,7 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasIndicadoresSubsistema = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")
@@ -823,8 +854,8 @@ class ModuloViewModel : ObservableObject {
                     switch responseHTTP?.statusCode {
                     case 200:
                         if let result = result{
-                            print(result)
                             self.graficasIndicadoresIES = result
+                            self.isTrue = false
                         }
                     case 401:
                         fatalError("No autorizado \(responseHTTP.debugDescription)")

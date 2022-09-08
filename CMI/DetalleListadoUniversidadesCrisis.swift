@@ -13,7 +13,14 @@ struct DetalleListadoUniversidadesCrisis: View {
     @State var montoConvenioEstado: Double
     @State var totalMinistradoEstado: Double
     @State var ministraciones : [Ministraciones]
-    @State var graficaUniversidadesCrisis : [String]
+    
+    @StateObject var mouloViewModel = ModuloViewModel()
+    @State var token: String
+    @State var path: String
+    @State var anio: String
+    @State var entidadFederativa: String
+    @State var subsistema: String
+    @State var universidad: String
     var body: some View {
         VStack{
             ZStack{
@@ -34,9 +41,14 @@ struct DetalleListadoUniversidadesCrisis: View {
                             Spacer()
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
-                        ForEach(items.sorted(by: >), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItemUniversidadesCrisis(titulo: key, montoPublico: montoPublico, totalMinistrado: totalMinistrado, montoConvenioSEP: montoConvenioSEP, montoMinistradoSEP: montoMinistradoSEP, fechaEjecucionSEP: fechaEjecucionSEP, observacionFederal: observacionFederal, montoConvenioEstado: montoConvenioEstado, totalMinistradoEstado: totalMinistradoEstado, ministraciones: ministraciones, graficaUniversidadesCrisis: graficaUniversidadesCrisis)){
-                                ItemView(indicador: key)
+                        
+                        if mouloViewModel.isTrue{
+                            ProgressView()
+                        }else{
+                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                                NavigationLink(destination: DetalleItemUniversidadesCrisis(titulo: key, montoPublico: montoPublico, totalMinistrado: totalMinistrado, montoConvenioSEP: montoConvenioSEP, montoMinistradoSEP: montoMinistradoSEP, fechaEjecucionSEP: fechaEjecucionSEP, observacionFederal: observacionFederal, montoConvenioEstado: montoConvenioEstado, totalMinistradoEstado: totalMinistradoEstado, ministraciones: ministraciones, graficaUniversidadesCrisis: mouloViewModel.graficaUniversidadesCrisis)){
+                                    ItemView(indicador: key)
+                                }
                             }
                         }
                     }.padding(.bottom)
@@ -47,6 +59,9 @@ struct DetalleListadoUniversidadesCrisis: View {
             }.edgesIgnoringSafeArea(.all)
                 .navigationViewStyle(StackNavigationViewStyle())
             
-        }.navigationBarHidden(true)
+        }.onAppear{
+            self.mouloViewModel.loadGraficasModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+        }
+        .navigationBarHidden(true)
     }
 }

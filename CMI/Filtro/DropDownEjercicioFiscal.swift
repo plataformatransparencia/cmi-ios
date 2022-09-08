@@ -3,7 +3,6 @@ import SwiftUI
 struct DropDownEjercicioFiscal: View {
     @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var expand = false
-    @State var anios: [String]
     var body: some View {
         VStack{
             HStack{
@@ -25,7 +24,7 @@ struct DropDownEjercicioFiscal: View {
             ScrollView(showsIndicators: false){
                 VStack(alignment: .center, spacing: 18, content: {
                     if expand {
-                        ForEach(anios, id: \.self){ value in
+                        ForEach(filtroViewModel.anios, id: \.self){ value in
                             Button(action: {
                                 self.expand.toggle()
                                 self.filtroViewModel.anioSeleccionado = value

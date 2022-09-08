@@ -10,13 +10,16 @@ class FiltroViewModel : ObservableObject {
     @Published var anioSeleccionado = "2022"
     
     @Published var subsistemas : [String] = []
-    @Published var subsistemaSeleccionado = ""
+    @Published var subsistemaSeleccionado = "Todos"
     
     @Published var entidadesFederativas : [String] = []
-    @Published var entidadFederativaSeleccionado = ""
+    @Published var entidadFederativaSeleccionado = "Todas"
     
     @Published var universidades : [String] = []
-    @Published var universidadSeleccionado = ""
+    @Published var universidadSeleccionado = "Todas"
+    
+    @Published var showGraph : Bool = true
+    @Published var showList : Bool = false
     
     func loadFiltro(token: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/filtro/periodos") else{
@@ -50,7 +53,6 @@ class FiltroViewModel : ObservableObject {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/filtro") else{
             return
         }
-        
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
@@ -63,16 +65,9 @@ class FiltroViewModel : ObservableObject {
                 case 200:
                     if let result = result{
                         self.anios = result.anios
-                        self.anioSeleccionado = result.anios.first ?? "2022"
-                        
                         self.subsistemas = result.subsistemas
-                        self.subsistemaSeleccionado = result.subsistemas.first ?? "Todos"
-                        
                         self.entidadesFederativas = result.entidadesFederativas
-                        self.entidadFederativaSeleccionado = result.entidadesFederativas.first ?? "Todas"
-                        
                         self.universidades = result.universidades
-                        self.universidadSeleccionado = result.universidades.first ?? "Todas"
                     }
                 case 401:
                     fatalError("No autorizado \(responseHTTP.debugDescription)")

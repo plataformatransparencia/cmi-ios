@@ -36,22 +36,23 @@ struct DetalleModulo: View {
                             case "Módulo I":
                                 Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
                                 ForEach(listaIndicadores){v in
-                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado).environmentObject(moduloViewModel)){
+                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado)){
                                         ItemView(indicador: v.indicador)
                                     }.padding(.bottom)
                                 }
                             case "Módulo II":
                                 ForEach(listaIndicadores){v in
-                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado).environmentObject(moduloViewModel)){
+                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado)){
                                         ItemView(indicador: v.indicador)
                                     }.padding(.bottom)
                                 }
                             case "Módulo III":
                                 ForEach(listaIndicadores){v in
-                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado).environmentObject(moduloViewModel).environmentObject(filtroViewModel)){
+                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado)){
                                         ItemView(indicador: v.indicador)
                                        
-                                    }.padding(.bottom)
+                                    }
+                                    .padding(.bottom)
                                 }
                             default:
                                 EmptyView()

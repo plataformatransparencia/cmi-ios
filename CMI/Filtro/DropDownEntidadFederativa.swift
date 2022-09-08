@@ -3,8 +3,6 @@ import SwiftUI
 struct DropDownEntidadFederativa: View {
     @EnvironmentObject var filtroViewModel : FiltroViewModel
     @State var expand = false
-    @State var selected: String = "Selecciona"
-    @State var entidadesFederativas: [String]
    
     var body: some View {
         VStack{
@@ -27,7 +25,7 @@ struct DropDownEntidadFederativa: View {
             ScrollView(showsIndicators: false){
                 VStack(alignment: .center, spacing: 18, content: {
                     if expand {
-                        ForEach(entidadesFederativas, id: \.self){ value in
+                        ForEach(filtroViewModel.entidadesFederativas, id: \.self){ value in
                             Button(action: {
                                 self.expand.toggle()
                                 self.filtroViewModel.entidadFederativaSeleccionado = value

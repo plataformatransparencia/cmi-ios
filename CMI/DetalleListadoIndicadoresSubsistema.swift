@@ -53,7 +53,13 @@ struct DetalleListadoIndicadoresSubsistema: View {
     @State var cienciasSaludMaCmpe: Int
     @State var serviciosMaCmpe: Int
     @State var totalMatriculaEs: Int
-    @State var graficasIndicadoresSubsistema : [String]
+    @StateObject var mouloViewModel = ModuloViewModel()
+    @State var token: String
+    @State var path: String
+    @State var anio: String
+    @State var entidadFederativa: String
+    @State var subsistema: String
+    @State var universidad: String
     var body: some View {
         VStack{
             ZStack{
@@ -74,11 +80,17 @@ struct DetalleListadoIndicadoresSubsistema: View {
                             Spacer()
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
-                        ForEach(items.sorted(by: >), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItemIndicadoresSubsistema(titulo: key, items: items, tsuPaNe: tsuPaNe, licenciaturaNe: licenciaturaNe, totalTsuLicNe: totalTsuLicNe, especialidadNe: especialidadNe, maestriaNe: maestriaNe, doctoradoNe: doctoradoNe, totalPosgradoNe: totalPosgradoNe, totalTsuLicPosNe: totalTsuLicPosNe, hombresEsNe: hombresEsNe, mujeresEsNe: mujeresEsNe, totalEsNe: totalEsNe, totalHombresDiscapacidadEsNe: totalHombresDiscapacidadEsNe, totalMujeresDiscapacidadEsNe: totalMujeresDiscapacidadEsNe, totalHombresHliEsNe: totalHombresHliEsNe, totalMujeresHliEsNe: totalMujeresHliEsNe, hombresEgresados: hombresEgresados, mujeresEgresados: mujeresEgresados, totalDiscapacidadEgresados: totalDiscapacidadEgresados, totalHliEgresados: totalHliEgresados, hombresTitulados: hombresTitulados, mujeresTitulados: mujeresTitulados, totalDiscapacidadTitulados: totalDiscapacidadTitulados, totalHliTitulados: totalHliTitulados, escolarizadaMm: escolarizadaMm, noEscolarizadaMm: noEscolarizadaMm, mixtaMm: mixtaMm, tsuPaMp: tsuPaMp, licenciaturaMp: licenciaturaMp, especialidadMp: especialidadMp, maestriaMp: maestriaMp, doctoradoMp: doctoradoMp, totalHombresMp: totalHombresMp, totalMujeresMp: totalMujeresMp, tsuPaTp: tsuPaTp, licenciaturaTp: licenciaturaTp, especialidadTp: especialidadTp, maestriaTp: maestriaTp, doctoradoTp: doctoradoTp, educacionMaCmpe: educacionMaCmpe, artesHumanidadesMaCmpe: artesHumanidadesMaCmpe, cienciasSocialesDerechoMaCmpe: cienciasSocialesDerechoMaCmpe, administracionNegociosMaCmpe: administracionNegociosMaCmpe, cienciasNaturalesMatematicasEstadisticaMaCmpe: cienciasNaturalesMatematicasEstadisticaMaCmpe, ticMaCmpe: ticMaCmpe, ingenieriaManufacturaConstruccionMaCmpe: ingenieriaManufacturaConstruccionMaCmpe, agronomiaVeterinariaMaCmpe: agronomiaVeterinariaMaCmpe, cienciasSaludMaCmpe: cienciasSaludMaCmpe, serviciosMaCmpe: serviciosMaCmpe, totalMatriculaEs: totalMatriculaEs, graficasIndicadoresSubsistema: graficasIndicadoresSubsistema)){
-                                ItemView(indicador: key)
+                        
+                        if mouloViewModel.isTrue{
+                            ProgressView()
+                        }else{
+                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                                NavigationLink(destination: DetalleItemIndicadoresSubsistema(titulo: key, items: items, tsuPaNe: tsuPaNe, licenciaturaNe: licenciaturaNe, totalTsuLicNe: totalTsuLicNe, especialidadNe: especialidadNe, maestriaNe: maestriaNe, doctoradoNe: doctoradoNe, totalPosgradoNe: totalPosgradoNe, totalTsuLicPosNe: totalTsuLicPosNe, hombresEsNe: hombresEsNe, mujeresEsNe: mujeresEsNe, totalEsNe: totalEsNe, totalHombresDiscapacidadEsNe: totalHombresDiscapacidadEsNe, totalMujeresDiscapacidadEsNe: totalMujeresDiscapacidadEsNe, totalHombresHliEsNe: totalHombresHliEsNe, totalMujeresHliEsNe: totalMujeresHliEsNe, hombresEgresados: hombresEgresados, mujeresEgresados: mujeresEgresados, totalDiscapacidadEgresados: totalDiscapacidadEgresados, totalHliEgresados: totalHliEgresados, hombresTitulados: hombresTitulados, mujeresTitulados: mujeresTitulados, totalDiscapacidadTitulados: totalDiscapacidadTitulados, totalHliTitulados: totalHliTitulados, escolarizadaMm: escolarizadaMm, noEscolarizadaMm: noEscolarizadaMm, mixtaMm: mixtaMm, tsuPaMp: tsuPaMp, licenciaturaMp: licenciaturaMp, especialidadMp: especialidadMp, maestriaMp: maestriaMp, doctoradoMp: doctoradoMp, totalHombresMp: totalHombresMp, totalMujeresMp: totalMujeresMp, tsuPaTp: tsuPaTp, licenciaturaTp: licenciaturaTp, especialidadTp: especialidadTp, maestriaTp: maestriaTp, doctoradoTp: doctoradoTp, educacionMaCmpe: educacionMaCmpe, artesHumanidadesMaCmpe: artesHumanidadesMaCmpe, cienciasSocialesDerechoMaCmpe: cienciasSocialesDerechoMaCmpe, administracionNegociosMaCmpe: administracionNegociosMaCmpe, cienciasNaturalesMatematicasEstadisticaMaCmpe: cienciasNaturalesMatematicasEstadisticaMaCmpe, ticMaCmpe: ticMaCmpe, ingenieriaManufacturaConstruccionMaCmpe: ingenieriaManufacturaConstruccionMaCmpe, agronomiaVeterinariaMaCmpe: agronomiaVeterinariaMaCmpe, cienciasSaludMaCmpe: cienciasSaludMaCmpe, serviciosMaCmpe: serviciosMaCmpe, totalMatriculaEs: totalMatriculaEs, graficasIndicadoresSubsistema: mouloViewModel.graficasIndicadoresSubsistema)){
+                                    ItemView(indicador: key)
+                                }
                             }
                         }
+                        
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)
@@ -87,6 +99,9 @@ struct DetalleListadoIndicadoresSubsistema: View {
             }.edgesIgnoringSafeArea(.all)
                 .navigationViewStyle(StackNavigationViewStyle())
             
-        }.navigationBarHidden(true)
+        }.onAppear{
+            self.mouloViewModel.loadGraficasModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+        }
+        .navigationBarHidden(true)
     }
 }

@@ -8,7 +8,13 @@ struct DetalleListadoExtraordinarioS247: View {
     @State var estatusConvenio : String
     @State var fechaProdep : String
     @State var montoFederalProdep : Double
-    @State var graficaExtraordinarioS247 : [String]
+    @StateObject var mouloViewModel = ModuloViewModel()
+    @State var token: String
+    @State var path: String
+    @State var anio: String
+    @State var entidadFederativa: String
+    @State var subsistema: String
+    @State var universidad: String
     var body: some View {
         VStack{
             ZStack{
@@ -29,9 +35,14 @@ struct DetalleListadoExtraordinarioS247: View {
                             Spacer()
                         }.foregroundColor(Color("gris_2"))
                             .padding([.horizontal, .top])
-                        ForEach(items.sorted(by: >), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItemExtraordinarioS247(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, fechaProdep: fechaProdep, montoFederalProdep: montoFederalProdep, graficaExtraordinarioS247: graficaExtraordinarioS247)){
-                                ItemView(indicador: key)
+                        
+                        if mouloViewModel.isTrue{
+                            ProgressView()
+                        }else{
+                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                                NavigationLink(destination: DetalleItemExtraordinarioS247(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, fechaProdep: fechaProdep, montoFederalProdep: montoFederalProdep, graficaExtraordinarioS247: mouloViewModel.graficaExtraordinarioS247)){
+                                    ItemView(indicador: key)
+                                }
                             }
                         }
                     }.padding(.bottom)
@@ -42,6 +53,9 @@ struct DetalleListadoExtraordinarioS247: View {
             }.edgesIgnoringSafeArea(.all)
                 .navigationViewStyle(StackNavigationViewStyle())
             
-        }.navigationBarHidden(true)
+        }.onAppear{
+            self.mouloViewModel.loadGraficasModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+        }
+        .navigationBarHidden(true)
     }
 }
