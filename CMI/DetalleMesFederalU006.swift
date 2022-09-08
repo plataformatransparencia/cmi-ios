@@ -48,19 +48,19 @@ struct DetalleMesFederalU006: View {
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Aportación comprobada CLC")
                                             .font(.headline.bold())
-                                        Text("$" + formatResultPIB(basedOn: String(val.comprobadaCLC)))
+                                        val.comprobadaCLC != 0.0 ? Text("$" + formatResultPIB(basedOn: String(val.comprobadaCLC))) : Text("")
                                             .font(.body)
                                     }
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Número de CLC")
                                             .font(.headline.bold())
-                                        Text("\(val.numeroCLC)")
+                                        Text("\(val.numeroCLC == "N/A" ? "" : val.numeroCLC)")
                                             .font(.body)
                                     }
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Fecha de pago CLC")
                                             .font(.headline.bold())
-                                        Text("\(val.fechaPago)")
+                                        Text("\(val.fechaPago == "N/A" ? "" : val.fechaPago)")
                                             .font(.body)
                                     }
                                 }
@@ -70,19 +70,19 @@ struct DetalleMesFederalU006: View {
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Aportación reportada por la universidad")
                                             .font(.headline.bold())
-                                        Text("$" + formatResultPIB(basedOn: String(val.aportacion)))
+                                        val.aportacion != 0.0 ? Text("$" + formatResultPIB(basedOn: String(val.aportacion))) : Text("")
                                             .font(.body)
                                     }
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Número de CLC")
                                             .font(.headline.bold())
-                                        Text("\(val.numeroTransferencia)")
+                                        Text("\(val.numeroTransferencia == "N/A" ? "" : val.numeroTransferencia)")
                                             .font(.body)
                                     }
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Fecha de pago CLC")
                                             .font(.headline.bold())
-                                        Text("\(val.fechaPago)")
+                                        Text("\(val.fechaPago == "N/A" ? "" : val.fechaPago)")
                                             .font(.body)
                                     }
                                 }
@@ -90,7 +90,7 @@ struct DetalleMesFederalU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Aportación según plataforma")
                                         .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(aportacionSP ?? 0.0)))
+                                    aportacionSP != 0.0 ? Text("$" + formatResultPIB(basedOn: String(aportacionSP ?? 0.0))) : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
@@ -102,7 +102,7 @@ struct DetalleMesFederalU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Adeudos mensuales")
                                         .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(adeudoMensualSP ?? 0.0)))
+                                    adeudoMensualSP != 0.0 ? Text("$" + formatResultPIB(basedOn: String(adeudoMensualSP ?? 0.0))) : Text("")
                                         .font(.body)
                                 }
                             default:
@@ -110,10 +110,6 @@ struct DetalleMesFederalU006: View {
                             }
                         }.padding()
                             .foregroundColor(Color("gris_2"))
-                        
-                        
-                        
-                        
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)

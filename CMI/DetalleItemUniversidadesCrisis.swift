@@ -41,7 +41,7 @@ struct DetalleItemUniversidadesCrisis: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Recursos Asignados para las Universidades en Crisis")
                                         .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(self.montoPublico)))
+                                    self.montoPublico != 0.0 ? Text("$" + formatResultPIB(basedOn: String(self.montoPublico))) : Text("")
                                         .font(.body)
                                 }
                                 
@@ -109,21 +109,21 @@ struct DetalleItemUniversidadesCrisis: View {
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Monto ministrado. Aportación estatal")
                                             .font(.headline.bold())
-                                        Text("$" + formatResultPIB(basedOn: String(n.monto)))
+                                        n.monto != 0.0 ? Text("$" + formatResultPIB(basedOn: String(n.monto))) : Text("")
                                             .font(.body)
                                     }
                                     
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Fecha de ejecución")
                                             .font(.headline.bold())
-                                        Text("\(n.fechaEjecucion)")
+                                        Text("\(n.fechaEjecucion == "N/A" ? "" : n.fechaEjecucion)")
                                             .font(.body)
                                     }
                                     
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Observación")
                                             .font(.headline.bold())
-                                        Text("\(n.observacion)")
+                                        Text("\(n.observacion == "N/A" ? "" : n.observacion)")
                                             .font(.body)
                                     }
                                 }

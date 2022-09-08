@@ -43,7 +43,7 @@ struct DetalleListadoEstatalU006: View {
                         if mouloViewModel.isTrue{
                             ProgressView()
                         }else{
-                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                            ForEach(items.sorted(by: <), id:\.key){key, value in
                                 NavigationLink(destination: DetalleItemEstatalU006(titulo: key, aportaciones: aportaciones, graficasEstatalU006: mouloViewModel.graficasEstatalU006, totalCalendarizado: totalCalendarizado, totalReportado: totalReportado, totalAdeudosMensuales: totalAdeudosMensuales)){
                                     ItemView(indicador: key)
                                 }

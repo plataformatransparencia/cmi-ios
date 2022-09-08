@@ -122,27 +122,27 @@ struct DetalleItemOrdU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Superior universitaria")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(self.matriculaSuperior)))")
+                                    Text("\(self.matriculaSuperior != 0 ? formatResult(basedOn: String(self.matriculaSuperior)) : "")")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula media superior")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(self.matriculaMediaSuperior)))")
+                                    Text("\(self.matriculaMediaSuperior != 0 ? formatResult(basedOn: String(self.matriculaMediaSuperior)) : "")")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula total")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(self.matriculaTotal)))")
+                                    Text("\(self.matriculaTotal != 0 ? formatResult(basedOn: String(self.matriculaTotal)) : "")")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula total ponderada")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(self.matriculaTotalPonderada)))")
+                                    Text("\(self.matriculaTotalPonderada != 0 ? formatResult(basedOn: String(self.matriculaTotalPonderada)) : "")")
                                         .font(.body)
                                 }
                                 
@@ -156,13 +156,13 @@ struct DetalleItemOrdU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Instrumento")
                                         .font(.headline.bold())
-                                    Text("\(self.instrumento)")
+                                    Text("\(self.instrumento.isEmpty ? "" : self.instrumento)")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Estatus")
                                         .font(.headline.bold())
-                                    Text("\(self.estatusConvenio)")
+                                    Text("\(self.estatusConvenio.isEmpty ? "" : self.estatusConvenio)")
                                         .font(.body)
                                 }
                                 
@@ -171,7 +171,7 @@ struct DetalleItemOrdU006: View {
                             }
                         }.padding()
                             .foregroundColor(Color("gris_2"))
-                            
+                        
                         
                         
                         

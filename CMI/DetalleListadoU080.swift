@@ -41,7 +41,7 @@ struct DetalleListadoU080: View {
                         if mouloViewModel.isTrue{
                             ProgressView()
                         }else{
-                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                            ForEach(items.sorted(by: <), id:\.key){key, value in
                                 NavigationLink(destination: DetalleItemU080(titulo: key, items: items, instrumento: instrumento, estatusConvenio: estatusConvenio, fechaFormalizacion: fechaFormalizacion, recursosAsignados: recursosAsignados, observacionEspecifica: observacionEspecifica, graficasU080: mouloViewModel.graficasU080)){
                                     ItemView(indicador: key)
                                 }

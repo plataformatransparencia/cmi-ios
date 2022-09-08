@@ -1,8 +1,16 @@
 import Foundation
+import Combine
 import SwiftUI
 
 
 class FichaViewModel : ObservableObject {
+    
+    var didChange = PassthroughSubject<FichaViewModel, Never>()
+    @Published var isTrue : Bool = true {
+        didSet{
+            didChange.send(self)
+        }
+    }
     @Published var id = ""
     @Published var nombreIndicador = ""
     @Published var codigoIndicador = ""
@@ -82,7 +90,7 @@ class FichaViewModel : ObservableObject {
                         self.notasLB = result.lineaBase.notas
                         self.valorMetas = result.meta.valor
                         self.notasMetas = result.meta.notas
-                         
+                        self.isTrue = false
                         
                     }
                 case 401:
@@ -155,6 +163,7 @@ class FichaViewModel : ObservableObject {
                         for i in result.dimensionCalidadEducativa{
                             self.dimensionCalidadEducativaModIII = "\(i),"
                         }
+                        self.isTrue = false
                     }
                 case 401:
                     fatalError("No autorizado \(responseHTTP.debugDescription)")

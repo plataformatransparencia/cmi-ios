@@ -38,26 +38,26 @@ struct DetalleMesEstatalU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Aportación calendarizada")
                                         .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(calendarizada ?? 0.0)))
+                                    calendarizada != 0.0 ? Text("$" + formatResultPIB(basedOn: String(calendarizada ?? 0.0))) : Text("")
                                         .font(.body)
                                 }
                                 ForEach(reportes!, id:\.numeroTransferencia){ val in
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Aportación reportada en el sistema")
                                             .font(.headline.bold())
-                                        Text("$" + formatResultPIB(basedOn: String(val.monto)))
+                                        val.monto != 0.0 ? Text("$" + formatResultPIB(basedOn: String(val.monto))) : Text("")
                                             .font(.body)
                                     }
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Número de transferencia")
                                             .font(.headline.bold())
-                                        Text("\(val.numeroTransferencia)")
+                                        Text("\(val.numeroTransferencia == "N/A" ? "" :  val.numeroTransferencia)")
                                             .font(.body)
                                     }
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Fecha de pago")
                                             .font(.headline.bold())
-                                        Text("\(val.fechaPago)")
+                                        Text("\(val.fechaPago == "N/A" ? "" : val.fechaPago)")
                                             .font(.body)
                                     }
                                 }
@@ -66,7 +66,7 @@ struct DetalleMesEstatalU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Aportación según plataforma")
                                         .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(totalReportado ?? 0.0)))
+                                    totalReportado != 0.0 ? Text("$" + formatResultPIB(basedOn: String(totalReportado ?? 0.0))) : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
@@ -78,7 +78,7 @@ struct DetalleMesEstatalU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Adeudos mensuales")
                                         .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(adeudoMensual ?? 0.0)))
+                                    adeudoMensual != 0.0 ? Text("$" + formatResultPIB(basedOn: String(adeudoMensual ?? 0.0))) : Text("")
                                         .font(.body)
                                 }
                             default:

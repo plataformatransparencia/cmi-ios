@@ -45,7 +45,7 @@ struct DetalleListadoUniversidadesCrisis: View {
                         if mouloViewModel.isTrue{
                             ProgressView()
                         }else{
-                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                            ForEach(items.sorted(by: <), id:\.key){key, value in
                                 NavigationLink(destination: DetalleItemUniversidadesCrisis(titulo: key, montoPublico: montoPublico, totalMinistrado: totalMinistrado, montoConvenioSEP: montoConvenioSEP, montoMinistradoSEP: montoMinistradoSEP, fechaEjecucionSEP: fechaEjecucionSEP, observacionFederal: observacionFederal, montoConvenioEstado: montoConvenioEstado, totalMinistradoEstado: totalMinistradoEstado, ministraciones: ministraciones, graficaUniversidadesCrisis: mouloViewModel.graficaUniversidadesCrisis)){
                                     ItemView(indicador: key)
                                 }

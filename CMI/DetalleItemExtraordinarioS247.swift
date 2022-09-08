@@ -57,7 +57,7 @@ struct DetalleItemExtraordinarioS247: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto Federal")
                                         .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(self.montoFederalProdep)))
+                                    self.montoFederalProdep != 0.0 ? Text("$" + formatResultPIB(basedOn: String(self.montoFederalProdep))) : Text("")
                                         .font(.body)
                                 }
                                 

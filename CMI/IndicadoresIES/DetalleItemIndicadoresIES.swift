@@ -40,31 +40,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Bachillerato Tecnológico")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.bachilleratoTecnologico)))")
+                                    indicadorIES.bachilleratoTecnologico != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.bachilleratoTecnologico)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Profesional Técnico")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.profesionalTecnico)))")
+                                    indicadorIES.profesionalTecnico != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.profesionalTecnico)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Subtotal Matrícula")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.subtotalMatriculaBgBt)))")
+                                    indicadorIES.subtotalMatriculaBgBt != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.subtotalMatriculaBgBt)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Subtotal Matrícula (Bachillerato Tecnológico+Profesional Técnico)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.subtotalMatriculaBtPt)))")
+                                    indicadorIES.subtotalMatriculaBtPt != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.subtotalMatriculaBtPt)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Matrícula EMS")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaBgBt)))")
+                                    indicadorIES.totalMatriculaBgBt != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaBgBt)))") : Text("")
                                         .font(.body)
                                 }
                             case "EMS":
@@ -77,31 +77,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresMatriculaEms)))")
+                                    indicadorIES.hombresMatriculaEms != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresMatriculaEms)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresMatriculaEms)))")
+                                    indicadorIES.mujeresMatriculaEms != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresMatriculaEms)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaEms)))")
+                                    indicadorIES.totalMatriculaEms != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaEms)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Discapacidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.conDiscapacidadMatriculaEms)))")
+                                    indicadorIES.conDiscapacidadMatriculaEms != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.conDiscapacidadMatriculaEms)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("HLI")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hliMatriculaEms)))")
+                                    indicadorIES.hliMatriculaEms != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hliMatriculaEms)))") : Text("")
                                         .font(.body)
                                 }
                             case "ES Nivel Educativo":
@@ -114,37 +114,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("TSU/PA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.tsuPaNeMatriculaEs)))")
+                                    indicadorIES.tsuPaNeMatriculaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.tsuPaNeMatriculaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaNeMatriculaEs)))")
+                                    indicadorIES.licenciaturaNeMatriculaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaNeMatriculaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Especialidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.especialidadNeMatriculaEs)))")
+                                    indicadorIES.especialidadNeMatriculaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.especialidadNeMatriculaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Maestría")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.maestriaNeMatriculaEs)))")
+                                    indicadorIES.maestriaNeMatriculaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.maestriaNeMatriculaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Doctorado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.doctoradoNeMatriculaEs)))")
+                                    indicadorIES.doctoradoNeMatriculaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.doctoradoNeMatriculaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("TOTAL MATRÍCULA ES")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalEs)))")
+                                    indicadorIES.totalEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalEs)))") : Text("")
                                         .font(.body)
                                 }
                             case "ES Modalidad, Hombres y Mujeres":
@@ -157,43 +157,43 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres ES")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresEs)))")
+                                    indicadorIES.hombresEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres ES")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresEs)))")
+                                    indicadorIES.mujeresEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Escolarizada")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.escolarizadaEs)))")
+                                    indicadorIES.escolarizadaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.escolarizadaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("No escolarizada")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.noEscolarizadaEs)))")
+                                    indicadorIES.noEscolarizadaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.noEscolarizadaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mixta")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mixtaEs)))")
+                                    indicadorIES.mixtaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mixtaEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total EMS y ES")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaTotalEmsEs)))")
+                                    indicadorIES.matriculaTotalEmsEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaTotalEmsEs)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula total ponderada")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaTotalPonderada)))")
+                                    indicadorIES.matriculaTotalPonderada != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaTotalPonderada)))") : Text("")
                                         .font(.body)
                                 }
                             case "Áreas de la CMPE":
@@ -206,63 +206,63 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("E")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.educacionCmpe)))")
+                                    indicadorIES.educacionCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.educacionCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("AH")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.artesHumanidadesCmpe)))")
+                                    indicadorIES.artesHumanidadesCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.artesHumanidadesCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("CSD")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.cienciasSocialesDerechoCmpe)))")
+                                    indicadorIES.cienciasSocialesDerechoCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.cienciasSocialesDerechoCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("AN")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.administracionNegociosCmpe)))")
+                                    indicadorIES.administracionNegociosCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.administracionNegociosCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("CNME")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.cienciasNaturalesMatematicasEstadisticaCmpe)))")
+                                    indicadorIES.cienciasNaturalesMatematicasEstadisticaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.cienciasNaturalesMatematicasEstadisticaCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("TIC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.ticCmpe)))")
+                                    indicadorIES.ticCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.ticCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("IMC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.ingenieriaManufacturaConstruccionCmpe)))")
+                                    indicadorIES.ingenieriaManufacturaConstruccionCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.ingenieriaManufacturaConstruccionCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("AV")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.agronomiaVeterinariaCmpe)))")
+                                    indicadorIES.agronomiaVeterinariaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.agronomiaVeterinariaCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("CS")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.cienciasSaludCmpe)))")
+                                    indicadorIES.cienciasSaludCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.cienciasSaludCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("S")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.serviciosCmpe)))")
+                                    indicadorIES.serviciosCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.serviciosCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("Total ES")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaEs)))")
+                                    indicadorIES.totalMatriculaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaEs)))") : Text("")
                                         .font(.body)
                                 }
                             case "Oferta Educativa (activos) CMPE":
@@ -275,68 +275,68 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("E")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.educacionOfertaCmpe)))")
+                                    indicadorIES.educacionOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.educacionOfertaCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("AH")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.artesHumanidadesOfertaCmpe)))")
+                                    indicadorIES.artesHumanidadesOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.artesHumanidadesOfertaCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("CSD")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.cienciasSocialesDerechoOfertaCmpe)))")
+                                    indicadorIES.cienciasSocialesDerechoOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.cienciasSocialesDerechoOfertaCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("AN")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.administracionNegociosOfertaCmpe)))")
+                                    indicadorIES.administracionNegociosOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.administracionNegociosOfertaCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("CNME")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.cienciasNaturalesMatematicasEstadisticaOfertaCmpe)))")
+                                    indicadorIES.cienciasNaturalesMatematicasEstadisticaOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.cienciasNaturalesMatematicasEstadisticaOfertaCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("TIC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.ticOfertaCmpe)))")
+                                    indicadorIES.ticOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.ticOfertaCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("IMC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.ingenieriaManufacturaConstruccionOfertaCmpe)))")
+                                    indicadorIES.ingenieriaManufacturaConstruccionOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.ingenieriaManufacturaConstruccionOfertaCmpe)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("AV")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.agronomiaVeterinariaOfertaCmpe)))")
+                                    indicadorIES.agronomiaVeterinariaOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.agronomiaVeterinariaOfertaCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("CS")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.cienciasSaludOfertaCmpe)))")
+                                    indicadorIES.cienciasSaludOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.cienciasSaludOfertaCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("S")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.serviciosOfertaCmpe)))")
+                                    indicadorIES.serviciosOfertaCmpe != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.serviciosOfertaCmpe)))") : Text("")
                                         .font(.body)
                                     
                                     Text("Total de Oferta Educativa (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalOferta)))")
+                                    indicadorIES.totalOferta != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalOferta)))") : Text("")
                                         .font(.body)
                                     
                                     Text("Número de programas educativos PNPC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasEducativos)))")
+                                    indicadorIES.numeroProgramasEducativos != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasEducativos)))") : Text("")
                                         .font(.body)
                                 }
                             case "Alumnos TSU y LIC":
@@ -349,37 +349,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula T.S.U.")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaTsu)))")
+                                    indicadorIES.matriculaTsu != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaTsu)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaLicenciatura)))")
+                                    indicadorIES.matriculaLicenciatura != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaLicenciatura)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Matrícula TSU y Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaTsuLic)))")
+                                    indicadorIES.totalMatriculaTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("AN")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresDesgloseTsuLic)))")
+                                    indicadorIES.hombresDesgloseTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresDesgloseTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresDesgloseTsuLic)))")
+                                    indicadorIES.mujeresDesgloseTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresDesgloseTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaTsu)))")
+                                    indicadorIES.matriculaTsu != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaTsu)))") : Text("")
                                         .font(.body)
                                 }
                             case "Alumnos Posgrado":
@@ -392,37 +392,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula Especialidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaEspecialidad)))")
+                                    indicadorIES.matriculaEspecialidad != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaEspecialidad)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula Maestría")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaMaestria)))")
+                                    indicadorIES.matriculaMaestria != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaMaestria)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula Doctorado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaDoctorado)))")
+                                    indicadorIES.matriculaDoctorado != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaDoctorado)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Matrícula posgrado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaPosgrado)))")
+                                    indicadorIES.totalMatriculaPosgrado != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaPosgrado)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresPosgrado)))")
+                                    indicadorIES.hombresPosgrado != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresPosgrado)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresPosgrado)))")
+                                    indicadorIES.mujeresPosgrado != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresPosgrado)))") : Text("")
                                         .font(.body)
                                 }
                             case "Alumnos Discapacidad TSU, LIC, POSG":
@@ -435,31 +435,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula (Con discapacidad) (TSU y Lic)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaDiscapacidadTsuLic)))")
+                                    indicadorIES.matriculaDiscapacidadTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaDiscapacidadTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula (Con discapacidad) (Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaDiscapacidadPosg)))")
+                                    indicadorIES.matriculaDiscapacidadPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaDiscapacidadPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Matrícula (Con discapacidad) (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaDiscapacidadTsuLicPosg)))")
+                                    indicadorIES.totalMatriculaDiscapacidadTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaDiscapacidadTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresDiscapacidad)))")
+                                    indicadorIES.hombresDiscapacidad != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresDiscapacidad)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresDiscapacidad)))")
+                                    indicadorIES.mujeresDiscapacidad != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresDiscapacidad)))") : Text("")
                                         .font(.body)
                                 }
                             case "Alumnos HLI TSU, LIC, POSG":
@@ -472,37 +472,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula (Hablante de lengua indígena)(TSU y Lic)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaHliTsuLic)))")
+                                    indicadorIES.matriculaHliTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaHliTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula (Hablante de lengua indígena) (Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaHliPosg)))")
+                                    indicadorIES.matriculaHliPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaHliPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Matrícula (Hablante de lengua indígena) (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaHliTsuLicPosg)))")
+                                    indicadorIES.totalMatriculaHliTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaHliTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresHli)))")
+                                    indicadorIES.hombresHli != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresHli)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresHli)))")
+                                    indicadorIES.mujeresHli != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresHli)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("TOTAL")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalHli)))")
+                                    indicadorIES.totalHli != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalHli)))") : Text("")
                                         .font(.body)
                                 }
                             case "Alumnos Titulados":
@@ -515,25 +515,25 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresTitulados)))")
+                                    indicadorIES.hombresTitulados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresTitulados)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresTitulados)))")
+                                    indicadorIES.mujeresTitulados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresTitulados)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total con discapacidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalDiscapacidadTitulados)))")
+                                    indicadorIES.totalDiscapacidadTitulados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalDiscapacidadTitulados)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total de Hablantes de Lenguas Indígenas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalHliTitulados)))")
+                                    indicadorIES.totalHliTitulados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalHliTitulados)))") : Text("")
                                         .font(.body)
                                 }
                             case "Alumnos Nuevo Ingreso TSU, LIC, POSG":
@@ -546,19 +546,19 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Alumnos Nuevo Ingreso (TSU y Lic)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.alumnosNuevoIngresoTsuLic)))")
+                                    indicadorIES.alumnosNuevoIngresoTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosNuevoIngresoTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Alumnos Nuevo Ingreso (Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.alumnosNuevoIngresoPosg)))")
+                                    indicadorIES.alumnosNuevoIngresoPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosNuevoIngresoPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Alumnos Nuevo Ingreso (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalAlumnosNuevoIngresoTsuLicPosg)))")
+                                    indicadorIES.totalAlumnosNuevoIngresoTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalAlumnosNuevoIngresoTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                             case "Alumnos Egresados TSU, LIC, POSG":
@@ -571,43 +571,43 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Alumnos egresados (TSU y Lic)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.alumnosEgresadosTsuLic)))")
+                                    indicadorIES.alumnosEgresadosTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosEgresadosTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Alumnos egresados (Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.alumnosEgresadosPosg)))")
+                                    indicadorIES.alumnosEgresadosPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosEgresadosPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Alumnos egresados (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalAlumnosEgresadosTsuLicPosg)))")
+                                    indicadorIES.totalAlumnosEgresadosTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalAlumnosEgresadosTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.hombresEgresados)))")
+                                    indicadorIES.hombresEgresados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.hombresEgresados)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.mujeresEgresados)))")
+                                    indicadorIES.mujeresEgresados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresEgresados)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total con discapacidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalDiscapacidadEgresados)))")
+                                    indicadorIES.totalDiscapacidadEgresados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalDiscapacidadEgresados)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total HLI")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalHliEgresados)))")
+                                    indicadorIES.totalHliEgresados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalHliEgresados)))") : Text("")
                                         .font(.body)
                                 }
                             case "Oferta Educativa (activos) NE y TP":
@@ -620,37 +620,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Oferta Educativa (TSU y Licenciatura)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.ofertaEducativaProgramasTsuLic)))")
+                                    indicadorIES.ofertaEducativaProgramasTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.ofertaEducativaProgramasTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Oferta Educativa (Programas Posgrado)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.ofertaEducativaProgramasPosgrado)))")
+                                    indicadorIES.ofertaEducativaProgramasPosgrado != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.ofertaEducativaProgramasPosgrado)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total de Oferta Educativa (activos TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalOfertaEducativaProgramasActivosTsuLicPosg)))")
+                                    indicadorIES.totalOfertaEducativaProgramasActivosTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalOfertaEducativaProgramasActivosTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Escolarizados (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.programasRscolarizadosTsuLicPosg)))")
+                                    indicadorIES.programasRscolarizadosTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.programasRscolarizadosTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mixto (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.programasMixtoTsuLicPosg)))")
+                                    indicadorIES.programasMixtoTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.programasMixtoTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("No Escolarizados (TSU, Lic y Posg)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.programasNoEscolarizadosTsuLicPosg)))")
+                                    indicadorIES.programasNoEscolarizadosTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.programasNoEscolarizadosTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
                             case "Plantilla Administrativo":
@@ -663,25 +663,25 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Plantilla (personal administrativo)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.plantillaPersonalAdministrativo)))")
+                                    indicadorIES.plantillaPersonalAdministrativo != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.plantillaPersonalAdministrativo)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Plantilla (Mandos medios y/o superiores)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.plantillaMandosMediosDuperiores)))")
+                                    indicadorIES.plantillaMandosMediosDuperiores != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.plantillaMandosMediosDuperiores)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Plantilla (Docente Investigador, Investigadores, Aux. Investigador)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.plantillaDocenteInvestigadorInvestigadoresAuxInvestigador)))")
+                                    indicadorIES.plantillaDocenteInvestigadorInvestigadoresAuxInvestigador != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.plantillaDocenteInvestigadorInvestigadoresAuxInvestigador)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Otros (choferes, personal de limpieza, servicios generales, etc)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.otrosChoferesPersonalLimpiezaServiciosGeneralesEtc)))")
+                                    indicadorIES.otrosChoferesPersonalLimpiezaServiciosGeneralesEtc != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.otrosChoferesPersonalLimpiezaServiciosGeneralesEtc)))") : Text("")
                                         .font(.body)
                                 }
                             case "Personal Docente":
@@ -694,31 +694,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal Docente PTC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalDocentePtc)))")
+                                    indicadorIES.personalDocentePtc != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalDocentePtc)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal Docente PTCT")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalDocentePtct)))")
+                                    indicadorIES.personalDocentePtct != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalDocentePtct)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal Docente MT")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalDocenteMt)))")
+                                    indicadorIES.personalDocenteMt != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalDocenteMt)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal Docente PH")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalDocentePh)))")
+                                    indicadorIES.personalDocentePh != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalDocentePh)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Personal Docente (PTC, PTCT, MT,PH)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalDocentePtcPtctMtPh)))")
+                                    indicadorIES.totalPersonalDocentePtcPtctMtPh != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalDocentePtcPtctMtPh)))") : Text("")
                                         .font(.body)
                                 }
                             case "Programas Buena Calidad, Evaluables y Competititvidad Académica":
@@ -731,37 +731,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Número de Programas de Buena Calidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasBc)))")
+                                    indicadorIES.numeroProgramasBc != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasBc)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula de Programas de Buena Calidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaProgramasBc)))")
+                                    indicadorIES.matriculaProgramasBc != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaProgramasBc)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Número de Programas Evaluables")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasEva)))")
+                                    indicadorIES.numeroProgramasEva != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasEva)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Número de Programas (No Evaluable)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasNoEva)))")
+                                    indicadorIES.numeroProgramasNoEva != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasNoEva)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula de Programas Evaluables")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaProgramasEva)))")
+                                    indicadorIES.matriculaProgramasEva != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaProgramasEva)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula (Programas no Evaluables)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.matriculaProgramasNoEva)))")
+                                    indicadorIES.matriculaProgramasNoEva != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaProgramasNoEva)))") : Text("")
                                         .font(.body)
                                 }
                             case "% Programas":
@@ -774,25 +774,25 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% de Programas TSU y Licenciatura Evaluables de Buena Calidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.porcentajeProgramasTsuLicEvaBc)))")
+                                    indicadorIES.porcentajeProgramasTsuLicEvaBc != 0.0 ? Text("\(formatResult(basedOn: String(indicadorIES.porcentajeProgramasTsuLicEvaBc)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Matrícula Atendida en Progamas de TSU y Licenciatura Evaluables de Buena Calidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.porcentajeMatriculaAtendidaProgamasTsuLicenciaturaEvaBc)))")
+                                    indicadorIES.porcentajeMatriculaAtendidaProgamasTsuLicenciaturaEvaBc != 0.0 ? Text("\(formatResult(basedOn: String(indicadorIES.porcentajeMatriculaAtendidaProgamasTsuLicenciaturaEvaBc)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Competitividad Académica")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.porcentajeCompetitividadAcademica)))")
+                                    indicadorIES.porcentajeCompetitividadAcademica != 0.0 ? Text("\(formatResult(basedOn: String(indicadorIES.porcentajeCompetitividadAcademica)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Competitividad y Capacidad Académica")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.competitividadCapacidadAcademica)))")
+                                    indicadorIES.competitividadCapacidadAcademica != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.competitividadCapacidadAcademica)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -817,31 +817,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("TSU/PA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.tsuPa)))")
+                                    indicadorIES.tsuPa != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.tsuPa)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciatura)))")
+                                    indicadorIES.licenciatura != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciatura)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Especialidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.especialidad)))")
+                                    indicadorIES.especialidad != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.especialidad)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Maestría")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.maestria)))")
+                                    indicadorIES.maestria != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.maestria)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Doctorado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.doctorado)))")
+                                    indicadorIES.doctorado != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.doctorado)))") : Text("")
                                         .font(.body)
                                 }
                             case "% Número Programas":
@@ -854,25 +854,25 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% CAC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.porcentajeCac)))")
+                                    indicadorIES.porcentajeCac != 0.0 ? Text("\(formatResult(basedOn: String(indicadorIES.porcentajeCac)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Perfil Deseable")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.porcentajePerfilDeseable)))")
+                                    indicadorIES.porcentajePerfilDeseable != 0.0 ? Text("\(formatResult(basedOn: String(indicadorIES.porcentajePerfilDeseable)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% S.N.I.")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.porcentajeSni)))")
+                                    indicadorIES.porcentajeSni != 0.0 ? Text("\(formatResult(basedOn: String(indicadorIES.porcentajeSni)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Capacidad Académica")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.capacidadAcademica)))")
+                                    indicadorIES.capacidadAcademica != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.capacidadAcademica)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -901,31 +901,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Técnico superior")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorANSModalidadEscolar)))")
+                                    indicadorIES.tecnicoSuperiorANSModalidadEscolar != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorANSModalidadEscolar)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licencia Profesional")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaProfesionalANSModalidadEscolar)))")
+                                    indicadorIES.licenciaProfesionalANSModalidadEscolar != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaProfesionalANSModalidadEscolar)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaANSModalidadEscolar)))")
+                                    indicadorIES.licenciaturaANSModalidadEscolar != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaANSModalidadEscolar)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Posgrado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.posgradoANSModalidadEscolar)))")
+                                    indicadorIES.posgradoANSModalidadEscolar != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.posgradoANSModalidadEscolar)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Escolar")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalEscolarANSModalidadEscolar)))")
+                                    indicadorIES.totalEscolarANSModalidadEscolar != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalEscolarANSModalidadEscolar)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -944,31 +944,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Técnico superior")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorANSModalidadNoEscolarizada)))")
+                                    indicadorIES.tecnicoSuperiorANSModalidadNoEscolarizada != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorANSModalidadNoEscolarizada)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licencia Profesional")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaProfesionalANSModalidadNoEscolarizada)))")
+                                    indicadorIES.licenciaProfesionalANSModalidadNoEscolarizada != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaProfesionalANSModalidadNoEscolarizada)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaANSModalidadNoEscolarizada)))")
+                                    indicadorIES.licenciaturaANSModalidadNoEscolarizada != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaANSModalidadNoEscolarizada)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Posgrado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.posgradoANSModalidadNoEscolarizada)))")
+                                    indicadorIES.posgradoANSModalidadNoEscolarizada != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.posgradoANSModalidadNoEscolarizada)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total No Escolarizada")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalNoEscolarizadaANSModalidadNoEscolarizada)))")
+                                    indicadorIES.totalNoEscolarizadaANSModalidadNoEscolarizada != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalNoEscolarizadaANSModalidadNoEscolarizada)))"): Text("")
                                         .font(.body)
                                 }
                                 HStack{
@@ -987,55 +987,55 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Directivo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.directivoPF)))")
+                                    indicadorIES.directivoPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.directivoPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Docente")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.docenteNoIncluyaPiPF)))")
+                                    indicadorIES.docenteNoIncluyaPiPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.docenteNoIncluyaPiPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Docente-Investigador y Docente-Auxiliar de Investigador")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.docenteInvestigadorDocenteAuxiliarInvestigadorPF)))")
+                                    indicadorIES.docenteInvestigadorDocenteAuxiliarInvestigadorPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.docenteInvestigadorDocenteAuxiliarInvestigadorPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Investigador")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.investigadorPF)))")
+                                    indicadorIES.investigadorPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.investigadorPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Auxiliar de Investigador")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.auxiliarInvestigadorNoIncluyeSSPPPF)))")
+                                    indicadorIES.auxiliarInvestigadorNoIncluyeSSPPPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.auxiliarInvestigadorNoIncluyeSSPPPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Administrativo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.administrativoPF)))")
+                                    indicadorIES.administrativoPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.administrativoPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Otros")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.otrosPF)))")
+                                    indicadorIES.otrosPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.otrosPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total de Personal")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalFacultadesPF)))")
+                                    indicadorIES.totalPersonalFacultadesPF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalFacultadesPF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Directivo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.directivo2PF)))")
+                                    indicadorIES.directivo2PF != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.directivo2PF)))"): Text("")
                                         .font(.body)
                                     
                                     HStack{
@@ -1055,31 +1055,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Directivo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.directivoPAC)))")
+                                    indicadorIES.directivoPAC != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.directivoPAC)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Auxiliar de Investigador (no incluye servicio social y prácticas profesionales)")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.auxiliarInvestigadorNoIncluyeSSPPPAC)))")
+                                    indicadorIES.auxiliarInvestigadorNoIncluyeSSPPPAC != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.auxiliarInvestigadorNoIncluyeSSPPPAC)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Administrativo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.administrativoPAC)))")
+                                    indicadorIES.administrativoPAC != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.administrativoPAC)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Otros")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalAreasCentralesPAC)))")
+                                    indicadorIES.totalPersonalAreasCentralesPAC != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalAreasCentralesPAC)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Personal Áreas Centrales")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.otrosPAC)))")
+                                    indicadorIES.otrosPAC != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.otrosPAC)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -1098,7 +1098,7 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total de Personal de la Institución")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalInstitucion)))")
+                                    indicadorIES.totalPersonalInstitucion != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalPersonalInstitucion)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -1117,31 +1117,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal de Tiempo Completo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalTiempoCompletoTPDE)))")
+                                    indicadorIES.personalTiempoCompletoTPDE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalTiempoCompletoTPDE)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal de Tres Cuartos de Tiempo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalTresCuartosTiempoTPDE)))")
+                                    indicadorIES.personalTresCuartosTiempoTPDE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalTresCuartosTiempoTPDE)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal de Medio Tiempo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalMedioTiempoTPDE)))")
+                                    indicadorIES.personalMedioTiempoTPDE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalMedioTiempoTPDE)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal por Hora o Asignatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalHoraOAsignaturaTPDE)))")
+                                    indicadorIES.personalHoraOAsignaturaTPDE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalHoraOAsignaturaTPDE)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalTPDE)))")
+                                    indicadorIES.totalTPDE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalTPDE)))")  : Text("")
                                         .font(.body)
                                 }
                                 HStack{
@@ -1159,31 +1159,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal de Tiempo Completo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalTiempoCompletoTPDNE)))")
+                                    indicadorIES.personalTiempoCompletoTPDNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalTiempoCompletoTPDNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal de Tres Cuartos de Tiempo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalTresCuartosTiempoTPDNE)))")
+                                    indicadorIES.personalTresCuartosTiempoTPDNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalTresCuartosTiempoTPDNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal de Medio Tiempo")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalMedioTiempoTPDNE)))")
+                                    indicadorIES.personalMedioTiempoTPDNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalMedioTiempoTPDNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Personal por Hora o Asignatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.personalHoraOAsignaturaTPDNE)))")
+                                    indicadorIES.personalHoraOAsignaturaTPDNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.personalHoraOAsignaturaTPDNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalTPDNE)))")
+                                    indicadorIES.totalTPDNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalTPDNE)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -1202,43 +1202,43 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Técnico Superior")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorCarreraPYAME)))")
+                                    indicadorIES.tecnicoSuperiorCarreraPYAME != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorCarreraPYAME)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura Profesional")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaProfesionalCarreraPYAME)))")
+                                    indicadorIES.licenciaturaProfesionalCarreraPYAME != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaProfesionalCarreraPYAME)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaCarreraPYAME)))")
+                                    indicadorIES.licenciaturaCarreraPYAME != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaCarreraPYAME)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Especialidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.especialidadCarreraPYAME)))")
+                                    indicadorIES.especialidadCarreraPYAME != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.especialidadCarreraPYAME)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Maestría")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.maestriaCarreraPYAME)))")
+                                    indicadorIES.maestriaCarreraPYAME != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.maestriaCarreraPYAME)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Doctorado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.doctoradoCarreraPYAME)))")
+                                    indicadorIES.doctoradoCarreraPYAME != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.doctoradoCarreraPYAME)))")  : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalCarreraPYAME)))")
+                                    indicadorIES.totalCarreraPYAME != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalCarreraPYAME)))")  : Text("")
                                         .font(.body)
                                 }
                                 
@@ -1257,43 +1257,43 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Técnico Superior")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorCarreraPYAMNE)))")
+                                    indicadorIES.tecnicoSuperiorCarreraPYAMNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.tecnicoSuperiorCarreraPYAMNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura Profesional")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaProfesionalCarreraPYAMNE)))")
+                                    indicadorIES.licenciaturaProfesionalCarreraPYAMNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaProfesionalCarreraPYAMNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaCarreraPYAMNE)))")
+                                    indicadorIES.licenciaturaCarreraPYAMNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.licenciaturaCarreraPYAMNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Especialidad")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.especialidadCarreraPYAMNE)))")
+                                    indicadorIES.especialidadCarreraPYAMNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.especialidadCarreraPYAMNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Maestría")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.maestriaCarreraPYAMNE)))")
+                                    indicadorIES.maestriaCarreraPYAMNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.maestriaCarreraPYAMNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Doctorado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.doctoradoCarreraPYAMNE)))")
+                                    indicadorIES.doctoradoCarreraPYAMNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.doctoradoCarreraPYAMNE)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(indicadorIES.totalCarreraPYAMNE)))")
+                                    indicadorIES.totalCarreraPYAMNE != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalCarreraPYAMNE)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -1312,31 +1312,31 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("PTC Licenciatura")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.licenciaturaPTC)))")
+                                    sisup.licenciaturaPTC != 0 ? Text("\(formatResult(basedOn: String(sisup.licenciaturaPTC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("PTC con Maestría")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.maestriaPTC)))")
+                                    sisup.maestriaPTC != 0 ? Text("\(formatResult(basedOn: String(sisup.maestriaPTC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("PTC con Doctorado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.doctoradoPTC)))")
+                                    sisup.doctoradoPTC != 0 ? Text("\(formatResult(basedOn: String(sisup.doctoradoPTC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("PTC con posgrado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.posgradoPTC)))")
+                                    sisup.posgradoPTC != 0 ? Text("\(formatResult(basedOn: String(sisup.posgradoPTC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total de PTC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.totalPTC)))")
+                                    sisup.totalPTC != 0 ? Text("\(formatResult(basedOn: String(sisup.totalPTC)))"): Text("")
                                 }
                                       
                             case "Desglose Profesores Perfil Deseable vigente y SNI":
@@ -1349,36 +1349,36 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Con Perfil Deseable Vigente")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.perfilDeseableVigente)))")
+                                    sisup.perfilDeseableVigente != 0 ? Text("\(formatResult(basedOn: String(sisup.perfilDeseableVigente)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("S.N.I.C")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.snic)))")
+                                    sisup.snic != 0 ? Text("\(formatResult(basedOn: String(sisup.snic)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("S.N.I.1")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.snic1)))")
+                                    sisup.snic1 != 0 ? Text("\(formatResult(basedOn: String(sisup.snic1)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("S.N.I.2")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.snic2)))")
+                                    sisup.snic2 != 0 ? Text("\(formatResult(basedOn: String(sisup.snic2)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("S.N.I.3")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.snic3)))")
+                                    sisup.snic3 != 0 ? Text("\(formatResult(basedOn: String(sisup.snic3)))"): Text("")
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total SNI Vigente")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.totalSNIVigente)))")
+                                    sisup.totalSNIVigente != 0 ? Text("\(formatResult(basedOn: String(sisup.totalSNIVigente)))"): Text("")
                                 }
                             case "Cuerpos Académicos (CA)":
                                 VStack(alignment: .leading,spacing: 10){
@@ -1390,25 +1390,25 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total CAEF")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.totalCAEF)))")
+                                    sisup.totalCAEF != 0 ? Text("\(formatResult(basedOn: String(sisup.totalCAEF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total CAEC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.totalCAEC)))")
+                                    sisup.totalCAEC != 0 ? Text("\(formatResult(basedOn: String(sisup.totalCAEC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total CAC")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.totalCAC)))")
+                                    sisup.totalCAC != 0 ? Text("\(formatResult(basedOn: String(sisup.totalCAC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.totalCA)))")
+                                    sisup.totalCA != 0 ? Text("\(formatResult(basedOn: String(sisup.totalCA)))"): Text("")
                                         .font(.body)
                                 }
                             case "Desglose CAEF":
@@ -1421,37 +1421,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Agropecuarias")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCAEF)))")
+                                    sisup.areaCSAgropecuariasCAEF != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCAEF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Salud")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSaludCAEF)))")
+                                    sisup.areaCSSaludCAEF != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSaludCAEF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Naturales y Exactas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCAEF)))")
+                                    sisup.areaCSNaturalesExactasCAEF != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCAEF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Sociales y Administrativas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCAEF)))")
+                                    sisup.areaCSSocialesAdministrativasCAEF != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCAEF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Ingeniería y Tecnología")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCAEF)))")
+                                    sisup.areaCSIngenieriaTecnologiaCAEF != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCAEF)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área Educación, Humanidades y Artes")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCAEF)))")
+                                    sisup.areaEducacionHumanidadesArtesCAEF != 0 ? Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCAEF)))"): Text("")
                                         .font(.body)
                                 }
                             case "Desglose CAEC":
@@ -1464,37 +1464,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Agropecuarias")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCAEC)))")
+                                    sisup.areaCSAgropecuariasCAEC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCAEC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Salud")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSaludCAEC)))")
+                                    sisup.areaCSSaludCAEC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSaludCAEC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Naturales y Exactas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCAEC)))")
+                                    sisup.areaCSNaturalesExactasCAEC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCAEC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Sociales y Administrativas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCAEC)))")
+                                    sisup.areaCSSocialesAdministrativasCAEC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCAEC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Ingeniería y Tecnología")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCAEC)))")
+                                    sisup.areaCSIngenieriaTecnologiaCAEC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCAEC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área Educación, Humanidades y Artes")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCAEC)))")
+                                    sisup.areaEducacionHumanidadesArtesCAEC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCAEC)))"): Text("")
                                         .font(.body)
                                 }
                             case "Desglose CAC":
@@ -1507,37 +1507,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Agropecuarias")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCAC)))")
+                                    sisup.areaCSAgropecuariasCAC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCAC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Salud")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSaludCAC)))")
+                                    sisup.areaCSSaludCAC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSaludCAC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Naturales y Exactas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCAC)))")
+                                    sisup.areaCSNaturalesExactasCAC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCAC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Sociales y Administrativas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCAC)))")
+                                    sisup.areaCSSocialesAdministrativasCAC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCAC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Ingeniería y Tecnología")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCAC)))")
+                                    sisup.areaCSIngenieriaTecnologiaCAC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCAC)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área Educación, Humanidades y Artes")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCAC)))")
+                                    sisup.areaEducacionHumanidadesArtesCAC != 0 ? Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCAC)))"): Text("")
                                         .font(.body)
                                 }
                             case "Desglose CA":
@@ -1550,37 +1550,37 @@ struct DetalleItemIndicadoresIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Agropecuarias")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCA)))")
+                                    sisup.areaCSAgropecuariasCA != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSAgropecuariasCA)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Salud")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSaludCA)))")
+                                    sisup.areaCSSaludCA != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSaludCA)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Naturales y Exactas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCA)))")
+                                    sisup.areaCSNaturalesExactasCA != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSNaturalesExactasCA)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Sociales y Administrativas")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCA)))")
+                                    sisup.areaCSSocialesAdministrativasCA != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSSocialesAdministrativasCA)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área CS. Ingeniería y Tecnología")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCA)))")
+                                    sisup.areaCSIngenieriaTecnologiaCA != 0 ? Text("\(formatResult(basedOn: String(sisup.areaCSIngenieriaTecnologiaCA)))"): Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Área Educación, Humanidades y Artes")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCA)))")
+                                    sisup.areaEducacionHumanidadesArtesCA != 0 ? Text("\(formatResult(basedOn: String(sisup.areaEducacionHumanidadesArtesCA)))"): Text("")
                                         .font(.body)
                                 }
                             default:

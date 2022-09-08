@@ -43,7 +43,7 @@ struct DetalleListadoFederalU006: View {
                         if mouloViewModel.isTrue{
                             ProgressView()
                         }else{
-                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                            ForEach(items.sorted(by: <), id:\.key){key, value in
                                 NavigationLink(destination: DetalleItemFederalU006(titulo: key, listaCalendarizado: listaCalendarizado, listaReportado: listaReportado, listaPlataforma: listaPlataforma, totalCalendarizado:totalCalendarizado, totalComprobado: totalComprobado, totalReportado:totalReportado, graficasFederalU006: mouloViewModel.graficasFederalU006)){
                                     ItemView(indicador: key)
                                 }

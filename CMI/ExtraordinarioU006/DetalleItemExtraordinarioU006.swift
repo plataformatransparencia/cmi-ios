@@ -64,7 +64,7 @@ struct DetalleItemExtraordinarioU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoFederalRecExt)))")
+                                    self.montoFederalRecExt != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoFederalRecExt)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -100,7 +100,7 @@ struct DetalleItemExtraordinarioU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoRegresoClases)))")
+                                    self.montoRegresoClases != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoRegresoClases)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -135,7 +135,7 @@ struct DetalleItemExtraordinarioU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoInclusionEstancias)))")
+                                    self.montoInclusionEstancias != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoInclusionEstancias)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -190,28 +190,28 @@ struct DetalleItemExtraordinarioU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto Federal")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoFederalIncrementoSalarial)))")
+                                    self.montoFederalIncrementoSalarial != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoFederalIncrementoSalarial)))") : Text("")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("CLC")
                                         .font(.headline.bold())
-                                    Text("\(self.clcIncrementoSalarial)")
+                                    clcIncrementoSalarial != 0.0 ? Text("\(self.clcIncrementoSalarial)") : Text("")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto Estatal")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoEstatalIncSalU006)))")
+                                    self.montoEstatalIncSalU006 != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoEstatalIncSalU006)))") : Text("")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto Público")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoPublicoIncSalU006)))")
+                                    self.montoPublicoIncSalU006 != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoPublicoIncSalU006)))") : Text("")
                                         .font(.body)
                                 }
                                 
@@ -224,7 +224,7 @@ struct DetalleItemExtraordinarioU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.deficit)))")
+                                    self.deficit != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.deficit)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
@@ -248,14 +248,14 @@ struct DetalleItemExtraordinarioU006: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto Estatal")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoEstatalDeficitU006)))")
+                                    self.montoEstatalDeficitU006 != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoEstatalDeficitU006)))") : Text("")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto Público")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.montoPublicoDeficitU006)))")
+                                    self.montoPublicoDeficitU006 != 0.0 ? Text("\(formatResultPIB(basedOn: String(self.montoPublicoDeficitU006)))") : Text("")
                                         .font(.body)
                                 }
                             default:

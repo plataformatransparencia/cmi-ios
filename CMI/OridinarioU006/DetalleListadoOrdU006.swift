@@ -51,7 +51,7 @@ struct DetalleListadoOrdU006: View {
                         if mouloViewModel.isTrue{
                             ProgressView()
                         }else{
-                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                            ForEach(items.sorted(by: <), id:\.key){key, value in
                                 NavigationLink(destination: DetalleItemOrdU006(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, matriculaSuperior: matriculaSuperior, matriculaMediaSuperior: matriculaMediaSuperior, porcentajeFederal: porcentajeFederal, porcentajeEstatal: porcentajeEstatal, matriculaTotal: matriculaTotal, matriculaTotalPonderada: matriculaTotalPonderada, subsidioEstatalPorAlumno: subsidioEstatalPorAlumno, subsidioFederalPorAlumno: subsidioFederalPorAlumno, subsidioPublicoPorAlumno: subsidioPublicoPorAlumno, graficasOrdinarioU006: mouloViewModel.graficasOrdinarioU006)){
                                     ItemView(indicador: key)
                                     

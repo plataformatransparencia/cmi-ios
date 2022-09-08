@@ -37,7 +37,7 @@ struct DetalleListadoIndicadoresIES: View {
                         if mouloViewModel.isTrue{
                             ProgressView()
                         }else{
-                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                            ForEach(items.sorted(by: <), id:\.key){key, value in
                                 NavigationLink(destination: DetalleItemIndicadoresIES(titulo: key, items: items, indicadorIES: indicadorIES, sisup: sisup, graficasIndicadoresIES: mouloViewModel.graficasIndicadoresIES)){
                                     ItemView(indicador: key)
                                 }

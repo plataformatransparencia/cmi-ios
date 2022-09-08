@@ -39,7 +39,7 @@ struct DetalleListadoExtraordinarioS247: View {
                         if mouloViewModel.isTrue{
                             ProgressView()
                         }else{
-                            ForEach(items.sorted(by: >), id:\.key){key, value in
+                            ForEach(items.sorted(by: <), id:\.key){key, value in
                                 NavigationLink(destination: DetalleItemExtraordinarioS247(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, fechaProdep: fechaProdep, montoFederalProdep: montoFederalProdep, graficaExtraordinarioS247: mouloViewModel.graficaExtraordinarioS247)){
                                     ItemView(indicador: key)
                                 }
