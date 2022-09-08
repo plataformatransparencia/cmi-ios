@@ -10,13 +10,13 @@ class FiltroViewModel : ObservableObject {
     @Published var anioSeleccionado = "2022"
     
     @Published var subsistemas : [String] = []
-    @Published var subsistemaSeleccionado = "Todos"
+    @Published var subsistemaSeleccionado = ""
     
     @Published var entidadesFederativas : [String] = []
-    @Published var entidadFederativaSeleccionado = "Todas"
+    @Published var entidadFederativaSeleccionado = ""
     
     @Published var universidades : [String] = []
-    @Published var universidadSeleccionado = "Todas"
+    @Published var universidadSeleccionado = ""
     
     @Published var showGraph : Bool = true
     @Published var showList : Bool = false
@@ -65,9 +65,13 @@ class FiltroViewModel : ObservableObject {
                 case 200:
                     if let result = result{
                         self.anios = result.anios
+                        self.anioSeleccionado = result.anios.first ?? ""
                         self.subsistemas = result.subsistemas
+                        self.subsistemaSeleccionado = result.subsistemas.first ?? ""
                         self.entidadesFederativas = result.entidadesFederativas
+                        self.entidadFederativaSeleccionado = result.entidadesFederativas.first ?? ""
                         self.universidades = result.universidades
+                        self.universidadSeleccionado = result.universidades.first ?? ""
                     }
                 case 401:
                     fatalError("No autorizado \(responseHTTP.debugDescription)")
