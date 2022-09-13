@@ -209,6 +209,14 @@ class ModuloViewModel : ObservableObject {
     @Published var indicadoresIES = [IndicadoresIES]()
     @Published var graficasIndicadoresIES = [String]()
     
+    
+    /** Módulo II*/
+    
+    @Published var tasaBrutaEES = [TasaBrutaEES]()
+    @Published var tasaBrutaEC = [TasaBrutaEC]()
+    @Published var tasaBrutaECIES = [TasaBrutaECIES]()
+    @Published var porcentajeDocumentosNormativos = [PorcentajeDocumentosNormativos]()
+    
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
             return
@@ -505,7 +513,6 @@ class ModuloViewModel : ObservableObject {
             }
         }.resume()
     }
-    
     
     func loadInfoModIII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, universidad: String) {
         let preprareUrl = "\(base_url_qa)/webservice/\(path)/\(anio)?ejercicioFiscal=\(anio)&entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
@@ -852,6 +859,89 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasIndicadoresIES = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            default:
+                fatalError("No se selecciono algun indicador de la lista")
+            }
+        }.resume()
+    }
+    
+    func loadInfoModII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, universidad: String) {
+        let preprareUrl = "\(base_url_qa)/webservice/\(path)/\(anio)"
+        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "%20")) else{
+            return
+        }
+        print(url)
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data, error == nil else {return}
+            switch path{
+            case "tasa-bruta-escolarizada":
+                let result = try? JSONDecoder().decode([TasaBrutaEES].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.tasaBrutaEES = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "tasa-bruta-escolarizada-cobertura":
+                let result = try? JSONDecoder().decode([TasaBrutaEC].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.tasaBrutaEC = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "tasa-bruta-escolarizacion-ies":
+                let result = try? JSONDecoder().decode([TasaBrutaECIES].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.tasaBrutaECIES = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
+            case "porcentaje-documentos-normativos":
+                let result = try? JSONDecoder().decode([PorcentajeDocumentosNormativos].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeDocumentosNormativos = result
                             self.isTrue = false
                         }
                     case 401:

@@ -233,7 +233,6 @@ struct DetalleIndicador: View {
         case "Módulo II":
             VStack{
                 ZStack{
-                    ScrollView(showsIndicators: true){
                         VStack{
                             HStack{
                                 Button(action: {
@@ -251,28 +250,60 @@ struct DetalleIndicador: View {
                             }.foregroundColor(Color("gris_2"))
                                 .padding([.horizontal, .top])
                             
-                            Filtro(mod: modulo,token: self.token).environmentObject(filtroViewModel)
+                            
+                            Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
                             HStack(alignment: .center){
-                                NavigationLink(destination: FichaModulo_II(titulo: nombreFicha)){
+                                NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                     Text("\(nombreFicha)")
                                         .font(.body)
                                         .underline()
                                         .multilineTextAlignment(.leading)
-                                }.padding(.horizontal)
+                                }
                                 Spacer()
                                 Button(action: {
-                                    print("descarga de excel")
+                                    self.isPresented.toggle()
                                 }){
                                     Image("Image_Excel")
                                         .resizable()
                                         .frame(width: 50, height: 50)
-                                }.padding(.horizontal)
+                                }
+                                
+                                Button(action: {
+                                    self.graph.toggle()
+                                }){
+                                    Image("lista_icon")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }.disabled(!graph)
+                                
+                                
+                                Button(action: {
+                                    self.graph.toggle()
+                                }){
+                                    Image("grafica_icon")
+                                        .resizable()
+                                        .frame(width: 50, height: 50)
+                                }.disabled(graph)
+                            }.padding(.horizontal)
+                            
+                            VStack{
+                                switch path{
+                                case "tasa-bruta-escolarizada":
+                                    ListadoTasaBrutaEES(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                case "tasa-bruta-escolarizada-cobertura":
+                                    ListadoTasaBrutaEC(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                case "tasa-bruta-escolarizacion-ies":
+                                    ListadoTasaBrutaECIES(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                case "porcentaje-documentos-normativos":
+                                   ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                default:
+                                    EmptyView()
+                                }
                             }
+                            Spacer()
                         }
-                        
-                    }.edgesIgnoringSafeArea(.all)
-                        .navigationBarHidden(true)
-                }
+                }.edgesIgnoringSafeArea(.all)
+                .navigationBarHidden(true)
             }.navigationBarHidden(true)
             
         case "Módulo III":
