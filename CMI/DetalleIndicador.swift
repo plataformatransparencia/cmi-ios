@@ -252,53 +252,291 @@ struct DetalleIndicador: View {
                             
                             
                             Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
-                            HStack(alignment: .center){
-                                NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                    Text("\(nombreFicha)")
-                                        .font(.body)
-                                        .underline()
-                                        .multilineTextAlignment(.leading)
-                                }
-                                Spacer()
-                                Button(action: {
-                                    self.isPresented.toggle()
-                                }){
-                                    Image("Image_Excel")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }
-                                
-                                Button(action: {
-                                    self.graph.toggle()
-                                }){
-                                    Image("lista_icon")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }.disabled(!graph)
-                                
-                                
-                                Button(action: {
-                                    self.graph.toggle()
-                                }){
-                                    Image("grafica_icon")
-                                        .resizable()
-                                        .frame(width: 50, height: 50)
-                                }.disabled(graph)
-                            }.padding(.horizontal)
-                            
                             VStack{
                                 switch path{
                                 case "tasa-bruta-escolarizada":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    }.padding(.horizontal)
                                     ListadoTasaBrutaEES(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
                                 case "tasa-bruta-escolarizada-cobertura":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    }.padding(.horizontal)
                                     ListadoTasaBrutaEC(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
                                 case "tasa-bruta-escolarizacion-ies":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    }.padding(.horizontal)
                                     ListadoTasaBrutaECIES(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
                                 case "porcentaje-documentos-normativos":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    }.padding(.horizontal)
                                    ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                case "porcentaje-profesores-tiempo-completo-ies-reconocimiento":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    EmptyView()
+                                case "porcentaje-cuerpos-academicos-ies":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    EmptyView()
+                                case "porcentaje-reconocimiento-perfil-deseable":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    EmptyView()
+                                case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    EmptyView()
+                                case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    EmptyView()
+                                    
                                 case "porcentaje-centros-organizaciones-sociedad-civil":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    }.padding(.horizontal)
                                     ListadoPorcentajeCentros(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
                                 case "porcentaje-apoyos-operacion-otorgados-centros":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    }.padding(.horizontal)
                                     ListadoPorcentajeApoyos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
                                 default:
                                     EmptyView()

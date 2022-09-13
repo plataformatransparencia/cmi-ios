@@ -86,6 +86,7 @@
 		78A11BCA28D1117F002ED178 /* PorcentajeCentros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11BC928D1117F002ED178 /* PorcentajeCentros.swift */; };
 		78A11BCC28D11571002ED178 /* ListadoPorcentajeCentros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11BCB28D11571002ED178 /* ListadoPorcentajeCentros.swift */; };
 		78A11BCE28D1158C002ED178 /* DetalleListadoPorcentajeCentros.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11BCD28D1158C002ED178 /* DetalleListadoPorcentajeCentros.swift */; };
+		78A11BD128D12FCD002ED178 /* FichaModuloIIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A11BD028D12FCD002ED178 /* FichaModuloIIModel.swift */; };
 		78A9AFF128C69233002FB144 /* FederalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A9AFF028C69233002FB144 /* FederalU006.swift */; };
 		78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B84E0B28BD4FFD0059D6B7 /* WebViewExcel.swift */; };
 		78C249C528AD5B120084B799 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C249C428AD5B120084B799 /* WebView.swift */; };
@@ -211,6 +212,7 @@
 		78A11BC928D1117F002ED178 /* PorcentajeCentros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentajeCentros.swift; sourceTree = "<group>"; };
 		78A11BCB28D11571002ED178 /* ListadoPorcentajeCentros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoPorcentajeCentros.swift; sourceTree = "<group>"; };
 		78A11BCD28D1158C002ED178 /* DetalleListadoPorcentajeCentros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoPorcentajeCentros.swift; sourceTree = "<group>"; };
+		78A11BD028D12FCD002ED178 /* FichaModuloIIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModuloIIModel.swift; sourceTree = "<group>"; };
 		78A9AFF028C69233002FB144 /* FederalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FederalU006.swift; sourceTree = "<group>"; };
 		78B84E0B28BD4FFD0059D6B7 /* WebViewExcel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewExcel.swift; sourceTree = "<group>"; };
 		78C249C428AD5B120084B799 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -464,6 +466,7 @@
 		78A11B9D28CFC771002ED178 /* Módulo_II */ = {
 			isa = PBXGroup;
 			children = (
+				78A11BCF28D12FB3002ED178 /* Ficha */,
 				78A11BC628D11137002ED178 /* IndicadoresProgramaPresupuestarioU080 */,
 				78A11BC528D10E81002ED178 /* IndicadoresProgramaPresupuestarioG001 */,
 			);
@@ -555,6 +558,14 @@
 				78A11BC928D1117F002ED178 /* PorcentajeCentros.swift */,
 			);
 			path = IndicadoresProgramaPresupuestarioU080;
+			sourceTree = "<group>";
+		};
+		78A11BCF28D12FB3002ED178 /* Ficha */ = {
+			isa = PBXGroup;
+			children = (
+				78A11BD028D12FCD002ED178 /* FichaModuloIIModel.swift */,
+			);
+			name = Ficha;
 			sourceTree = "<group>";
 		};
 		78C249C328AD5B000084B799 /* WebView */ = {
@@ -863,6 +874,7 @@
 				7881D8F428C280C0006142C8 /* GraficaIndicadoresSubsistema.swift in Sources */,
 				78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */,
 				78A11BAA28D0EE49002ED178 /* DetalleListadoTasaBrutaEC.swift in Sources */,
+				78A11BD128D12FCD002ED178 /* FichaModuloIIModel.swift in Sources */,
 				7872728D2899D1B00018DAB5 /* AppDelegate.swift in Sources */,
 				7881D8EB28C26559006142C8 /* GraficaIndicadoresEntidad.swift in Sources */,
 				78C249C828AD850B0084B799 /* FiltroModel.swift in Sources */,
