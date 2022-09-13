@@ -296,6 +296,10 @@ struct DetalleIndicador: View {
                                     ListadoTasaBrutaECIES(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
                                 case "porcentaje-documentos-normativos":
                                    ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                case "porcentaje-centros-organizaciones-sociedad-civil":
+                                    ListadoPorcentajeCentros(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                case "porcentaje-apoyos-operacion-otorgados-centros":
+                                    ListadoPorcentajeApoyos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
                                 default:
                                     EmptyView()
                                 }

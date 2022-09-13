@@ -216,6 +216,8 @@ class ModuloViewModel : ObservableObject {
     @Published var tasaBrutaEC = [TasaBrutaEC]()
     @Published var tasaBrutaECIES = [TasaBrutaECIES]()
     @Published var porcentajeDocumentosNormativos = [PorcentajeDocumentosNormativos]()
+    @Published var porcentajeApoyos = [PorcentajeApoyos]()
+    @Published var porcentajeCentros = [PorcentajeCentros]()
     
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
@@ -942,6 +944,39 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.porcentajeDocumentosNormativos = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
+            case "porcentaje-apoyos-operacion-otorgados-centros":
+                let result = try? JSONDecoder().decode([PorcentajeApoyos].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeApoyos = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-centros-organizaciones-sociedad-civil":
+                let result = try? JSONDecoder().decode([PorcentajeCentros].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeCentros = result
                             self.isTrue = false
                         }
                     case 401:
