@@ -546,7 +546,29 @@ struct DetalleIndicador: View {
                         }
                 }.edgesIgnoringSafeArea(.all)
                 .navigationBarHidden(true)
-            }.navigationBarHidden(true)
+            }
+            .navigationBarHidden(true)
+            .sheet(isPresented: $isPresented, content: {
+                VStack {
+                    if path == "tasa-bruta-escolarizada" || path == "tasa-bruta-escolarizada-cobertura" || path == "tasa-bruta-escolarizacion-ies"{
+                        WebViewExcel(token: self.token, path: self.path, periodo: "2019 - 2020", modulo: "III", entidadFederativa: "Todas", subsistema: "Todos", universidad: "Todas")
+                    }else{
+                        WebViewExcel(token: self.token, path: self.path, periodo: "2022", modulo: "III", entidadFederativa: "Todas", subsistema: "Todos", universidad: "Todas")
+                    }
+                    
+                    HStack{
+                        Spacer()
+                        Button(action: {
+                            self.isPresented.toggle()
+                        }, label: {
+                            Text("Listo")
+                                .font(.headline.bold())
+                                .padding([.trailing])
+                        })
+                    }.foregroundColor(.blue)
+                    
+                }
+            })
             
         case "Módulo III":
             VStack{

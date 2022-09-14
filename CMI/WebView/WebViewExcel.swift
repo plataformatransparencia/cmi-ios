@@ -16,7 +16,8 @@ struct WebViewExcel: UIViewRepresentable {
         let urlModI = "\(base_url_qa)/webservice/\(path)/\(periodo).csv?enc=iso-8859-1"
         let urlModIII = "\(base_url_qa)/webservice/\(path)/\(periodo).csv?universidad=\(universidad)&subsistema=\(subsistema)&entidadFederativa=\(entidadFederativa)&enc=iso-8859-1"
        
-        let downloadUrl = URL(string: modulo == "I" ? urlModI : urlModIII.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: " ", with: "+"))!
+        let downloadUrl = URL(string: modulo == "I" ? urlModI : urlModIII.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: " ", with: "%20"))!
+        print(downloadUrl)
         var request = URLRequest(url: downloadUrl)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
