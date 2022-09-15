@@ -218,6 +218,14 @@ class ModuloViewModel : ObservableObject {
     @Published var porcentajeDocumentosNormativos = [PorcentajeDocumentosNormativos]()
     @Published var porcentajeApoyos = [PorcentajeApoyos]()
     @Published var porcentajeCentros = [PorcentajeCentros]()
+    @Published var porcentajeAbosorcionAlumnosEgresados = [PorcentajeAbosorcionAlumnosEgresados]()
+    @Published var graficasPorcentajeAbosorcionAlumnosEgresados = [String]()
+    
+    @Published var montoPromedioRecursosRadicadosInstituciones = [MontoPromedioRecursosRadicadosInstituciones]()
+    @Published var graficasMontoPromedioRecursosRadicadosInstituciones = [String]()
+    
+    @Published var montoPromedioRecursosRadicadosAlumnos = [MontoPromedioRecursosRadicadosAlumnos]()
+    @Published var graficasMontoPromedioRecursosRadicadosAlumnos = [String]()
     
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
@@ -952,7 +960,54 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
-                
+            case "porcentaje-abosorcion-alumnos-egresados":
+                let result = try? JSONDecoder().decode([PorcentajeAbosorcionAlumnosEgresados].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeAbosorcionAlumnosEgresados = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "monto-promedio-recursos-radicados-alumnos":
+                let result = try? JSONDecoder().decode([MontoPromedioRecursosRadicadosAlumnos].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.montoPromedioRecursosRadicadosAlumnos = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "monto-promedio-recursos-radicados-instituciones":
+                let result = try? JSONDecoder().decode([MontoPromedioRecursosRadicadosInstituciones].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.montoPromedioRecursosRadicadosInstituciones = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
             case "porcentaje-apoyos-operacion-otorgados-centros":
                 let result = try? JSONDecoder().decode([PorcentajeApoyos].self, from: data)
                 let responseHTTP = response as? HTTPURLResponse
@@ -977,6 +1032,72 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.porcentajeCentros = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            default:
+                fatalError("No se selecciono algun indicador de la lista")
+            }
+        }.resume()
+    }
+    
+    func loadGraficasModII(token: String, path: String ,anio: String,entidadFederativa: String, subsistema: String, universidad: String) {
+        let prepareURL = "\(base_url_qa)/webservice/\(path)/\(anio)/graficas?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
+        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+")) else{
+            
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            guard let data = data, error == nil else {return}
+            switch path{
+            case "porcentaje-abosorcion-alumnos-egresados":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeAbosorcionAlumnosEgresados = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "monto-promedio-recursos-radicados-alumnos":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasMontoPromedioRecursosRadicadosAlumnos = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "monto-promedio-recursos-radicados-instituciones":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasMontoPromedioRecursosRadicadosInstituciones = result
                             self.isTrue = false
                         }
                     case 401:

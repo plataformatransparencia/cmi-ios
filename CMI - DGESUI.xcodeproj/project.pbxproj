@@ -12,6 +12,21 @@
 		78002B68286E764400B3B8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B67286E764400B3B8B4 /* Assets.xcassets */; };
 		78002B6B286E764400B3B8B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */; };
 		7819C1062887242100E7BE73 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819C1052887242100E7BE73 /* Login.swift */; };
+		783B417C28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B417B28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift */; };
+		783B417E28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B417D28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift */; };
+		783B418028D25BB30086C9E4 /* GraficasPorcentajeAbsorcionAlumnosEgresados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B417F28D25BB30086C9E4 /* GraficasPorcentajeAbsorcionAlumnosEgresados.swift */; };
+		783B418228D25D6C0086C9E4 /* DetalleListadoPorcentajeAbsorcionAlumnosEgresados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B418128D25D6C0086C9E4 /* DetalleListadoPorcentajeAbsorcionAlumnosEgresados.swift */; };
+		783B418428D25EE90086C9E4 /* DetalleItemPorcentajeAbsocionAlumnosEgresados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B418328D25EE90086C9E4 /* DetalleItemPorcentajeAbsocionAlumnosEgresados.swift */; };
+		783B418728D378380086C9E4 /* MontoPromedioRecursosRadicadosInstituciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B418628D378380086C9E4 /* MontoPromedioRecursosRadicadosInstituciones.swift */; };
+		783B418928D379EE0086C9E4 /* GraficaMontoPromedioRecursosRadicadosInstituciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B418828D379EE0086C9E4 /* GraficaMontoPromedioRecursosRadicadosInstituciones.swift */; };
+		783B418B28D37B460086C9E4 /* ListadoMontoPromedioRecursosRadicadosInstituciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B418A28D37B460086C9E4 /* ListadoMontoPromedioRecursosRadicadosInstituciones.swift */; };
+		783B418D28D37C360086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosInstituciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B418C28D37C360086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosInstituciones.swift */; };
+		783B418F28D37EC70086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosInstituciones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B418E28D37EC70086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosInstituciones.swift */; };
+		783B419228D382BA0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos .swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B419128D382BA0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos .swift */; };
+		783B419428D3876D0086C9E4 /* ListadoMontoPromedioRecursosRadicadosAlumnos .swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B419328D3876D0086C9E4 /* ListadoMontoPromedioRecursosRadicadosAlumnos .swift */; };
+		783B419628D387780086C9E4 /* GraficaMontoPromedioRecursosRadicadosAlumnos .swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B419528D387780086C9E4 /* GraficaMontoPromedioRecursosRadicadosAlumnos .swift */; };
+		783B419828D388C50086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosAlumnos .swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B419728D388C50086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosAlumnos .swift */; };
+		783B419A28D38A3B0086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosAlumnos .swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B419928D38A3B0086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosAlumnos .swift */; };
 		784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA5FF28919F7500DF30BE /* DetalleModulo.swift */; };
 		784FA6042891BBE900DF30BE /* Filtro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6032891BBE900DF30BE /* Filtro.swift */; };
 		784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */; };
@@ -137,6 +152,21 @@
 		78002B67286E764400B3B8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7819C1052887242100E7BE73 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		783B417B28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentajeAbosorcionAlumnosEgresados.swift; sourceTree = "<group>"; };
+		783B417D28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoPorcentajeAbsorcionAlumnosEgresados.swift; sourceTree = "<group>"; };
+		783B417F28D25BB30086C9E4 /* GraficasPorcentajeAbsorcionAlumnosEgresados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficasPorcentajeAbsorcionAlumnosEgresados.swift; sourceTree = "<group>"; };
+		783B418128D25D6C0086C9E4 /* DetalleListadoPorcentajeAbsorcionAlumnosEgresados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoPorcentajeAbsorcionAlumnosEgresados.swift; sourceTree = "<group>"; };
+		783B418328D25EE90086C9E4 /* DetalleItemPorcentajeAbsocionAlumnosEgresados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemPorcentajeAbsocionAlumnosEgresados.swift; sourceTree = "<group>"; };
+		783B418628D378380086C9E4 /* MontoPromedioRecursosRadicadosInstituciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MontoPromedioRecursosRadicadosInstituciones.swift; sourceTree = "<group>"; };
+		783B418828D379EE0086C9E4 /* GraficaMontoPromedioRecursosRadicadosInstituciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaMontoPromedioRecursosRadicadosInstituciones.swift; sourceTree = "<group>"; };
+		783B418A28D37B460086C9E4 /* ListadoMontoPromedioRecursosRadicadosInstituciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoMontoPromedioRecursosRadicadosInstituciones.swift; sourceTree = "<group>"; };
+		783B418C28D37C360086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosInstituciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoMontoPromedioRecursosRadicadosInstituciones.swift; sourceTree = "<group>"; };
+		783B418E28D37EC70086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosInstituciones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemMontoPromedioRecursosRadicadosInstituciones.swift; sourceTree = "<group>"; };
+		783B419128D382BA0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MontoPromedioRecursosRadicadosAlumnos .swift"; sourceTree = "<group>"; };
+		783B419328D3876D0086C9E4 /* ListadoMontoPromedioRecursosRadicadosAlumnos .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListadoMontoPromedioRecursosRadicadosAlumnos .swift"; sourceTree = "<group>"; };
+		783B419528D387780086C9E4 /* GraficaMontoPromedioRecursosRadicadosAlumnos .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GraficaMontoPromedioRecursosRadicadosAlumnos .swift"; sourceTree = "<group>"; };
+		783B419728D388C50086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosAlumnos .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetalleListadoMontoPromedioRecursosRadicadosAlumnos .swift"; sourceTree = "<group>"; };
+		783B419928D38A3B0086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosAlumnos .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetalleItemMontoPromedioRecursosRadicadosAlumnos .swift"; sourceTree = "<group>"; };
 		784FA5FF28919F7500DF30BE /* DetalleModulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleModulo.swift; sourceTree = "<group>"; };
 		784FA6032891BBE900DF30BE /* Filtro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filtro.swift; sourceTree = "<group>"; };
 		784FA6052891BD6900DF30BE /* DropDownPeriodos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownPeriodos.swift; sourceTree = "<group>"; };
@@ -304,6 +334,59 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		783B417828D253B70086C9E4 /* IndicadoresProgramaPresupuestarioU006 */ = {
+			isa = PBXGroup;
+			children = (
+				783B419028D3828B0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos  */,
+				783B418528D36D860086C9E4 /* MontoPromedioRecursosRadicadosInstituciones */,
+				783B417928D253E40086C9E4 /* PorcentajeAbosorcionAlumnosEgresados */,
+			);
+			name = IndicadoresProgramaPresupuestarioU006;
+			sourceTree = "<group>";
+		};
+		783B417928D253E40086C9E4 /* PorcentajeAbosorcionAlumnosEgresados */ = {
+			isa = PBXGroup;
+			children = (
+				783B417D28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift */,
+				783B417F28D25BB30086C9E4 /* GraficasPorcentajeAbsorcionAlumnosEgresados.swift */,
+				783B418128D25D6C0086C9E4 /* DetalleListadoPorcentajeAbsorcionAlumnosEgresados.swift */,
+				783B418328D25EE90086C9E4 /* DetalleItemPorcentajeAbsocionAlumnosEgresados.swift */,
+			);
+			path = PorcentajeAbosorcionAlumnosEgresados;
+			sourceTree = "<group>";
+		};
+		783B417A28D257CF0086C9E4 /* IndicadoresProgramaPresupuestarioU006 */ = {
+			isa = PBXGroup;
+			children = (
+				783B417B28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift */,
+				783B418628D378380086C9E4 /* MontoPromedioRecursosRadicadosInstituciones.swift */,
+				783B419128D382BA0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos .swift */,
+			);
+			path = IndicadoresProgramaPresupuestarioU006;
+			sourceTree = "<group>";
+		};
+		783B418528D36D860086C9E4 /* MontoPromedioRecursosRadicadosInstituciones */ = {
+			isa = PBXGroup;
+			children = (
+				783B418828D379EE0086C9E4 /* GraficaMontoPromedioRecursosRadicadosInstituciones.swift */,
+				783B418A28D37B460086C9E4 /* ListadoMontoPromedioRecursosRadicadosInstituciones.swift */,
+				783B418C28D37C360086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosInstituciones.swift */,
+				783B418E28D37EC70086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosInstituciones.swift */,
+			);
+			name = MontoPromedioRecursosRadicadosInstituciones;
+			sourceTree = "<group>";
+		};
+		783B419028D3828B0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos  */ = {
+			isa = PBXGroup;
+			children = (
+				783B419328D3876D0086C9E4 /* ListadoMontoPromedioRecursosRadicadosAlumnos .swift */,
+				783B419528D387780086C9E4 /* GraficaMontoPromedioRecursosRadicadosAlumnos .swift */,
+				783B419728D388C50086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosAlumnos .swift */,
+				783B419928D38A3B0086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosAlumnos .swift */,
+			);
+			name = "MontoPromedioRecursosRadicadosAlumnos ";
+			sourceTree = "<group>";
+		};
 		784FA5FE28919F1300DF30BE /* Módulos */ = {
 			isa = PBXGroup;
 			children = (
@@ -467,6 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				78A11BCF28D12FB3002ED178 /* Ficha */,
+				783B417A28D257CF0086C9E4 /* IndicadoresProgramaPresupuestarioU006 */,
 				78A11BC628D11137002ED178 /* IndicadoresProgramaPresupuestarioU080 */,
 				78A11BC528D10E81002ED178 /* IndicadoresProgramaPresupuestarioG001 */,
 			);
@@ -650,6 +734,7 @@
 		78F3178328C1423400389DBF /* Módulo II */ = {
 			isa = PBXGroup;
 			children = (
+				783B417828D253B70086C9E4 /* IndicadoresProgramaPresupuestarioU006 */,
 				78A11BBE28D10BBC002ED178 /* IndicadoresProgramaPresupuestarioU080 */,
 				78A11BBD28D10B80002ED178 /* IndicadoresProgramaPresupuestarioG001 */,
 			);
@@ -790,6 +875,7 @@
 			files = (
 				78F317A328C1761300389DBF /* DetalleListadoExtraordinarioU006.swift in Sources */,
 				78C249CA28AD85A80084B799 /* FiltroViewModel.swift in Sources */,
+				783B418B28D37B460086C9E4 /* ListadoMontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
 				7872727D289444C70018DAB5 /* FichaModulo_II.swift in Sources */,
 				78C249C528AD5B120084B799 /* WebView.swift in Sources */,
 				789107212891CE0F00CCB68C /* DetalleIndicador.swift in Sources */,
@@ -797,10 +883,12 @@
 				7857F16028A719F700D75FC3 /* PorcentajeAbanonoEscolarModel.swift in Sources */,
 				7881D8E628C26391006142C8 /* IndicadoresEntidad.swift in Sources */,
 				7857F16228A725D400D75FC3 /* GastoFederalEducacionPorcentajePibIesModel.swift in Sources */,
+				783B419628D387780086C9E4 /* GraficaMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				78F3179128C16AFB00389DBF /* ExtraordinarioS247.swift in Sources */,
 				78F3178928C1456600389DBF /* ListadoUniversidadesCrisis.swift in Sources */,
 				78F317A128C175FF00389DBF /* GraficaExtraordinarioU006.swift in Sources */,
 				78DF290828861F9500106EF7 /* ViewRouter.swift in Sources */,
+				783B419428D3876D0086C9E4 /* ListadoMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				787272872899C0AA0018DAB5 /* AuthUser.swift in Sources */,
 				78DF290A288622E400106EF7 /* AcercaDe.swift in Sources */,
 				78A11BB528D0F4AB002ED178 /* TasaButaECIES.swift in Sources */,
@@ -809,6 +897,7 @@
 				7886262D28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift in Sources */,
 				7881D8DE28C25A6F006142C8 /* GraficaU080.swift in Sources */,
 				78F3179F28C175ED00389DBF /* ListadoExtraordinarioU006.swift in Sources */,
+				783B418F28D37EC70086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
 				78A11BB128D0F408002ED178 /* DetalleListadoTasaBrutaECIES.swift in Sources */,
 				78DA650A28C7BB1C00576E37 /* DetalleMesFederalU006.swift in Sources */,
 				78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */,
@@ -824,6 +913,7 @@
 				7857F15A28A6B35800D75FC3 /* TasaBrutaEscolarizacionCoberturaInstitucionModel.swift in Sources */,
 				7881D90128C3DD77006142C8 /* ListadoIndicadoresIES.swift in Sources */,
 				78DA651228C7D54B00576E37 /* GraficaEstatalU006.swift in Sources */,
+				783B419228D382BA0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				78F3178F28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift in Sources */,
 				78A11BAC28D0EE58002ED178 /* DetalleItemTasaBrutaEC.swift in Sources */,
 				784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */,
@@ -833,22 +923,28 @@
 				78F3179D28C1740C00389DBF /* ExtraordinarioU006.swift in Sources */,
 				78D9F881288A0CC70087A35A /* Modulo.swift in Sources */,
 				78F3179828C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift in Sources */,
+				783B418928D379EE0086C9E4 /* GraficaMontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
 				78A11BA328CFCD94002ED178 /* DetalleItemTasaBrutaEES.swift in Sources */,
 				7860F2BE28BFFB93003A17E6 /* OrdinarioU006.swift in Sources */,
 				7881D8FA28C28161006142C8 /* IndicadoresSubsistema.swift in Sources */,
 				7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */,
 				78DA651028C7D54000576E37 /* ListadoEstatalU006.swift in Sources */,
 				7857F15C28A7051700D75FC3 /* TasaBrutaEscolarizacionPoblacionPrimerosCuatroDecilesIngresoModel.swift in Sources */,
+				783B417C28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift in Sources */,
+				783B419828D388C50086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */,
 				78F3178028C11CFD00389DBF /* DetalleItemOrdU006.swift in Sources */,
+				783B417E28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift in Sources */,
 				7857F16428A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift in Sources */,
 				78002B66286E764300B3B8B4 /* ContentView.swift in Sources */,
+				783B418228D25D6C0086C9E4 /* DetalleListadoPorcentajeAbsorcionAlumnosEgresados.swift in Sources */,
 				78DA651828C7D57D00576E37 /* DetalleMesEstatalU006.swift in Sources */,
 				78A9AFF128C69233002FB144 /* FederalU006.swift in Sources */,
 				78DA650228C7A9B300576E37 /* ListadoFederalU006.swift in Sources */,
 				78DF29012886064700106EF7 /* Inicio.swift in Sources */,
 				78A11BC828D1115F002ED178 /* PorcentajeApoyos.swift in Sources */,
 				78DF28FF2885D91B00106EF7 /* Home.swift in Sources */,
+				783B418D28D37C360086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
 				7881D90728C3DDA5006142C8 /* DetalleItemIndicadoresIES.swift in Sources */,
 				78DA651428C7D55D00576E37 /* DetalleListadoEstatalU006.swift in Sources */,
 				7881D8EF28C2657E006142C8 /* DetalleItemIndicadoresEntidad.swift in Sources */,
@@ -874,11 +970,13 @@
 				7881D8F428C280C0006142C8 /* GraficaIndicadoresSubsistema.swift in Sources */,
 				78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */,
 				78A11BAA28D0EE49002ED178 /* DetalleListadoTasaBrutaEC.swift in Sources */,
+				783B418428D25EE90086C9E4 /* DetalleItemPorcentajeAbsocionAlumnosEgresados.swift in Sources */,
 				78A11BD128D12FCD002ED178 /* FichaModuloIIModel.swift in Sources */,
 				7872728D2899D1B00018DAB5 /* AppDelegate.swift in Sources */,
 				7881D8EB28C26559006142C8 /* GraficaIndicadoresEntidad.swift in Sources */,
 				78C249C828AD850B0084B799 /* FiltroModel.swift in Sources */,
 				78F3179A28C16D0200389DBF /* DetalleItemExtraordinarioS247.swift in Sources */,
+				783B418728D378380086C9E4 /* MontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
 				78DA650828C7A9E600576E37 /* DetalleItemFederalU006.swift in Sources */,
 				7881D90528C3DD96006142C8 /* DetalleListadoIndicadoresIES.swift in Sources */,
 				788FD89F28A57C7D002C97F3 /* DetalleItem.swift in Sources */,
@@ -892,7 +990,9 @@
 				78DA650C28C7D34F00576E37 /* EstatalU006.swift in Sources */,
 				78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */,
 				7881D8F828C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift in Sources */,
+				783B419A28D38A3B0086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				78DA651628C7D57000576E37 /* DetalleItemEstatalU006.swift in Sources */,
+				783B418028D25BB30086C9E4 /* GraficasPorcentajeAbsorcionAlumnosEgresados.swift in Sources */,
 				78A11BC428D10DFB002ED178 /* DetalleListadoPorcentajeApoyos.swift in Sources */,
 				78A11BA528D0ED72002ED178 /* TasaBrutaEC.swift in Sources */,
 				7872727F289444D70018DAB5 /* FichaModulo_III.swift in Sources */,

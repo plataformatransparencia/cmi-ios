@@ -326,7 +326,7 @@ struct DetalleIndicador: View {
                                         }
                                     }.padding(.horizontal)
                                    ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                case "porcentaje-profesores-tiempo-completo-ies-reconocimiento":
+                                case "porcentaje-abosorcion-alumnos-egresados":
                                     HStack(alignment: .center){
                                         NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                             Text("\(nombreFicha)")
@@ -360,10 +360,15 @@ struct DetalleIndicador: View {
                                                 .frame(width: 50, height: 50)
                                         }.disabled(graph)
                                     }.padding(.horizontal)
-                                    EmptyView()
-                                case "porcentaje-cuerpos-academicos-ies":
+                                    if graph{
+                                        GraficasPorcentajeAbsorcionAlumnosEgresados(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ListadoPorcentajeAbsorcionAlumnosEgresados(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }
+                                    
+                                case "monto-promedio-recursos-radicados-alumnos":
                                     HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                             Text("\(nombreFicha)")
                                                 .font(.body)
                                                 .underline()
@@ -372,6 +377,7 @@ struct DetalleIndicador: View {
                                         Spacer()
                                         Button(action: {
                                             self.isPresented.toggle()
+                                            
                                         }){
                                             Image("Image_Excel")
                                                 .resizable()
@@ -395,10 +401,15 @@ struct DetalleIndicador: View {
                                                 .frame(width: 50, height: 50)
                                         }.disabled(graph)
                                     }.padding(.horizontal)
-                                    EmptyView()
-                                case "porcentaje-reconocimiento-perfil-deseable":
+                                    if graph{
+                                        GraficaMontoPromedioRecursosRadicadosAlumnos(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ListadoMontoPromedioRecursosRadicadosAlumnos(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                        
+                                    }
+                                case "monto-promedio-recursos-radicados-instituciones":
                                     HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                             Text("\(nombreFicha)")
                                                 .font(.body)
                                                 .underline()
@@ -407,6 +418,7 @@ struct DetalleIndicador: View {
                                         Spacer()
                                         Button(action: {
                                             self.isPresented.toggle()
+                                            
                                         }){
                                             Image("Image_Excel")
                                                 .resizable()
@@ -430,77 +442,11 @@ struct DetalleIndicador: View {
                                                 .frame(width: 50, height: 50)
                                         }.disabled(graph)
                                     }.padding(.horizontal)
-                                    EmptyView()
-                                case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    EmptyView()
-                                case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    EmptyView()
+                                    if graph{
+                                        GraficaMontoPromedioRecursosRadicadosInstituciones(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ListadoMontoPromedioRecursosRadicadosInstituciones(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }
                                     
                                 case "porcentaje-centros-organizaciones-sociedad-civil":
                                     HStack(alignment: .center){
