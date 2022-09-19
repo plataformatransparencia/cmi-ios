@@ -11,6 +11,22 @@
 		78002B66286E764300B3B8B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78002B65286E764300B3B8B4 /* ContentView.swift */; };
 		78002B68286E764400B3B8B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B67286E764400B3B8B4 /* Assets.xcassets */; };
 		78002B6B286E764400B3B8B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */; };
+		780236CA28DB793D00957848 /* GraficaPorcentajeApoyosIESIncorporacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236C928DB793D00957848 /* GraficaPorcentajeApoyosIESIncorporacion.swift */; };
+		780236CC28DB7CB200957848 /* ListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236CB28DB7CB200957848 /* ListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift */; };
+		780236CE28DB7CCB00957848 /* DetalleListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236CD28DB7CCB00957848 /* DetalleListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift */; };
+		780236D028DB7EC100957848 /* ListadoUniversidadPorcentajeApoyosIESIncorporacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236CF28DB7EC100957848 /* ListadoUniversidadPorcentajeApoyosIESIncorporacion.swift */; };
+		780236D228DB7EF800957848 /* DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236D128DB7EF800957848 /* DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion.swift */; };
+		780236D428DB820800957848 /* PorcentajeCuerposAcademicosIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236D328DB820800957848 /* PorcentajeCuerposAcademicosIES.swift */; };
+		780236D928DB850000957848 /* GraficaPorcentajeCuerposAcademicosIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236D828DB850000957848 /* GraficaPorcentajeCuerposAcademicosIES.swift */; };
+		780236DB28DB862900957848 /* ListadoSubsistemaPorcentajeCuerposAcademicosIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236DA28DB862900957848 /* ListadoSubsistemaPorcentajeCuerposAcademicosIES.swift */; };
+		780236DD28DB864300957848 /* DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236DC28DB864300957848 /* DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES.swift */; };
+		780236DF28DB885A00957848 /* ListadoUniversidadPorcentajeCuerposAcademicosIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236DE28DB885A00957848 /* ListadoUniversidadPorcentajeCuerposAcademicosIES.swift */; };
+		780236E128DB888000957848 /* DetalleListadoUniversidadPorcentajeCuerposAcademicosIES.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236E028DB888000957848 /* DetalleListadoUniversidadPorcentajeCuerposAcademicosIES.swift */; };
+		780236E628DBAAB500957848 /* GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236E528DBAAB500957848 /* GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */; };
+		780236EB28DBAC9800957848 /* ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236EA28DBAC9800957848 /* ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */; };
+		780236ED28DBACC000957848 /* DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236EC28DBACC000957848 /* DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */; };
+		780236EF28DBAEEE00957848 /* ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236EE28DBAEEE00957848 /* ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */; };
+		780236F128DBAF0A00957848 /* DetalleListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780236F028DBAF0A00957848 /* DetalleListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */; };
 		7819C1062887242100E7BE73 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7819C1052887242100E7BE73 /* Login.swift */; };
 		783B417C28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B417B28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift */; };
 		783B417E28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783B417D28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift */; };
@@ -45,6 +61,17 @@
 		7860F2BE28BFFB93003A17E6 /* OrdinarioU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7860F2BD28BFFB93003A17E6 /* OrdinarioU006.swift */; };
 		7866D87F28AC189800B71244 /* FichaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866D87E28AC189800B71244 /* FichaViewModel.swift */; };
 		7866D88228AC19A900B71244 /* FichaModuloIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7866D88128AC19A900B71244 /* FichaModuloIModel.swift */; };
+		786B772A28DA306E000D985C /* IndicadoresUniversidadSusbistema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B772928DA306E000D985C /* IndicadoresUniversidadSusbistema.swift */; };
+		786B772D28DA3EF7000D985C /* ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B772C28DA3EF7000D985C /* ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift */; };
+		786B772F28DA4315000D985C /* DetalleListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B772E28DA4315000D985C /* DetalleListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift */; };
+		786B773528DA51E2000D985C /* ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B773428DA51E2000D985C /* ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable.swift */; };
+		786B773728DA570C000D985C /* DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B773628DA570C000D985C /* DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable.swift */; };
+		786B773928DA584D000D985C /* GraficaPorcentajeReconocimientoPerfilDeseable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B773828DA584D000D985C /* GraficaPorcentajeReconocimientoPerfilDeseable.swift */; };
+		786B773E28DA7110000D985C /* GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B773D28DA7110000D985C /* GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */; };
+		786B774028DA7494000D985C /* ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B773F28DA7494000D985C /* ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */; };
+		786B774228DA74AD000D985C /* DetalleListadoSubsistemaListadoPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B774128DA74AD000D985C /* DetalleListadoSubsistemaListadoPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */; };
+		786B774428DA7BB0000D985C /* ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B774328DA7BB0000D985C /* ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */; };
+		786B774628DA7C0E000D985C /* DetalleListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 786B774528DA7C0E000D985C /* DetalleListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */; };
 		7872727B289444B80018DAB5 /* FichaModulo_I.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872727A289444B80018DAB5 /* FichaModulo_I.swift */; };
 		7872727D289444C70018DAB5 /* FichaModulo_II.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872727C289444C70018DAB5 /* FichaModulo_II.swift */; };
 		7872727F289444D70018DAB5 /* FichaModulo_III.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7872727E289444D70018DAB5 /* FichaModulo_III.swift */; };
@@ -120,6 +147,15 @@
 		78DA651428C7D55D00576E37 /* DetalleListadoEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA651328C7D55D00576E37 /* DetalleListadoEstatalU006.swift */; };
 		78DA651628C7D57000576E37 /* DetalleItemEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA651528C7D57000576E37 /* DetalleItemEstatalU006.swift */; };
 		78DA651828C7D57D00576E37 /* DetalleMesEstatalU006.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DA651728C7D57D00576E37 /* DetalleMesEstatalU006.swift */; };
+		78DDAD5B28D8CCFA004D25C3 /* PorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD5A28D8CCFA004D25C3 /* PorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */; };
+		78DDAD5E28D8D1C3004D25C3 /* ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD5D28D8D1C3004D25C3 /* ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */; };
+		78DDAD6028D8D1CF004D25C3 /* GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD5F28D8D1CF004D25C3 /* GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */; };
+		78DDAD6328D8D702004D25C3 /* DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD6228D8D702004D25C3 /* DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */; };
+		78DDAD6528D8D9E9004D25C3 /* DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD6428D8D9E9004D25C3 /* DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */; };
+		78DDAD6728D8E6D6004D25C3 /* PorcentajeCuerposAcademicosConsolidados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD6628D8E6D6004D25C3 /* PorcentajeCuerposAcademicosConsolidados.swift */; };
+		78DDAD6A28D8FB92004D25C3 /* ListadoPorcentajeCuerposAcademicosConsolidados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD6928D8FB92004D25C3 /* ListadoPorcentajeCuerposAcademicosConsolidados.swift */; };
+		78DDAD6C28D8FD16004D25C3 /* DetalleListadoPorcentajeCuerposAcademicosConsolidados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD6B28D8FD16004D25C3 /* DetalleListadoPorcentajeCuerposAcademicosConsolidados.swift */; };
+		78DDAD6E28D901A1004D25C3 /* DetalleItemPorcentajeCuerposAcademicosConsolidados.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DDAD6D28D901A1004D25C3 /* DetalleItemPorcentajeCuerposAcademicosConsolidados.swift */; };
 		78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF28FC2885D62500106EF7 /* SlideMenu.swift */; };
 		78DF28FF2885D91B00106EF7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF28FE2885D91B00106EF7 /* Home.swift */; };
 		78DF29012886064700106EF7 /* Inicio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DF29002886064700106EF7 /* Inicio.swift */; };
@@ -151,6 +187,22 @@
 		78002B65286E764300B3B8B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		78002B67286E764400B3B8B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		780236C928DB793D00957848 /* GraficaPorcentajeApoyosIESIncorporacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaPorcentajeApoyosIESIncorporacion.swift; sourceTree = "<group>"; };
+		780236CB28DB7CB200957848 /* ListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift; sourceTree = "<group>"; };
+		780236CD28DB7CCB00957848 /* DetalleListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift; sourceTree = "<group>"; };
+		780236CF28DB7EC100957848 /* ListadoUniversidadPorcentajeApoyosIESIncorporacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoUniversidadPorcentajeApoyosIESIncorporacion.swift; sourceTree = "<group>"; };
+		780236D128DB7EF800957848 /* DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion.swift; sourceTree = "<group>"; };
+		780236D328DB820800957848 /* PorcentajeCuerposAcademicosIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentajeCuerposAcademicosIES.swift; sourceTree = "<group>"; };
+		780236D828DB850000957848 /* GraficaPorcentajeCuerposAcademicosIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaPorcentajeCuerposAcademicosIES.swift; sourceTree = "<group>"; };
+		780236DA28DB862900957848 /* ListadoSubsistemaPorcentajeCuerposAcademicosIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoSubsistemaPorcentajeCuerposAcademicosIES.swift; sourceTree = "<group>"; };
+		780236DC28DB864300957848 /* DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES.swift; sourceTree = "<group>"; };
+		780236DE28DB885A00957848 /* ListadoUniversidadPorcentajeCuerposAcademicosIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoUniversidadPorcentajeCuerposAcademicosIES.swift; sourceTree = "<group>"; };
+		780236E028DB888000957848 /* DetalleListadoUniversidadPorcentajeCuerposAcademicosIES.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoUniversidadPorcentajeCuerposAcademicosIES.swift; sourceTree = "<group>"; };
+		780236E528DBAAB500957848 /* GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift; sourceTree = "<group>"; };
+		780236EA28DBAC9800957848 /* ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift; sourceTree = "<group>"; };
+		780236EC28DBACC000957848 /* DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift; sourceTree = "<group>"; };
+		780236EE28DBAEEE00957848 /* ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift; sourceTree = "<group>"; };
+		780236F028DBAF0A00957848 /* DetalleListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift; sourceTree = "<group>"; };
 		7819C1052887242100E7BE73 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		783B417B28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentajeAbosorcionAlumnosEgresados.swift; sourceTree = "<group>"; };
 		783B417D28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoPorcentajeAbsorcionAlumnosEgresados.swift; sourceTree = "<group>"; };
@@ -185,6 +237,17 @@
 		7860F2BD28BFFB93003A17E6 /* OrdinarioU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdinarioU006.swift; sourceTree = "<group>"; };
 		7866D87E28AC189800B71244 /* FichaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaViewModel.swift; sourceTree = "<group>"; };
 		7866D88128AC19A900B71244 /* FichaModuloIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModuloIModel.swift; sourceTree = "<group>"; };
+		786B772928DA306E000D985C /* IndicadoresUniversidadSusbistema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicadoresUniversidadSusbistema.swift; sourceTree = "<group>"; };
+		786B772C28DA3EF7000D985C /* ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift; sourceTree = "<group>"; };
+		786B772E28DA4315000D985C /* DetalleListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift; sourceTree = "<group>"; };
+		786B773428DA51E2000D985C /* ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable.swift; sourceTree = "<group>"; };
+		786B773628DA570C000D985C /* DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable.swift; sourceTree = "<group>"; };
+		786B773828DA584D000D985C /* GraficaPorcentajeReconocimientoPerfilDeseable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaPorcentajeReconocimientoPerfilDeseable.swift; sourceTree = "<group>"; };
+		786B773D28DA7110000D985C /* GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift; sourceTree = "<group>"; };
+		786B773F28DA7494000D985C /* ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift; sourceTree = "<group>"; };
+		786B774128DA74AD000D985C /* DetalleListadoSubsistemaListadoPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoSubsistemaListadoPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift; sourceTree = "<group>"; };
+		786B774328DA7BB0000D985C /* ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift; sourceTree = "<group>"; };
+		786B774528DA7C0E000D985C /* DetalleListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift; sourceTree = "<group>"; };
 		7872727A289444B80018DAB5 /* FichaModulo_I.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModulo_I.swift; sourceTree = "<group>"; };
 		7872727C289444C70018DAB5 /* FichaModulo_II.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModulo_II.swift; sourceTree = "<group>"; };
 		7872727E289444D70018DAB5 /* FichaModulo_III.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FichaModulo_III.swift; sourceTree = "<group>"; };
@@ -261,6 +324,15 @@
 		78DA651328C7D55D00576E37 /* DetalleListadoEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoEstatalU006.swift; sourceTree = "<group>"; };
 		78DA651528C7D57000576E37 /* DetalleItemEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemEstatalU006.swift; sourceTree = "<group>"; };
 		78DA651728C7D57D00576E37 /* DetalleMesEstatalU006.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleMesEstatalU006.swift; sourceTree = "<group>"; };
+		78DDAD5A28D8CCFA004D25C3 /* PorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentajeProfesoresTiempoCompletoIESReconocimiento.swift; sourceTree = "<group>"; };
+		78DDAD5D28D8D1C3004D25C3 /* ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift; sourceTree = "<group>"; };
+		78DDAD5F28D8D1CF004D25C3 /* GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift; sourceTree = "<group>"; };
+		78DDAD6228D8D702004D25C3 /* DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift; sourceTree = "<group>"; };
+		78DDAD6428D8D9E9004D25C3 /* DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift; sourceTree = "<group>"; };
+		78DDAD6628D8E6D6004D25C3 /* PorcentajeCuerposAcademicosConsolidados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentajeCuerposAcademicosConsolidados.swift; sourceTree = "<group>"; };
+		78DDAD6928D8FB92004D25C3 /* ListadoPorcentajeCuerposAcademicosConsolidados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListadoPorcentajeCuerposAcademicosConsolidados.swift; sourceTree = "<group>"; };
+		78DDAD6B28D8FD16004D25C3 /* DetalleListadoPorcentajeCuerposAcademicosConsolidados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleListadoPorcentajeCuerposAcademicosConsolidados.swift; sourceTree = "<group>"; };
+		78DDAD6D28D901A1004D25C3 /* DetalleItemPorcentajeCuerposAcademicosConsolidados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalleItemPorcentajeCuerposAcademicosConsolidados.swift; sourceTree = "<group>"; };
 		78DF28FC2885D62500106EF7 /* SlideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenu.swift; sourceTree = "<group>"; };
 		78DF28FE2885D91B00106EF7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		78DF29002886064700106EF7 /* Inicio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inicio.swift; sourceTree = "<group>"; };
@@ -332,6 +404,90 @@
 				78002B6A286E764400B3B8B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		780236C628DB69DE00957848 /* PorcentajeApoyosIESIncorporacion */ = {
+			isa = PBXGroup;
+			children = (
+				780236C728DB6A1B00957848 /* Por Subsistema */,
+				780236C828DB6A2A00957848 /* Por Universidad */,
+				780236C928DB793D00957848 /* GraficaPorcentajeApoyosIESIncorporacion.swift */,
+			);
+			name = PorcentajeApoyosIESIncorporacion;
+			sourceTree = "<group>";
+		};
+		780236C728DB6A1B00957848 /* Por Subsistema */ = {
+			isa = PBXGroup;
+			children = (
+				780236CB28DB7CB200957848 /* ListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift */,
+				780236CD28DB7CCB00957848 /* DetalleListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift */,
+			);
+			path = "Por Subsistema";
+			sourceTree = "<group>";
+		};
+		780236C828DB6A2A00957848 /* Por Universidad */ = {
+			isa = PBXGroup;
+			children = (
+				780236CF28DB7EC100957848 /* ListadoUniversidadPorcentajeApoyosIESIncorporacion.swift */,
+				780236D128DB7EF800957848 /* DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion.swift */,
+			);
+			name = "Por Universidad";
+			sourceTree = "<group>";
+		};
+		780236D528DB84C600957848 /* PorcentajeCuerposAcademicosIES */ = {
+			isa = PBXGroup;
+			children = (
+				780236D628DB84D500957848 /* Por Subsistema */,
+				780236D728DB84DF00957848 /* Por Universidad */,
+				780236D828DB850000957848 /* GraficaPorcentajeCuerposAcademicosIES.swift */,
+			);
+			path = PorcentajeCuerposAcademicosIES;
+			sourceTree = "<group>";
+		};
+		780236D628DB84D500957848 /* Por Subsistema */ = {
+			isa = PBXGroup;
+			children = (
+				780236DA28DB862900957848 /* ListadoSubsistemaPorcentajeCuerposAcademicosIES.swift */,
+				780236DC28DB864300957848 /* DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES.swift */,
+			);
+			name = "Por Subsistema";
+			sourceTree = "<group>";
+		};
+		780236D728DB84DF00957848 /* Por Universidad */ = {
+			isa = PBXGroup;
+			children = (
+				780236DE28DB885A00957848 /* ListadoUniversidadPorcentajeCuerposAcademicosIES.swift */,
+				780236E028DB888000957848 /* DetalleListadoUniversidadPorcentajeCuerposAcademicosIES.swift */,
+			);
+			path = "Por Universidad";
+			sourceTree = "<group>";
+		};
+		780236E228DBA9F600957848 /* PorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion */ = {
+			isa = PBXGroup;
+			children = (
+				780236E928DBAB1300957848 /* Por Subsistema */,
+				780236E728DBAADE00957848 /* Por Universidad */,
+				780236E528DBAAB500957848 /* GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */,
+			);
+			name = PorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion;
+			sourceTree = "<group>";
+		};
+		780236E728DBAADE00957848 /* Por Universidad */ = {
+			isa = PBXGroup;
+			children = (
+				780236EE28DBAEEE00957848 /* ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */,
+				780236F028DBAF0A00957848 /* DetalleListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */,
+			);
+			name = "Por Universidad";
+			sourceTree = "<group>";
+		};
+		780236E928DBAB1300957848 /* Por Subsistema */ = {
+			isa = PBXGroup;
+			children = (
+				780236EA28DBAC9800957848 /* ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */,
+				780236EC28DBACC000957848 /* DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift */,
+			);
+			name = "Por Subsistema";
 			sourceTree = "<group>";
 		};
 		783B417828D253B70086C9E4 /* IndicadoresProgramaPresupuestarioU006 */ = {
@@ -443,6 +599,62 @@
 			name = Ficha;
 			sourceTree = "<group>";
 		};
+		786B772B28DA307A000D985C /* PorcentajeReconocimientoPerfilDeseable */ = {
+			isa = PBXGroup;
+			children = (
+				786B773328DA4E55000D985C /* Por Subsistema */,
+				786B773228DA4E42000D985C /* Por Universidad */,
+				786B773828DA584D000D985C /* GraficaPorcentajeReconocimientoPerfilDeseable.swift */,
+			);
+			name = PorcentajeReconocimientoPerfilDeseable;
+			sourceTree = "<group>";
+		};
+		786B773228DA4E42000D985C /* Por Universidad */ = {
+			isa = PBXGroup;
+			children = (
+				786B772C28DA3EF7000D985C /* ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift */,
+				786B772E28DA4315000D985C /* DetalleListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift */,
+			);
+			path = "Por Universidad";
+			sourceTree = "<group>";
+		};
+		786B773328DA4E55000D985C /* Por Subsistema */ = {
+			isa = PBXGroup;
+			children = (
+				786B773428DA51E2000D985C /* ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable.swift */,
+				786B773628DA570C000D985C /* DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable.swift */,
+			);
+			name = "Por Subsistema";
+			sourceTree = "<group>";
+		};
+		786B773A28DA70A5000D985C /* PorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas */ = {
+			isa = PBXGroup;
+			children = (
+				786B773C28DA70BD000D985C /* Por Subsistema */,
+				786B773B28DA70B0000D985C /* Por Universidad */,
+				786B773D28DA7110000D985C /* GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */,
+			);
+			path = PorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas;
+			sourceTree = "<group>";
+		};
+		786B773B28DA70B0000D985C /* Por Universidad */ = {
+			isa = PBXGroup;
+			children = (
+				786B774328DA7BB0000D985C /* ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */,
+				786B774528DA7C0E000D985C /* DetalleListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */,
+			);
+			name = "Por Universidad";
+			sourceTree = "<group>";
+		};
+		786B773C28DA70BD000D985C /* Por Subsistema */ = {
+			isa = PBXGroup;
+			children = (
+				786B773F28DA7494000D985C /* ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */,
+				786B774128DA74AD000D985C /* DetalleListadoSubsistemaListadoPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift */,
+			);
+			path = "Por Subsistema";
+			sourceTree = "<group>";
+		};
 		787272792894428B0018DAB5 /* Fichas */ = {
 			isa = PBXGroup;
 			children = (
@@ -549,6 +761,7 @@
 		78A11B9D28CFC771002ED178 /* Módulo_II */ = {
 			isa = PBXGroup;
 			children = (
+				78DDAD5928D8CC9C004D25C3 /* IndicadoresProgramaPresupuestarioS247 */,
 				78A11BCF28D12FB3002ED178 /* Ficha */,
 				783B417A28D257CF0086C9E4 /* IndicadoresProgramaPresupuestarioU006 */,
 				78A11BC628D11137002ED178 /* IndicadoresProgramaPresupuestarioU080 */,
@@ -720,6 +933,52 @@
 			path = EstatalU006;
 			sourceTree = "<group>";
 		};
+		78DDAD5928D8CC9C004D25C3 /* IndicadoresProgramaPresupuestarioS247 */ = {
+			isa = PBXGroup;
+			children = (
+				78DDAD5A28D8CCFA004D25C3 /* PorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */,
+				78DDAD6628D8E6D6004D25C3 /* PorcentajeCuerposAcademicosConsolidados.swift */,
+				786B772928DA306E000D985C /* IndicadoresUniversidadSusbistema.swift */,
+				780236D328DB820800957848 /* PorcentajeCuerposAcademicosIES.swift */,
+			);
+			name = IndicadoresProgramaPresupuestarioS247;
+			sourceTree = "<group>";
+		};
+		78DDAD5C28D8D168004D25C3 /* IndicadoresProgramaPresupuestarioS247 */ = {
+			isa = PBXGroup;
+			children = (
+				780236E228DBA9F600957848 /* PorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion */,
+				780236D528DB84C600957848 /* PorcentajeCuerposAcademicosIES */,
+				780236C628DB69DE00957848 /* PorcentajeApoyosIESIncorporacion */,
+				786B773A28DA70A5000D985C /* PorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas */,
+				786B772B28DA307A000D985C /* PorcentajeReconocimientoPerfilDeseable */,
+				78DDAD6828D8FB68004D25C3 /* PorcentajeCuerposAcademicosConsolidados */,
+				78DDAD6128D8D1F6004D25C3 /* PorcentajeProfesoresTiempoCompletoIESReconocimiento */,
+			);
+			path = IndicadoresProgramaPresupuestarioS247;
+			sourceTree = "<group>";
+		};
+		78DDAD6128D8D1F6004D25C3 /* PorcentajeProfesoresTiempoCompletoIESReconocimiento */ = {
+			isa = PBXGroup;
+			children = (
+				78DDAD5D28D8D1C3004D25C3 /* ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */,
+				78DDAD5F28D8D1CF004D25C3 /* GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */,
+				78DDAD6228D8D702004D25C3 /* DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */,
+				78DDAD6428D8D9E9004D25C3 /* DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift */,
+			);
+			name = PorcentajeProfesoresTiempoCompletoIESReconocimiento;
+			sourceTree = "<group>";
+		};
+		78DDAD6828D8FB68004D25C3 /* PorcentajeCuerposAcademicosConsolidados */ = {
+			isa = PBXGroup;
+			children = (
+				78DDAD6928D8FB92004D25C3 /* ListadoPorcentajeCuerposAcademicosConsolidados.swift */,
+				78DDAD6B28D8FD16004D25C3 /* DetalleListadoPorcentajeCuerposAcademicosConsolidados.swift */,
+				78DDAD6D28D901A1004D25C3 /* DetalleItemPorcentajeCuerposAcademicosConsolidados.swift */,
+			);
+			path = PorcentajeCuerposAcademicosConsolidados;
+			sourceTree = "<group>";
+		};
 		78DF28FB2885D39D00106EF7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,6 +993,7 @@
 		78F3178328C1423400389DBF /* Módulo II */ = {
 			isa = PBXGroup;
 			children = (
+				78DDAD5C28D8D168004D25C3 /* IndicadoresProgramaPresupuestarioS247 */,
 				783B417828D253B70086C9E4 /* IndicadoresProgramaPresupuestarioU006 */,
 				78A11BBE28D10BBC002ED178 /* IndicadoresProgramaPresupuestarioU080 */,
 				78A11BBD28D10B80002ED178 /* IndicadoresProgramaPresupuestarioG001 */,
@@ -877,6 +1137,7 @@
 				78C249CA28AD85A80084B799 /* FiltroViewModel.swift in Sources */,
 				783B418B28D37B460086C9E4 /* ListadoMontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
 				7872727D289444C70018DAB5 /* FichaModulo_II.swift in Sources */,
+				786B774428DA7BB0000D985C /* ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */,
 				78C249C528AD5B120084B799 /* WebView.swift in Sources */,
 				789107212891CE0F00CCB68C /* DetalleIndicador.swift in Sources */,
 				7881D8FE28C2950C006142C8 /* FichaModuloIIIModel.swift in Sources */,
@@ -886,40 +1147,56 @@
 				783B419628D387780086C9E4 /* GraficaMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				78F3179128C16AFB00389DBF /* ExtraordinarioS247.swift in Sources */,
 				78F3178928C1456600389DBF /* ListadoUniversidadesCrisis.swift in Sources */,
+				78DDAD6528D8D9E9004D25C3 /* DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */,
 				78F317A128C175FF00389DBF /* GraficaExtraordinarioU006.swift in Sources */,
 				78DF290828861F9500106EF7 /* ViewRouter.swift in Sources */,
+				786B774028DA7494000D985C /* ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */,
+				780236D028DB7EC100957848 /* ListadoUniversidadPorcentajeApoyosIESIncorporacion.swift in Sources */,
 				783B419428D3876D0086C9E4 /* ListadoMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				787272872899C0AA0018DAB5 /* AuthUser.swift in Sources */,
 				78DF290A288622E400106EF7 /* AcercaDe.swift in Sources */,
 				78A11BB528D0F4AB002ED178 /* TasaButaECIES.swift in Sources */,
 				7881D8E228C25A99006142C8 /* DetalleItemU080.swift in Sources */,
+				786B773928DA584D000D985C /* GraficaPorcentajeReconocimientoPerfilDeseable.swift in Sources */,
 				78A11BBC28D10634002ED178 /* DetalleListadoDocumentosNormativos.swift in Sources */,
 				7886262D28A439A200048F74 /* TasaBrutaEscolarizacionCoberturaModel.swift in Sources */,
+				786B772A28DA306E000D985C /* IndicadoresUniversidadSusbistema.swift in Sources */,
 				7881D8DE28C25A6F006142C8 /* GraficaU080.swift in Sources */,
 				78F3179F28C175ED00389DBF /* ListadoExtraordinarioU006.swift in Sources */,
 				783B418F28D37EC70086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
 				78A11BB128D0F408002ED178 /* DetalleListadoTasaBrutaECIES.swift in Sources */,
 				78DA650A28C7BB1C00576E37 /* DetalleMesFederalU006.swift in Sources */,
+				78DDAD6C28D8FD16004D25C3 /* DetalleListadoPorcentajeCuerposAcademicosConsolidados.swift in Sources */,
 				78DF28FD2885D62500106EF7 /* SlideMenu.swift in Sources */,
+				78DDAD5B28D8CCFA004D25C3 /* PorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */,
 				784FA6082891C6F500DF30BE /* DropDownEjercicioFiscal.swift in Sources */,
+				780236D428DB820800957848 /* PorcentajeCuerposAcademicosIES.swift in Sources */,
 				7881D8F228C280B5006142C8 /* ListadoIndicadoresSubsistema.swift in Sources */,
 				78F3179428C16CD200389DBF /* ListadoExtraordinarioS247.swift in Sources */,
+				78DDAD6E28D901A1004D25C3 /* DetalleItemPorcentajeCuerposAcademicosConsolidados.swift in Sources */,
 				784FA60C2891C7DB00DF30BE /* DropDownSubsistema.swift in Sources */,
 				78F3178228C1377A00389DBF /* UniversidadesCrisis.swift in Sources */,
 				78A11BCC28D11571002ED178 /* ListadoPorcentajeCentros.swift in Sources */,
 				7881D8F628C280CC006142C8 /* DetalleListadoIndicadoresSubsistema.swift in Sources */,
+				780236CC28DB7CB200957848 /* ListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift in Sources */,
 				7857F15E28A712A600D75FC3 /* PorcentajeEficienciaTerminalSistemaEducativoNacionalModel.swift in Sources */,
 				78A11B9F28CFC78E002ED178 /* TasaBrutaEES.swift in Sources */,
 				7857F15A28A6B35800D75FC3 /* TasaBrutaEscolarizacionCoberturaInstitucionModel.swift in Sources */,
 				7881D90128C3DD77006142C8 /* ListadoIndicadoresIES.swift in Sources */,
+				780236DB28DB862900957848 /* ListadoSubsistemaPorcentajeCuerposAcademicosIES.swift in Sources */,
 				78DA651228C7D54B00576E37 /* GraficaEstatalU006.swift in Sources */,
 				783B419228D382BA0086C9E4 /* MontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				78F3178F28C1459B00389DBF /* DetalleItemUniversidadesCrisis.swift in Sources */,
+				78DDAD6028D8D1CF004D25C3 /* GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */,
+				786B772D28DA3EF7000D985C /* ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift in Sources */,
 				78A11BAC28D0EE58002ED178 /* DetalleItemTasaBrutaEC.swift in Sources */,
 				784FA6062891BD6900DF30BE /* DropDownPeriodos.swift in Sources */,
 				7819C1062887242100E7BE73 /* Login.swift in Sources */,
 				788F067028BE858000A61A5B /* ListadoOrdU006.swift in Sources */,
+				786B773528DA51E2000D985C /* ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable.swift in Sources */,
+				780236E128DB888000957848 /* DetalleListadoUniversidadPorcentajeCuerposAcademicosIES.swift in Sources */,
 				78A11BA128CFCCAF002ED178 /* DetalleListadoTasaBrutaEES.swift in Sources */,
+				780236DD28DB864300957848 /* DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES.swift in Sources */,
 				78F3179D28C1740C00389DBF /* ExtraordinarioU006.swift in Sources */,
 				78D9F881288A0CC70087A35A /* Modulo.swift in Sources */,
 				78F3179828C16CEF00389DBF /* DetalleListadoExtraordinarioS247.swift in Sources */,
@@ -931,10 +1208,12 @@
 				78DA651028C7D54000576E37 /* ListadoEstatalU006.swift in Sources */,
 				7857F15C28A7051700D75FC3 /* TasaBrutaEscolarizacionPoblacionPrimerosCuatroDecilesIngresoModel.swift in Sources */,
 				783B417C28D257F10086C9E4 /* PorcentajeAbosorcionAlumnosEgresados.swift in Sources */,
+				780236D928DB850000957848 /* GraficaPorcentajeCuerposAcademicosIES.swift in Sources */,
 				783B419828D388C50086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
 				7886262F28A4421F00048F74 /* ModuloViewModel.swift in Sources */,
 				78F3178028C11CFD00389DBF /* DetalleItemOrdU006.swift in Sources */,
 				783B417E28D259900086C9E4 /* ListadoPorcentajeAbsorcionAlumnosEgresados.swift in Sources */,
+				786B774228DA74AD000D985C /* DetalleListadoSubsistemaListadoPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */,
 				7857F16428A729F000D75FC3 /* GastoFederalEducacionPorcentajePibEntidadModel.swift in Sources */,
 				78002B66286E764300B3B8B4 /* ContentView.swift in Sources */,
 				783B418228D25D6C0086C9E4 /* DetalleListadoPorcentajeAbsorcionAlumnosEgresados.swift in Sources */,
@@ -942,22 +1221,27 @@
 				78A9AFF128C69233002FB144 /* FederalU006.swift in Sources */,
 				78DA650228C7A9B300576E37 /* ListadoFederalU006.swift in Sources */,
 				78DF29012886064700106EF7 /* Inicio.swift in Sources */,
+				780236EB28DBAC9800957848 /* ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */,
 				78A11BC828D1115F002ED178 /* PorcentajeApoyos.swift in Sources */,
 				78DF28FF2885D91B00106EF7 /* Home.swift in Sources */,
 				783B418D28D37C360086C9E4 /* DetalleListadoMontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
+				78DDAD6728D8E6D6004D25C3 /* PorcentajeCuerposAcademicosConsolidados.swift in Sources */,
 				7881D90728C3DDA5006142C8 /* DetalleItemIndicadoresIES.swift in Sources */,
 				78DA651428C7D55D00576E37 /* DetalleListadoEstatalU006.swift in Sources */,
 				7881D8EF28C2657E006142C8 /* DetalleItemIndicadoresEntidad.swift in Sources */,
+				780236ED28DBACC000957848 /* DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */,
 				788F067228BE858E00A61A5B /* GraficaOrdU006.swift in Sources */,
 				7866D88228AC19A900B71244 /* FichaModuloIModel.swift in Sources */,
 				7866D87F28AC189800B71244 /* FichaViewModel.swift in Sources */,
 				7881D8DC28C25A62006142C8 /* ListadoU080.swift in Sources */,
 				788B5C6E28C7EE5400021CC8 /* FiltroModelModIII.swift in Sources */,
+				780236CA28DB793D00957848 /* GraficaPorcentajeApoyosIESIncorporacion.swift in Sources */,
 				78DA650428C7A9C300576E37 /* GraficaFederalU006.swift in Sources */,
 				7881D90328C3DD84006142C8 /* GraficaIndicadoresIES.swift in Sources */,
 				784FA60028919F7500DF30BE /* DetalleModulo.swift in Sources */,
 				78DF290628861E7B00106EF7 /* MenuButton.swift in Sources */,
 				7881D8E428C25B83006142C8 /* U080.swift in Sources */,
+				786B773E28DA7110000D985C /* GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */,
 				784FA60E2891C7EA00DF30BE /* DropDownInstitucion.swift in Sources */,
 				78A11BC228D10D53002ED178 /* ListadoPorcentajeApoyos.swift in Sources */,
 				78F3178D28C1458A00389DBF /* DetalleListadoUniversidadesCrisis.swift in Sources */,
@@ -971,15 +1255,19 @@
 				78D13CE3287F3B4D0038EE47 /* Utils.swift in Sources */,
 				78A11BAA28D0EE49002ED178 /* DetalleListadoTasaBrutaEC.swift in Sources */,
 				783B418428D25EE90086C9E4 /* DetalleItemPorcentajeAbsocionAlumnosEgresados.swift in Sources */,
+				78DDAD6328D8D702004D25C3 /* DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */,
 				78A11BD128D12FCD002ED178 /* FichaModuloIIModel.swift in Sources */,
 				7872728D2899D1B00018DAB5 /* AppDelegate.swift in Sources */,
 				7881D8EB28C26559006142C8 /* GraficaIndicadoresEntidad.swift in Sources */,
 				78C249C828AD850B0084B799 /* FiltroModel.swift in Sources */,
 				78F3179A28C16D0200389DBF /* DetalleItemExtraordinarioS247.swift in Sources */,
 				783B418728D378380086C9E4 /* MontoPromedioRecursosRadicadosInstituciones.swift in Sources */,
+				78DDAD6A28D8FB92004D25C3 /* ListadoPorcentajeCuerposAcademicosConsolidados.swift in Sources */,
 				78DA650828C7A9E600576E37 /* DetalleItemFederalU006.swift in Sources */,
 				7881D90528C3DD96006142C8 /* DetalleListadoIndicadoresIES.swift in Sources */,
+				780236DF28DB885A00957848 /* ListadoUniversidadPorcentajeCuerposAcademicosIES.swift in Sources */,
 				788FD89F28A57C7D002C97F3 /* DetalleItem.swift in Sources */,
+				78DDAD5E28D8D1C3004D25C3 /* ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento.swift in Sources */,
 				787272892899C5BD0018DAB5 /* LoginModel.swift in Sources */,
 				7860F2BB28BFF4B9003A17E6 /* DetalleListadoOrdU006.swift in Sources */,
 				7857F15828A6A99E00D75FC3 /* TasaBrutaEscolarizacionCoberturaEntidadFederativaModel.swift in Sources */,
@@ -990,8 +1278,15 @@
 				78DA650C28C7D34F00576E37 /* EstatalU006.swift in Sources */,
 				78B84E0C28BD4FFD0059D6B7 /* WebViewExcel.swift in Sources */,
 				7881D8F828C280DA006142C8 /* DetalleItemIndicadoresSubsistema.swift in Sources */,
+				780236F128DBAF0A00957848 /* DetalleListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */,
+				786B772F28DA4315000D985C /* DetalleListadoUniversidadesPorcentajeReconocimientoPerfilDeseable.swift in Sources */,
+				786B773728DA570C000D985C /* DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable.swift in Sources */,
 				783B419A28D38A3B0086C9E4 /* DetalleItemMontoPromedioRecursosRadicadosAlumnos .swift in Sources */,
+				780236CE28DB7CCB00957848 /* DetalleListadoSubsistemaPorcentajeApoyosIESIncorporacion.swift in Sources */,
+				780236EF28DBAEEE00957848 /* ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */,
+				786B774628DA7C0E000D985C /* DetalleListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.swift in Sources */,
 				78DA651628C7D57000576E37 /* DetalleItemEstatalU006.swift in Sources */,
+				780236E628DBAAB500957848 /* GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.swift in Sources */,
 				783B418028D25BB30086C9E4 /* GraficasPorcentajeAbsorcionAlumnosEgresados.swift in Sources */,
 				78A11BC428D10DFB002ED178 /* DetalleListadoPorcentajeApoyos.swift in Sources */,
 				78A11BA528D0ED72002ED178 /* TasaBrutaEC.swift in Sources */,
@@ -1004,6 +1299,7 @@
 				78F317A528C1762100389DBF /* DetalleItemExtraordinarioU006.swift in Sources */,
 				788F066A28BE6A5F00A61A5B /* NetworkManager.swift in Sources */,
 				78A11BCE28D1158C002ED178 /* DetalleListadoPorcentajeCentros.swift in Sources */,
+				780236D228DB7EF800957848 /* DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion.swift in Sources */,
 				784FA60A2891C7A700DF30BE /* DropDownEntidadFederativa.swift in Sources */,
 				78A11B9C28CFC61D002ED178 /* ListadoTasaBrutaEES.swift in Sources */,
 				78F3179628C16CE000389DBF /* GraficaExtraordinarioS247.swift in Sources */,

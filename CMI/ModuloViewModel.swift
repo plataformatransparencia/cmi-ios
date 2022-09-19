@@ -227,6 +227,42 @@ class ModuloViewModel : ObservableObject {
     @Published var montoPromedioRecursosRadicadosAlumnos = [MontoPromedioRecursosRadicadosAlumnos]()
     @Published var graficasMontoPromedioRecursosRadicadosAlumnos = [String]()
     
+    @Published var porcentajeProfesoresTiempoCompletoIESReconocimiento = [PorcentajeProfesoresTiempoCompletoIESReconocimiento]()
+    @Published var graficasPorcentajeProfesoresTiempoCompletoIESReconocimiento = [String]()
+    
+    @Published var porcentajeCuerposAcademicosConsolidados = [PorcentajeCuerposAcademicosConsolidados]()
+    
+    @Published var porcentajeReconocimientoPerfilDeseableUniversidad = [IndicadoresPorUniversidad]()
+    @Published var graficasPorcentajeReconocimientoPerfilDeseableUniversidad = [String]()
+    @Published var porcentajeReconocimientoPerfilDeseableSubsistema = [IndicadoresPorSubsistema]()
+    @Published var graficasPorcentajeReconocimientoPerfilDeseableSubsistema = [String]()
+    @Published var unionPorcentajeReconocimientoPerfilDeseable = [String]()
+
+    @Published var porcentajeSolicitudesApoyosEstudiosPosgradoAprobadasUniversidad = [IndicadoresPorUniversidad]()
+    @Published var graficasPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadasUniversidad = [String]()
+    @Published var porcentajeSolicitudesApoyosEstudiosPosgradoAprobadasSubsistema = [IndicadoresPorSubsistema]()
+    @Published var graficasPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadasSubsistema = [String]()
+    @Published var unionPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas = [String]()
+    
+    @Published var porcentajeApoyosIESIncorporacionUniversidad = [IndicadoresPorUniversidad]()
+    @Published var graficasPorcentajeApoyosIESIncorporacionUniversidad = [String]()
+    @Published var porcentajeApoyosIESIncorporacionSubsistema = [IndicadoresPorSubsistema]()
+    @Published var graficasporcentajeApoyosIESIncorporacionSubsistema = [String]()
+    @Published var unionporcentajeApoyosIESIncorporacion = [String]()
+    
+    @Published var porcentajeCuerposAcademicosIESUniversidad = [PorcentajeCuerposAcademicosIESUniversidad]()
+    @Published var graficasPorcentajeCuerposAcademicosIESUniversidad = [String]()
+    @Published var porcentajeCuerposAcademicosIESSubistema = [PorcentajeCuerposAcademicosIESSubistema]()
+    @Published var graficasPorcentajeCuerposAcademicosIESSubistema = [String]()
+    @Published var unionPorcentajeCuerposAcademicosIES = [String]()
+    
+    @Published var porcentajeSolicitudesApoyoAprobadasProyectosInvestigacionUniversidad = [IndicadoresPorUniversidad]()
+    @Published var graficasPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacionUniversidad = [String]()
+    @Published var porcentajeSolicitudesApoyoAprobadasProyectosInvestigacionSubsistema = [IndicadoresPorSubsistema]()
+    @Published var graficasPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacionSubsistema = [String]()
+    @Published var unionporcentajeSolicitudesApoyoAprobadasProyectosInvestigacion = [String]()
+    
+    
     func loadInfoModI(token: String, path: String ,periodo: String) {
         guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
             return
@@ -960,6 +996,203 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
+                
+            case "porcentaje-profesores-tiempo-completo-ies-reconocimiento":
+                let result = try? JSONDecoder().decode([PorcentajeProfesoresTiempoCompletoIESReconocimiento].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeProfesoresTiempoCompletoIESReconocimiento = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-cuerpos-academicos-consolidados":
+                let result = try? JSONDecoder().decode([PorcentajeCuerposAcademicosConsolidados].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeCuerposAcademicosConsolidados = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
+            case "porcentaje-reconocimiento-perfil-deseable":
+                let result = try? JSONDecoder().decode([IndicadoresPorUniversidad].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeReconocimientoPerfilDeseableUniversidad = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
+            case "porcentaje-reconocimiento-perfil-deseable/subsistema":
+                let result = try? JSONDecoder().decode([IndicadoresPorSubsistema].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeReconocimientoPerfilDeseableSubsistema = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+
+            case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas/subsistema":
+                let result = try? JSONDecoder().decode([IndicadoresPorSubsistema].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeSolicitudesApoyosEstudiosPosgradoAprobadasSubsistema = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
+            case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas":
+                let result = try? JSONDecoder().decode([IndicadoresPorUniversidad].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeSolicitudesApoyosEstudiosPosgradoAprobadasUniversidad = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-apoyos-ies-incorporacion":
+                let result = try? JSONDecoder().decode([IndicadoresPorUniversidad].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeApoyosIESIncorporacionUniversidad = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-apoyos-ies-incorporacion/subsistema":
+                let result = try? JSONDecoder().decode([IndicadoresPorSubsistema].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeApoyosIESIncorporacionSubsistema = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-cuerpos-academicos-ies":
+                let result = try? JSONDecoder().decode([PorcentajeCuerposAcademicosIESUniversidad].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeCuerposAcademicosIESUniversidad = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-cuerpos-academicos-ies/subsistema":
+                let result = try? JSONDecoder().decode([PorcentajeCuerposAcademicosIESSubistema].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeCuerposAcademicosIESSubistema = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion":
+                let result = try? JSONDecoder().decode([IndicadoresPorUniversidad].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeSolicitudesApoyoAprobadasProyectosInvestigacionUniversidad = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion/subsistema":
+                let result = try? JSONDecoder().decode([IndicadoresPorSubsistema].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.porcentajeSolicitudesApoyoAprobadasProyectosInvestigacionSubsistema = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
             case "porcentaje-abosorcion-alumnos-egresados":
                 let result = try? JSONDecoder().decode([PorcentajeAbosorcionAlumnosEgresados].self, from: data)
                 let responseHTTP = response as? HTTPURLResponse
@@ -1074,6 +1307,24 @@ class ModuloViewModel : ObservableObject {
                         fatalError("BAD REQUEST \(error.debugDescription)")
                     }
                 }
+                
+            case "porcentaje-profesores-tiempo-completo-ies-reconocimiento":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeProfesoresTiempoCompletoIESReconocimiento = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
             case "monto-promedio-recursos-radicados-alumnos":
                 let result = try? JSONDecoder().decode([String].self, from: data)
                 let responseHTTP = response as? HTTPURLResponse
@@ -1098,6 +1349,198 @@ class ModuloViewModel : ObservableObject {
                     case 200:
                         if let result = result{
                             self.graficasMontoPromedioRecursosRadicadosInstituciones = result
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-reconocimiento-perfil-deseable":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeReconocimientoPerfilDeseableUniversidad = result
+                            for i in result{
+                                self.unionPorcentajeReconocimientoPerfilDeseable.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-reconocimiento-perfil-deseable/subsistema":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeReconocimientoPerfilDeseableSubsistema = result
+                            for i in result{
+                                self.unionPorcentajeReconocimientoPerfilDeseable.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
+            case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadasUniversidad = result
+                            for i in result{
+                                self.unionPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas/subsistema":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadasSubsistema = result
+                            for i in result{
+                                self.unionPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-apoyos-ies-incorporacion":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeApoyosIESIncorporacionUniversidad = result
+                            for i in result{
+                                self.unionporcentajeApoyosIESIncorporacion.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+                
+            case "porcentaje-apoyos-ies-incorporacion/subsistema":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasporcentajeApoyosIESIncorporacionSubsistema = result
+                            for i in result{
+                                self.unionporcentajeApoyosIESIncorporacion.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-cuerpos-academicos-ies":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeCuerposAcademicosIESUniversidad = result
+                            for i in result{
+                                self.unionPorcentajeCuerposAcademicosIES.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-cuerpos-academicos-ies/subsistema":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeCuerposAcademicosIESSubistema = result
+                            for i in result{
+                                self.unionPorcentajeCuerposAcademicosIES.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacionUniversidad = result
+                            for i in result{
+                                self.unionporcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.append(i)
+                            }
+                            self.isTrue = false
+                        }
+                    case 401:
+                        fatalError("No autorizado \(responseHTTP.debugDescription)")
+                    default:
+                        fatalError("BAD REQUEST \(error.debugDescription)")
+                    }
+                }
+            case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion/subsistema":
+                let result = try? JSONDecoder().decode([String].self, from: data)
+                let responseHTTP = response as? HTTPURLResponse
+                DispatchQueue.main.async {
+                    switch responseHTTP?.statusCode {
+                    case 200:
+                        if let result = result{
+                            self.graficasPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacionSubsistema = result
+                            for i in result{
+                                self.unionporcentajeSolicitudesApoyoAprobadasProyectosInvestigacion.append(i)
+                            }
                             self.isTrue = false
                         }
                     case 401:

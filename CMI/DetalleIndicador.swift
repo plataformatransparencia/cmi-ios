@@ -326,9 +326,287 @@ struct DetalleIndicador: View {
                                         }
                                     }.padding(.horizontal)
                                    ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                case "porcentaje-profesores-tiempo-completo-ies-reconocimiento":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    if graph{
+                                        GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }
+                                    
+                                case "porcentaje-cuerpos-academicos-consolidados":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                    }.padding(.horizontal)
+                                    ListadoPorcentajeCuerposAcademicosConsolidados(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
+                                        
+                                   
+                                case "porcentaje-reconocimiento-perfil-deseable":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    
+                                    if graph{
+                                        GraficaPorcentajeReconocimientoPerfilDeseable(token: token, path: path, anio: "2021", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: "2021", entidadFederativa: "", subsistema: "", universidad: "")
+                                            ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: "2021", entidadFederativa: "", subsistema: "", universidad: "")
+                                        }
+                                        
+                                    }
+                                    
+                                case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    
+                                    if graph{
+                                        GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                            ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                        }
+                                        
+                                    }
+                                case "porcentaje-apoyos-ies-incorporacion":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    
+                                    if graph{
+                                        GraficaPorcentajeApoyosIESIncorporacion(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                            ListadoUniversidadPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                        }
+                                        
+                                    }
+                                    
+                                case "porcentaje-cuerpos-academicos-ies":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    
+                                    if graph{
+                                        GraficaPorcentajeCuerposAcademicosIES(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                            ListadoUniversidadPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                        }
+                                        
+                                    }
+                                    
+                                case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion":
+                                    HStack(alignment: .center){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                            Text("\(nombreFicha)")
+                                                .font(.body)
+                                                .underline()
+                                                .multilineTextAlignment(.leading)
+                                        }
+                                        Spacer()
+                                        Button(action: {
+                                            self.isPresented.toggle()
+                                        }){
+                                            Image("Image_Excel")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("lista_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(!graph)
+                                        
+                                        Button(action: {
+                                            self.graph.toggle()
+                                        }){
+                                            Image("grafica_icon")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                        }.disabled(graph)
+                                    }.padding(.horizontal)
+                                    
+                                    if graph{
+                                        GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                            ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
+                                        }
+                                        
+                                    }
                                 case "porcentaje-abosorcion-alumnos-egresados":
                                     HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                             Text("\(nombreFicha)")
                                                 .font(.body)
                                                 .underline()
@@ -368,7 +646,7 @@ struct DetalleIndicador: View {
                                     
                                 case "monto-promedio-recursos-radicados-alumnos":
                                     HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                             Text("\(nombreFicha)")
                                                 .font(.body)
                                                 .underline()
@@ -409,7 +687,7 @@ struct DetalleIndicador: View {
                                     }
                                 case "monto-promedio-recursos-radicados-instituciones":
                                     HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_III(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
                                             Text("\(nombreFicha)")
                                                 .font(.body)
                                                 .underline()
