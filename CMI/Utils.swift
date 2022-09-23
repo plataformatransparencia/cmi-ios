@@ -18,10 +18,17 @@ extension Font{
     }
 }
 
-
+//Servidor Desarrollo
 let base_url_dev = "https://dgesui.ses.sep.gob.mx/desarrollocmi"
+let base_url_kc_dev = "https://dgesui.ses.sep.gob.mx/desarrollocmi/auth/realms/CMI/protocol/openid-connect"
+
+//Servidor Pruebas
 let base_url_qa = "https://dgesui.ses.sep.gob.mx/pruebascmi"
+let base_url_kc_qa = "https://dgesui.ses.sep.gob.mx/pruebascmi/auth/realms/CMI/protocol/openid-connect"
+
+//Servidor Poducción
 let base_url_prod = "https://dgesui.ses.sep.gob.mx/cmi"
+let base_url_kc_prod = "https://dgesui.ses.sep.gob.mx/auth/realms/CMI/protocol/openid-connect"
 
 
 struct LabelAlignment: UIViewRepresentable {

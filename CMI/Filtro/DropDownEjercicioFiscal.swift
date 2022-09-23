@@ -6,7 +6,7 @@ struct DropDownEjercicioFiscal: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Ejercicio Fiscal")
+                Text(self.filtroViewModel.anioSeleccionado.contains("-") ? "Periodo" : "Ejercicio Fiscal")
                     .font(.body)
                 Spacer()
                 HStack{

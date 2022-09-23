@@ -7,7 +7,7 @@ struct DropDownEntidadFederativa: View {
     var body: some View {
         VStack{
             HStack{
-                Text("Entidad Fedeativa")
+                Text("Entidad Federativa")
                     .font(.body)
                 Spacer()
                 HStack{
