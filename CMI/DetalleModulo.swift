@@ -41,16 +41,74 @@ struct DetalleModulo: View {
                                     }.padding(.bottom)
                                 }
                             case "Módulo II":
-                                ForEach(listaIndicadores){v in
-                                    NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado)){
-                                        ItemView(indicador: v.indicador)
-                                    }.padding(.bottom)
-                                }
+                                VStack(alignment: .leading, spacing: 15){
+                                    HStack{
+                                        Text("Indicadores del Programa Presupuestario G001 Normar los Servicios Educativos")
+                                            .font(.body.bold())
+                                            .foregroundColor(Color("gris_2"))
+                                        Spacer()
+                                    }
+                                    ForEach(listaIndicadores){indicador in
+                                        if indicador.grupo.contains("G001"){
+                                            NavigationLink(destination: DetalleIndicador(titulo: "\(indicador.indicador)", modulo: modulo, items: indicador.items, path: indicador.path ,codigoFicha: indicador.codigo, nombreFicha: indicador.ficha,token: token, periodo: filtroViewModel.seleccionado)){
+                                                ItemView(indicador: indicador.indicador)
+                                            }
+                                            
+                                        }
+                                    }
+                                }.padding([.top,.leading])
+                                VStack(alignment: .leading, spacing: 15){
+                                    HStack{
+                                        Text("Indicadores del Programa Presupuestario S247 Programa para el Desarrollo Profesional Docente")
+                                            .font(.body.bold())
+                                            .foregroundColor(Color("gris_2"))
+                                        Spacer()
+                                    }
+                                    ForEach(listaIndicadores){indicador in
+                                        if indicador.grupo.contains("S247"){
+                                            NavigationLink(destination: DetalleIndicador(titulo: "\(indicador.indicador)", modulo: modulo, items: indicador.items, path: indicador.path ,codigoFicha: indicador.codigo, nombreFicha: indicador.ficha,token: token, periodo: filtroViewModel.seleccionado)){
+                                                ItemView(indicador: indicador.indicador)
+                                            }
+                                            
+                                        }
+                                    }
+                                }.padding([.top,.leading])
+                                VStack(alignment: .leading, spacing: 15){
+                                    HStack{
+                                        Text("Indicadores del Programa Presupuestario U006 Subsidios para Organismos Descentralizados Estatales")
+                                            .font(.body.bold())
+                                            .foregroundColor(Color("gris_2"))
+                                        Spacer()
+                                    }
+                                    ForEach(listaIndicadores){indicador in
+                                        if indicador.grupo.contains("U006"){
+                                            NavigationLink(destination: DetalleIndicador(titulo: "\(indicador.indicador)", modulo: modulo, items: indicador.items, path: indicador.path ,codigoFicha: indicador.codigo, nombreFicha: indicador.ficha,token: token, periodo: filtroViewModel.seleccionado)){
+                                                ItemView(indicador: indicador.indicador)
+                                            }
+                                           
+                                        }
+                                    }
+                                }.padding([.top,.leading])
+                                VStack(alignment: .leading, spacing: 15){
+                                    HStack{
+                                        Text("Indicadores del Programa Presupuestario U080 Apoyos a Centros y Organizaciones de Educación")
+                                            .font(.body.bold())
+                                            .foregroundColor(Color("gris_2"))
+                                        Spacer()
+                                    }
+                                    ForEach(listaIndicadores){indicador in
+                                        if indicador.grupo.contains("U080"){
+                                            NavigationLink(destination: DetalleIndicador(titulo: "\(indicador.indicador)", modulo: modulo, items: indicador.items, path: indicador.path ,codigoFicha: indicador.codigo, nombreFicha: indicador.ficha,token: token, periodo: filtroViewModel.seleccionado)){
+                                                ItemView(indicador: indicador.indicador)
+                                            }
+                                        }
+                                    }
+                                }.padding([.top,.leading])
                             case "Módulo III":
                                 ForEach(listaIndicadores){v in
                                     NavigationLink(destination: DetalleIndicador(titulo: "\(v.indicador)", modulo: modulo, items: v.items, path: v.path ,codigoFicha: v.codigo, nombreFicha: v.ficha,token: token, periodo: filtroViewModel.seleccionado)){
                                         ItemView(indicador: v.indicador)
-                                       
+                                        
                                     }
                                     .padding(.bottom)
                                 }
@@ -58,7 +116,7 @@ struct DetalleModulo: View {
                                 EmptyView()
                             }
                         }
-                    }.padding(.bottom)
+                    }.padding(.bottom, 15)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)
                 }
@@ -72,6 +130,7 @@ struct DetalleModulo: View {
         
         
     }
+    
 }
 
 
