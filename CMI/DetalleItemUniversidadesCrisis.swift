@@ -83,6 +83,13 @@ struct DetalleItemUniversidadesCrisis: View {
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
+                                    Text("Monto. Aportación estado")
+                                        .font(.headline.bold())
+                                    Text("$" + formatResultPIB(basedOn: String(self.montoConvenioEstado)))
+                                        .font(.body)
+                                }
+                                
+                                VStack(alignment: .leading,spacing: 10){
                                     Text("Fecha de ejecución")
                                         .font(.headline.bold())
                                     Text("\(fechaEjecucionSEP)")
@@ -98,13 +105,6 @@ struct DetalleItemUniversidadesCrisis: View {
                                 
                                 
                             case "Aportación estatal":
-                                VStack(alignment: .leading,spacing: 10){
-                                    Text("Monto. Aportación estado")
-                                        .font(.headline.bold())
-                                    Text("$" + formatResultPIB(basedOn: String(self.montoConvenioEstado)))
-                                        .font(.body)
-                                }
-                                
                                 ForEach(ministraciones, id:\.monto){n in
                                     VStack(alignment: .leading,spacing: 10){
                                         Text("Monto ministrado. Aportación estatal")
