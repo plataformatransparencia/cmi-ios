@@ -925,7 +925,6 @@ class ModuloViewModel : ObservableObject {
             return
         }
         
-        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")
@@ -1200,9 +1199,7 @@ class ModuloViewModel : ObservableObject {
                 DispatchQueue.main.async {
                     switch responseHTTP?.statusCode {
                     case 200:
-                        print("No entro")
                         if let result = result{
-                            print("ok")
                             self.porcentajeAbosorcionAlumnosEgresados = result
                             self.isTrue = false
                         }

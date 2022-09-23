@@ -41,9 +41,7 @@ struct ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas: Vi
                 }
             }
         }.onAppear{
-            print("\(path)/subsistema")
             self.mouloViewModel.loadInfoModII(token: self.token, path: "\(path)/subsistema", anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
-        
         }
         .navigationBarHidden(true)
         .padding(.bottom)

@@ -211,7 +211,6 @@ class FichaViewModel : ObservableObject {
         guard let url = URL(string: "\(base_url_prod)/webservice/\(path)/ficha") else{
             return
         }
-        print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")

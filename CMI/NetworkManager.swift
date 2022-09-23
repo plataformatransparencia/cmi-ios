@@ -59,7 +59,6 @@ class NetworkManager {
                 completionOnMain(.failure(error))
             }
         }
-
         // Start the request
         urlSession.resume()
     }
