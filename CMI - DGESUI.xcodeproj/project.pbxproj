@@ -1434,7 +1434,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Direccion General de Educacion Superior Universitaria e Intercultural (DGESUI) (MYY8YFL9J8)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"CMI/Preview Content\"";
 				DEVELOPMENT_TEAM = MYY8YFL9J8;
 				ENABLE_PREVIEWS = YES;
@@ -1471,7 +1471,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Direccion General de Educacion Superior Universitaria e Intercultural (DGESUI) (MYY8YFL9J8)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"CMI/Preview Content\"";
 				DEVELOPMENT_TEAM = MYY8YFL9J8;
 				ENABLE_PREVIEWS = YES;
