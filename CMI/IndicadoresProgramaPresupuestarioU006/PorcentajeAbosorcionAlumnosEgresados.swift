@@ -16,6 +16,6 @@ struct PorcentajeAbosorcionAlumnosEgresados: Codable {
     var primerIngresoPublicoTSULIC: Int
     var primerIngresoParticularTSULIC: Int
     var entidadFedrativa: String
-    var totalIndiceAbsorcion: String
+    var totalIndiceAbsorcion: Double
 }
 

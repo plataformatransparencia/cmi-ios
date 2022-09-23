@@ -264,7 +264,7 @@ class ModuloViewModel : ObservableObject {
     
     
     func loadInfoModI(token: String, path: String ,periodo: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/\(periodo)") else{
+        guard let url = URL(string: "\(base_url_prod)/webservice/\(path)/\(periodo)") else{
             return
         }
         var request = URLRequest(url: url)
@@ -561,8 +561,8 @@ class ModuloViewModel : ObservableObject {
     }
     
     func loadInfoModIII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, universidad: String) {
-        let preprareUrl = "\(base_url_qa)/webservice/\(path)/\(anio)?ejercicioFiscal=\(anio)&entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
-        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+")) else{
+        let preprareUrl = "\(base_url_prod)/webservice/\(path)/\(anio)?ejercicioFiscal=\(anio)&entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
+        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+").replacingOccurrences(of: "ñ", with: "%C3%B1")) else{
             return
         }
         var request = URLRequest(url: url)
@@ -740,8 +740,8 @@ class ModuloViewModel : ObservableObject {
     }
     
     func loadGraficasModIII(token: String, path: String ,anio: String,entidadFederativa: String, subsistema: String, universidad: String) {
-        let prepareURL = "\(base_url_qa)/webservice/\(path)/\(anio)/graficas?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
-        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+")) else{
+        let prepareURL = "\(base_url_prod)/webservice/\(path)/\(anio)/graficas?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
+        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+").replacingOccurrences(of: "ñ", with: "%C3%B1")) else{
             
             return
         }
@@ -920,10 +920,11 @@ class ModuloViewModel : ObservableObject {
     }
     
     func loadInfoModII(token: String, path: String ,anio: String, entidadFederativa: String, subsistema: String, universidad: String) {
-        let preprareUrl = "\(base_url_qa)/webservice/\(path)/\(anio)"
-        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "%20")) else{
+        let preprareUrl = "\(base_url_prod)/webservice/\(path)/\(anio)?periodo=\(anio)&entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
+        guard let url = URL(string: preprareUrl.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "%20").replacingOccurrences(of: "ñ", with: "%C3%B1")) else{
             return
         }
+        
         print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -1199,7 +1200,9 @@ class ModuloViewModel : ObservableObject {
                 DispatchQueue.main.async {
                     switch responseHTTP?.statusCode {
                     case 200:
+                        print("No entro")
                         if let result = result{
+                            print("ok")
                             self.porcentajeAbosorcionAlumnosEgresados = result
                             self.isTrue = false
                         }
@@ -1280,8 +1283,8 @@ class ModuloViewModel : ObservableObject {
     }
     
     func loadGraficasModII(token: String, path: String ,anio: String,entidadFederativa: String, subsistema: String, universidad: String) {
-        let prepareURL = "\(base_url_qa)/webservice/\(path)/\(anio)/graficas?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
-        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+")) else{
+        let prepareURL = "\(base_url_prod)/webservice/\(path)/\(anio)/graficas?entidadFederativa=\(entidadFederativa)&subsistema=\(subsistema)&universidad=\(universidad)"
+        guard let url = URL(string: prepareURL.replacingOccurrences(of: "á", with: "%C3%A1").replacingOccurrences(of: "é", with: "%C3%A9").replacingOccurrences(of: "É", with: "%C3%89").replacingOccurrences(of: "í", with: "%C3%AD").replacingOccurrences(of: "ó", with: "%C3%B3").replacingOccurrences(of: "Ó", with: "%C3%93").replacingOccurrences(of: " ", with: "+").replacingOccurrences(of: "ñ", with: "%C3%B1")) else{
             
             return
         }

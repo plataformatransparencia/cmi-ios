@@ -21,7 +21,7 @@ struct DetalleListadoPorcentajeAbsorcionAlumnosEgresados: View {
     @State var primerIngresoPublicoTSULIC: Int
     @State var primerIngresoParticularTSULIC: Int
     @State var entidadFedrativa: String
-    @State var totalIndiceAbsorcion: String
+    @State var totalIndiceAbsorcion: Double
     var body: some View {
         VStack{
             ZStack{

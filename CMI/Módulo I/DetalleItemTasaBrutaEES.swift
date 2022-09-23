@@ -42,19 +42,19 @@ struct DetalleItemTasaBrutaEES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula Total (incluye TSU, Lic de escolarizado y no escolarizado)")
                                         .font(.headline.bold())
-                                    Text(formatResultPIB(basedOn: String(self.matriculaTotal)))
+                                    Text(formatResult(basedOn: String(self.matriculaTotal)))
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Población Total 18 a 22 años")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.censoTotal)))")
+                                    Text("\(formatResult(basedOn: String(self.censoTotal)))")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Tasa Bruta de Escolarización (Cobertura) de la Población Total")
                                         .font(.headline.bold())
-                                    Text("\(calcularPorcentaje(monto: self.tasaEscolarizacion))")
+                                    Text("\(calcularPorcentaje(monto: self.tasaEscolarizacion)) %")
                                         .font(.body)
                                 }
                                 
@@ -63,13 +63,13 @@ struct DetalleItemTasaBrutaEES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula de Mujeres (incluye TSU, Lic de escolarizado y no escolarizado)")
                                         .font(.headline.bold())
-                                    Text(formatResultPIB(basedOn: String(self.matriculaMuj)))
+                                    Text(formatResult(basedOn: String(self.matriculaMuj)))
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Mujeres 18 a 22 años")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.censoMuj)))")
+                                    Text("\(formatResult(basedOn: String(self.censoMuj)))")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
@@ -84,13 +84,13 @@ struct DetalleItemTasaBrutaEES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Matrícula de Hombres (incluye TSU, Lic de escolarizado y no escolarizado)")
                                         .font(.headline.bold())
-                                    Text(formatResultPIB(basedOn: String(self.matriculaHom)))
+                                    Text(formatResult(basedOn: String(self.matriculaHom)))
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Hombres 18 a 22 años")
                                         .font(.headline.bold())
-                                    Text("\(formatResultPIB(basedOn: String(self.censoHom)))")
+                                    Text("\(formatResult(basedOn: String(self.censoHom)))")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){

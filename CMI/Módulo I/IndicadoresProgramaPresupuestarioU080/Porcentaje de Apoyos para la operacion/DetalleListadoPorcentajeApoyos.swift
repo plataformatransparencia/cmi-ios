@@ -28,7 +28,7 @@ struct DetalleListadoPorcentajeApoyos: View {
                             VStack(alignment: .leading,spacing: 10){
                                 Text("Apoyos Otorgados a Centros y Organizaciones de Educación que Participan en el Fondo")
                                     .font(.headline.bold())
-                                Text("\(formatResult(basedOn: String(cantidad)))")
+                                Text("$ \(formatResultPIB(basedOn: String(cantidad)))")
                                     .font(.body)
                             }
                             VStack(alignment: .leading,spacing: 10){

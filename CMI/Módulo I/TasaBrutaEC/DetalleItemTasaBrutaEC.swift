@@ -33,7 +33,7 @@ struct DetalleItemTasaBrutaEC: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Contribución de las Instituciones de los Subsistemas de la DGESUI al Programa Sectorial de Educación 2020-2024")
                                         .font(.headline.bold())
-                                    Text("\(calcularPorcentaje(monto: self.contribucion))")
+                                    Text("\(calcularPorcentaje(monto: self.contribucion)) %")
                                         .font(.body)
                                 }
                                 

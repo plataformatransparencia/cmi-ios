@@ -254,47 +254,47 @@ struct DetalleItemPorcentajeCuerposAcademicosConsolidados: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Ciencias Agropecuarias CAEF/CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(porCaefCienciasAgropecuarias)))")
+                                    Text("\(porCaefCienciasAgropecuarias)")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Ciencias Sociales Y Administrativas CAEF/CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(porCaefCienciasSocialesAdministrativas)))")
+                                    Text("\(porCaefCienciasSocialesAdministrativas)")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Ciencias de la Salud CAEF/CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(porCaefCienciasSalud)))")
+                                    Text("\(porCaefCienciasSalud)")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Ciencias Ingeniería Y Tecnología CAEF/CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(porCaefCienciasIngenieriaTecnologia)))")
+                                    Text("\(porCaefCienciasIngenieriaTecnologia)")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Ciencias Naturalez Y Exactas CAEF/CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(porCaefCienciasNaturalezExactas)))")
+                                    Text("\(porCaefCienciasNaturalezExactas)")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Ciencias Educación, Humanidades Y Arte CAEF/CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(porCaefCienciasEducacionHumanidadesArte)))")
+                                    Text("\(porCaefCienciasEducacionHumanidadesArte)")
                                         .font(.body)
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("% Total CAEF/ Total CA")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(porCaefTotalCaef)))")
+                                    Text("\(porCaefTotalCaef)")
                                         .font(.body)
                                 }
                             case "%CAEC/CA":

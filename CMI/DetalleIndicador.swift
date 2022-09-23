@@ -233,551 +233,689 @@ struct DetalleIndicador: View {
         case "Módulo II":
             VStack{
                 ZStack{
-                        VStack{
-                            HStack{
-                                Button(action: {
-                                    self.presentationMode.wrappedValue.dismiss()
-                                }, label: {
-                                    Image(systemName: "chevron.left")
-                                        .font(.title3.bold())
-                                })
-                                Spacer()
-                                Text("\(titulo)")
+                    VStack{
+                        HStack{
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }, label: {
+                                Image(systemName: "chevron.left")
                                     .font(.title3.bold())
-                                    .multilineTextAlignment(.center)
-                                Spacer()
-                                
-                            }.foregroundColor(Color("gris_2"))
-                                .padding([.horizontal, .top])
-                            
-                            
-                            Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
-                            VStack{
-                                switch path{
-                                case "tasa-bruta-escolarizada":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                    }.padding(.horizontal)
-                                    ListadoTasaBrutaEES(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                case "tasa-bruta-escolarizada-cobertura":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                    }.padding(.horizontal)
-                                    ListadoTasaBrutaEC(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                case "tasa-bruta-escolarizacion-ies":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                    }.padding(.horizontal)
-                                    ListadoTasaBrutaECIES(items: items, token: token, path: path, periodo: "2019 - 2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                case "porcentaje-documentos-normativos":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                    }.padding(.horizontal)
-                                   ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                case "porcentaje-profesores-tiempo-completo-ies-reconocimiento":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    if graph{
-                                        GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }
-                                    
-                                case "porcentaje-cuerpos-academicos-consolidados":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                    }.padding(.horizontal)
-                                    ListadoPorcentajeCuerposAcademicosConsolidados(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                        
-                                   
-                                case "porcentaje-reconocimiento-perfil-deseable":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    
-                                    if graph{
-                                        GraficaPorcentajeReconocimientoPerfilDeseable(token: token, path: path, anio: "2021", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ScrollView(.vertical, showsIndicators: true){
-                                            ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: "2021", entidadFederativa: "", subsistema: "", universidad: "")
-                                            ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: "2021", entidadFederativa: "", subsistema: "", universidad: "")
-                                        }
-                                        
-                                    }
-                                    
-                                case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    
-                                    if graph{
-                                        GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ScrollView(.vertical, showsIndicators: true){
-                                            ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                            ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                        }
-                                        
-                                    }
-                                case "porcentaje-apoyos-ies-incorporacion":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    
-                                    if graph{
-                                        GraficaPorcentajeApoyosIESIncorporacion(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ScrollView(.vertical, showsIndicators: true){
-                                            ListadoSubsistemaPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                            ListadoUniversidadPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                        }
-                                        
-                                    }
-                                    
-                                case "porcentaje-cuerpos-academicos-ies":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    
-                                    if graph{
-                                        GraficaPorcentajeCuerposAcademicosIES(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ScrollView(.vertical, showsIndicators: true){
-                                            ListadoSubsistemaPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                            ListadoUniversidadPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                        }
-                                        
-                                    }
-                                    
-                                case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    
-                                    if graph{
-                                        GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(token: token, path: path, anio: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ScrollView(.vertical, showsIndicators: true){
-                                            ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                            ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: "2020", entidadFederativa: "", subsistema: "", universidad: "")
-                                        }
-                                        
-                                    }
-                                case "porcentaje-abosorcion-alumnos-egresados":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    if graph{
-                                        GraficasPorcentajeAbsorcionAlumnosEgresados(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ListadoPorcentajeAbsorcionAlumnosEgresados(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }
-                                    
-                                case "monto-promedio-recursos-radicados-alumnos":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                            
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    if graph{
-                                        GraficaMontoPromedioRecursosRadicadosAlumnos(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ListadoMontoPromedioRecursosRadicadosAlumnos(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                        
-                                    }
-                                case "monto-promedio-recursos-radicados-instituciones":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                            
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("lista_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(!graph)
-                                        
-                                        
-                                        Button(action: {
-                                            self.graph.toggle()
-                                        }){
-                                            Image("grafica_icon")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }.disabled(graph)
-                                    }.padding(.horizontal)
-                                    if graph{
-                                        GraficaMontoPromedioRecursosRadicadosInstituciones(token: token, path: path, anio: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }else{
-                                        ListadoMontoPromedioRecursosRadicadosInstituciones(items: items, token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                    }
-                                    
-                                case "porcentaje-centros-organizaciones-sociedad-civil":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                    }.padding(.horizontal)
-                                    ListadoPorcentajeCentros(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                case "porcentaje-apoyos-operacion-otorgados-centros":
-                                    HStack(alignment: .center){
-                                        NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
-                                            Text("\(nombreFicha)")
-                                                .font(.body)
-                                                .underline()
-                                                .multilineTextAlignment(.leading)
-                                        }
-                                        Spacer()
-                                        Button(action: {
-                                            self.isPresented.toggle()
-                                        }){
-                                            Image("Image_Excel")
-                                                .resizable()
-                                                .frame(width: 50, height: 50)
-                                        }
-                                    }.padding(.horizontal)
-                                    ListadoPorcentajeApoyos(token: token, path: path, periodo: "2022", entidadFederativa: "", subsistema: "", universidad: "")
-                                default:
-                                    EmptyView()
-                                }
-                            }
+                            })
                             Spacer()
+                            Text("\(titulo)")
+                                .font(.title3.bold())
+                                .multilineTextAlignment(.center)
+                            Spacer()
+                            
+                        }.foregroundColor(Color("gris_2"))
+                            .padding([.horizontal, .top])
+                        
+                        
+                        Filtro(mod: modulo, token: self.token).environmentObject(filtroViewModel)
+                        VStack{
+                            switch path{
+                            case "tasa-bruta-escolarizada":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    ListadoTasaBrutaEES(items: items, token: token, path: path, periodo: filtroViewModel.periodoSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }else{
+                                    ListadoTasaBrutaEES(items: items, token: token, path: path, periodo: filtroViewModel.periodoSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                            case "tasa-bruta-escolarizada-cobertura":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    ListadoTasaBrutaEC(items: items, token: token, path: path, periodo: filtroViewModel.periodoSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }else{
+                                    ListadoTasaBrutaEC(items: items, token: token, path: path, periodo: filtroViewModel.periodoSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                            case "tasa-bruta-escolarizacion-ies":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    ListadoTasaBrutaECIES(items: items, token: token, path: path, periodo: filtroViewModel.periodoSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }else{
+                                    ListadoTasaBrutaECIES(items: items, token: token, path: path, periodo: filtroViewModel.periodoSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                            case "porcentaje-documentos-normativos":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }else{
+                                    ListadoPorcentajeDocumentosNormativos(token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                            case "porcentaje-profesores-tiempo-completo-ies-reconocimiento":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaPorcentajeProfesoresTiempoCompletoIESReconocimiento(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                
+                            case "porcentaje-cuerpos-academicos-consolidados":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    ListadoPorcentajeCuerposAcademicosConsolidados(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }else{
+                                    ListadoPorcentajeCuerposAcademicosConsolidados(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                                
+                                
+                            case "porcentaje-reconocimiento-perfil-deseable":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaPorcentajeReconocimientoPerfilDeseable(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaPorcentajeReconocimientoPerfilDeseable(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemasPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadesPorcentajeReconocimientoPerfilDeseable(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }
+                                
+                                
+                            case "porcentaje-solicitudes-apoyos-estudios-posgrado-aprobadas":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeSolicitudesApoyosEstudiosPosgradoAprobadas(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }
+                                
+                            case "porcentaje-apoyos-ies-incorporacion":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaPorcentajeApoyosIESIncorporacion(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaPorcentajeApoyosIESIncorporacion(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeApoyosIESIncorporacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }
+                                
+                                
+                            case "porcentaje-cuerpos-academicos-ies":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaPorcentajeCuerposAcademicosIES(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaPorcentajeCuerposAcademicosIES(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeCuerposAcademicosIES(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }
+                                
+                                
+                            case "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ScrollView(.vertical, showsIndicators: true){
+                                            ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                            ListadoUniversidadPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        }
+                                        
+                                    }
+                                }
+                                
+                            case "porcentaje-abosorcion-alumnos-egresados":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficasPorcentajeAbsorcionAlumnosEgresados(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoPorcentajeAbsorcionAlumnosEgresados(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficasPorcentajeAbsorcionAlumnosEgresados(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoPorcentajeAbsorcionAlumnosEgresados(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                
+                            case "monto-promedio-recursos-radicados-alumnos":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                        
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaMontoPromedioRecursosRadicadosAlumnos(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoMontoPromedioRecursosRadicadosAlumnos(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaMontoPromedioRecursosRadicadosAlumnos(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoMontoPromedioRecursosRadicadosAlumnos(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                        
+                                    }
+                                }
+                                
+                            case "monto-promedio-recursos-radicados-instituciones":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                        
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("lista_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(!graph)
+                                    
+                                    
+                                    Button(action: {
+                                        self.graph.toggle()
+                                    }){
+                                        Image("grafica_icon")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }.disabled(graph)
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    if graph{
+                                        GraficaMontoPromedioRecursosRadicadosInstituciones(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoMontoPromedioRecursosRadicadosInstituciones(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }else{
+                                    if graph{
+                                        GraficaMontoPromedioRecursosRadicadosInstituciones(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }else{
+                                        ListadoMontoPromedioRecursosRadicadosInstituciones(items: items, token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                    }
+                                }
+                                
+                                
+                            case "porcentaje-centros-organizaciones-sociedad-civil":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    ListadoPorcentajeCentros(token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }else{
+                                    ListadoPorcentajeCentros(token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                            case "porcentaje-apoyos-operacion-otorgados-centros":
+                                HStack(alignment: .center){
+                                    NavigationLink(destination: FichaModulo_II(titulo: nombreFicha,path: path, token: token).environmentObject(fichaViewModel)){
+                                        Text("\(nombreFicha)")
+                                            .font(.body)
+                                            .underline()
+                                            .multilineTextAlignment(.leading)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        self.isPresented.toggle()
+                                    }){
+                                        Image("Image_Excel")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                    }
+                                }.padding(.horizontal)
+                                if filtroViewModel.cambio{
+                                    ListadoPorcentajeApoyos(token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }else{
+                                    ListadoPorcentajeApoyos(token: token, path: path, periodo: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
+                                }
+                                
+                            default:
+                                EmptyView()
+                            }
+                        }.onAppear{
+                            
+                            if self.filtroViewModel.anios.isEmpty && self.filtroViewModel.subsistemas.isEmpty && self.filtroViewModel.entidadesFederativas.isEmpty && self.filtroViewModel.universidades.isEmpty{
+                                self.filtroViewModel.loadFiltroModII(token: self.token, path: self.path)
+                            }
+                            
                         }
+                        Spacer()
+                    }
                 }.edgesIgnoringSafeArea(.all)
-                .navigationBarHidden(true)
+                    .navigationBarHidden(true)
             }
             .navigationBarHidden(true)
             .sheet(isPresented: $isPresented, content: {
                 VStack {
                     if path == "tasa-bruta-escolarizada" || path == "tasa-bruta-escolarizada-cobertura" || path == "tasa-bruta-escolarizacion-ies"{
-                        WebViewExcel(token: self.token, path: self.path, periodo: "2019 - 2020", modulo: "III", entidadFederativa: "Todas", subsistema: "Todos", universidad: "Todas")
+                        WebViewExcel(token: self.token, path: self.path, periodo: filtroViewModel.periodoSeleccionado, modulo: "III", entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
                     }else{
-                        WebViewExcel(token: self.token, path: self.path, periodo: "2022", modulo: "III", entidadFederativa: "Todas", subsistema: "Todos", universidad: "Todas")
+                        WebViewExcel(token: self.token, path: self.path, periodo: filtroViewModel.anioSeleccionado, modulo: "III", entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
                     }
                     
                     HStack{
@@ -880,7 +1018,7 @@ struct DetalleIndicador: View {
                                     }
                                 }
                                 
-                                case "estatal-u006":
+                            case "estatal-u006":
                                 if filtroViewModel.cambio{
                                     if graph {
                                         GraficaEstatalU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
@@ -895,7 +1033,7 @@ struct DetalleIndicador: View {
                                     }
                                 }
                                 
-                                case "universidades-en-crisis":
+                            case "universidades-en-crisis":
                                 if filtroViewModel.cambio{
                                     if graph {
                                         GraficaUniversidadesCrisis(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
@@ -910,7 +1048,7 @@ struct DetalleIndicador: View {
                                     }
                                 }
                                 
-                                case "extraordinario-s247":
+                            case "extraordinario-s247":
                                 if filtroViewModel.cambio{
                                     if graph {
                                         GraficaExtraordinarioS247(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
@@ -925,7 +1063,7 @@ struct DetalleIndicador: View {
                                     }
                                 }
                                 
-                                case "extraordinario-u006":
+                            case "extraordinario-u006":
                                 if filtroViewModel.cambio{
                                     if graph {
                                         GraficaExtraordinarioU006(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
@@ -940,7 +1078,7 @@ struct DetalleIndicador: View {
                                     }
                                 }
                                 
-                                case "u080":
+                            case "u080":
                                 if filtroViewModel.cambio{
                                     if graph {
                                         GraficaU080(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)
@@ -955,7 +1093,7 @@ struct DetalleIndicador: View {
                                     }
                                 }
                                 
-                                case "indicadores-entidad":
+                            case "indicadores-entidad":
                                 if filtroViewModel.cambio{
                                     if graph {
                                         GraficaIndicadoresEntidad(token: token, path: path, anio: filtroViewModel.anioSeleccionado, entidadFederativa: filtroViewModel.entidadFederativaSeleccionado, subsistema: filtroViewModel.subsistemaSeleccionado, universidad: filtroViewModel.universidadSeleccionado)

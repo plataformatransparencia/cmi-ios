@@ -13,7 +13,7 @@ struct DetalleItemPorcentajeAbsocionAlumnosEgresados: View {
     @State var primerIngresoPublicoTSULIC: Int
     @State var primerIngresoParticularTSULIC: Int
     @State var entidadFedrativa: String
-    @State var totalIndiceAbsorcion: String
+    @State var totalIndiceAbsorcion: Double
     @State var graficasPorcentajeAbsocionAlumnosEgresados : [String]
     var body: some View {
         VStack{
@@ -98,7 +98,7 @@ struct DetalleItemPorcentajeAbsocionAlumnosEgresados: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Total Índice de Absorción (%)")
                                         .font(.headline.bold())
-                                    Text("\(calcularPorcentaje(monto: Double(totalIndiceAbsorcion) ?? 0.0)) %")
+                                    Text("\(calcularPorcentaje(monto: Double(totalIndiceAbsorcion) )) %")
                                         .font(.body)
                                     
                                     HStack{

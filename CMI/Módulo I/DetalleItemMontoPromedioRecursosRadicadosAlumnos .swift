@@ -117,7 +117,7 @@ struct DetalleItemMontoPromedioRecursosRadicadosAlumnos: View {
                                     
                                     Text("Porcentaje del Monto Público que se Asigna a cada Alumno")
                                         .font(.headline.bold())
-                                    Text("\(porcentaje) %")
+                                    Text("\(String(format:  "%.2f",porcentaje)) %")
                                         .font(.body)
                                     
                                     HStack{

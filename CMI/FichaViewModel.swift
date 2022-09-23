@@ -82,7 +82,7 @@ class FichaViewModel : ObservableObject {
     @Published var dimensionCalidadEducativaModII = [DimensionCalidadEducativaModII]()
     
     func loadInfoFicha(token: String, path: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/ficha") else{
+        guard let url = URL(string: "\(base_url_prod)/webservice/\(path)/ficha") else{
             return
         }
         var request = URLRequest(url: url)
@@ -136,7 +136,7 @@ class FichaViewModel : ObservableObject {
     }
     
     func loadInfoFichaPDF(token: String, path: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/ficha.pdf") else{
+        guard let url = URL(string: "\(base_url_prod)/webservice/\(path)/ficha.pdf") else{
             return
         }
         var request = URLRequest(url: url)
@@ -160,7 +160,7 @@ class FichaViewModel : ObservableObject {
     }
     
     func loadInfoFichaModIII(token: String, path: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/ficha") else{
+        guard let url = URL(string: "\(base_url_prod)/webservice/\(path)/ficha") else{
             return
         }
         var request = URLRequest(url: url)
@@ -208,7 +208,7 @@ class FichaViewModel : ObservableObject {
     }
     
     func loadInfoFichaModII(token: String, path: String) {
-        guard let url = URL(string: "\(base_url_qa)/webservice/\(path)/ficha") else{
+        guard let url = URL(string: "\(base_url_prod)/webservice/\(path)/ficha") else{
             return
         }
         print(url)

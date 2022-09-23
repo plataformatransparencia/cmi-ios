@@ -50,7 +50,7 @@ struct Filtro: View {
                                     DropDownPeriodos()
                                 }
                                 
-                                if mod == "Módulo III" {
+                                if mod == "Módulo III" || mod == "Módulo II" {
                                     DropDownEjercicioFiscal()
                                     DropDownEntidadFederativa()
                                     DropDownSubsistema()

@@ -21,7 +21,7 @@ struct ListadoPorcentajeApoyos: View {
                         NavigationLink(destination: DetalleListadoPorcentajeApoyos(titulo: "\(n.ejercicioFiscal)", cantidad: n.cantidad, nota: n.nota), label: {
                             VStack(alignment: .leading){
                                 HStack{
-                                    Text("\(n.ejercicioFiscal)")
+                                    Text(String(n.ejercicioFiscal))
                                         .multilineTextAlignment(.leading)
                                     Spacer()
                                     Image(systemName: "chevron.right")

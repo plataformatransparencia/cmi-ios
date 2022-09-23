@@ -8,7 +8,7 @@ struct WebView : UIViewRepresentable {
     let path : String
     
     func makeUIView(context: Context) -> some UIView {
-        let downloadUrl = URL(string: "\(base_url_qa)/webservice/\(self.path)/ficha.pdf")!
+        let downloadUrl = URL(string: "\(base_url_prod)/webservice/\(self.path)/ficha.pdf")!
         var request = URLRequest(url: downloadUrl)
         request.httpMethod = "GET"
         request.addValue("Bearer " + token, forHTTPHeaderField: "Authorization")

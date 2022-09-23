@@ -19,7 +19,7 @@ struct ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
                     
                 }else{
                     ForEach(mouloViewModel.porcentajeProfesoresTiempoCompletoIESReconocimiento, id:\.nombre) { n in
-                        NavigationLink(destination: DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(titulo: n.nombre, items: items, token: token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad, cicloMatricula: n.cicloMatricula, totalPtc: n.totalPtc, ptcLicenciatura: n.ptcLicenciatura, ptcMaestria: n.ptcMaestria, ptcDoctorado: n.ptcDoctorado, ptcPosgrado: n.ptcPosgrado, perfilDeseable: n.perfilDeseable, snic: n.snic, sni1: n.sni1, sni2: n.sni2, sni3: n.sni3, totalSniVigente: n.totalSniVigente, porcentajeGrafica: n.porcentajeGrafica), label: {
+                        NavigationLink(destination: DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(titulo: n.nombre, items: items, token: token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: n.nombre, cicloMatricula: n.cicloMatricula, totalPtc: n.totalPtc, ptcLicenciatura: n.ptcLicenciatura, ptcMaestria: n.ptcMaestria, ptcDoctorado: n.ptcDoctorado, ptcPosgrado: n.ptcPosgrado, perfilDeseable: n.perfilDeseable, snic: n.snic, sni1: n.sni1, sni2: n.sni2, sni3: n.sni3, totalSniVigente: n.totalSniVigente, porcentajeGrafica: n.porcentajeGrafica), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.nombre)")

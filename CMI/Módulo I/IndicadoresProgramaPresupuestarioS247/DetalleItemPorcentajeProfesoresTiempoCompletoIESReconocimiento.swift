@@ -134,7 +134,8 @@ struct DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("PTC con Perfil Deseable(%)")
                                         .font(.headline.bold())
-                                    Text("\(calcularPorcentaje(monto: porcentajeGrafica))")
+                                    
+                                    Text("\(String(format: "%.2f", porcentajeGrafica)) %")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){

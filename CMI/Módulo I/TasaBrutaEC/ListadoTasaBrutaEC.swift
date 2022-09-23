@@ -19,7 +19,7 @@ struct ListadoTasaBrutaEC: View {
                     
                 }else{
                     ForEach(mouloViewModel.tasaBrutaEC, id:\.universidad.siglas) { n in
-                        NavigationLink(destination: DetalleListadoTasaBrutaEC(titulo: n.universidad.siglas, items: items, contribucion: n.contribucion, contribucionHombres: n.contribucionHombres, contribucionMujeres: n.contribucionMujeres), label: {
+                        NavigationLink(destination: DetalleListadoTasaBrutaEC(titulo: n.entidadFederativa.valor, items: items, contribucion: n.contribucion, contribucionHombres: n.contribucionHombres, contribucionMujeres: n.contribucionMujeres), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.entidadFederativa.valor)")
@@ -27,11 +27,6 @@ struct ListadoTasaBrutaEC: View {
                                     Spacer()
                                     Image(systemName: "chevron.right")
                                 }
-                                HStack{
-                                    Text("\(n.universidad.siglas)")
-                                        .multilineTextAlignment(.leading)
-                                }
-                                
                             }.font(.body)
                             .foregroundColor(Color("gris_2"))
                             .padding([.top, .horizontal])

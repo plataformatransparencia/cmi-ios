@@ -21,7 +21,7 @@ struct ListadoPorcentajeDocumentosNormativos: View {
                         NavigationLink(destination: DetalleListadoDocumentosNormativos(titulo: "\(n.ejercicioFiscal)", numeroDocNorProgram: n.numeroDocNorProgram), label: {
                             VStack(alignment: .leading){
                                 HStack{
-                                    Text("\(n.ejercicioFiscal)")
+                                    Text(String(n.ejercicioFiscal))
                                         .multilineTextAlignment(.leading)
                                     Spacer()
                                     Image(systemName: "chevron.right")

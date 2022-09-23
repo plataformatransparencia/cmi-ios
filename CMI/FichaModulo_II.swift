@@ -56,6 +56,18 @@ struct FichaModulo_II: View {
                                         Spacer()
                                     }
                                 }
+                                
+                                VStack{
+                                    HStack{
+                                        Text("Objetivo")
+                                            .font(.body.bold())
+                                        Spacer()
+                                    }
+                                    HStack{
+                                        LabelAlignment(text: fichaViewModel.objetivoModII, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                        Spacer()
+                                    }
+                                }
                                 VStack{
                                     HStack{
                                         Text("Código del indicador")
