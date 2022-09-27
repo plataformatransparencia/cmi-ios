@@ -32,7 +32,7 @@ struct DetalleIndicador: View {
                                         .font(.title3.bold())
                                 })
                                 Spacer()
-                                Text("\(titulo)")
+                                Text("\(titulo) (\(periodo))")
                                     .font(.title3.bold())
                                     .multilineTextAlignment(.center)
                                 Spacer()
@@ -230,6 +230,7 @@ struct DetalleIndicador: View {
                     self.mouloViewModel.loadInfoModI(token: self.token, path: self.path, periodo: periodo.replacingOccurrences(of: " ", with: "%20"))
                 }
             }.navigationBarHidden(true)
+            
         case "Módulo II":
             VStack{
                 ZStack{
