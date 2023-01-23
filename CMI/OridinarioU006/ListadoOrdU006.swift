@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoOrdU006: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var anio: String
@@ -21,7 +22,7 @@ struct ListadoOrdU006: View {
                     
                 }else{
                     ForEach(mouloViewModel.ordinarioU006, id:\.universidad.clave) { n in
-                        NavigationLink(destination: DetalleListadoOrdU006(titulo: "\(n.universidad.nombre)", items: items, instrumento: n.instrumento, estatusConvenio: n.estatusConvenio, montoEstatal: n.montoEstatal, montoFederal: n.montoFederal, montoPublico: n.montoPublico, matriculaSuperior: n.matriculaSuperior, matriculaMediaSuperior: n.matriculaMediaSuperior, porcentajeFederal: n.porcentajeFederal, porcentajeEstatal: n.porcentajeEstatal, matriculaTotal: n.matriculaTotal, matriculaTotalPonderada: n.matriculaTotalPonderada, subsidioEstatalPorAlumno: n.subsidioEstatalPorAlumno, subsidioFederalPorAlumno: n.subsidioFederalPorAlumno, subsidioPublicoPorAlumno: n.subsidioPublicoPorAlumno, token: token, path: path, anio:anio, entidadFederativa: entidadFederativa, subsistema:subsistema, universidad: n.universidad.nombre ), label: {
+                        NavigationLink(destination: DetalleListadoOrdU006(titulo: "\(n.universidad.nombre)", items: items, instrumento: n.instrumento, estatusConvenio: n.estatusConvenio, montoEstatal: n.montoEstatal, montoFederal: n.montoFederal, montoPublico: n.montoPublico, matriculaSuperior: n.matriculaSuperior, matriculaMediaSuperior: n.matriculaMediaSuperior, porcentajeFederal: n.porcentajeFederal, porcentajeEstatal: n.porcentajeEstatal, matriculaTotal: n.matriculaTotal, matriculaTotalPonderada: n.matriculaTotalPonderada, subsidioEstatalPorAlumno: n.subsidioEstatalPorAlumno, subsidioFederalPorAlumno: n.subsidioFederalPorAlumno, subsidioPublicoPorAlumno: n.subsidioPublicoPorAlumno, token: token, path: path, anio:anio, entidadFederativa: entidadFederativa, subsistema:subsistema, universidad: n.universidad.nombre, fuentes:fichaViewModel.fuenteModIII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.universidad.nombre)")
@@ -40,6 +41,8 @@ struct ListadoOrdU006: View {
             
         }.onAppear{
             self.mouloViewModel.loadInfoModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModIII(token: token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

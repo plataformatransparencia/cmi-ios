@@ -9,6 +9,7 @@ struct GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion: View {
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
+    @StateObject var fichaViewModel = FichaViewModel()
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
             if mouloViewModel.isTrue{
@@ -21,10 +22,24 @@ struct GraficaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion: View {
                         }
                     }.padding(.bottom)
                 }
+                VStack(alignment: .leading){
+                    HStack{
+                        Text("Fuente")
+                            .font(.headline.bold())
+                        Spacer()
+                    }.padding(.bottom)
+                    ForEach(fichaViewModel.fuentesModII, id:\.fuente) { f in
+                        LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                .padding(.bottom)
+                    }
+                }
+                
             }
         }.onAppear{
             self.mouloViewModel.loadGraficasModII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
             self.mouloViewModel.loadGraficasModII(token: self.token, path: "\(path)/subsistema", anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

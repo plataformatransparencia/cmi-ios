@@ -18,6 +18,7 @@ struct DetalleItemOrdU006: View {
     @State var subsidioFederalPorAlumno: Double
     @State var subsidioPublicoPorAlumno: Double
     @State var graficasOrdinarioU006 : [String]
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -40,22 +41,22 @@ struct DetalleItemOrdU006: View {
                             .padding([.horizontal, .top])
                         VStack(alignment: .leading, spacing: 15){
                             switch titulo{
-                            case "Subsidio por alumno":
+                            case "Subsidio por estudiante":
                                 
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Subsidio federal por alumno")
+                                    Text("Subsidio federal por estudiante")
                                         .font(.headline.bold())
                                     Text("$" + formatResultPIB(basedOn: String(self.subsidioFederalPorAlumno)))
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Subsidio estatal por alumno")
+                                    Text("Subsidio estatal por estudiante")
                                         .font(.headline.bold())
                                     Text("$ \(formatResultPIB(basedOn: String(self.subsidioEstatalPorAlumno)))")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Subsidio público por alumno")
+                                    Text("Subsidio público por estudiante")
                                         .font(.headline.bold())
                                     Text("$ \(formatResultPIB(basedOn: String(self.subsidioPublicoPorAlumno)))")
                                         .font(.body)
@@ -171,8 +172,17 @@ struct DetalleItemOrdU006: View {
                             }
                         }.padding()
                             .foregroundColor(Color("gris_2"))
-                        
-                        
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            
+                            LabelAlignment(text: fuentes, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                            .padding(.bottom)
+                            
+                        }
                         
                         
                     }.padding(.bottom)

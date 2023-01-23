@@ -20,7 +20,6 @@ struct TopBand: View {
                     }
                 }
                
-
                 Spacer(minLength: 0)
                 
                 Text("Cuadro de Mando Integral")

@@ -1,14 +1,14 @@
 struct PorcentajeCuerposAcademicosIESUniversidad: Codable {
     var universidad: Universidad
-    var evaluados: Int
-    var subenGrado: Int
-    var porcentaje: Double
+    var evaluados: String
+    var subenGrado: String
+    var porcentaje: String
 }
 
 
 struct PorcentajeCuerposAcademicosIESSubistema: Codable {
     var subsistema: String
-    var totalEvaluados: Int
-    var totalSubenGrado: Int
-    var totalPorcentaje: Double
+    var totalEvaluados: String
+    var totalSubenGrado: String
+    var totalPorcentaje: String
 }

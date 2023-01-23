@@ -3,15 +3,15 @@ import Foundation
 
 struct IndicadoresPorUniversidad: Codable {
     var universidad: Universidad
-    var otorgado: Int
-    var solicitado: Int
-    var porcentaje: Double
+    var otorgado: String
+    var solicitado: String
+    var porcentaje: String
 }
 
 
 struct IndicadoresPorSubsistema: Codable {
     var subsistema: String
-    var totalOtorgado: Int
-    var totalSolicitado: Int
-    var totalPorcentaje: Double
+    var totalOtorgado: String
+    var totalSolicitado: String
+    var totalPorcentaje: String
 }

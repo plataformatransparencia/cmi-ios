@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoUniversidadPorcentajeApoyosIESIncorporacion: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -25,7 +26,7 @@ struct ListadoUniversidadPorcentajeApoyosIESIncorporacion: View {
                     
                 }else{
                     ForEach(mouloViewModel.porcentajeApoyosIESIncorporacionUniversidad, id:\.universidad.nombre) { n in
-                        NavigationLink(destination: DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion(titulo: n.universidad.nombre, items: items, otorgado: n.otorgado, solicitado: n.solicitado, porcentaje: n.porcentaje, token: token, path: path, periodo: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: n.universidad.nombre), label: {
+                        NavigationLink(destination: DetalleListadoUniversidadPorcentajeApoyosIESIncorporacion(titulo: n.universidad.nombre, items: items, otorgado: n.otorgado, solicitado: n.solicitado, porcentaje: n.porcentaje, token: token, path: path, periodo: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: n.universidad.nombre,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.universidad.nombre)")
@@ -42,6 +43,8 @@ struct ListadoUniversidadPorcentajeApoyosIESIncorporacion: View {
             }
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
         .padding(.bottom)

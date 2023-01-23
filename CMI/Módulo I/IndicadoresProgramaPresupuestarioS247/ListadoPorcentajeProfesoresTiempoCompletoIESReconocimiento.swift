@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -19,7 +20,7 @@ struct ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
                     
                 }else{
                     ForEach(mouloViewModel.porcentajeProfesoresTiempoCompletoIESReconocimiento, id:\.nombre) { n in
-                        NavigationLink(destination: DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(titulo: n.nombre, items: items, token: token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: n.nombre, cicloMatricula: n.cicloMatricula, totalPtc: n.totalPtc, ptcLicenciatura: n.ptcLicenciatura, ptcMaestria: n.ptcMaestria, ptcDoctorado: n.ptcDoctorado, ptcPosgrado: n.ptcPosgrado, perfilDeseable: n.perfilDeseable, snic: n.snic, sni1: n.sni1, sni2: n.sni2, sni3: n.sni3, totalSniVigente: n.totalSniVigente, porcentajeGrafica: n.porcentajeGrafica), label: {
+                        NavigationLink(destination: DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento(titulo: n.nombre, items: items, token: token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: n.nombre, cicloMatricula: n.cicloMatricula, totalPtc: n.totalPtc, ptcLicenciatura: n.ptcLicenciatura, ptcMaestria: n.ptcMaestria, ptcDoctorado: n.ptcDoctorado, ptcPosgrado: n.ptcPosgrado, perfilDeseable: n.perfilDeseable, snic: n.snic, sni1: n.sni1, sni2: n.sni2, sni3: n.sni3, totalSniVigente: n.totalSniVigente, porcentajeGrafica: n.porcentajeGrafica,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.nombre)")
@@ -36,6 +37,8 @@ struct ListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
             }
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

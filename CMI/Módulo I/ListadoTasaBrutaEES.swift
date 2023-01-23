@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoTasaBrutaEES: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -19,7 +20,7 @@ struct ListadoTasaBrutaEES: View {
                     
                 }else{
                     ForEach(mouloViewModel.tasaBrutaEES, id:\.entidadFederativa.valor) { n in
-                        NavigationLink(destination: DetalleListadoTasaBrutaEES(titulo: n.entidadFederativa.valor, items: items, matriculaTotal: n.matriculaTotal, censoTotal: n.censoTotal, tasaEscolarizacion: n.tasaEscolarizacion, matriculaMuj: n.matriculaMuj, censoMuj: n.censoMuj, tasaMujeres: n.tasaMujeres, matriculaHom: n.matriculaHom, censoHom: n.censoHom, tasaHombres: n.tasaHombres), label: {
+                        NavigationLink(destination: DetalleListadoTasaBrutaEES(titulo: n.entidadFederativa.valor, items: items, matriculaTotal: n.matriculaTotal, censoTotal: n.censoTotal, tasaEscolarizacion: n.tasaEscolarizacion, matriculaMuj: n.matriculaMuj, censoMuj: n.censoMuj, tasaMujeres: n.tasaMujeres, matriculaHom: n.matriculaHom, censoHom: n.censoHom, tasaHombres: n.tasaHombres,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.entidadFederativa.valor)")
@@ -38,6 +39,7 @@ struct ListadoTasaBrutaEES: View {
             
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
         }
         .navigationBarHidden(true)
     }

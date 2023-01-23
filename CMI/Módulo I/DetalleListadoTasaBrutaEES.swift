@@ -15,6 +15,7 @@ struct DetalleListadoTasaBrutaEES: View {
     @State var matriculaHom: Int
     @State var censoHom: Int
     @State var tasaHombres: Double
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -37,7 +38,7 @@ struct DetalleListadoTasaBrutaEES: View {
                             .padding([.horizontal, .top])
                         
                         ForEach(items.sorted(by: <), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItemTasaBrutaEES(titulo: key, matriculaTotal: matriculaTotal, censoTotal: censoTotal, tasaEscolarizacion: tasaEscolarizacion, matriculaMuj: matriculaMuj, censoMuj: censoMuj, tasaMujeres: tasaMujeres, matriculaHom: matriculaHom, censoHom: censoHom, tasaHombres: tasaHombres)){
+                            NavigationLink(destination: DetalleItemTasaBrutaEES(titulo: key, matriculaTotal: matriculaTotal, censoTotal: censoTotal, tasaEscolarizacion: tasaEscolarizacion, matriculaMuj: matriculaMuj, censoMuj: censoMuj, tasaMujeres: tasaMujeres, matriculaHom: matriculaHom, censoHom: censoHom, tasaHombres: tasaHombres, fuentes: fuentes)){
                                 ItemView(indicador: key)
                                 
                             }

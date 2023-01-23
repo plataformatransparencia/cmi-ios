@@ -202,7 +202,9 @@ struct DetalleIndicador: View {
                                     case "gasto-federal-educacion-porcentaje-pib-ies":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResultPIB(basedOn: "\(self.mouloViewModel.aportacionGFEPPibIes)")).replacingOccurrences(of: "{1}", with: calcularPorcentajePIB(monto: self.mouloViewModel.subsidioGFEPPibIes)), ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibIes, referencias: self.mouloViewModel.refereenciasGFEPPibIes, token: token, path: self.path, periodo: self.periodo)){
+                                            let anio = self.periodo.split(separator: "-").first!
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: formatResultPIB(basedOn: "\(self.mouloViewModel.aportacionGFEPPibIes)")).replacingOccurrences(of: "{1}", with: calcularPorcentajePIB(monto: self.mouloViewModel.subsidioGFEPPibIes)).replacingOccurrences(of: "{2}", with: anio.trimmingCharacters(in: .whitespacesAndNewlines)), ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibIes, referencias: self.mouloViewModel.refereenciasGFEPPibIes, token: token, path: self.path, periodo: self.periodo)){
+                                                
                                                 ItemView(indicador: key)
                                             }
                                         default:
@@ -212,7 +214,8 @@ struct DetalleIndicador: View {
                                     case "gasto-federal-educacion-porcentaje-pib-entidad":
                                         switch key{
                                         case "Total":
-                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: calcularPorcentajePIB(monto: self.mouloViewModel.subsidioGFEPPibEEntidad)), ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibEEntidad, referencias: self.mouloViewModel.refereenciasGFEPPibEEntidad, token: token, path: self.path, periodo: self.periodo)){
+                                            let anio = self.periodo.split(separator: "-").first!
+                                            NavigationLink(destination: DetalleItem(titulo: key, texto: value.replacingOccurrences(of: "{0}", with: calcularPorcentajePIB(monto: self.mouloViewModel.subsidioGFEPPibEEntidad)).replacingOccurrences(of: "{1}", with: anio.trimmingCharacters(in: .whitespacesAndNewlines)), ImagenGrafica: self.mouloViewModel.imagenTotalGFEPPibEEntidad, referencias: self.mouloViewModel.refereenciasGFEPPibEEntidad, token: token, path: self.path, periodo: self.periodo)){
                                                 ItemView(indicador: key)
                                             }
                                         default:

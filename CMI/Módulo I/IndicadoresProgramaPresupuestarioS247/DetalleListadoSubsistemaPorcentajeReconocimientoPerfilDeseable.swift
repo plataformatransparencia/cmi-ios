@@ -4,15 +4,16 @@ struct DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var mouloViewModel = ModuloViewModel()
     @State var titulo: String
-    @State var totalOtorgado: Int
-    @State var totalSolicitado: Int
-    @State var totalPorcentaje: Double
+    @State var totalOtorgado: String
+    @State var totalSolicitado: String
+    @State var totalPorcentaje: String
     @State var token: String
     @State var path: String
     @State var periodo: String
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -41,19 +42,19 @@ struct DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Otorgado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(totalOtorgado)))")
+                                    Text( totalOtorgado)
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Solicitado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(totalSolicitado)))")
+                                    Text(totalSolicitado)
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Porcentaje de Reconocimientos al Perfil Deseable Otorgados a Profesores de Tiempo Completo de Instituciones Públicas de Educación Superior")
                                         .font(.headline.bold())
-                                    Text("\(calcularPorcentaje(monto: totalPorcentaje)) %")
+                                    Text("\(calcularPorcentajeString(monto: totalPorcentaje))")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
@@ -63,9 +64,21 @@ struct DetalleListadoSubsistemaPorcentajeReconocimientoPerfilDeseable: View {
                                         }
                                     }.padding(.bottom)
                                 }
+                                
+                                
                             }.padding()
                                 .foregroundColor(Color("gris_2"))
-                        }
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }                        }
                         
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)

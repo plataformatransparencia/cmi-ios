@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -25,7 +26,7 @@ struct ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacio
                     
                 }else{
                     ForEach(mouloViewModel.porcentajeSolicitudesApoyoAprobadasProyectosInvestigacionSubsistema, id:\.subsistema) { n in
-                        NavigationLink(destination: DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(titulo: n.subsistema, totalOtorgado: n.totalOtorgado, totalSolicitado: n.totalSolicitado, totalPorcentaje: n.totalPorcentaje, token: token, path: "\(path)/subsistema", periodo: periodo, entidadFederativa: entidadFederativa, subsistema: n.subsistema, universidad: universidad), label: {
+                        NavigationLink(destination: DetalleListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacion(titulo: n.subsistema, totalOtorgado: n.totalOtorgado, totalSolicitado: n.totalSolicitado, totalPorcentaje: n.totalPorcentaje, token: token, path: "\(path)/subsistema", periodo: periodo, entidadFederativa: entidadFederativa, subsistema: n.subsistema, universidad: universidad,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.subsistema)")
@@ -42,6 +43,8 @@ struct ListadoSubsistemaPorcentajeSolicitudesApoyoAprobadasProyectosInvestigacio
             }
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: "\(path)/subsistema", anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
         .padding(.bottom)

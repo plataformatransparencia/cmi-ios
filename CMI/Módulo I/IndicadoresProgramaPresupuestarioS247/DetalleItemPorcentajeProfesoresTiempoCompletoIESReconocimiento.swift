@@ -17,6 +17,7 @@ struct DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
     @State var totalSniVigente: Int
     @State var porcentajeGrafica: Double
     @State var graficasPorcentajeProfesoresTiempoCompletoIESReconocimiento : [String]
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -148,6 +149,18 @@ struct DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
                             default:
                                 EmptyView()
                             }
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }
+                            
                         }.padding()
                             .foregroundColor(Color("gris_2"))
                         

@@ -40,8 +40,14 @@ struct SlideMenu: View {
                                         if value.title == "Cerrar Sesión"{
                                             userAuth.logout(token: self.userAuth.token, refresToken: self.userAuth.refreshToken)
                                         }
+                                        if value.title == "Inicio"{
+                                            viewRouter.currentPage = .inicio
+                                            print("entro a inicio")
+                                        }
+                                        if value.title == "Acerca de CMI"{
+                                            viewRouter.currentPage = .acercaDe
+                                        }
                                         
-                                        viewRouter.currentPage = value.pagina
                                         x = -UIScreen.main.bounds.width - 90
                                     }
                                 }
@@ -68,10 +74,3 @@ struct SlideMenu: View {
         }
     }
 }
-
-
-
-
-
-
-

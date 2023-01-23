@@ -4,15 +4,16 @@ struct DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var mouloViewModel = ModuloViewModel()
     @State var titulo: String
-    @State var totalEvaluados: Int
-    @State var totalSubenGrado : Int
-    @State var totalPorcentaje: Double
+    @State var totalEvaluados: String
+    @State var totalSubenGrado : String
+    @State var totalPorcentaje: String
     @State var token: String
     @State var path: String
     @State var periodo: String
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -41,19 +42,19 @@ struct DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES: View {
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Evaluados")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(totalEvaluados)))")
+                                    Text(totalEvaluados)
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Suben de Grado")
                                         .font(.headline.bold())
-                                    Text("\(formatResult(basedOn: String(totalSubenGrado)))")
+                                    Text(totalSubenGrado)
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Porcentaje de Cuerpos Académicos en las IES que Cambian a un Grado de Consolidación Superior por Año")
                                         .font(.headline.bold())
-                                    Text("\(calcularPorcentaje(monto: totalPorcentaje)) %")
+                                    Text("\(calcularPorcentajeString(monto: totalPorcentaje))")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
@@ -65,6 +66,18 @@ struct DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES: View {
                                 }
                             }.padding()
                                 .foregroundColor(Color("gris_2"))
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }
+                            
                         }
                         
                     }.padding(.bottom)

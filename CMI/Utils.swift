@@ -119,7 +119,7 @@ Contar con una herramienta para medir la evolución de las actividades de los Su
 let antecedentes_text_info_acerca_de = """
 En la educación superior históricamente se han enfatizado las medidas académicas que son fácilmente cuantificables. Por ejemplo:
 
-* Número de profesores y alumnos.
+* Número de profesores y estudiantes.
 
 * Grado académico promedio.
 
@@ -198,6 +198,17 @@ func calcularPorcentaje(monto: Double) -> String{
     return String(format: "%.2f", (monto * 100))
 }
 
+func calcularPorcentajeString(monto: String) -> String{
+    if(Double(monto) != nil){
+        return String(format: "%.2f", (Double(monto)! * 100)) + " %"
+        
+    }
+    else{
+        return monto
+    }
+        
+   
+}
 func calcularPorcentajePIB(monto: Double) -> String{
     return String(format: "%.4f", (monto * 100))
 }
@@ -253,11 +264,11 @@ let listaModulo_I = [
                 codigo: "2.3.10", ficha: "2.3.10 - Porcentaje de abandono escolar - Superior, nacional", path: "porcentaje-abandono-escolar", grupo: ""),
     Indicadores(indicador: "Gasto federal en educación como porcentaje del Producto Interno Bruto (por Institución de Educación Superior)",
                 items: [
-                    "Total":"Aportación estatal asignada en convenio 2019: $ {0}\n\nSubsidio estatal ministrado por institución como % del PIB del estado 2019: {1} %"],
+                    "Total":"Aportación estatal asignada en convenio {2}: $ {0}\n\nSubsidio estatal ministrado por institución como % del PIB del estado {2}: {1} %"],
                 codigo: "6.2" ,ficha: "6.2 - Gasto federal en educación como porcentaje del Producto Interno Bruto", path: "gasto-federal-educacion-porcentaje-pib-ies", grupo: ""),
     Indicadores(indicador: "Gasto federal en educación como porcentaje del Producto Interno Bruto (por entidad federativa)",
                 items: [
-                    "Total":"Subsidio estatal ministrado a Instituciones de la DGESUI por entidad federativa como % del PIB del estado 2019: {0} %"],
+                    "Total":"Subsidio estatal ministrado a Instituciones de la DGESUI por entidad federativa como % del PIB del estado {1}: {0} %"],
                 codigo: "6.2" ,ficha: "6.2 - Gasto federal en educación como porcentaje del Producto Interno Bruto", path: "gasto-federal-educacion-porcentaje-pib-entidad", grupo: "")
 ]
 
@@ -275,8 +286,8 @@ let listaModulo_II = [
     Indicadores(indicador: "Porcentaje de Apoyos en IES para la Incorporación de Nuevos Profesores de Tiempo Completo y la Reincorporación de Exbecarios Otorgados", items: ["Por Universidades":"","Por Subsistemas":""], codigo: "S247 C 1.3" ,ficha: "S247 C 1.3 - C03.1 Porcentaje de apoyos en IES para la incorporación de nuevos profesores de tiempo completo y la reincorporación de exbecarios otorgados", path: "porcentaje-apoyos-ies-incorporacion", grupo: "S247"),
     Indicadores(indicador: "Porcentaje de Cuerpos Académicos en las IES que Cambian a un Grado de Consolidación Superior por Año", items: ["Por Universidades":"","Por Subsistemas":""], codigo: "S247 C 1.4" ,ficha: "S247 C 1.4 - C04.1 Porcentaje de cuerpos académicos en las IES que cambian a un grado de consolidación superior por año", path: "porcentaje-cuerpos-academicos-ies", grupo: "S247"),
     Indicadores(indicador: "Porcentaje de Solicitudes de Apoyo Aprobadas para Proyectos de Investigación a Cuerpos Académicos en IES", items: ["Por Universidades":"","Por Subsistemas":""], codigo: "S247 A 03.1" ,ficha: "S247 A 03.1 - Porcentaje de solicitudes de apoyo aprobadas para proyectos de investigación a cuerpos académicos en IES", path: "porcentaje-solicitudes-apoyo-aprobadas-proyectos-investigacion", grupo: "S247"),
-    Indicadores(indicador: "Porcentaje de Absorción de Alumnos Egresados de la Educación Media Superior que Ingresan a la Educación Superior de Instituciones en el Ámbito de la DGESUI Proporcionada por los Organismos Descentralizados Estatales.", items: ["Índice Absorción":""], codigo: "U006 P 1.1" ,ficha: "U006 P 1.1 - Porcentaje de absorción de alumnos egresados de la educación media superior que ingresan a la educación superior de instituciones en el ámbito de la DGESUI proporcionada por los Organismos Descentralizados Estatales.", path: "porcentaje-abosorcion-alumnos-egresados", grupo: "U006"),
-    Indicadores(indicador: "Monto promedio de Recursos Radicados por Alumno Inscrito a una Institución de Educación Superior Universitaria Perteneciente a la DGESUI", items: ["Monto Promedio por Alumno":""], codigo: "U006 C 1.1" ,ficha: "U006 C 1.1 - Monto promedio de recursos radicados por alumno inscrito a una Institución de Educación Superior Universitaria perteneciente a la DGESUI", path: "monto-promedio-recursos-radicados-alumnos", grupo: "U006"),
+    Indicadores(indicador: "Porcentaje de Absorción de Estudiantes Egresados de la Educación Media Superior que Ingresan a la Educación Superior de Instituciones en el Ámbito de la DGESUI Proporcionada por los Organismos Descentralizados Estatales.", items: ["Índice Absorción":""], codigo: "U006 P 1.1" ,ficha: "U006 P 1.1 - Porcentaje de absorción de estudiantes egresados de la educación media superior que ingresan a la educación superior de instituciones en el ámbito de la DGESUI proporcionada por los Organismos Descentralizados Estatales.", path: "porcentaje-abosorcion-alumnos-egresados", grupo: "U006"),
+    Indicadores(indicador: "Monto promedio de Recursos Radicados por Estudiante Inscrito a una Institución de Educación Superior Universitaria Perteneciente a la DGESUI", items: ["Monto Promedio por Estudiante":""], codigo: "U006 C 1.1" ,ficha: "U006 C 1.1 - Monto promedio de recursos radicados por estudiante inscrito a una Institución de Educación Superior Universitaria perteneciente a la DGESUI", path: "monto-promedio-recursos-radicados-alumnos", grupo: "U006"),
     Indicadores(indicador: "Monto Promedio de Recursos Radicados a Instituciones de Educación Superior Universitaria Perteneciente a la DGESUI", items: ["Monto promedio por instituciones":""], codigo: "U006 C 1.2" ,ficha: "U006 C 1.2 - Monto promedio de recursos radicados a Instituciones de Educación Superior Universitaria perteneciente a la DGESUI", path: "monto-promedio-recursos-radicados-instituciones", grupo: "U006"),
     Indicadores(indicador: "Porcentaje de Centros, Organizaciones y Sociedad Civil que Continúan con la Prestación de Servicios Vinculados a la Educación en el Año", items: ["Porcentaje de Centros, Organizaciones y Sociedad Civil":""], codigo: "U080 P 1.1" ,ficha: "U080 P 1.1 - P01.2 Porcentaje de Centros, Organizaciones y Sociedad Civil que continuan con la prestación de servicios vinculados a la educación en el año", path: "porcentaje-centros-organizaciones-sociedad-civil", grupo: "U080"),
     Indicadores(indicador: "Porcentaje de Apoyos para la Operación Otorgados a Centros, Organizaciones y Sociedad Civil Vinculados al Tipo de Educación Superior Respecto a los Programados", items: ["Porcentaje de Apoyos para la Operación Otorgados a Centros, Organizaciones y Sociedad Civil":""], codigo: "U080 C 1.1" ,ficha: "U080 C 1.1 - Porcentaje de apoyos para la operación otorgados a Centros, Organizaciones y sociedad civil vinculados al tipo de educación superior respecto a los programados", path: "porcentaje-apoyos-operacion-otorgados-centros", grupo: "U080")
@@ -284,16 +295,16 @@ let listaModulo_II = [
 
 
 let listaModulo_III = [
-    Indicadores(indicador: "Ordinario U006", items: ["Instrumento":"","Montos asignados":"","Matrícula":"","Subsidio por alumno":""], codigo: "ORD 1.1" ,ficha: "ORD 1.1 - Ordinario U006", path: "ordinario-u006", grupo: ""),
-    Indicadores(indicador: "Federal U006", items: ["Calendarizado":"","Reportado por la universidad":"","Según plataforma":""], codigo: "Federal 1.1" ,ficha: "Federal 1.1 - Federal U006", path: "federal-u006", grupo: ""),
-    Indicadores(indicador: "Estatal U006", items: ["Calendarizado":"","Según plataforma":""], codigo: "Estatal 1.1",ficha: "Estatal 1.1 - Estatal U006", path: "estatal-u006", grupo: ""),
+    Indicadores(indicador: "Ordinario U006", items: ["Instrumento":"","Montos asignados":"","Matrícula":"","Subsidio por estudiante":""], codigo: "ORD 1.1" ,ficha: "ORD 1.1 - Ordinario U006", path: "ordinario-u006", grupo: ""),
+    Indicadores(indicador: "Federal U006", items: ["Calendarizado":"","Reportado por la universidad":"","Información de Dirección de Subsidio a Universidades":""], codigo: "Federal 1.1" ,ficha: "Federal 1.1 - Federal U006", path: "federal-u006", grupo: ""),
+    Indicadores(indicador: "Estatal U006", items: ["Calendarizado":"","Información de Dirección de Subsidio a Universidades":""], codigo: "Estatal 1.1",ficha: "Estatal 1.1 - Estatal U006", path: "estatal-u006", grupo: ""),
     Indicadores(indicador: "Universidades en crisis", items: ["Monto público":"","Aportación federal":"","Aportación estatal":""], codigo: "Universidades en crisis 1.1",ficha: "Universidades en crisis 1.1 - Universidades en crisis", path: "universidades-en-crisis", grupo: ""),
     Indicadores(indicador: "Extraordinario S247", items: ["PRODEP S247":""], codigo: "Extraordinario 1.2",ficha: "Extraordinario 1.2 - Extraordinario S247", path: "extraordinario-s247", grupo: ""),
     Indicadores(indicador: "Extraordinario U006", items: ["Recurso extraordinario":"","Regreso a clases":"","Inclusión Estancias U006":"","Incremento Salarial U006":"","Déficit U006":""], codigo: "Extraordinario 1.1",ficha: "Extraordinario 1.1 - Extraordinario U006", path: "extraordinario-u006", grupo: ""),
     Indicadores(indicador: "U080", items: ["Recursos asignados":""], codigo: "U080 1.1",ficha: "U080 1.1 - Programa presupuestal U080", path: "u080", grupo: ""),
     Indicadores(indicador: "Indicadores Entidad", items: ["Cobertura":"","Cobertura 2012-2013":"","Matrícula Nivel Superior":"","Matrícula Posgrado":"","Matrícula Nivel Medio Superior":"","Desglose IES":"","Matrícula ES Modalidad":"","PTC, Perfil Deseable, SNI":"","Matrícula Discapacidad ES":"","Matrícula HLI ES":"","Matrícula por áreas de la CMPE":"","Matrícula Buena Calidad Normal, TSU y Lic":"","Matrícula Subsistema ES":""], codigo: "Ind Entidad 1.1",ficha: "Ind Entidad 1.1 - Indicadores básicos por entidad", path: "indicadores-entidad", grupo: ""),
     Indicadores(indicador: "Indicadores Subsistema", items: ["Matrícula Nivel Educativo":"","Total Discapacidad ES":"","Total HLI ES":"","Egresados ES":"","Titulados ES":"","Matrícula por Modalidad":"","Matrícula por Programa":"","Total de Programas":"","Matrícula por áreas de la CMPE":""], codigo: "Ind Subsistema 1.1",ficha: "Ind Subsistema 1.1 - Indicadores básicos por subsistema", path: "indicadores-subsistema", grupo: ""),
-    Indicadores(indicador: "Indicadores IES", items: ["Bachillerato Tecnológico y Profesional Técnico":"","EMS":"","ES Nivel Educativo":"","ES Modalidad, Hombres y Mujeres":"","Áreas de la CMPE":"", "Oferta Educativa (activos) CMPE":"","Alumnos TSU y LIC":"","Alumnos Posgrado":"","Alumnos Discapacidad TSU, LIC, POSG":"","Alumnos HLI TSU, LIC, POSG":"","Alumnos Titulados":"","Alumnos Nuevo Ingreso TSU, LIC, POSG":"","Alumnos Egresados TSU, LIC, POSG":"","Oferta Educativa (activos) NE y TP":"","Plantilla Administrativo":"","Personal Docente":"","Programas Buena Calidad, Evaluables y Competititvidad Académica":"","% Programas":"","Número Programas TSU, LIC, POSG":"","% Número Programas":"","Alumnos Nivel Superior Modalidad Escolar":"","Alumnos Nivel Superior Modalidad no Escolarizada":"","Personal de Facultades, Escuelas, Centros, Divisiones o Departamentos":"","Personal en Áreas Centrales":"","Total Personal Institución":"","Total de Personal Docente Escolarizado":"","Total de Personal Docente no Escolarizado":"","Carrera, Programas y Alumnos de la Modalidad Escolarizada":"","Carrera, Programas y Alumnos de la Modalidad no Escolarizada":"","Desglose Profesores de Tiempo Completo (PTC)":"","Desglose Profesores Perfil Deseable vigente y SNI":"","Cuerpos Académicos (CA)":"","Desglose CAEF":"","Desglose CAEC":"","Desglose CAC":"","Desglose CA":""], codigo: "Ind IES",ficha: "Ind IES - Indicadores básicos IES", path: "indicadores-ies", grupo: "")
+    Indicadores(indicador: "Indicadores IES", items: ["Bachillerato Tecnológico y Profesional Técnico":"","EMS":"","ES Nivel Educativo":"","ES Modalidad, Hombres y Mujeres":"","Áreas de la CMPE":"", "Oferta Educativa (activos) CMPE":"","Estudiantes TSU y LIC":"","Estudiantes Posgrado":"","Estudiantes Discapacidad TSU, LIC, POSG":"","Estudiantes HLI TSU, LIC, POSG":"","Estudiantes Titulados":"","Estudiantes Nuevo Ingreso TSU, LIC, POSG":"","Estudiantes Egresados TSU, LIC, POSG":"","Oferta Educativa (activos) NE y TP":"","Plantilla Administrativo":"","Personal Docente":"","Programas Buena Calidad, Evaluables y Competititvidad Académica":"","% Programas":"","Número Programas TSU, LIC, POSG":"","% Número Programas":"","Estudiantes Nivel Superior Modalidad Escolar":"","Estudiantes Nivel Superior Modalidad no Escolarizada":"","Personal de Facultades, Escuelas, Centros, Divisiones o Departamentos":"","Personal en Áreas Centrales":"","Total Personal Institución":"","Total de Personal Docente Escolarizado":"","Total de Personal Docente no Escolarizado":"","Carrera, Programas y Estudiantes de la Modalidad Escolarizada":"","Carrera, Programas y Estudiantes de la Modalidad no Escolarizada":"","Desglose Profesores de Tiempo Completo (PTC)":"","Desglose Profesores Perfil Deseable vigente y SNI":"","Cuerpos Académicos (CA)":"","Desglose CAEF":"","Desglose CAEC":"","Desglose CAC":"","Desglose CA":""], codigo: "Ind IES",ficha: "Ind IES - Indicadores básicos IES", path: "indicadores-ies", grupo: "")
 ]
 
 

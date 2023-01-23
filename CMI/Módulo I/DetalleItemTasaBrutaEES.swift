@@ -14,6 +14,7 @@ struct DetalleItemTasaBrutaEES: View {
     @State var matriculaHom: Int
     @State var censoHom: Int
     @State var tasaHombres: Double
+    @State var fuentes: [FuentesModII]
     
     var body: some View {
         VStack{
@@ -100,9 +101,22 @@ struct DetalleItemTasaBrutaEES: View {
                                         .font(.body)
                                 }
                                 
+                                
                             default:
                                 EmptyView()
                             }
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }
+                            
                         }.padding()
                             .foregroundColor(Color("gris_2"))
                     }.padding(.bottom)

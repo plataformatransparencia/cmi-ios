@@ -18,6 +18,7 @@ struct DetalleItemMontoPromedioRecursosRadicadosAlumnos: View {
     @State var montPubAlum: String
     @State var porcentaje: Double
     @State var graficasMontoPromedioRecursosRadicadosAlumnos : [String]
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -40,7 +41,7 @@ struct DetalleItemMontoPromedioRecursosRadicadosAlumnos: View {
                             .padding([.horizontal, .top])
                         VStack(alignment: .leading, spacing: 15){
                             switch titulo{
-                            case "Monto Promedio por Alumno":
+                            case "Monto Promedio por Estudiante":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Monto Federal")
                                         .font(.headline.bold())
@@ -101,21 +102,21 @@ struct DetalleItemMontoPromedioRecursosRadicadosAlumnos: View {
                                 }
                                 
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Subsidio Federal por Alumno")
+                                    Text("Subsidio Federal por Estudiante")
                                         .font(.headline.bold())
                                     Text("\(subFedAlum)")
                                         .font(.body)
-                                    Text("Subsidio Estatal Por Alumno")
+                                    Text("Subsidio Estatal Por Estudiante")
                                         .font(.headline.bold())
                                     Text("\(subEstAlum)")
                                         .font(.body)
                                     
-                                    Text("Subsidio por Alumno")
+                                    Text("Subsidio por Estudiante")
                                         .font(.headline.bold())
                                     Text("\(subsTotAlum)")
                                         .font(.body)
                                     
-                                    Text("Porcentaje del Monto Público que se Asigna a cada Alumno")
+                                    Text("Porcentaje del Monto Público que se Asigna a cada Estudiante")
                                         .font(.headline.bold())
                                     Text("\(String(format:  "%.2f",porcentaje)) %")
                                         .font(.body)
@@ -130,6 +131,18 @@ struct DetalleItemMontoPromedioRecursosRadicadosAlumnos: View {
                             default:
                                 EmptyView()
                             }
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }
+                            
                         }.padding()
                             .foregroundColor(Color("gris_2"))
                         

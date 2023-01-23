@@ -9,7 +9,7 @@ struct ListadoUniversidadesCrisis: View {
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
-
+    @StateObject var fichaViewModel = FichaViewModel()
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
             
@@ -20,7 +20,7 @@ struct ListadoUniversidadesCrisis: View {
                     Alert()
                 }else{
                     ForEach(mouloViewModel.universidadesCrisis, id:\.universidad.clave) { n in
-                        NavigationLink(destination: DetalleListadoUniversidadesCrisis(titulo: n.universidad.nombre, items: self.items,montoPublico: n.montoPublico, totalMinistrado: n.totalMinistrado, montoConvenioSEP:n.montoConvenioSEP, montoMinistradoSEP: n.montoMinistradoSEP, fechaEjecucionSEP: n.fechaEjecucionSEP, observacionFederal: n.observacionFederal, montoConvenioEstado: n.montoConvenioEstado, totalMinistradoEstado: n.totalMinistradoEstado, ministraciones: n.ministraciones, token: token, path: path, anio:anio, entidadFederativa: entidadFederativa, subsistema:subsistema, universidad: n.universidad.nombre), label: {
+                        NavigationLink(destination: DetalleListadoUniversidadesCrisis(titulo: n.universidad.nombre, items: self.items,montoPublico: n.montoPublico, totalMinistrado: n.totalMinistrado, montoConvenioSEP:n.montoConvenioSEP, montoMinistradoSEP: n.montoMinistradoSEP, fechaEjecucionSEP: n.fechaEjecucionSEP, observacionFederal: n.observacionFederal, montoConvenioEstado: n.montoConvenioEstado, totalMinistradoEstado: n.totalMinistradoEstado, ministraciones: n.ministraciones, token: token, path: path, anio:anio, entidadFederativa: entidadFederativa, subsistema:subsistema, universidad: n.universidad.nombre,fuentes:fichaViewModel.fuenteModIII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.universidad.nombre)")
@@ -39,6 +39,8 @@ struct ListadoUniversidadesCrisis: View {
             
         }.onAppear{
             self.mouloViewModel.loadInfoModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModIII(token: token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

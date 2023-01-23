@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoTasaBrutaEC: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -19,7 +20,7 @@ struct ListadoTasaBrutaEC: View {
                     
                 }else{
                     ForEach(mouloViewModel.tasaBrutaEC, id:\.universidad.siglas) { n in
-                        NavigationLink(destination: DetalleListadoTasaBrutaEC(titulo: n.entidadFederativa.valor, items: items, contribucion: n.contribucion, contribucionHombres: n.contribucionHombres, contribucionMujeres: n.contribucionMujeres), label: {
+                        NavigationLink(destination: DetalleListadoTasaBrutaEC(titulo: n.entidadFederativa.valor, items: items, contribucion: n.contribucion, contribucionHombres: n.contribucionHombres, contribucionMujeres: n.contribucionMujeres,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.entidadFederativa.valor)")
@@ -38,6 +39,8 @@ struct ListadoTasaBrutaEC: View {
             
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

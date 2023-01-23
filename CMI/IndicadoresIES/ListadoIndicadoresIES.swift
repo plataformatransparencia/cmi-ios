@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoIndicadoresIES: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var anio: String
@@ -19,7 +20,7 @@ struct ListadoIndicadoresIES: View {
                     Alert()
                 }else{
                     ForEach(mouloViewModel.indicadoresIES, id:\.universidad.clave) { n in
-                        NavigationLink(destination: DetalleListadoIndicadoresIES(titulo: n.universidad.nombre, items: items, indicadorIES: n.indicadorIES, sisup: n.sisup, token: token, path: path, anio:anio, entidadFederativa: entidadFederativa, subsistema:subsistema, universidad: n.universidad.nombre), label: {
+                        NavigationLink(destination: DetalleListadoIndicadoresIES(titulo: n.universidad.nombre, items: items, indicadorIES: n.indicadorIES, sisup: n.sisup, token: token, path: path, anio:anio, entidadFederativa: entidadFederativa, subsistema:subsistema, universidad: n.universidad.nombre,fuentes:fichaViewModel.fuenteModIII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.universidad.nombre)")
@@ -37,6 +38,8 @@ struct ListadoIndicadoresIES: View {
             }
         }.onAppear{
             self.mouloViewModel.loadInfoModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModIII(token: token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

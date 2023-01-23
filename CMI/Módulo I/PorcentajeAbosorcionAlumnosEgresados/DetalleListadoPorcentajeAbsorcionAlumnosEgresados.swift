@@ -22,6 +22,7 @@ struct DetalleListadoPorcentajeAbsorcionAlumnosEgresados: View {
     @State var primerIngresoParticularTSULIC: Int
     @State var entidadFedrativa: String
     @State var totalIndiceAbsorcion: Double
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -47,7 +48,7 @@ struct DetalleListadoPorcentajeAbsorcionAlumnosEgresados: View {
                             ProgressView()
                         }else{
                             ForEach(items.sorted(by: <), id:\.key){key, value in
-                                NavigationLink(destination: DetalleItemPorcentajeAbsocionAlumnosEgresados(titulo: key, totalEmsEgresadosPublicoParticular: totalEmsEgresadosPublicoParticular, emsEgresadosPublico: emsEgresadosPublico, emsEgresadosPublicoFederal: emsEgresadosPublicoFederal, emsEgresadosPublicoEstatal: emsEgresadosPublicoEstatal, emsEgresadosPublicoAutonomo: emsEgresadosPublicoAutonomo, emsEgresadosPublicoParticular: emsEgresadosPublicoParticular, totalPrimerIngresoPublicoParticular: totalPrimerIngresoPublicoParticular, primerIngresoPublicoTSULIC: primerIngresoPublicoTSULIC, primerIngresoParticularTSULIC: primerIngresoParticularTSULIC, entidadFedrativa: entidadFedrativa, totalIndiceAbsorcion: totalIndiceAbsorcion, graficasPorcentajeAbsocionAlumnosEgresados: mouloViewModel.graficasPorcentajeAbosorcionAlumnosEgresados)){
+                                NavigationLink(destination: DetalleItemPorcentajeAbsocionAlumnosEgresados(titulo: key, totalEmsEgresadosPublicoParticular: totalEmsEgresadosPublicoParticular, emsEgresadosPublico: emsEgresadosPublico, emsEgresadosPublicoFederal: emsEgresadosPublicoFederal, emsEgresadosPublicoEstatal: emsEgresadosPublicoEstatal, emsEgresadosPublicoAutonomo: emsEgresadosPublicoAutonomo, emsEgresadosPublicoParticular: emsEgresadosPublicoParticular, totalPrimerIngresoPublicoParticular: totalPrimerIngresoPublicoParticular, primerIngresoPublicoTSULIC: primerIngresoPublicoTSULIC, primerIngresoParticularTSULIC: primerIngresoParticularTSULIC, entidadFedrativa: entidadFedrativa, totalIndiceAbsorcion: totalIndiceAbsorcion, graficasPorcentajeAbsocionAlumnosEgresados: mouloViewModel.graficasPorcentajeAbosorcionAlumnosEgresados, fuentes: fuentes)){
                                     ItemView(indicador: key)
                                     
                                 }

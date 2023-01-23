@@ -35,6 +35,7 @@ struct DetalleItemExtraordinarioU006: View {
     @State var montoEstatalDeficitU006: Double
     @State var montoPublicoDeficitU006: Double
     @State var graficasExtraordinarioU006 : [String]
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -263,6 +264,18 @@ struct DetalleItemExtraordinarioU006: View {
                             }
                         }.padding()
                             .foregroundColor(Color("gris_2"))
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            
+                            LabelAlignment(text: fuentes, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                            .padding(.bottom)
+                            
+                        }
+                        
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)

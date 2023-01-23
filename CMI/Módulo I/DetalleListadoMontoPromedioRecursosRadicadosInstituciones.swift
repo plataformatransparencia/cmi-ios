@@ -18,7 +18,7 @@ struct DetalleListadoMontoPromedioRecursosRadicadosInstituciones: View {
     @State var aportFed: String
     @State var aportEstatal: Double
     @State var aportFederal: Double
-    
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -44,7 +44,7 @@ struct DetalleListadoMontoPromedioRecursosRadicadosInstituciones: View {
                             ProgressView()
                         }else{
                             ForEach(items.sorted(by: <), id:\.key){key, value in
-                                NavigationLink(destination: DetalleItemMontoPromedioRecursosRadicadosInstituciones(titulo: key, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, aportEst: aportEst, aportFed: aportFed, aportEstatal: aportEstatal, aportFederal: aportFederal, graficasMontoPromedioRecursosRadicadosInstituciones: mouloViewModel.graficasMontoPromedioRecursosRadicadosInstituciones)){
+                                NavigationLink(destination: DetalleItemMontoPromedioRecursosRadicadosInstituciones(titulo: key, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, aportEst: aportEst, aportFed: aportFed, aportEstatal: aportEstatal, aportFederal: aportFederal, graficasMontoPromedioRecursosRadicadosInstituciones: mouloViewModel.graficasMontoPromedioRecursosRadicadosInstituciones, fuentes: fuentes)){
                                     ItemView(indicador: key)
                                     
                                 }

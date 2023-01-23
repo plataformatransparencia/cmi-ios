@@ -26,7 +26,7 @@ struct DetalleListadoOrdU006: View {
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
-    
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -52,7 +52,7 @@ struct DetalleListadoOrdU006: View {
                             ProgressView()
                         }else{
                             ForEach(items.sorted(by: <), id:\.key){key, value in
-                                NavigationLink(destination: DetalleItemOrdU006(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, matriculaSuperior: matriculaSuperior, matriculaMediaSuperior: matriculaMediaSuperior, porcentajeFederal: porcentajeFederal, porcentajeEstatal: porcentajeEstatal, matriculaTotal: matriculaTotal, matriculaTotalPonderada: matriculaTotalPonderada, subsidioEstatalPorAlumno: subsidioEstatalPorAlumno, subsidioFederalPorAlumno: subsidioFederalPorAlumno, subsidioPublicoPorAlumno: subsidioPublicoPorAlumno, graficasOrdinarioU006: mouloViewModel.graficasOrdinarioU006)){
+                                NavigationLink(destination: DetalleItemOrdU006(titulo: key, instrumento: instrumento, estatusConvenio: estatusConvenio, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, matriculaSuperior: matriculaSuperior, matriculaMediaSuperior: matriculaMediaSuperior, porcentajeFederal: porcentajeFederal, porcentajeEstatal: porcentajeEstatal, matriculaTotal: matriculaTotal, matriculaTotalPonderada: matriculaTotalPonderada, subsidioEstatalPorAlumno: subsidioEstatalPorAlumno, subsidioFederalPorAlumno: subsidioFederalPorAlumno, subsidioPublicoPorAlumno: subsidioPublicoPorAlumno, graficasOrdinarioU006: mouloViewModel.graficasOrdinarioU006,fuentes:fuentes)){
                                     ItemView(indicador: key)
                                     
                                 }

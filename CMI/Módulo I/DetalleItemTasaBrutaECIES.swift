@@ -25,6 +25,7 @@ struct DetalleItemTasaBrutaECIES: View {
     @State var porcentajeEscolarizado: Double
     @State var porcentajeNoEscolarizado: Double
     @State var porcentajeMixto: Double
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -190,6 +191,18 @@ struct DetalleItemTasaBrutaECIES: View {
                             default:
                                 EmptyView()
                             }
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }
+                            
                         }.padding()
                             .foregroundColor(Color("gris_2"))
                     }.padding(.bottom)

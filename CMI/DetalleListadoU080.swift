@@ -16,7 +16,7 @@ struct DetalleListadoU080: View {
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
-    
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -42,7 +42,7 @@ struct DetalleListadoU080: View {
                             ProgressView()
                         }else{
                             ForEach(items.sorted(by: <), id:\.key){key, value in
-                                NavigationLink(destination: DetalleItemU080(titulo: key, items: items, instrumento: instrumento, estatusConvenio: estatusConvenio, fechaFormalizacion: fechaFormalizacion, recursosAsignados: recursosAsignados, observacionEspecifica: observacionEspecifica, graficasU080: mouloViewModel.graficasU080)){
+                                NavigationLink(destination: DetalleItemU080(titulo: key, items: items, instrumento: instrumento, estatusConvenio: estatusConvenio, fechaFormalizacion: fechaFormalizacion, recursosAsignados: recursosAsignados, observacionEspecifica: observacionEspecifica, graficasU080: mouloViewModel.graficasU080,fuentes:fuentes)){
                                     ItemView(indicador: key)
                                 }
                             }

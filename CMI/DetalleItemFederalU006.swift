@@ -10,6 +10,7 @@ struct DetalleItemFederalU006: View {
     @State var totalComprobado: Double
     @State var totalReportado: Double
     @State var graficasFederalU006 : [String]
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -33,7 +34,7 @@ struct DetalleItemFederalU006: View {
                             switch titulo{
                             case "Calendarizado":
                                 ForEach(listaCalendarizado, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, aportacion: value.aportacion, comprobaciones: value.comprobaciones)){
+                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, aportacion: value.aportacion, comprobaciones: value.comprobaciones,fuentes:fuentes)){
                                         ItemView(indicador: value.mes)
                                     }
                                 }
@@ -63,7 +64,7 @@ struct DetalleItemFederalU006: View {
                                 
                             case "Reportado por la universidad":
                                 ForEach(listaReportado, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, reportes: value.reportes)){
+                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, reportes: value.reportes,fuentes:fuentes)){
                                         ItemView(indicador: value.mes)
                                     }
                                 }
@@ -78,9 +79,9 @@ struct DetalleItemFederalU006: View {
                                     }
                                 }.padding()
                                 
-                            case "Según plataforma":
+                            case "Información de Dirección de Subsidio a Universidades":
                                 ForEach(listaPlataforma, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, aportacionSP: value.aportacion ,observacionSP: value.observacion, adeudoMensualSP: value.adeudoMensual)){
+                                    NavigationLink(destination: DetalleMesFederalU006(titulo: value.mes, item: titulo, aportacionSP: value.aportacion ,observacionSP: value.observacion, adeudoMensualSP: value.adeudoMensual,fuentes:fuentes)){
                                         ItemView(indicador: value.mes)
                                     }
                                 }
@@ -89,8 +90,17 @@ struct DetalleItemFederalU006: View {
                             }
                         }.foregroundColor(Color("gris_2"))
                         
-                        
-                        
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            
+                            LabelAlignment(text: fuentes, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                            .padding(.bottom)
+                            
+                        }
                         
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)

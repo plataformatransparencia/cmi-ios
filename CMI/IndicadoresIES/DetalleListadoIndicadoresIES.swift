@@ -13,6 +13,7 @@ struct DetalleListadoIndicadoresIES: View {
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -38,7 +39,7 @@ struct DetalleListadoIndicadoresIES: View {
                             ProgressView()
                         }else{
                             ForEach(items.sorted(by: <), id:\.key){key, value in
-                                NavigationLink(destination: DetalleItemIndicadoresIES(titulo: key, items: items, indicadorIES: indicadorIES, sisup: sisup, graficasIndicadoresIES: mouloViewModel.graficasIndicadoresIES)){
+                                NavigationLink(destination: DetalleItemIndicadoresIES(titulo: key, items: items, indicadorIES: indicadorIES, sisup: sisup, graficasIndicadoresIES: mouloViewModel.graficasIndicadoresIES,fuentes:fuentes)){
                                     ItemView(indicador: key)
                                 }
                             }

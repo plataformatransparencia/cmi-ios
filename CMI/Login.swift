@@ -1,12 +1,42 @@
 import SwiftUI
 
-struct Login: View {
+let defaults = UserDefaults.standard
+struct df{
     
+    static var us: String{
+        var x = ""
+        if let usx = defaults.string(forKey: "keyUser"){
+            x = usx
+        }
+        return x
+    }
+//    static var pa: String{
+//        var y = ""
+//        if let pax = defaults.string(forKey: "keyPass"){
+//            y = pax
+//        }
+//        return y
+//    }
+    
+}
+
+
+
+struct Login: View {
     @EnvironmentObject var userAuth: AuthUser
-    @State var username: String = ""
+    @State var username: String = df.us
     @State var password: String = ""
     @State var loginError = "Usuario o contraseña incorrectos."
-    var disableForm: Bool {(!isValidEmail(username) || !isValidUser(username)) && !isPasswordValid(password)}
+    var disableForm: Bool {
+        var bandera = false
+        if(username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty){
+            bandera = true
+        }
+//        if(password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty){
+//            bandera   = true
+//        }
+        return bandera
+    }
     
     var body: some View {
         VStack(alignment: .center, spacing: 15){
@@ -87,7 +117,10 @@ struct Login: View {
             
         }
         
+        
+        
     }
+  
     
     private func isValidUser(_ email: String) -> Bool {
         let usernamePred = NSPredicate(format:"SELF MATCHES %@", "^(?=[a-zA-Z0-9._]{2,}$)(?!.*[_.]{2})[^_.].*[^_.]$")

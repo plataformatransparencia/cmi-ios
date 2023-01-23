@@ -5,6 +5,7 @@ struct DetalleListadoPorcentajeApoyos: View {
     @State var titulo: String
     @State var cantidad: Double
     @State var nota: String
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -35,7 +36,17 @@ struct DetalleListadoPorcentajeApoyos: View {
                                 Text("\(nota)")
                                     .font(.body)
                             }
-                        }.padding()
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }                        }.padding()
                             .foregroundColor(Color("gris_2"))
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)

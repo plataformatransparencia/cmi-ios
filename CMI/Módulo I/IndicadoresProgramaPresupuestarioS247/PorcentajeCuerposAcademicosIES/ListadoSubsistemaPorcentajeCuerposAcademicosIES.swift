@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoSubsistemaPorcentajeCuerposAcademicosIES: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -25,7 +26,7 @@ struct ListadoSubsistemaPorcentajeCuerposAcademicosIES: View {
                     
                 }else{
                     ForEach(mouloViewModel.porcentajeCuerposAcademicosIESSubistema, id:\.subsistema) { n in
-                        NavigationLink(destination: DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES(titulo: n.subsistema, totalEvaluados: n.totalEvaluados, totalSubenGrado: n.totalSubenGrado, totalPorcentaje: n.totalPorcentaje, token: token, path: "\(path)/subsistema", periodo: periodo, entidadFederativa: entidadFederativa, subsistema: n.subsistema, universidad: universidad), label: {
+                        NavigationLink(destination: DetalleListadoSubsistemaPorcentajeCuerposAcademicosIES(titulo: n.subsistema, totalEvaluados: n.totalEvaluados, totalSubenGrado: n.totalSubenGrado, totalPorcentaje: n.totalPorcentaje, token: token, path: "\(path)/subsistema", periodo: periodo, entidadFederativa: entidadFederativa, subsistema: n.subsistema, universidad: universidad,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.subsistema)")
@@ -42,6 +43,8 @@ struct ListadoSubsistemaPorcentajeCuerposAcademicosIES: View {
             }
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: "\(path)/subsistema", anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
         .padding(.bottom)

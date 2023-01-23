@@ -4,10 +4,10 @@ import SwiftUI
 
 class AuthUser: ObservableObject {
     
-    
     var didChange = PassthroughSubject<AuthUser, Never>()
     var timer : Timer?
     var counter = 0
+    
     @Published var username : String = ""
     @Published var token : String = ""
     @Published var refreshToken : String = ""
@@ -36,6 +36,10 @@ class AuthUser: ObservableObject {
                 switch responseHTTP?.statusCode{
                 case 200:
                     if let result = result {
+                        let defaults = UserDefaults.standard
+                        defaults.set(username,forKey:"keyUser")
+//                        defaults.set(password, forKey: "keyPass")
+                        defaults.synchronize()
                         self.isLoggedin = true
                         self.token = result.accessToken
                         self.refreshToken = result.refreshToken

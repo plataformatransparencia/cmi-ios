@@ -25,6 +25,7 @@ struct DetalleListadoMontoPromedioRecursosRadicadosAlumnos: View {
     @State var subsTotAlum: String
     @State var montPubAlum: String
     @State var porcentaje: Double
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -50,7 +51,7 @@ struct DetalleListadoMontoPromedioRecursosRadicadosAlumnos: View {
                             ProgressView()
                         }else{
                             ForEach(items.sorted(by: <), id:\.key){key, value in
-                                NavigationLink(destination: DetalleItemMontoPromedioRecursosRadicadosAlumnos(titulo: key, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, aportEst: aportEst, aportFed: aportFed, matriculaSuperior: matriculaSuperior, matriculaMediaSuperior: matriculaMediaSuperior, matriculaTotal: matriculaTotal, matriculaPond: matriculaPond, subFedAlum: subFedAlum, subEstAlum: subEstAlum, subsTotAlum: subsTotAlum, montPubAlum: montPubAlum, porcentaje: porcentaje, graficasMontoPromedioRecursosRadicadosAlumnos: mouloViewModel.graficasMontoPromedioRecursosRadicadosAlumnos)){
+                                NavigationLink(destination: DetalleItemMontoPromedioRecursosRadicadosAlumnos(titulo: key, montoEstatal: montoEstatal, montoFederal: montoFederal, montoPublico: montoPublico, aportEst: aportEst, aportFed: aportFed, matriculaSuperior: matriculaSuperior, matriculaMediaSuperior: matriculaMediaSuperior, matriculaTotal: matriculaTotal, matriculaPond: matriculaPond, subFedAlum: subFedAlum, subEstAlum: subEstAlum, subsTotAlum: subsTotAlum, montPubAlum: montPubAlum, porcentaje: porcentaje, graficasMontoPromedioRecursosRadicadosAlumnos: mouloViewModel.graficasMontoPromedioRecursosRadicadosAlumnos, fuentes: fuentes)){
                                     ItemView(indicador: key)
                                     
                                 }

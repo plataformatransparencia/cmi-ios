@@ -24,7 +24,7 @@ struct DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
     @State var sni3: Int
     @State var totalSniVigente: Int
     @State var porcentajeGrafica: Double
-    
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -50,7 +50,7 @@ struct DetalleListadoPorcentajeProfesoresTiempoCompletoIESReconocimiento: View {
                             ProgressView()
                         }else{
                             ForEach(items.sorted(by: <), id:\.key){key, value in
-                                NavigationLink(destination: DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento(titulo: key, cicloMatricula: cicloMatricula, totalPtc: totalPtc, ptcLicenciatura: ptcLicenciatura, ptcMaestria: ptcMaestria, ptcDoctorado: ptcDoctorado, ptcPosgrado: ptcPosgrado, perfilDeseable: perfilDeseable, snic: snic, sni1: sni1, sni2: sni2, sni3: sni3, totalSniVigente: totalSniVigente, porcentajeGrafica: porcentajeGrafica, graficasPorcentajeProfesoresTiempoCompletoIESReconocimiento: mouloViewModel.graficasPorcentajeProfesoresTiempoCompletoIESReconocimiento)){
+                                NavigationLink(destination: DetalleItemPorcentajeProfesoresTiempoCompletoIESReconocimiento(titulo: key, cicloMatricula: cicloMatricula, totalPtc: totalPtc, ptcLicenciatura: ptcLicenciatura, ptcMaestria: ptcMaestria, ptcDoctorado: ptcDoctorado, ptcPosgrado: ptcPosgrado, perfilDeseable: perfilDeseable, snic: snic, sni1: sni1, sni2: sni2, sni3: sni3, totalSniVigente: totalSniVigente, porcentajeGrafica: porcentajeGrafica, graficasPorcentajeProfesoresTiempoCompletoIESReconocimiento: mouloViewModel.graficasPorcentajeProfesoresTiempoCompletoIESReconocimiento, fuentes: fuentes)){
                                     ItemView(indicador: key)
                                     
                                 }

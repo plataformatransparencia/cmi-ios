@@ -3,6 +3,7 @@ import SwiftUI
 struct ListadoMontoPromedioRecursosRadicadosInstituciones: View {
     @State var items : [String:String]
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -19,7 +20,7 @@ struct ListadoMontoPromedioRecursosRadicadosInstituciones: View {
                     
                 }else{
                     ForEach(mouloViewModel.montoPromedioRecursosRadicadosInstituciones, id:\.nombreUniversidad) { n in
-                        NavigationLink(destination: DetalleListadoMontoPromedioRecursosRadicadosInstituciones(titulo: n.nombreUniversidad, items: items, token: token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: n.nombreUniversidad, montoEstatal: n.montoEstatal, montoFederal: n.montoFederal, montoPublico: n.montoPublico, aportEst: n.aportEst, aportFed: n.aportFed, aportEstatal: n.aportEstatal, aportFederal: n.aportFederal), label: {
+                        NavigationLink(destination: DetalleListadoMontoPromedioRecursosRadicadosInstituciones(titulo: n.nombreUniversidad, items: items, token: token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: n.nombreUniversidad, montoEstatal: n.montoEstatal, montoFederal: n.montoFederal, montoPublico: n.montoPublico, aportEst: n.aportEst, aportFed: n.aportFed, aportEstatal: n.aportEstatal, aportFederal: n.aportFederal,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text("\(n.nombreUniversidad)")
@@ -38,6 +39,8 @@ struct ListadoMontoPromedioRecursosRadicadosInstituciones: View {
             
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

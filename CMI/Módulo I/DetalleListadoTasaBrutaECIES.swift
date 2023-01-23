@@ -24,6 +24,7 @@ struct DetalleListadoTasaBrutaECIES: View {
     @State var porcentajeEscolarizado: Double
     @State var porcentajeNoEscolarizado: Double
     @State var porcentajeMixto: Double
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -46,7 +47,7 @@ struct DetalleListadoTasaBrutaECIES: View {
                             .padding([.horizontal, .top])
                         
                         ForEach(items.sorted(by: <), id:\.key){key, value in
-                            NavigationLink(destination: DetalleItemTasaBrutaECIES(titulo: key, censoEstatalHombres: censoEstatalHombres, censoEstatalMujeres: censoEstatalMujeres, totalTSUPA: totalTSUPA, totalLicenciatura: totalLicenciatura, totalHombres: totalHombres, totalMujeres: totalMujeres, totalDiscapacitados: totalDiscapacitados, totalHablanteLenguaIndigena: totalHablanteLenguaIndigena, totalEscolarizado: totalEscolarizado, totalNoEscolarizado: totalNoEscolarizado, totalMixto: totalMixto, matriculaTotal: matriculaTotal, contribucionDGESUI: contribucionDGESUI, contribucionDGESUIHombres: contribucionDGESUIHombres, contribucionDGESUIMujeres: contribucionDGESUIMujeres, porcentajeConDiscapacidad: porcentajeConDiscapacidad, porcentajeHablanteLenguaIndigena: porcentajeHablanteLenguaIndigena, porcentajeEscolarizado: porcentajeEscolarizado, porcentajeNoEscolarizado: porcentajeNoEscolarizado, porcentajeMixto: porcentajeMixto)){
+                            NavigationLink(destination: DetalleItemTasaBrutaECIES(titulo: key, censoEstatalHombres: censoEstatalHombres, censoEstatalMujeres: censoEstatalMujeres, totalTSUPA: totalTSUPA, totalLicenciatura: totalLicenciatura, totalHombres: totalHombres, totalMujeres: totalMujeres, totalDiscapacitados: totalDiscapacitados, totalHablanteLenguaIndigena: totalHablanteLenguaIndigena, totalEscolarizado: totalEscolarizado, totalNoEscolarizado: totalNoEscolarizado, totalMixto: totalMixto, matriculaTotal: matriculaTotal, contribucionDGESUI: contribucionDGESUI, contribucionDGESUIHombres: contribucionDGESUIHombres, contribucionDGESUIMujeres: contribucionDGESUIMujeres, porcentajeConDiscapacidad: porcentajeConDiscapacidad, porcentajeHablanteLenguaIndigena: porcentajeHablanteLenguaIndigena, porcentajeEscolarizado: porcentajeEscolarizado, porcentajeNoEscolarizado: porcentajeNoEscolarizado, porcentajeMixto: porcentajeMixto, fuentes: fuentes)){
                                 ItemView(indicador: key)
                                 
                             }

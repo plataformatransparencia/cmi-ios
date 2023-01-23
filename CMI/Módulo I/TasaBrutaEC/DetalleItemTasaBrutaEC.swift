@@ -6,6 +6,7 @@ struct DetalleItemTasaBrutaEC: View {
     var contribucion: Double
     var contribucionHombres: Double
     var contribucionMujeres: Double
+    @State var fuentes: [FuentesModII]
     var body: some View {
         VStack{
             ZStack{
@@ -58,6 +59,18 @@ struct DetalleItemTasaBrutaEC: View {
                             default:
                                 EmptyView()
                             }
+                            VStack(alignment: .leading){
+                                HStack{
+                                    Text("Fuente")
+                                        .font(.headline.bold())
+                                    Spacer()
+                                }.padding(.bottom)
+                                ForEach(fuentes, id:\.fuente) { f in
+                                    LabelAlignment(text: f.fuente, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                                            .padding(.bottom)
+                                }
+                            }
+                            
                         }.padding()
                             .foregroundColor(Color("gris_2"))
                     }.padding(.bottom)

@@ -7,6 +7,7 @@ struct DetalleItemIndicadoresIES: View {
     @State var indicadorIES: IndicadorIES
     @State var sisup: Sisup
     @State var graficasIndicadoresIES : [String]
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -264,8 +265,15 @@ struct DetalleItemIndicadoresIES: View {
                                         .font(.headline.bold())
                                     indicadorIES.totalMatriculaEs != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalMatriculaEs)))") : Text("")
                                         .font(.body)
+                                    
                                 }
-                            case "Oferta Educativa (activos) CMPE":
+                                VStack(alignment: .leading,spacing: 10){
+                                    Text("Referencia")
+                                        .font(.headline.bold())
+                                    Text("E: Educación \nAH: Artes y Humanidades\nCSD: Ciencias Sociales y Derecho \nAN: Administración de negocios \nCNME: Ciencias Naturales, Matemáticas y Estadística \nTIC: Tecnologías de la Información y la Comunicación \nIMC: Ingenieria, Manufactura y Construcción \nAV: Agronomia y Veterinaria \nCS: Ciencias de la Salud \nS: Servicios")
+                                        .font(.body)
+                                }
+                                case "Oferta Educativa (activos) CMPE":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -339,7 +347,13 @@ struct DetalleItemIndicadoresIES: View {
                                     indicadorIES.numeroProgramasEducativos != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.numeroProgramasEducativos)))") : Text("")
                                         .font(.body)
                                 }
-                            case "Alumnos TSU y LIC":
+                                VStack(alignment: .leading,spacing: 10){
+                                    Text("Referencia")
+                                        .font(.headline.bold())
+                                    Text("E: Educación \nAH: Artes y Humanidades\nCSD: Ciencias Sociales y Derecho \nAN: Administración de negocios \nCNME: Ciencias Naturales, Matemáticas y Estadística \nTIC: Tecnologías de la Información y la Comunicación \nIMC: Ingenieria, Manufactura y Construcción \nAV: Agronomia y Veterinaria \nCS: Ciencias de la Salud \nS: Servicios")
+                                        .font(.body)
+                                }
+                            case "Estudiantes TSU y LIC":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -382,7 +396,7 @@ struct DetalleItemIndicadoresIES: View {
                                     indicadorIES.matriculaTsu != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.matriculaTsu)))") : Text("")
                                         .font(.body)
                                 }
-                            case "Alumnos Posgrado":
+                            case "Estudiantes Posgrado":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -425,7 +439,7 @@ struct DetalleItemIndicadoresIES: View {
                                     indicadorIES.mujeresPosgrado != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresPosgrado)))") : Text("")
                                         .font(.body)
                                 }
-                            case "Alumnos Discapacidad TSU, LIC, POSG":
+                            case "Estudiantes Discapacidad TSU, LIC, POSG":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -462,7 +476,7 @@ struct DetalleItemIndicadoresIES: View {
                                     indicadorIES.mujeresDiscapacidad != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.mujeresDiscapacidad)))") : Text("")
                                         .font(.body)
                                 }
-                            case "Alumnos HLI TSU, LIC, POSG":
+                            case "Estudiantes HLI TSU, LIC, POSG":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -505,7 +519,7 @@ struct DetalleItemIndicadoresIES: View {
                                     indicadorIES.totalHli != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalHli)))") : Text("")
                                         .font(.body)
                                 }
-                            case "Alumnos Titulados":
+                            case "Estudiantes Titulados":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -536,7 +550,7 @@ struct DetalleItemIndicadoresIES: View {
                                     indicadorIES.totalHliTitulados != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalHliTitulados)))") : Text("")
                                         .font(.body)
                                 }
-                            case "Alumnos Nuevo Ingreso TSU, LIC, POSG":
+                            case "Estudiantes Nuevo Ingreso TSU, LIC, POSG":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -544,24 +558,24 @@ struct DetalleItemIndicadoresIES: View {
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Alumnos Nuevo Ingreso (TSU y Lic)")
+                                    Text("Estudiantes Nuevo Ingreso (TSU y Lic)")
                                         .font(.headline.bold())
                                     indicadorIES.alumnosNuevoIngresoTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosNuevoIngresoTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Alumnos Nuevo Ingreso (Posg)")
+                                    Text("Estudiantes Nuevo Ingreso (Posg)")
                                         .font(.headline.bold())
                                     indicadorIES.alumnosNuevoIngresoPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosNuevoIngresoPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Total Alumnos Nuevo Ingreso (TSU, Lic y Posg)")
+                                    Text("Total Estudiantes Nuevo Ingreso (TSU, Lic y Posg)")
                                         .font(.headline.bold())
                                     indicadorIES.totalAlumnosNuevoIngresoTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalAlumnosNuevoIngresoTsuLicPosg)))") : Text("")
                                         .font(.body)
                                 }
-                            case "Alumnos Egresados TSU, LIC, POSG":
+                            case "Estudiantes Egresados TSU, LIC, POSG":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -569,19 +583,19 @@ struct DetalleItemIndicadoresIES: View {
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Alumnos egresados (TSU y Lic)")
+                                    Text("Estudiantes egresados (TSU y Lic)")
                                         .font(.headline.bold())
                                     indicadorIES.alumnosEgresadosTsuLic != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosEgresadosTsuLic)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Alumnos egresados (Posg)")
+                                    Text("Estudiantes egresados (Posg)")
                                         .font(.headline.bold())
                                     indicadorIES.alumnosEgresadosPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.alumnosEgresadosPosg)))") : Text("")
                                         .font(.body)
                                 }
                                 VStack(alignment: .leading,spacing: 10){
-                                    Text("Alumnos egresados (TSU, Lic y Posg)")
+                                    Text("Estudiantes egresados (TSU, Lic y Posg)")
                                         .font(.headline.bold())
                                     indicadorIES.totalAlumnosEgresadosTsuLicPosg != 0 ? Text("\(formatResult(basedOn: String(indicadorIES.totalAlumnosEgresadosTsuLicPosg)))") : Text("")
                                         .font(.body)
@@ -891,7 +905,7 @@ struct DetalleItemIndicadoresIES: View {
                                         !(graficasIndicadoresIES[4].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficasIndicadoresIES[4])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                                     }
                                 }.padding(.bottom)
-                            case "Alumnos Nivel Superior Modalidad Escolar":
+                            case "Estudiantes Nivel Superior Modalidad Escolar":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -934,7 +948,7 @@ struct DetalleItemIndicadoresIES: View {
                                         !(graficasIndicadoresIES[5].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficasIndicadoresIES[5])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                                     }
                                 }.padding(.bottom)
-                            case "Alumnos Nivel Superior Modalidad no Escolarizada":
+                            case "Estudiantes Nivel Superior Modalidad no Escolarizada":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -1192,7 +1206,7 @@ struct DetalleItemIndicadoresIES: View {
                                         !(graficasIndicadoresIES[11].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficasIndicadoresIES[11])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                                     }
                                 }.padding(.bottom)
-                            case "Carrera, Programas y Alumnos de la Modalidad Escolarizada":
+                            case "Carrera, Programas y Estudiantes de la Modalidad Escolarizada":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -1247,7 +1261,7 @@ struct DetalleItemIndicadoresIES: View {
                                         !(graficasIndicadoresIES[12].isEmpty) ? Image(uiImage: UIImage(data: (Data(base64Encoded: graficasIndicadoresIES[12])!))!) :  Image(uiImage: UIImage(data: (Data(base64Encoded: imagenDefault)!))!)
                                     }
                                 }.padding(.bottom)
-                            case "Carrera, Programas y Alumnos de la Modalidad no Escolarizada":
+                            case "Carrera, Programas y Estudiantes de la Modalidad no Escolarizada":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos de matrícula")
                                         .font(.headline.bold())
@@ -1588,6 +1602,18 @@ struct DetalleItemIndicadoresIES: View {
                             }
                         }.padding()
                             .foregroundColor(Color("gris_2"))
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            
+                            LabelAlignment(text: fuentes, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                            .padding(.bottom)
+                            
+                        }
+                        
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)

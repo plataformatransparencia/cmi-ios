@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ListadoPorcentajeDocumentosNormativos: View {
     @StateObject var mouloViewModel = ModuloViewModel()
+    @StateObject var fichaViewModel = FichaViewModel()
     @State var token: String
     @State var path: String
     @State var periodo: String
@@ -18,7 +19,7 @@ struct ListadoPorcentajeDocumentosNormativos: View {
                     
                 }else{
                     ForEach(mouloViewModel.porcentajeDocumentosNormativos, id:\.id) { n in
-                        NavigationLink(destination: DetalleListadoDocumentosNormativos(titulo: "\(n.ejercicioFiscal)", numeroDocNorProgram: n.numeroDocNorProgram), label: {
+                        NavigationLink(destination: DetalleListadoDocumentosNormativos(titulo: "\(n.ejercicioFiscal)", numeroDocNorProgram: n.numeroDocNorProgram,fuentes: fichaViewModel.fuentesModII), label: {
                             VStack(alignment: .leading){
                                 HStack{
                                     Text(String(n.ejercicioFiscal))
@@ -37,6 +38,8 @@ struct ListadoPorcentajeDocumentosNormativos: View {
             
         }.onAppear{
             self.mouloViewModel.loadInfoModII(token: self.token, path: path, anio: periodo, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModII(token: self.token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

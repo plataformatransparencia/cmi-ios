@@ -13,6 +13,7 @@ struct DetalleItemUniversidadesCrisis: View {
     @State var totalMinistradoEstado: Double
     @State var ministraciones : [Ministraciones]
     @State var graficaUniversidadesCrisis : [String]
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -136,7 +137,17 @@ struct DetalleItemUniversidadesCrisis: View {
                         }.padding()
                             .foregroundColor(Color("gris_2"))
                             
-                        
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            
+                            LabelAlignment(text: fuentes, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                            .padding(.bottom)
+                            
+                        }
                         
                         
                     }.padding(.bottom)

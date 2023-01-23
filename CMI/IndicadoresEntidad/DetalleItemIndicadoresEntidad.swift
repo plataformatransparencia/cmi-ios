@@ -95,6 +95,7 @@ struct DetalleItemIndicadoresEntidad: View {
     @State var totalSubsistema: Int
     
     @State var graficasIndicadoresEntidad : [String]
+    @State var fuentes: String
     var body: some View {
         VStack{
             ZStack{
@@ -572,7 +573,14 @@ struct DetalleItemIndicadoresEntidad: View {
                                         .font(.headline.bold())
                                     totalMatriculaAreasCmpe != 0 ? Text("\(formatResult(basedOn: String(self.totalMatriculaAreasCmpe)))") : Text("")
                                         .font(.body)
+                                    
+                                    Text("Referencia")
+                                        .font(.headline.bold())
+                                    Text("E: Educación \nAH: Artes y Humanidades\nCSD: Ciencias Sociales y Derecho \nAN: Administración de negocios \nCNME: Ciencias Naturales, Matemáticas y Estadística \nTIC: Tecnologías de la Información y la Comunicación \nIMC: Ingenieria, Manufactura y Construcción \nAV: Agronomia y Veterinaria \nCS: Ciencias de la Salud \nS: Servicios")
+                                        .font(.body)
+                                    
                                 }
+
                             case "Matrícula Buena Calidad Normal, TSU y Lic":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Ciclo de datos")
@@ -706,6 +714,18 @@ struct DetalleItemIndicadoresEntidad: View {
                             }
                         }.padding()
                             .foregroundColor(Color("gris_2"))
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            
+                            LabelAlignment(text: fuentes, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                            .padding(.bottom)
+                            
+                        }
+                        
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)

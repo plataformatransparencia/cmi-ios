@@ -15,6 +15,7 @@ struct DetalleMesFederalU006: View {
     @State var aportacionSP: Double?
     @State var observacionSP: String?
     @State var adeudoMensualSP: Double?
+    @State var fuentes: String
     
     var body: some View {
         VStack{
@@ -86,7 +87,7 @@ struct DetalleMesFederalU006: View {
                                             .font(.body)
                                     }
                                 }
-                            case "Según plataforma":
+                            case "Información de Dirección de Subsidio a Universidades":
                                 VStack(alignment: .leading,spacing: 10){
                                     Text("Aportación según plataforma")
                                         .font(.headline.bold())

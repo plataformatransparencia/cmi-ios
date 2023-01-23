@@ -8,6 +8,7 @@ struct GraficaUniversidadesCrisis: View {
     @State var entidadFederativa: String
     @State var subsistema: String
     @State var universidad: String
+    @StateObject var fichaViewModel = FichaViewModel()
     var body: some View {
         ScrollView(.vertical, showsIndicators: true){
             
@@ -24,6 +25,18 @@ struct GraficaUniversidadesCrisis: View {
                             }
                         }.padding(.bottom)
                     }
+                    VStack(alignment: .leading){
+                        HStack{
+                            Text("Fuente")
+                                .font(.headline.bold())
+                            Spacer()
+                        }.padding(.bottom)
+                        
+                        LabelAlignment(text: fichaViewModel.fuenteModIII, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                        .padding(.bottom)
+                        
+                    }
+                    
                 }
                 
             }
@@ -31,6 +44,8 @@ struct GraficaUniversidadesCrisis: View {
             
         }.onAppear{
             self.mouloViewModel.loadGraficasModIII(token: self.token, path: path, anio: anio, entidadFederativa: entidadFederativa, subsistema: subsistema, universidad: universidad)
+            self.fichaViewModel.loadInfoFichaModIII(token: token, path: path)
+            
         }
         .navigationBarHidden(true)
     }

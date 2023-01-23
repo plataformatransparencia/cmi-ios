@@ -9,6 +9,7 @@ struct DetalleItemEstatalU006: View {
     @State var totalCalendarizado: Double
     @State var totalReportado: Double
     @State var totalAdeudosMensuales: Double
+    @State var fuentes: String
     
     var body: some View {
         VStack{
@@ -33,7 +34,7 @@ struct DetalleItemEstatalU006: View {
                             switch titulo{
                             case "Calendarizado":
                                 ForEach(aportaciones, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesEstatalU006(titulo: value.mes, item: titulo, calendarizada: value.calendarizada, reportes: value.reportes)){
+                                    NavigationLink(destination: DetalleMesEstatalU006(titulo: value.mes, item: titulo, calendarizada: value.calendarizada, reportes: value.reportes,fuentes:fuentes)){
                                         ItemView(indicador: value.mes)
                                     }
                                 }
@@ -60,9 +61,9 @@ struct DetalleItemEstatalU006: View {
                                     }
                                 }.padding(.bottom)
                                 
-                            case "Según plataforma":
+                            case "Información de Dirección de Subsidio a Universidades":
                                 ForEach(aportaciones, id:\.mes){ value in
-                                    NavigationLink(destination: DetalleMesEstatalU006(titulo: value.mes, item: titulo, totalReportado: value.totalReportado, observacion: value.observacion, adeudoMensual: value.adeudoMensual)){
+                                    NavigationLink(destination: DetalleMesEstatalU006(titulo: value.mes, item: titulo, totalReportado: value.totalReportado, observacion: value.observacion, adeudoMensual: value.adeudoMensual,fuentes:fuentes)){
                                         ItemView(indicador: value.mes)
                                     }
                                 }
@@ -88,6 +89,17 @@ struct DetalleItemEstatalU006: View {
                                 EmptyView()
                             }
                         }.foregroundColor(Color("gris_2"))
+                        VStack(alignment: .leading){
+                            HStack{
+                                Text("Fuente")
+                                    .font(.headline.bold())
+                                Spacer()
+                            }.padding(.bottom)
+                            
+                            LabelAlignment(text: fuentes, textAlignmentStyle: .justified, width: UIScreen.main.bounds.width - 20)
+                            .padding(.bottom)
+                            
+                        }
                     }.padding(.bottom)
                         .edgesIgnoringSafeArea(.all)
                         .navigationBarHidden(true)
